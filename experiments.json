@@ -1,14 +1,4 @@
 {
- "updated": "2026-06-24T00:00:00Z",
- "experiments": [
-  {
-   "id": "exp_test",
-   "created": "2026-06-24",
-   "fields": {
-    "product": "WRITE-TEST",
-    "version_label": "roundtrip",
-    "contrast": 5
-   }
-  }
- ]
+ "updated": null,
+ "experiments": []
 }
