@@ -256,6 +256,29 @@ a{color:var(--accent);text-decoration:none}
 .badge.bucket{background:var(--grey-soft);color:var(--grey)}
 .card-actions{margin-left:auto;display:flex;align-items:center;gap:6px}
 
+/* BIG version-count pill — prominent, reads at a glance */
+.ver-pill{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:14px;font-weight:800;letter-spacing:-.005em;
+  background:var(--accent-soft);color:var(--accent-ink);
+  border:1px solid var(--accent-line);border-radius:999px;padding:4px 11px;
+  white-space:nowrap;
+}
+.ver-pill-lg{font-size:16px;padding:6px 14px}
+.ver-pill-sm{font-size:12.5px;padding:3px 9px}
+.ver-pill-await{background:var(--amber-soft);color:#a85d05;border-color:#f0dcb6}
+
+/* amber "awaiting upload" chip on a tile + subtle accent on the card */
+.tile-await{
+  position:absolute;bottom:9px;left:9px;z-index:3;
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:11px;font-weight:800;letter-spacing:.02em;
+  background:var(--amber);color:#fff;border-radius:8px;padding:4px 9px;
+  box-shadow:0 2px 8px rgba(0,0,0,.28);
+}
+.card-awaiting{border-color:#f0cd8e;box-shadow:0 0 0 1px #f3dcb6, var(--shadow)}
+.card-awaiting:hover{border-color:var(--amber)}
+
 /* overflow menu */
 .menu-wrap{position:relative}
 .menu-btn{
@@ -296,6 +319,13 @@ table.tbl{width:100%;border-collapse:collapse;font-size:13px}
 .tbl .t-title small{display:block;color:var(--mut);font-weight:500;font-size:11.5px}
 .tbl .t-good{color:var(--green)}
 .tbl .t-act{white-space:nowrap;text-align:right}
+.tbl .t-await{
+  display:inline-block;margin-top:3px;
+  font-size:10.5px;font-weight:800;letter-spacing:.02em;
+  background:var(--amber-soft);color:#a85d05;border:1px solid #f0dcb6;
+  border-radius:6px;padding:1px 7px;
+}
+.tbl tr.tr-awaiting td:first-child{box-shadow:inset 3px 0 0 var(--amber)}
 
 /* --------------------------------------------------------------- findings -- */
 .findings-head{margin:6px 0 18px}
@@ -350,6 +380,7 @@ dialog::backdrop{background:rgba(17,22,35,.42);backdrop-filter:blur(2px)}
 .drawer-sub{color:var(--mut);font-size:12.5px;font-weight:600;margin-top:4px}
 .drawer-sub .rel{color:var(--mut-2);font-weight:500}
 .drawer-head-actions{display:flex;align-items:center;gap:8px}
+.dh-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}
 .dh-buttons{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}
 .detail-body{padding:18px 22px 40px;overflow-y:auto;flex:1}
 
@@ -382,37 +413,7 @@ dialog::backdrop{background:rgba(17,22,35,.42);backdrop-filter:blur(2px)}
 .spark .bar{flex:1;background:var(--accent-soft);border-radius:3px 3px 0 0;min-height:3px}
 .spark-cap{font-size:10.5px;color:var(--mut);margin-top:6px;display:flex;justify-content:space-between}
 
-/* version cards inside drawer */
-.ver{
-  border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;margin-bottom:12px;background:var(--card);
-}
-.ver-strip{background:#0d1018;line-height:0}
-.ver-strip img{width:100%;height:auto;display:block}
-.ver-body{padding:11px 13px;display:flex;flex-direction:column;gap:7px}
-.ver-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.ver-label{font-weight:800;font-size:13.5px}
-.ver-metrics{display:flex;gap:16px;flex-wrap:wrap}
-.ver-metrics .vm{display:flex;flex-direction:column;line-height:1.1}
-.ver-metrics .vm .v{font-size:15px;font-weight:800}
-.ver-metrics .vm .l{font-size:10px;color:var(--mut);font-weight:700;text-transform:uppercase;letter-spacing:.03em}
-.status-badge{font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;border-radius:6px;padding:2px 7px}
-.st-posted{background:var(--green-soft);color:#0f7a36}
-.st-prediction{background:var(--accent-soft);color:var(--accent-ink)}
-.st-resolved{background:var(--blue-soft);color:#1d4ed8}
-.st-idea{background:var(--grey-soft);color:var(--grey)}
-.st-edited{background:var(--amber-soft);color:#a85d05}
-
-/* prediction / reconcile */
-.pred-block{background:linear-gradient(180deg,#f4f3ff,#fbfbff);border:1px solid var(--accent-line)}
-.pred-row{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:12px}
-.pred-cell .l{font-size:10.5px;color:var(--mut);font-weight:700;text-transform:uppercase;letter-spacing:.03em}
-.pred-cell .v{font-size:19px;font-weight:800}
-.pred-cell .band{font-size:11px;font-weight:700;color:var(--accent-ink)}
-.verdict{font-size:12px;font-weight:800;border-radius:8px;padding:4px 10px;display:inline-block}
-.v-hit{background:var(--green-soft);color:#0f7a36}
-.v-close{background:var(--amber-soft);color:#a85d05}
-.v-miss{background:var(--red-soft);color:#b02020}
-.v-pending{background:var(--grey-soft);color:var(--grey)}
+/* how-to-change list (used by the 🔮 prediction panel's expandable internals) */
 .howto{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-direction:column;gap:9px}
 .howto li{border-left:3px solid var(--accent-line);padding:3px 0 3px 11px}
 .howto .ht-change{font-weight:800;font-size:13px}
@@ -466,7 +467,8 @@ dialog::backdrop{background:rgba(17,22,35,.42);backdrop-filter:blur(2px)}
   box-shadow:0 0 0 4px var(--bg), 0 0 0 5px var(--line);
 }
 .tl-dot-posted{background:var(--green)}
-.tl-dot-pred{background:var(--amber)}
+.tl-dot-await{background:var(--amber);box-shadow:0 0 0 4px var(--bg), 0 0 0 6px #f0cd8e}
+.tl-dot-scrapped{background:var(--mut-2)}
 .tl-dot-resolved{background:var(--blue)}
 .tl-dot-exp{background:var(--grey)}
 .tl-node.is-newest .tl-dot{width:16px;height:16px;margin-top:5px;box-shadow:0 0 0 4px var(--bg), 0 0 0 6px var(--accent-line)}
@@ -479,18 +481,42 @@ dialog::backdrop{background:rgba(17,22,35,.42);backdrop-filter:blur(2px)}
 }
 .tl-node.is-newest .tl-card{border-color:var(--accent-line);box-shadow:0 0 0 3px var(--accent-soft), var(--shadow)}
 
+/* AWAITING UPLOAD — prominent amber border + soft amber tint. Wins over the
+   is-newest accent so an in-progress version unmistakably reads "still working
+   on this / not uploaded yet". */
+.tl-card.tl-card-awaiting,
+.tl-node.is-newest .tl-card.tl-card-awaiting{
+  border:2px solid var(--amber);
+  background:linear-gradient(180deg,#fdf4e3,#fffdf9);
+  box-shadow:0 0 0 3px rgba(217,119,6,.12), var(--shadow);
+}
+
+/* SCRAPPED — de-emphasised so several rejected tests can stack without clutter.
+   Dimmed + slight grayscale; still fully expandable. */
+.tl-node-scrapped{opacity:.5}
+.tl-node-scrapped:hover{opacity:.82;transition:opacity .15s}
+.tl-card.tl-card-scrapped{
+  filter:grayscale(.35);
+  background:var(--line-soft);border-style:dashed;box-shadow:none;
+}
+.tl-version-strike{text-decoration:line-through;text-decoration-thickness:1.5px;color:var(--mut)}
+
 .tl-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
 .tl-date{display:flex;flex-direction:column;line-height:1.15}
 .tl-date-abs{font-size:15px;font-weight:800;letter-spacing:-.01em;color:var(--ink)}
 .tl-date-rel{font-size:11.5px;font-weight:600;color:var(--mut-2);margin-top:1px}
 .tl-date-future .tl-date-abs{color:var(--amber)}
+.tl-date-scrapped .tl-date-abs{color:var(--mut);text-decoration:line-through}
 .tl-pills{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
 .tl-pill{
   font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;
   border-radius:7px;padding:3px 9px;white-space:nowrap;
 }
 .tl-pill-posted{background:var(--green-soft);color:#0f7a36}
-.tl-pill-pred{background:var(--amber-soft);color:#a85d05}
+/* AWAITING UPLOAD — solid amber, the loudest pill so it's impossible to miss */
+.tl-pill-await{background:var(--amber);color:#fff;font-weight:900;box-shadow:0 1px 3px rgba(217,119,6,.35)}
+/* SCRAPPED — muted grey, quiet */
+.tl-pill-scrapped{background:var(--grey-soft);color:var(--grey)}
 .tl-pill-resolved{background:var(--blue-soft);color:#1d4ed8}
 .tl-pill-exp{background:var(--grey-soft);color:var(--grey)}
 .tl-pill-best{background:var(--accent-soft);color:var(--accent-ink);border:1px solid var(--accent-line)}

@@ -232,10 +232,45 @@ function toItem(rec, kind){
     url: rec.url || (rec.id && realKind!=='prediction' ? `https://www.youtube.com/shorts/${rec.id}` : null),
     script: rec.script || '',
     status: realStatus,
+    // lifecycle ∈ {uploaded, awaiting, scrapped} — carried through so the
+    // timeline + tiles can render unmistakable in-progress / superseded states.
+    // Falls back to status (awaiting/scrapped) then derives from kind/metrics.
+    lifecycle: rec.lifecycle || (realStatus==='awaiting' ? 'awaiting'
+                : realStatus==='scrapped' ? 'scrapped'
+                : (realKind==='prediction' ? 'awaiting' : 'uploaded')),
     prediction: predObj,            // nested prediction (or null)
     actual: rec.actual || null,
     ts: parseDate(rec.publish)?.getTime() || 0,
   };
+}
+
+// a "posted" item is a posted video OR an experiment explicitly marked
+// status==='posted'. EVERY posted-detection path keys on this helper so a
+// posted experiment's real metrics are counted: it can become the card
+// representative, feeds the KPI median + posted chip count, and is eligible
+// for the BEST star. (toItem keeps a posted experiment as kind:'experiment'
+// to preserve its raw shape; this is the single source of truth for "posted".)
+function isPostedItem(it){
+  return it.kind==='posted' || (it.kind==='experiment' && it.status==='posted');
+}
+
+// canonical lifecycle for an item:
+//   uploaded — a real shipped/posted version (posted video or posted experiment)
+//   awaiting — pre-upload, actively in progress (explicit lifecycle/status only)
+//   scrapped — superseded pre-upload test
+//   draft    — an unposted experiment idea/draft or a bare pending prediction
+// An explicit lifecycle always wins. Only ACTUALLY-posted items resolve to
+// 'uploaded' (so an idea/draft never reads as uploaded). 'awaiting' means
+// STRICTLY "edited, pending upload" — it requires an explicit lifecycle/status
+// signal, so a merely-predicted future version or a draft never auto-flips the
+// amber awaiting state. build_dashboard.py sets lifecycle explicitly on every
+// prediction, so the draft fallback only catches legacy/AI-authored records.
+function lifecycleOf(it){
+  if(it.lifecycle) return it.lifecycle;
+  if(it.status==='scrapped') return 'scrapped';
+  if(it.status==='awaiting') return 'awaiting';
+  if(isPostedItem(it)) return 'uploaded';
+  return 'draft';
 }
 function numOrNull(v){ return (v==null || v===''||isNaN(v)) ? null : +v; }
 function bucketFromLen(L){
@@ -262,18 +297,35 @@ function buildGroups(){
   }
   const groups = [];
   for(const g of map.values()){
-    // versions newest first: status rank, then ts desc. Without the rank tie-in,
-    // an experiment's large _ts could outrank real posts and all null-publish
-    // items (ts:0) would pile up in arbitrary insertion order.
-    const rank = {posted:0, resolved:1, prediction:2, edited:3, idea:4, experiment:5};
+    // versions newest first: a derived sort-status rank, then ts desc. Without
+    // the rank tie-in, an experiment's large _ts could outrank real posts and
+    // all null-publish items (ts:0) would pile up in arbitrary insertion order.
+    // awaiting (active pre-upload candidate) floats to the very top; scrapped
+    // (superseded pre-upload tests) sink to the bottom so they stack quietly.
+    // Rank on a DERIVED label (not the raw it.status, which is only ever
+    // awaiting/posted/scrapped/edited/idea) so 'resolved' and 'prediction'
+    // actually distinguish their cases: a resolved prediction (posted re-edit
+    // carrying a nested .prediction) ranks below a fresh post; a pending
+    // prediction ranks between resolved and edited drafts.
+    const sortStatus = it => {
+      if(it.status==='awaiting') return 'awaiting';
+      if(it.status==='scrapped') return 'scrapped';
+      if(it.kind==='prediction') return 'prediction';   // pending prediction
+      if(it.prediction && it.swipe!=null) return 'resolved'; // posted re-edit w/ prediction
+      if(isPostedItem(it)) return 'posted';
+      return it.status; // edited / idea / other experiment states
+    };
+    const rank = {awaiting:0, posted:1, resolved:2, prediction:3, edited:4, idea:5, scrapped:8};
     g.items.sort((a,b)=>{
-      const ra = rank[a.status]==null?9:rank[a.status];
-      const rb = rank[b.status]==null?9:rank[b.status];
+      const ra = rank[sortStatus(a)]==null?7:rank[sortStatus(a)];
+      const rb = rank[sortStatus(b)]==null?7:rank[sortStatus(b)];
       if(ra!==rb) return ra-rb;
       return (b.ts||0)-(a.ts||0);
     });
-    // pick representative = best posted version (highest views), else first
-    const posted = g.items.filter(i=>i.kind==='posted');
+    // pick representative = best posted version (highest views), else first.
+    // posted set includes posted experiments (isPostedItem) so a posted
+    // experiment's real metrics drive the rep, KPI median + posted count.
+    const posted = g.items.filter(isPostedItem);
     let rep;
     if(posted.length){
       rep = posted.slice().sort((a,b)=>(b.views||0)-(a.views||0))[0];
@@ -287,8 +339,11 @@ function buildGroups(){
       const da=parseDate(a.publish), db=parseDate(b.publish);
       if(da&&db) return da-db; if(da) return -1; if(db) return 1; return (a.ts||0)-(b.ts||0);
     });
-    const nameRep = (byDate.filter(i=>i.kind==='posted')[0]) || byDate[0] || rep;
+    const nameRep = (byDate.filter(isPostedItem)[0]) || byDate[0] || rep;
     g.display = displayName(g.key, nameRep.title);
+    // the ORIGINAL = earliest posted version; keeps the plain "Posted" label so
+    // only later uploads read "✓ Uploaded".
+    g.originalId = (byDate.filter(isPostedItem)[0] || null)?.id || null;
     g.versionCount = g.items.length;
     // swipe range across versions w/ swipe
     const sw = g.items.map(i=>i.swipe).filter(v=>v!=null);
@@ -299,6 +354,9 @@ function buildGroups(){
     // re-edit that carries a nested .prediction (resolved prediction).
     g.hasPrediction = g.items.some(i=>i.kind==='prediction' || i.prediction);
     g.hasExperiment = g.items.some(i=>i.kind==='experiment');
+    // ANY version awaiting upload (active in-progress candidate) → flags the
+    // tile with an amber chip + accent so in-progress shorts pop in the grid.
+    g.hasAwaiting = g.items.some(i=>lifecycleOf(i)==='awaiting');
     // BEST = highest stayed-to-watch among POSTED versions (for the timeline badge)
     let best=null;
     for(const i of posted){ if(i.swipe!=null && (best==null || i.swipe>best.swipe)) best=i; }
@@ -404,10 +462,6 @@ function renderKPI(groups){
 }
 
 /* ----------------------------------------------------------- render grid -- */
-function stripHTML(item, cls){
-  if(item.strip) return `<div class="${cls}"><img src="${esc(item.strip)}" alt="opening frames" loading="lazy"></div>`;
-  return `<div class="${cls}"><div class="no-strip">no filmstrip yet</div></div>`;
-}
 function kindTag(g){
   if(g.rep.kind==='prediction') return `<span class="kind-tag kind-prediction">Prediction</span>`;
   if(g.rep.kind==='experiment') return `<span class="kind-tag kind-experiment">My test</span>`;
@@ -436,10 +490,15 @@ function renderGrid(groups){
     const range = (g.swMin!=null && g.swMax!=null && g.versionCount>1 && g.swMin!==g.swMax)
       ? `<span class="badge range">${num(g.swMin)}–${num(g.swMax)}%</span>` : '';
     const ytBtn = r.url ? `<a class="btn btn-yt card-yt" href="${esc(r.url)}" target="_blank" rel="noopener" data-stop>▶ YouTube</a>` : '';
+    // BIG version-count pill — reads at a glance how many cuts this short has.
+    const verPill = `<span class="ver-pill">▦ ${g.versionCount} version${g.versionCount>1?'s':''}</span>`;
+    // amber in-progress chip on the filmstrip when any version awaits upload
+    const awaitChip = g.hasAwaiting ? `<span class="tile-await">⏳ awaiting upload</span>` : '';
     return `
-      <article class="card" data-key="${esc(g.key)}">
+      <article class="card ${g.hasAwaiting?'card-awaiting':''}" data-key="${esc(g.key)}">
         <div class="card-strip">
           ${kindTag(g)}
+          ${awaitChip}
           ${ytBtn}
           ${r.strip?`<img src="${esc(r.strip)}" alt="opening frames" loading="lazy">`:`<div class="no-strip">no filmstrip yet</div>`}
         </div>
@@ -455,7 +514,7 @@ function renderGrid(groups){
             <div class="metric-sm"><span class="v">${r.avd!=null?num(r.avd)+'%':'—'}</span><span class="l">avd</span></div>
           </div>
           <div class="card-foot">
-            <span class="badge">${g.versionCount} version${g.versionCount>1?'s':''}</span>
+            ${verPill}
             ${range}
             ${r.bucket?`<span class="badge bucket">${esc(shortBucket(r.bucket))}</span>`:''}
             <div class="card-actions" data-stop>
@@ -492,14 +551,15 @@ function renderTable(groups){
     const abs=fmtDateAbs(r.publish);
     const good = rSwipe!=null && rSwipe>=75 ? 't-good':'';
     const ytBtn = r.url?`<a class="btn btn-yt btn-sm" href="${esc(r.url)}" target="_blank" rel="noopener" data-stop>▶</a>`:'';
-    return `<tr data-key="${esc(g.key)}">
+    const tAwait = g.hasAwaiting ? `<span class="t-await">⏳ awaiting upload</span>` : '';
+    return `<tr data-key="${esc(g.key)}" class="${g.hasAwaiting?'tr-awaiting':''}">
       <td class="t-thumb">${r.strip?`<img src="${esc(r.strip)}" alt="" loading="lazy">`:''}</td>
-      <td class="t-title">${esc(g.display)}<small>${esc(r.version_label)}${g.versionCount>1?` · ${g.versionCount} versions`:''}</small></td>
+      <td class="t-title">${esc(g.display)}<small>${esc(r.version_label)}</small>${tAwait}</td>
       <td>${abs?esc(abs):(r.kind==='prediction'?'predicted':'—')}</td>
       <td class="num ${good}">${rSwipe!=null?num(rSwipe)+(r.kind==='prediction'?'%*':'%'):'—'}</td>
       <td class="num">${r.avd!=null?num(r.avd)+'%':'—'}</td>
       <td class="num">${fmtViews(r.views)}</td>
-      <td class="num">${g.versionCount}</td>
+      <td class="num"><span class="ver-pill ver-pill-sm">▦ ${g.versionCount}</span></td>
       <td class="t-act" data-stop>${ytBtn}
         <button type="button" class="btn btn-sm" data-add="${esc(g.key)}">+ Test</button></td>
     </tr>`;
@@ -618,17 +678,29 @@ function sparkHTML(raw){
  * optional 🔮 prediction-vs-actual panel, expandable script + AI features).
  * -------------------------------------------------------------------------- */
 
-// status → pill class + human label (Posted / Predicted / Resolved / Experiment / …)
-function statusMeta(it){
-  if(it.kind==='prediction') return {cls:'tl-pill-pred',  label:'Predicted'};
+// status → pill class + human label + dot class. LIFECYCLE drives the dominant
+// state so each version reads unmistakably:
+//   awaiting  → "⏳ AWAITING UPLOAD" (amber)  — still working on it / not uploaded
+//   scrapped  → "✗ SCRAPPED" (grey, muted)   — superseded pre-upload test
+//   uploaded  → "✓ UPLOADED" (green)          — posted (first original keeps POSTED)
+// Experiment ideas/drafts keep their grey IDEA/DRAFT badges (unchanged).
+function statusMeta(it, isOriginal){
+  const lc = lifecycleOf(it);
+  if(lc==='awaiting') return {cls:'tl-pill-await', dot:'tl-dot-await', label:'⏳ Awaiting upload'};
+  if(lc==='scrapped') return {cls:'tl-pill-scrapped', dot:'tl-dot-scrapped', label:'✗ Scrapped'};
+  // experiment ideas / drafts (not yet a real upload)
   if(it.kind==='experiment'){
-    if(it.status==='posted') return {cls:'tl-pill-posted', label:'Posted'};
-    return {cls:'tl-pill-exp', label:'Experiment'};
+    if(it.status==='posted') return {cls:'tl-pill-posted', dot:'tl-dot-posted', label:'✓ Uploaded'};
+    if(it.status==='edited') return {cls:'tl-pill-exp', dot:'tl-dot-exp', label:'Draft'};
+    return {cls:'tl-pill-exp', dot:'tl-dot-exp', label:'Idea'};
   }
   // a resolved prediction = a posted re-edit that carried a nested prediction
   // and now has real metrics → distinct blue "Resolved" pill.
-  if(it.prediction && it.swipe!=null) return {cls:'tl-pill-resolved', label:'Resolved'};
-  return {cls:'tl-pill-posted', label:'Posted'};
+  if(it.prediction && it.swipe!=null) return {cls:'tl-pill-resolved', dot:'tl-dot-resolved', label:'✓ Resolved'};
+  // the very first original keeps the plain "Posted" label; later uploads read
+  // "✓ Uploaded" so a re-edit obviously reads as a new shipped version.
+  if(isOriginal) return {cls:'tl-pill-posted', dot:'tl-dot-posted', label:'Posted'};
+  return {cls:'tl-pill-posted', dot:'tl-dot-posted', label:'✓ Uploaded'};
 }
 
 function detailHTML(g){
@@ -642,7 +714,11 @@ function detailHTML(g){
   const bucket = rep.bucket
     ? `<span class="tl-bucket">${esc(shortBucket(rep.bucket))} · ${esc(rep.bucket)}</span>` : '';
 
-  let subParts = [`${g.versionCount} version${g.versionCount>1?'s':''}`];
+  // big version-count pill leads the header; dates fall to the sub-line text.
+  const verPill = `<span class="ver-pill ver-pill-lg">▦ ${g.versionCount} version${g.versionCount>1?'s':''}</span>`;
+  const awaitN = g.items.filter(i=>lifecycleOf(i)==='awaiting').length;
+  const awaitPill = awaitN ? `<span class="ver-pill ver-pill-await">⏳ ${awaitN} awaiting upload</span>` : '';
+  let subParts = [];
   if(earliest) subParts.push(`first posted ${esc(earliest)}`);
   if(latest && latest!==earliest) subParts.push(`latest ${esc(latest)}`);
   const sub = subParts.join(' · ');
@@ -653,7 +729,8 @@ function detailHTML(g){
     <div class="drawer-head tl-head">
       <div class="tl-head-main">
         <h2 class="drawer-title">${esc(g.display)}</h2>
-        <p class="drawer-sub">${sub}</p>
+        <div class="dh-pills">${verPill}${awaitPill}</div>
+        ${sub?`<p class="drawer-sub">${sub}</p>`:''}
         <div class="dh-buttons">
           <button type="button" class="btn btn-primary" data-add-detail="${esc(g.key)}">+ Add Test (new version)</button>
           ${bucket}
@@ -668,24 +745,30 @@ function detailHTML(g){
 
 // one timeline node = connector (dot + line) + a version card
 function timelineNodeHTML(it, g, isNewest){
-  const meta = statusMeta(it);
+  const isOriginal = g.originalId && it.id===g.originalId;
+  const meta = statusMeta(it, isOriginal);
+  const lc = lifecycleOf(it);
+  const isAwaiting = lc==='awaiting';
+  const isScrapped = lc==='scrapped';
   const abs = fmtDateAbs(it.publish);
   const rel = fmtDateRel(it.publish);
   // BEST star: only meaningful when comparing 2+ REAL posted versions. Gate the
   // count on the same posted set that g.bestId was computed from so a pending
   // prediction can never inflate the count and flip the star on a lone post.
   const isBest = g.bestId && it.id===g.bestId &&
-                 g.items.filter(i=>i.kind==='posted').length>1;
+                 g.items.filter(isPostedItem).length>1;
   const stayedGood = it.swipe!=null && it.swipe>=75;
 
   // node dot colour mirrors the status pill
-  const dotCls = meta.cls.replace('tl-pill-','tl-dot-');
+  const dotCls = meta.dot;
 
   // date block — prominent on the node
   const dateBlock = abs
     ? `<div class="tl-date"><span class="tl-date-abs">${esc(abs)}</span>${rel?`<span class="tl-date-rel">${esc(rel)}</span>`:''}</div>`
-    : (it.kind==='prediction'
-        ? `<div class="tl-date tl-date-future"><span class="tl-date-abs">Awaiting upload</span><span class="tl-date-rel">planned version</span></div>`
+    : (isAwaiting
+        ? `<div class="tl-date tl-date-future"><span class="tl-date-abs">Awaiting upload</span><span class="tl-date-rel">not uploaded yet</span></div>`
+        : isScrapped
+        ? `<div class="tl-date tl-date-scrapped"><span class="tl-date-abs">Scrapped</span><span class="tl-date-rel">never uploaded</span></div>`
         : `<div class="tl-date"><span class="tl-date-abs">Not posted</span></div>`);
 
   const strip = it.strip
@@ -711,10 +794,13 @@ function timelineNodeHTML(it, g, isNewest){
       <div class="tl-expand-body">${featuresHTML(it.raw.features)}</div>
     </details>` : '';
 
+  // card state classes: amber border/tint for awaiting; dim + grayscale for
+  // scrapped so several rejected tests can stack quietly.
+  const cardState = isAwaiting ? 'tl-card-awaiting' : (isScrapped ? 'tl-card-scrapped' : '');
   return `
-    <li class="tl-node ${isNewest?'is-newest':''}">
+    <li class="tl-node ${isNewest?'is-newest':''} ${isScrapped?'tl-node-scrapped':''}">
       <div class="tl-rail"><span class="tl-dot ${dotCls}"></span></div>
-      <div class="tl-card">
+      <div class="tl-card ${cardState}">
         <div class="tl-card-top">
           ${dateBlock}
           <div class="tl-pills">
@@ -722,7 +808,7 @@ function timelineNodeHTML(it, g, isNewest){
             ${isBest?`<span class="tl-pill tl-pill-best">★ BEST</span>`:''}
           </div>
         </div>
-        <div class="tl-version-label">${esc(it.version_label)}</div>
+        <div class="tl-version-label ${isScrapped?'tl-version-strike':''}">${esc(it.version_label)}</div>
         ${strip}
         <div class="tl-metrics">
           <div class="tl-metric ${stayedGood?'is-good':''}">
@@ -888,9 +974,11 @@ function prefillFrom(item){
   // 'Visual (AI ensemble)' (sub-key `face_in_first_frame`). Resolve either.
   const vis = feats['Visual (AI)'] || feats['Visual (AI ensemble)'] || {};
   const faceVal = (vis.face!=null ? vis.face : vis.face_in_first_frame);
+  // NOTE: no `topic` here — there is no `topic` field in the schema, so a topic
+  // value would be silently dropped by collectForm. Only set keys that map to a
+  // real schema field.
   const out = {
     product: item.base,
-    topic: item.topic,
     length_sec: raw.duration!=null?Math.round(raw.duration):'',
     format: '',
     youtube_url: item.url||'',
@@ -905,14 +993,14 @@ function mapLineType(t){
   if(/null|nothing/i.test(t)) return "null-state / 'nothing happens' (avoid)";
   return 'statement (good)';
 }
-const INHERIT_KEYS = ['product','topic','length_sec','face_in_frame','opening_line_type','youtube_url','format'];
+const INHERIT_KEYS = ['product','length_sec','face_in_frame','opening_line_type','youtube_url','format'];
 // fields shown first as "lead levers" — the two graduated FIRST-FRAME levers
 // per the brief are face + object clarity. The real schema has no single
 // "object_clarity" field; clarity is expressed by product_size + sharpness +
 // centered + contrast. These float to the top of the First Frame group and get
 // the lever flag/styling. opening_line_type is the hook/words lead lever.
 const LEVER_KEYS = ['face_in_frame','product_size','sharpness','centered','contrast','opening_line_type'];
-const OPEN_GROUPS = {identify:true, identify_:true, first_frame:true, hook:true, outcomes:true, video_level:false};
+const OPEN_GROUPS = {identify:true, first_frame:true, hook:true, outcomes:true, video_level:false};
 
 function openAddTest(key, cloneId){
   atContext = { key:key||null, editId:null };
