@@ -1,30 +1,202 @@
 {
  "updated": "2026-06-25",
- "note": "The Rulebook — follow these every time you make a short. AI-generated from our data + research; the AI adds/updates rules as we learn. Trust: ✅ validated = holds out-of-sample (LOO) · 🟡 directional = real but small-n / unproven · 🔵 craft = sound judgment, not yet in the stats.",
+ "note": "The Rulebook — follow these every time you make a short. AI-generated from our data + research; the AI adds/updates rules as we learn. Re-scanned Jun 2026 (38 own videos + 99 competitor scripts) and adversarially stress-tested every candidate — only effects that survive confound-checks become rules. Trust: ✅ validated = holds out-of-sample (LOO) · 🟡 directional = real but small-n/unproven · 🔵 craft = sound judgment, not yet in the stats.",
  "stages": [
-  {"key":"intro","icon":"🎬","title":"The intro — wins the SWIPE","sub":"Decided in ~1 second. The opening VISUAL is everything; words barely matter here."},
-  {"key":"avd","icon":"⏱","title":"The body — wins WATCH-THROUGH (AVD)","sub":"What keeps them after the swipe. Audio + pacing + script."},
-  {"key":"views","icon":"👁","title":"Topic — wins VIEWS","sub":"Views = topic + reach + luck, NOT opening craft."},
-  {"key":"craft","icon":"🎨","title":"Craft notes","sub":"Sound practice that hasn't earned a coefficient yet."}
+  {
+   "key": "intro",
+   "icon": "🎬",
+   "title": "The intro — wins the SWIPE",
+   "sub": "Decided in ~1 second. The opening VISUAL is everything; words barely matter here."
+  },
+  {
+   "key": "avd",
+   "icon": "⏱",
+   "title": "The body — wins WATCH-THROUGH (AVD)",
+   "sub": "What keeps them after the swipe. Audio + pacing + script."
+  },
+  {
+   "key": "views",
+   "icon": "👁",
+   "title": "Topic — wins VIEWS",
+   "sub": "Views = topic + reach + luck, NOT opening craft."
+  },
+  {
+   "key": "craft",
+   "icon": "🎨",
+   "title": "Craft notes",
+   "sub": "Sound practice that hasn't earned a coefficient yet."
+  },
+  {
+   "key": "lab",
+   "icon": "🧪",
+   "title": "Testing queue — NOT rules yet",
+   "sub": "Re-scan (Jun 2026, n=38) checked these; none survived confound-checks. Vary ONE per upload so we can confirm or kill them."
+  },
+  {
+   "key": "traps",
+   "icon": "🚫",
+   "title": "Confirmed non-levers — don't chase",
+   "sub": "These looked predictive but are confounds. Ignore them."
+  }
  ],
  "rules": [
-  {"id":"intro-checklist","stage":"intro","kind":"checklist","rule":"Every intro MUST have all four","items":[
-    {"label":"High CONTRAST","trust":"craft"},
-    {"label":"A FACE in frame 1","trust":"validated"},
-    {"label":"ACTION / movement","trust":"directional"},
-    {"label":"Something INTERESTING / novel — a \"what is that?!\" mystery","trust":"directional"}
-   ],"why":"These are the four levers that stop the scroll. A face is validated (ρ+0.78); contrast is craft; early action and a novel/mysterious subject are directional. If an opening is missing any one, fix it before anything else."},
-  {"id":"face","stage":"intro","rule":"Put a clear FACE in the first frame.","trust":"validated","why":"Strongest swipe driver: ρ+0.78 (short bucket, n=11). Shorts with a face in frame 1 average ~74% stayed vs ~63% without."},
-  {"id":"mystery","stage":"intro","rule":"Open on a MYSTERY — let them wonder \"what is that?\" Don't explain or label the object up front.","trust":"validated","why":"Low object-clarity drives the swipe (ρ−0.73). Counter-example we caught: the floating-pot version with the plant already in it explained the object and scored lower than the bare floating pot."},
-  {"id":"payoff-first","stage":"intro","rule":"Lead frame 1 with the cool thing ALREADY happening (the float, the glow, the arc) — never an inert/off object or a slow setup.","trust":"validated","why":"The plasma re-edit gained +12.6 pts stayed by opening on the glowing ball instead of the off one. Put the payoff on frame 1."},
-  {"id":"cuts","stage":"intro","rule":"Use quick CUTS in the first 4s (3+), and land the first cut/zoom before 0.5s — no static first second.","trust":"validated","why":"Cuts in the first 4s: ρ+0.65. A slow/static opening second is a stall risk that bleeds the swipe."},
-  {"id":"no-null","stage":"intro","rule":"NEVER narrate a \"nothing's happening\" / \"it seems like nothing happens\" line in the open.","trust":"validated","why":"The clearest swipe-killer in the words analysis — and the 100-video competitor set agrees: top openings have ~0% dead-air."},
-  {"id":"loud-open","stage":"avd","rule":"Open LOUD and energetic — and NEVER ramp the loudness UP later.","trust":"validated","why":"The AVD model: AVD ≈ 90.25 − 134·audio_buildup. Front-loaded loudness wins; ramping up tanks watch-through. (±2.1, most reliable model we have.)"},
-  {"id":"statement","stage":"avd","rule":"Open with a STATEMENT, not a question.","trust":"directional","why":"Questions ('does this actually work?') consistently underperform. Switching the phone-AC open from a question to a statement was the core fix."},
-  {"id":"against-norm","stage":"avd","rule":"Lead with an against-the-norm or stakes line (\"I thought… but…\", or a price like \"$100\").","trust":"directional","why":"On the floating pot, the '$100 / I thought it was just two magnets' hook beat the dry 'if you take a sensor and electromagnet…' explainer."},
-  {"id":"short","stage":"avd","rule":"Keep it SHORT — the shortest length that lands the hook + one clear payoff (single-object demo ≈ 20–25s).","trust":"directional","why":"Shortening a 38s cut to ~22s lifted AVD. Rules differ by length bucket; short videos retain best."},
-  {"id":"format","stage":"views","rule":"To grow VIEWS, choose the FORMAT/topic — comparison/versus & knockoff tests beat single-object demos (~23×).","trust":"validated","why":"Topic sets the view ceiling. Confirmed on 100 competitor videos: 'versus' formats out-viewed single-object demos ~23×."},
-  {"id":"craft-not-views","stage":"views","rule":"Don't expect a better intro to grow VIEWS — opening craft drives the SWIPE and watch-through, not views.","trust":"validated","why":"No opening/script feature predicts views (ours or 100 competitors'). Views = topic + channel reach + luck."},
-  {"id":"bright","stage":"craft","rule":"Keep it bright & high-contrast.","trust":"craft","why":"Competitor top-view openings are brighter & clearer, but brightness isn't a proven swipe lever in our own data — treat as craft, don't over-tweak."}
+  {
+   "id": "intro-checklist",
+   "stage": "intro",
+   "kind": "checklist",
+   "rule": "Every intro MUST have all four",
+   "items": [
+    {
+     "label": "High CONTRAST",
+     "trust": "craft"
+    },
+    {
+     "label": "A FACE in frame 1",
+     "trust": "validated"
+    },
+    {
+     "label": "ACTION / movement",
+     "trust": "directional"
+    },
+    {
+     "label": "Something INTERESTING / novel — a \"what is that?!\" mystery",
+     "trust": "directional"
+    }
+   ],
+   "why": "These are the four levers that stop the scroll. A face is validated (ρ+0.78); contrast is craft; early action and a novel/mysterious subject are directional. If an opening is missing any one, fix it before anything else."
+  },
+  {
+   "id": "face",
+   "stage": "intro",
+   "rule": "Put a clear FACE in the first frame.",
+   "trust": "validated",
+   "why": "Strongest swipe driver: ρ+0.78 (short bucket, n=11). Shorts with a face in frame 1 average ~74% stayed vs ~63% without."
+  },
+  {
+   "id": "mystery",
+   "stage": "intro",
+   "rule": "Open on a MYSTERY — let them wonder \"what is that?\" Don't explain or label the object up front.",
+   "trust": "validated",
+   "why": "Low object-clarity drives the swipe (ρ−0.73). Counter-example we caught: the floating-pot version with the plant already in it explained the object and scored lower than the bare floating pot."
+  },
+  {
+   "id": "payoff-first",
+   "stage": "intro",
+   "rule": "Lead frame 1 with the cool thing ALREADY happening (the float, the glow, the arc) — never an inert/off object or a slow setup.",
+   "trust": "validated",
+   "why": "The plasma re-edit gained +12.6 pts stayed by opening on the glowing ball instead of the off one. Put the payoff on frame 1."
+  },
+  {
+   "id": "cuts",
+   "stage": "intro",
+   "rule": "Use quick CUTS in the first 4s (3+), and land the first cut/zoom before 0.5s — no static first second.",
+   "trust": "validated",
+   "why": "Cuts in the first 4s: ρ+0.65. A slow/static opening second is a stall risk that bleeds the swipe."
+  },
+  {
+   "id": "no-null",
+   "stage": "intro",
+   "rule": "NEVER narrate a \"nothing's happening\" / \"it seems like nothing happens\" line in the open.",
+   "trust": "validated",
+   "why": "The clearest swipe-killer in the words analysis — and the 100-video competitor set agrees: top openings have ~0% dead-air."
+  },
+  {
+   "id": "loud-open",
+   "stage": "avd",
+   "rule": "Open LOUD and energetic — and NEVER ramp the loudness UP later.",
+   "trust": "validated",
+   "why": "The AVD model: AVD ≈ 90.25 − 134·audio_buildup. Front-loaded loudness wins; ramping up tanks watch-through. (±2.1, most reliable model we have.)"
+  },
+  {
+   "id": "statement",
+   "stage": "avd",
+   "rule": "Lean toward a STATEMENT over a question (a lean, not a law).",
+   "trust": "directional",
+   "why": "Switching the phone-AC open from a question to a statement was a real win for THAT video. But honesty check: across our 38 videos, question-openers actually scored slightly HIGHER on swipe, and the competitor 'statement > question' gap (5.8M vs 2.9M views) is reach/length, not craft. So prefer statements, but it's unconfirmed."
+  },
+  {
+   "id": "against-norm",
+   "stage": "avd",
+   "rule": "Anchor the open on SURPRISE or a price (\"I thought… but…\", \"$100\") — keep stakes LOW, not tense.",
+   "trust": "directional",
+   "why": "The floating-pot '$100 / I thought it was just two magnets' hook beat the dry explainer. But the re-scan found opening with heavy STAKES/tension tracked LOWER swipe in our data (and we over-use stakes: 3.4 vs competitors' 2.5). So anchor on surprise/price, not danger/tension. See the Testing queue."
+  },
+  {
+   "id": "short",
+   "stage": "avd",
+   "rule": "Keep it SHORT — the shortest length that lands the hook + one clear payoff (single-object demo ≈ 20–25s).",
+   "trust": "directional",
+   "why": "Shortening a 38s cut to ~22s lifted AVD. Rules differ by length bucket; short videos retain best."
+  },
+  {
+   "id": "format",
+   "stage": "views",
+   "rule": "To grow VIEWS, choose the FORMAT/topic — comparison/versus & knockoff tests beat single-object demos.",
+   "trust": "validated",
+   "why": "Topic sets the view ceiling (our long-held finding). On 100 competitors, 'versus' formats out-viewed single-object demos massively — but that sample is small (n=6 versus) and reach-confounded, so treat the size of the gap loosely. Direction is solid; magnitude isn't."
+  },
+  {
+   "id": "craft-not-views",
+   "stage": "views",
+   "rule": "Don't expect a better intro to grow VIEWS — opening craft drives the SWIPE and watch-through, not views.",
+   "trust": "validated",
+   "why": "No opening/script feature predicts views (ours or 100 competitors'). Views = topic + channel reach + luck."
+  },
+  {
+   "id": "bright",
+   "stage": "craft",
+   "rule": "Keep it bright & high-contrast.",
+   "trust": "craft",
+   "why": "Competitor top-view openings are brighter & clearer, but brightness isn't a proven swipe lever in our own data — treat as craft, don't over-tweak."
+  },
+  {
+   "id": "data-more",
+   "stage": "lab",
+   "rule": "POST MORE and log swipe/AVD — that's the #1 way to sharpen predictions.",
+   "trust": "directional",
+   "why": "At n=38 videos almost every effect is too small or too length/topic-confounded to confirm. More labeled videos > more analysis of the current 38, and > more competitor scraping (competitors can't validate engagement)."
+  },
+  {
+   "id": "lab-superlative",
+   "stage": "lab",
+   "rule": "TEST: open with a superlative/extreme claim (\"the illegal…\", \"the craziest…\").",
+   "trust": "directional",
+   "why": "It nudged BOTH our swipe (ρ=+0.29, p=.08) and competitor views (ρ=+0.29) — the only pattern that showed in both datasets. But only 6–7 of our videos use it and they cluster in long videos, so it failed the confound-check. Promising enough to A/B."
+  },
+  {
+   "id": "lab-stakes",
+   "stage": "lab",
+   "rule": "TEST: try LOWER-stakes, more-curious openings instead of tense/high-stakes ones.",
+   "trust": "directional",
+   "why": "Our high-stakes opens correlate with LOWER swipe (ρ=−0.40; −0.63 in long videos), and we over-use stakes. Most interesting lead in the re-scan — but it's confounded by length/topic and a recompute softened it to −0.32, so it's a hypothesis, not a rule."
+  },
+  {
+   "id": "lab-pace-short",
+   "stage": "lab",
+   "rule": "TEST (short videos only): slow the voiceover slightly.",
+   "trust": "directional",
+   "why": "In short videos, faster talking tracked LOWER watch-through (ρ=−0.80) — but n=11 and outlier-driven, and the sign flips in long videos. Worth a deliberate test on short videos."
+  },
+  {
+   "id": "trap-words",
+   "stage": "traps",
+   "rule": "'Fewer words → higher AVD' is NOT a lever.",
+   "trust": "method",
+   "why": "It's just video length. ρ=−0.46 overall but the sign FLIPS to +0.40 inside the long bucket — classic length confound. Don't cut words to chase AVD."
+  },
+  {
+   "id": "trap-cta",
+   "stage": "traps",
+   "rule": "'Add a CTA → more views' is NOT a lever.",
+   "trust": "method",
+   "why": "It's channel size. ρ=+0.43 overall, but within Hafu Go it's +0.03 and within Disobey Normal it's −0.22 (sign flip). Big channels add CTAs and already have reach — the CTA isn't buying the views."
+  },
+  {
+   "id": "trap-competitor-views",
+   "stage": "traps",
+   "rule": "Competitor VIEW patterns are an idea bank, not a rulebook.",
+   "trust": "method",
+   "why": "Format, superlatives, statements, slow pace all correlate with competitor views — but views = reach + topic + channel size, and competitors have NO swipe/AVD, so none of it can prove an engagement lever. Mine the Competitors tab for ideas to TEST, never as proof."
+  }
  ]
 }
