@@ -74,6 +74,7 @@ const state = {
   groups:      [],   // memoized buildGroups() output; rebuilt on data mutation
   findings:    null,
   reference:   null,         // competitor corpus (reference.json) — isolated, never merged
+  refRegistry: null,         // dedup registry (reference_registry.json) — tag + per-channel cutoffs
   refChannel:  'all',
   refSort:     'views',
   names:       loadJSON(LS.names, {}),     // {groupKey: displayName}
@@ -2064,7 +2065,7 @@ function refCardHTML(v){
         ${v.strip?`<img src="${esc(v.strip)}" alt="opening frames" loading="lazy">`:`<div class="no-strip">no filmstrip</div>`}
       </div>
       <div class="card-body">
-        <div class="ref-chan">${esc(v.channel||'')}${v.publish?` · ${esc(fmtDateAbs(v.publish)||v.publish)}`:''}</div>
+        <div class="ref-chan">${esc(v.channel||'')}${v.publish?` · ${esc(fmtDateAbs(v.publish)||v.publish)}`:''}<span class="ref-tagid" title="dedup tag — the YouTube video id; we never re-scan a tag we already have">#${esc(v.video_id)}</span></div>
         <h3 class="card-title">${esc(v.title||'(untitled)')}</h3>
         <div class="card-metrics">
           <div class="metric-big"><span class="v">${fmtViews(v.views)}</span><span class="l">views</span></div>
@@ -2092,6 +2093,14 @@ function renderReference(){
   const chans = R.channels||{};
   $('#ref-stamp').textContent =
     `${R.count||R.videos.length} videos scanned · ${Object.keys(chans).join(' · ')} · updated ${esc(R.updated||'—')}`;
+  // tracking/dedup line: per-channel handle + latest video we already have (the "fetch newer than" cutoff)
+  const reg = state.refRegistry;
+  if(reg && reg.channels){
+    const parts = Object.entries(reg.channels).map(([ch,c])=>
+      `${esc(c.handle||ch)} (${c.count}, latest ${esc(c.latest_upload||'—')})`);
+    $('#ref-track').innerHTML = `🏷️ <b>Tracked & deduped:</b> every video has a tag (its YouTube id) — `
+      + `${parts.join(' · ')}. Ask me to "get their latest" and I skip everything already here.`;
+  } else { $('#ref-track').innerHTML = ''; }
   const ins = R.insights||[];
   $('#ref-warn').innerHTML = ins[0] ? esc(ins[0]) : '';
   $('#ref-insights').innerHTML = ins.slice(1).map(s=>`<li>${esc(s)}</li>`).join('');
@@ -2275,6 +2284,8 @@ async function boot(){
 
   try{ state.reference = await (await fetch('reference.json',{cache:'no-cache'})).json(); }
   catch(e){ state.reference = null; }
+  try{ state.refRegistry = await (await fetch('reference_registry.json',{cache:'no-cache'})).json(); }
+  catch(e){ state.refRegistry = null; }
 
   // experiments: GitHub first, then localStorage, then static experiments.json (seed-only)
   let remoteExps = null, gotRemote = false;

@@ -924,7 +924,13 @@ dialog::backdrop{background:rgba(17,22,35,.42);backdrop-filter:blur(2px)}
 .ref-toolbar .chips{flex:1}
 .ref-tag{background:var(--grey,#64748b)!important;left:9px}
 .ref-card .card-strip{background:#0c1018}
-.ref-chan{font-size:12px;font-weight:800;color:var(--accent-ink);text-transform:uppercase;letter-spacing:.02em}
+.ref-chan{font-size:12px;font-weight:800;color:var(--accent-ink);text-transform:uppercase;letter-spacing:.02em;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.ref-tagid{margin-left:auto;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10.5px;font-weight:700;
+  text-transform:none;letter-spacing:0;color:var(--mut);background:var(--line-soft);border:1px solid var(--line);
+  border-radius:6px;padding:1px 6px}
+.ref-track{margin-top:9px;background:var(--accent-soft);border:1px solid var(--accent-line);color:var(--accent-ink);
+  border-radius:10px;padding:9px 13px;font-size:12.5px;line-height:1.5}
+.ref-track b{font-weight:800}
 .ref-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
 .badge.fmt{background:#e6f7f1;color:#0f7a5a}
 .badge.hook{background:#fdeef6;color:#a4316f}

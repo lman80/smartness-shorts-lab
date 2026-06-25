@@ -1,0 +1,20 @@
+{
+ "updated": "2026-06-25",
+ "count": 100,
+ "channels": {
+  "Hafu Go": {
+   "handle": "@hafu",
+   "shorts_url": "https://www.youtube.com/@hafu/shorts",
+   "count": 50,
+   "latest_upload": "2026-06-20",
+   "earliest_upload": "2025-06-25"
+  },
+  "Disobey Normal": {
+   "handle": "@disobeynormal",
+   "shorts_url": "https://www.youtube.com/@disobeynormal/shorts",
+   "count": 50,
+   "latest_upload": "2026-06-20",
+   "earliest_upload": "2026-05-17"
+  }
+ }
+}
