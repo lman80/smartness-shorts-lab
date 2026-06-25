@@ -1983,11 +1983,12 @@
    "kind": "prediction",
    "id": "2026-06-22_plasma-blue-intro",
    "slug": "plasma-ball-blue-intro-re-edit",
+   "url": "https://www.youtube.com/shorts/sczLUWfbHZk",
    "title": "Plasma ball (blue intro re-edit)",
    "base": "Will This Plasma Ball Shock Me",
    "source_video_id": "pR1mqUNnYSo",
    "version_label": "edited re-cut (predicted)",
-   "status": "prediction",
+   "status": "resolved",
    "bucket": "Short 20-35s",
    "duration": 22.9,
    "note": "Re-edit of original Plasma Ball (video_id pR1mqUNnYSo, actual stayed 65.3%) — testing whether the blue/bright intro + zoom fixes the swipe.",
@@ -2080,11 +2081,11 @@
     }
    },
    "actual": {
-    "swipe": null,
-    "avd": null,
-    "views": null,
-    "verdict": null,
-    "error": null
+    "swipe": 77.93,
+    "avd": 98.7,
+    "views": 47774,
+    "verdict": "HIT",
+    "error": "swipe +1.93 pts (pred 76 → actual 77.93); AVD -0.3 pts (pred 99 → actual 98.7)"
    }
   }
  ],
