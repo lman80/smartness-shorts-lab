@@ -181,27 +181,59 @@ function toItem(rec, kind){
     };
   }
   // posted | prediction (from data.json)
+  // NEW SHAPE: a version may carry a nested `prediction` object
+  //   prediction = {pred_swipe:{point,range,band,vs_original}, pred_avd:{...},
+  //                 verdict, error, how_to_change_it:[...], scorecard, note}
+  // A RESOLVED prediction is kind:'posted' (the uploaded re-edit) WITH a nested
+  // .prediction and real metrics. A PENDING prediction is kind:'prediction'
+  // with .prediction but null actual metrics (a planned future version).
+  // LEGACY SHAPE: prediction fields sat top-level (rec.pred_swipe / rec.actual);
+  // resolve either so older data.json still renders.
+  const nested = rec.prediction || null;
+  // a legacy prediction record (top-level pred_swipe) → synthesize the nested obj
+  const predObj = nested || (rec.pred_swipe ? {
+    pred_swipe: rec.pred_swipe, pred_avd: rec.pred_avd,
+    verdict: rec.actual && rec.actual.verdict,
+    error: rec.actual && rec.actual.error,
+    how_to_change_it: rec.how_to_change_it,
+    note: rec.note,
+  } : null);
   const isPred = kind==='prediction';
-  const pswipe = isPred ? (rec.pred_swipe && rec.pred_swipe.point) : rec.swipe;
-  const pavd   = isPred ? (rec.pred_avd && rec.pred_avd.point) : rec.avd;
+  // honour the record's own kind/status when present (a resolved prediction in
+  // the predictions[] array is really kind:'posted'); else fall back to the
+  // array it came from.
+  const realKind   = rec.kind || (isPred ? 'prediction' : 'posted');
+  const realStatus = rec.status || (isPred ? 'prediction' : 'posted');
+  // actual metrics: prefer top-level real numbers, else rec.actual. NEVER fall
+  // back to the predicted point — it.swipe/it.avd must hold REAL posted metrics
+  // only (null while pending), so range badges, sortKey('stayed'/'avd') and KPI
+  // medians never mix fabricated predictions into actual-metric aggregates. The
+  // predicted point is read exclusively from it.prediction.pred_swipe.point in
+  // the prediction panel / card-pred rendering.
+  const ac = rec.actual || {};
+  const swipeVal = rec.swipe!=null ? rec.swipe : (ac.swipe!=null ? ac.swipe : null);
+  const avdVal   = rec.avd!=null ? rec.avd : (ac.avd!=null ? ac.avd : null);
+  const viewsVal = rec.views!=null ? rec.views : ac.views;
   return {
-    kind, raw:rec, id:rec.id, slug:rec.slug,
+    kind: realKind, raw:rec, id:rec.id, slug:rec.slug,
     gkey: groupKey(rec),
     title: rec.title || rec.base || 'Untitled',
     base: rec.base || rec.title || 'Untitled',
-    version_label: rec.version_label || (isPred?'prediction':'original'),
+    version_label: rec.version_label || (realKind==='prediction'?'prediction':'original'),
     notes: rec.note || '',
     topic: rec.topic || '',
     publish: rec.publish || null,
     bucket: rec.bucket || '',
-    swipe: numOrNull(pswipe),
-    avd: numOrNull(pavd),
-    views: numOrNull(isPred ? (rec.actual && rec.actual.views) : rec.views),
+    swipe: numOrNull(swipeVal),
+    avd: numOrNull(avdVal),
+    views: numOrNull(viewsVal),
     relret: numOrNull(rec.relret),
     strip: rec.strip || null,
-    url: rec.url || (rec.id && !isPred ? `https://www.youtube.com/shorts/${rec.id}` : null),
+    url: rec.url || (rec.id && realKind!=='prediction' ? `https://www.youtube.com/shorts/${rec.id}` : null),
     script: rec.script || '',
-    status: isPred ? 'prediction' : (rec.status || 'posted'),
+    status: realStatus,
+    prediction: predObj,            // nested prediction (or null)
+    actual: rec.actual || null,
     ts: parseDate(rec.publish)?.getTime() || 0,
   };
 }
@@ -230,9 +262,16 @@ function buildGroups(){
   }
   const groups = [];
   for(const g of map.values()){
-    // versions newest first: status rank then ts
+    // versions newest first: status rank, then ts desc. Without the rank tie-in,
+    // an experiment's large _ts could outrank real posts and all null-publish
+    // items (ts:0) would pile up in arbitrary insertion order.
     const rank = {posted:0, resolved:1, prediction:2, edited:3, idea:4, experiment:5};
-    g.items.sort((a,b)=>(b.ts||0)-(a.ts||0));
+    g.items.sort((a,b)=>{
+      const ra = rank[a.status]==null?9:rank[a.status];
+      const rb = rank[b.status]==null?9:rank[b.status];
+      if(ra!==rb) return ra-rb;
+      return (b.ts||0)-(a.ts||0);
+    });
     // pick representative = best posted version (highest views), else first
     const posted = g.items.filter(i=>i.kind==='posted');
     let rep;
@@ -242,15 +281,28 @@ function buildGroups(){
       rep = g.items[0];
     }
     g.rep = rep;
-    g.display = displayName(g.key, rep.title);
+    // NAME the short after its ORIGINAL (earliest-posted) version — stable, so a newer
+    // re-edit with more views doesn't rename the short. Falls back to oldest item.
+    const byDate = g.items.slice().sort((a,b)=>{
+      const da=parseDate(a.publish), db=parseDate(b.publish);
+      if(da&&db) return da-db; if(da) return -1; if(db) return 1; return (a.ts||0)-(b.ts||0);
+    });
+    const nameRep = (byDate.filter(i=>i.kind==='posted')[0]) || byDate[0] || rep;
+    g.display = displayName(g.key, nameRep.title);
     g.versionCount = g.items.length;
     // swipe range across versions w/ swipe
     const sw = g.items.map(i=>i.swipe).filter(v=>v!=null);
     g.swMin = sw.length?Math.min(...sw):null;
     g.swMax = sw.length?Math.max(...sw):null;
     g.hasPosted = posted.length>0;
-    g.hasPrediction = g.items.some(i=>i.kind==='prediction');
+    // a "prediction" group has either a pending prediction version OR a posted
+    // re-edit that carries a nested .prediction (resolved prediction).
+    g.hasPrediction = g.items.some(i=>i.kind==='prediction' || i.prediction);
     g.hasExperiment = g.items.some(i=>i.kind==='experiment');
+    // BEST = highest stayed-to-watch among POSTED versions (for the timeline badge)
+    let best=null;
+    for(const i of posted){ if(i.swipe!=null && (best==null || i.swipe>best.swipe)) best=i; }
+    g.bestId = best ? best.id : null;
     groups.push(g);
   }
   return groups;
@@ -304,7 +356,9 @@ function computeView(){
   const mul = state.dir==='asc'?1:-1;
   groups.sort((a,b)=>{
     const ka=sortKey(a), kb=sortKey(b);
-    if(typeof ka==='string') return ka.localeCompare(kb)*mul;
+    // symmetric + string-coercing: if either side is a string (az), compare as
+    // strings so a non-string counterpart can't crash localeCompare.
+    if(typeof ka==='string' || typeof kb==='string') return String(ka).localeCompare(String(kb))*mul;
     return (ka-kb)*mul;
   });
   return groups;
@@ -359,15 +413,26 @@ function kindTag(g){
   if(g.rep.kind==='experiment') return `<span class="kind-tag kind-experiment">My test</span>`;
   return '';
 }
+// display-only swipe for a card/row: the REAL stayed-to-watch, or — for a
+// pending prediction (no actual) — its predicted point. Never used in
+// aggregates (range/sort/KPI); those read it.swipe (real only) exclusively.
+function repSwipe(it){
+  if(it.swipe!=null) return it.swipe;
+  if(it.kind==='prediction' && it.prediction && it.prediction.pred_swipe){
+    return numOrNull(it.prediction.pred_swipe.point);
+  }
+  return null;
+}
 function renderGrid(groups){
   const grid = $('#grid');
   if(!groups.length){ grid.innerHTML=''; return; }
   grid.innerHTML = groups.map(g=>{
     const r = g.rep;
+    const rSwipe = repSwipe(r);          // real metric, or predicted point for a pending prediction
     const abs = fmtDateAbs(r.publish), rel = fmtDateRel(r.publish);
     const dateLine = abs ? `Posted ${esc(abs)} <span class="rel">· ${esc(rel)}</span>` :
                      (r.kind==='prediction' ? 'Predicted — not posted' : 'Not posted');
-    const stayedGood = r.swipe!=null && r.swipe>=75 ? 'stayed-good' : '';
+    const stayedGood = rSwipe!=null && rSwipe>=75 ? 'stayed-good' : '';
     const range = (g.swMin!=null && g.swMax!=null && g.versionCount>1 && g.swMin!==g.swMax)
       ? `<span class="badge range">${num(g.swMin)}–${num(g.swMax)}%</span>` : '';
     const ytBtn = r.url ? `<a class="btn btn-yt card-yt" href="${esc(r.url)}" target="_blank" rel="noopener" data-stop>▶ YouTube</a>` : '';
@@ -383,7 +448,7 @@ function renderGrid(groups){
           <div class="card-date">${dateLine}</div>
           <div class="card-metrics">
             <div class="metric-big ${stayedGood}">
-              <span class="v">${r.swipe!=null?num(r.swipe):'—'}<span class="pct">${r.swipe!=null?'%':''}</span></span>
+              <span class="v">${rSwipe!=null?num(rSwipe):'—'}<span class="pct">${rSwipe!=null?'%':''}</span></span>
               <span class="l">${r.kind==='prediction'?'pred. stayed':'stayed'}</span>
             </div>
             <div class="metric-sm"><span class="v">${fmtViews(r.views)}</span><span class="l">views</span></div>
@@ -423,14 +488,15 @@ function renderTable(groups){
   if(!groups.length){ wrap.innerHTML=''; return; }
   const rows = groups.map(g=>{
     const r=g.rep;
+    const rSwipe = repSwipe(r);          // real metric, or predicted point for a pending prediction
     const abs=fmtDateAbs(r.publish);
-    const good = r.swipe!=null && r.swipe>=75 ? 't-good':'';
+    const good = rSwipe!=null && rSwipe>=75 ? 't-good':'';
     const ytBtn = r.url?`<a class="btn btn-yt btn-sm" href="${esc(r.url)}" target="_blank" rel="noopener" data-stop>▶</a>`:'';
     return `<tr data-key="${esc(g.key)}">
       <td class="t-thumb">${r.strip?`<img src="${esc(r.strip)}" alt="" loading="lazy">`:''}</td>
       <td class="t-title">${esc(g.display)}<small>${esc(r.version_label)}${g.versionCount>1?` · ${g.versionCount} versions`:''}</small></td>
       <td>${abs?esc(abs):(r.kind==='prediction'?'predicted':'—')}</td>
-      <td class="num ${good}">${r.swipe!=null?num(r.swipe)+'%':'—'}</td>
+      <td class="num ${good}">${rSwipe!=null?num(rSwipe)+(r.kind==='prediction'?'%*':'%'):'—'}</td>
       <td class="num">${r.avd!=null?num(r.avd)+'%':'—'}</td>
       <td class="num">${fmtViews(r.views)}</td>
       <td class="num">${g.versionCount}</td>
@@ -544,111 +610,181 @@ function sparkHTML(raw){
     <div class="spark-cap"><span>retention drop-off</span><span>${num(vals[0])}% → ${num(vals[vals.length-1])}%</span></div>`;
 }
 
+/* ----------------------------------------------------------------------------
+ * DETAIL DRAWER = SHORT-CENTRIC VERSIONS TIMELINE
+ * The drawer shows ONE short (a group) and all of its versions as a vertical
+ * timeline, newest at top. Header = display name + version summary + add-test.
+ * Each node = a version card (filmstrip, status pill, metrics, YouTube, an
+ * optional 🔮 prediction-vs-actual panel, expandable script + AI features).
+ * -------------------------------------------------------------------------- */
+
+// status → pill class + human label (Posted / Predicted / Resolved / Experiment / …)
+function statusMeta(it){
+  if(it.kind==='prediction') return {cls:'tl-pill-pred',  label:'Predicted'};
+  if(it.kind==='experiment'){
+    if(it.status==='posted') return {cls:'tl-pill-posted', label:'Posted'};
+    return {cls:'tl-pill-exp', label:'Experiment'};
+  }
+  // a resolved prediction = a posted re-edit that carried a nested prediction
+  // and now has real metrics → distinct blue "Resolved" pill.
+  if(it.prediction && it.swipe!=null) return {cls:'tl-pill-resolved', label:'Resolved'};
+  return {cls:'tl-pill-posted', label:'Posted'};
+}
+
 function detailHTML(g){
-  const r = g.rep;
-  const abs = fmtDateAbs(r.publish), rel = fmtDateRel(r.publish);
-  const dateLine = abs ? `Posted ${esc(abs)} <span class="rel">· ${esc(rel)}</span>`
-                       : (r.kind==='prediction'?'Predicted — not yet posted':'Not posted');
-  const ytBtn = r.url?`<a class="btn btn-yt" href="${esc(r.url)}" target="_blank" rel="noopener">▶ Open in YouTube</a>`:'';
-  const bucket = r.bucket?`<span class="badge bucket">${esc(shortBucket(r.bucket))} · ${esc(r.bucket)}</span>`:'';
+  // versions, newest first (g.items already sorted by ts desc in buildGroups)
+  const items = g.items.slice();
+  // earliest / latest posted-or-any date for the subtitle
+  const dated = items.filter(i=>i.publish).map(i=>i.publish).sort();
+  const earliest = dated.length ? fmtDateAbs(dated[0]) : null;
+  const latest   = dated.length ? fmtDateAbs(dated[dated.length-1]) : null;
+  const rep = g.rep;
+  const bucket = rep.bucket
+    ? `<span class="tl-bucket">${esc(shortBucket(rep.bucket))} · ${esc(rep.bucket)}</span>` : '';
 
-  // metrics block (+ optional retention drop-off sparkline when data present)
-  const metrics = `
-    <div class="det-section static">
-      <div class="sec-label">Metrics</div>
-      <div class="metric-grid">
-        <div class="mg-cell"><span class="v ${r.swipe>=75?'good':''}">${r.swipe!=null?num(r.swipe)+'%':'—'}</span><span class="l">Stayed-to-watch</span></div>
-        <div class="mg-cell"><span class="v">${r.avd!=null?num(r.avd)+'%':'—'}</span><span class="l">AVD</span></div>
-        <div class="mg-cell"><span class="v">${fmtViews(r.views)}</span><span class="l">Views</span></div>
-        <div class="mg-cell"><span class="v">${r.relret!=null?num(r.relret,1)+'%':'—'}</span><span class="l">Rel. retention</span></div>
-      </div>
-      ${sparkHTML(r.raw)}
-    </div>`;
+  let subParts = [`${g.versionCount} version${g.versionCount>1?'s':''}`];
+  if(earliest) subParts.push(`first posted ${esc(earliest)}`);
+  if(latest && latest!==earliest) subParts.push(`latest ${esc(latest)}`);
+  const sub = subParts.join(' · ');
 
-  // versions (newest first)
-  const versions = `
-    <details class="det-section" open>
-      <summary>Versions <span class="badge" style="margin-left:6px">${g.versionCount}</span></summary>
-      <div class="sec-body">${g.items.map(versionHTML).join('')}</div>
-    </details>`;
-
-  // prediction/reconcile block (only if any prediction in group)
-  const preds = g.items.filter(i=>i.kind==='prediction');
-  const predBlock = preds.map(p=>predictionHTML(p)).join('');
-
-  // script (rep)
-  const scriptBlock = r.script ? `
-    <details class="det-section">
-      <summary>Second-by-second script</summary>
-      <div class="sec-body"><pre class="script-pre">${esc(r.script)}</pre></div>
-    </details>` : '';
-
-  // AI features (rep)
-  const featBlock = r.raw && r.raw.features ? `
-    <details class="det-section" open>
-      <summary>AI feature scores</summary>
-      <div class="sec-body">${featuresHTML(r.raw.features)}</div>
-    </details>` : '';
+  const nodes = items.map((it,i)=>timelineNodeHTML(it, g, i===0)).join('');
 
   return `
-    <div class="drawer-head">
-      <div>
+    <div class="drawer-head tl-head">
+      <div class="tl-head-main">
         <h2 class="drawer-title">${esc(g.display)}</h2>
-        <p class="drawer-sub">${dateLine}</p>
+        <p class="drawer-sub">${sub}</p>
         <div class="dh-buttons">
-          ${ytBtn}
           <button type="button" class="btn btn-primary" data-add-detail="${esc(g.key)}">+ Add Test (new version)</button>
           ${bucket}
         </div>
       </div>
       <button type="button" class="x" data-close-detail aria-label="Close">✕</button>
     </div>
-    <div class="detail-body">
-      ${stripHTML(r,'det-strip')}
-      ${metrics}
-      ${predBlock}
-      ${versions}
-      ${scriptBlock}
-      ${featBlock}
+    <div class="detail-body tl-body">
+      <ol class="timeline">${nodes}</ol>
     </div>`;
 }
 
-function versionHTML(it){
-  const stClass = 'st-'+(it.status||'posted');
+// one timeline node = connector (dot + line) + a version card
+function timelineNodeHTML(it, g, isNewest){
+  const meta = statusMeta(it);
   const abs = fmtDateAbs(it.publish);
+  const rel = fmtDateRel(it.publish);
+  // BEST star: only meaningful when comparing 2+ REAL posted versions. Gate the
+  // count on the same posted set that g.bestId was computed from so a pending
+  // prediction can never inflate the count and flip the star on a lone post.
+  const isBest = g.bestId && it.id===g.bestId &&
+                 g.items.filter(i=>i.kind==='posted').length>1;
+  const stayedGood = it.swipe!=null && it.swipe>=75;
+
+  // node dot colour mirrors the status pill
+  const dotCls = meta.cls.replace('tl-pill-','tl-dot-');
+
+  // date block — prominent on the node
+  const dateBlock = abs
+    ? `<div class="tl-date"><span class="tl-date-abs">${esc(abs)}</span>${rel?`<span class="tl-date-rel">${esc(rel)}</span>`:''}</div>`
+    : (it.kind==='prediction'
+        ? `<div class="tl-date tl-date-future"><span class="tl-date-abs">Awaiting upload</span><span class="tl-date-rel">planned version</span></div>`
+        : `<div class="tl-date"><span class="tl-date-abs">Not posted</span></div>`);
+
+  const strip = it.strip
+    ? `<div class="tl-strip"><img src="${esc(it.strip)}" alt="opening frames" loading="lazy"></div>`
+    : `<div class="tl-strip tl-strip-empty">no filmstrip yet</div>`;
+
+  const ytBtn = it.url
+    ? `<a class="btn btn-yt tl-yt" href="${esc(it.url)}" target="_blank" rel="noopener">▶ Open in YouTube</a>` : '';
+
+  const predPanel = it.prediction ? predictionPanelHTML(it) : '';
+
+  // expandable script
+  const scriptBlock = it.script ? `
+    <details class="tl-expand">
+      <summary>Second-by-second script</summary>
+      <div class="tl-expand-body"><pre class="script-pre">${esc(it.script)}</pre></div>
+    </details>` : '';
+
+  // expandable AI features
+  const featBlock = (it.raw && it.raw.features) ? `
+    <details class="tl-expand">
+      <summary>AI feature scores</summary>
+      <div class="tl-expand-body">${featuresHTML(it.raw.features)}</div>
+    </details>` : '';
+
   return `
-    <div class="ver">
-      ${it.strip?`<div class="ver-strip"><img src="${esc(it.strip)}" alt="" loading="lazy"></div>`:''}
-      <div class="ver-body">
-        <div class="ver-head">
-          <span class="ver-label">${esc(it.version_label)}</span>
-          <span class="status-badge ${stClass}">${esc(it.status)}</span>
-          ${abs?`<span class="drawer-sub" style="margin:0">${esc(abs)}</span>`:''}
-          ${it.url?`<a class="btn btn-yt btn-sm" style="margin-left:auto" href="${esc(it.url)}" target="_blank" rel="noopener">▶</a>`:''}
+    <li class="tl-node ${isNewest?'is-newest':''}">
+      <div class="tl-rail"><span class="tl-dot ${dotCls}"></span></div>
+      <div class="tl-card">
+        <div class="tl-card-top">
+          ${dateBlock}
+          <div class="tl-pills">
+            <span class="tl-pill ${meta.cls}">${esc(meta.label)}</span>
+            ${isBest?`<span class="tl-pill tl-pill-best">★ BEST</span>`:''}
+          </div>
         </div>
-        <div class="ver-metrics">
-          <div class="vm"><span class="v">${it.swipe!=null?num(it.swipe)+'%':'—'}</span><span class="l">stayed</span></div>
-          <div class="vm"><span class="v">${it.avd!=null?num(it.avd)+'%':'—'}</span><span class="l">avd</span></div>
-          <div class="vm"><span class="v">${fmtViews(it.views)}</span><span class="l">views</span></div>
+        <div class="tl-version-label">${esc(it.version_label)}</div>
+        ${strip}
+        <div class="tl-metrics">
+          <div class="tl-metric ${stayedGood?'is-good':''}">
+            <span class="tl-mv">${it.swipe!=null?num(it.swipe)+'%':'—'}</span>
+            <span class="tl-ml">${it.kind==='prediction'?'Pred. stayed':'Stayed-to-watch'}</span>
+          </div>
+          <div class="tl-metric">
+            <span class="tl-mv">${it.avd!=null?num(it.avd)+'%':'—'}</span>
+            <span class="tl-ml">AVD</span>
+          </div>
+          <div class="tl-metric">
+            <span class="tl-mv">${fmtViews(it.views)}</span>
+            <span class="tl-ml">Views</span>
+          </div>
         </div>
-        ${it.notes?`<div class="finding-body">${esc(it.notes)}</div>`:''}
-        <div><button type="button" class="btn btn-sm" data-clone="${esc(it.id)}">+ Add Test (clone this)</button></div>
+        ${it.notes?`<div class="tl-note">${esc(it.notes)}</div>`:''}
+        ${predPanel}
+        <div class="tl-card-actions">
+          ${ytBtn}
+          <button type="button" class="btn btn-sm" data-clone="${esc(it.id)}">+ Add Test (clone this)</button>
+        </div>
+        ${scriptBlock}
+        ${featBlock}
       </div>
-    </div>`;
+    </li>`;
 }
 
-function predictionHTML(it){
-  const p = it.raw;
-  const ps = p.pred_swipe||{}, pa = p.pred_avd||{}, ac = p.actual||{};
-  // verdict
-  let verdict = ac.verdict, vclass='v-pending', vtext='Pending — not yet posted';
-  if(ac.swipe!=null && ps.point!=null){
-    const err = Math.abs(ac.swipe - ps.point);
-    if(!verdict) verdict = err<=3?'HIT':(err<=7?'CLOSE':'MISS');
-  }
-  if(verdict){ vtext=verdict; vclass = verdict==='HIT'?'v-hit':(verdict==='CLOSE'?'v-close':(verdict==='MISS'?'v-miss':'v-pending')); }
+// 🔮 prediction-vs-actual panel — rendered INSIDE a version card that carries
+// a nested .prediction (resolved OR pending).
+function predictionPanelHTML(it){
+  const p = it.prediction || {};
+  const ps = p.pred_swipe || {}, pa = p.pred_avd || {};
+  const predPt = ps.point;
+  const actual = it.swipe;                          // real stayed-to-watch (null if pending)
+  const pending = (it.kind==='prediction') || actual==null;
 
-  const rangeTxt = (a)=> a.range ? ` (${a.range[0]}–${a.range[1]})` : '';
+  // verdict: prefer the model's own verdict, else derive from error
+  let verdict = p.verdict;
+  if(!verdict && actual!=null && predPt!=null){
+    const err = Math.abs(actual - predPt);
+    verdict = err<=3?'HIT':(err<=7?'PARTIAL':'MISS');
+  }
+  const vClass = verdict==='HIT'?'tl-v-hit'
+               : verdict==='PARTIAL'||verdict==='CLOSE'?'tl-v-partial'
+               : verdict==='MISS'?'tl-v-miss':'tl-v-pending';
+  const rangeTxt = ps.range ? ` (${ps.range[0]}–${ps.range[1]})` : '';
+
+  // headline
+  let headline;
+  if(pending){
+    headline = `<span class="tl-pred-pt">Predicted ${predPt!=null?num(predPt)+'%':'—'}${esc(rangeTxt)}</span>
+                <span class="tl-pred-await">— awaiting upload</span>`;
+  } else {
+    const delta = (actual!=null && predPt!=null) ? (actual - predPt) : null;
+    const deltaTxt = delta!=null ? `<span class="tl-pred-delta ${delta>=0?'pos':'neg'}">${delta>=0?'+':''}${num(delta)} pts</span>` : '';
+    headline = `<span class="tl-pred-pt">Predicted ${predPt!=null?num(predPt)+'%':'—'}</span>
+                <span class="tl-pred-arrow">→</span>
+                <span class="tl-pred-actual">actual ${num(actual)}%</span>
+                ${deltaTxt}`;
+  }
+
+  // expandable internals: how_to_change_it + scorecard + tested features
   const howto = (p.how_to_change_it||[]).map(h=>`
     <li class="${h.fixes==='keep'?'fix-keep':''}">
       <div class="ht-change">${esc(h.change)}</div>
@@ -656,18 +792,37 @@ function predictionHTML(it){
       <div class="ht-fixes">fixes: ${esc(h.fixes||'—')}</div>
     </li>`).join('');
 
+  const detailBits = [];
+  if(p.note) detailBits.push(`<div class="tl-pred-note">${esc(p.note)}</div>`);
+  detailBits.push(`
+    <div class="tl-pred-grid">
+      <div class="tl-pred-cell"><span class="l">Predicted stayed</span><span class="v">${predPt!=null?num(predPt)+'%':'—'}${esc(rangeTxt)}</span>${ps.band||ps.vs_original?`<span class="b">${esc(ps.band||'')} ${esc(ps.vs_original||'')}</span>`:''}</div>
+      <div class="tl-pred-cell"><span class="l">Predicted AVD</span><span class="v">${pa.point!=null?num(pa.point)+'%':'—'}${pa.range?` (${pa.range[0]}–${pa.range[1]})`:''}</span>${pa.band?`<span class="b">${esc(pa.band)}</span>`:''}</div>
+      ${!pending?`<div class="tl-pred-cell"><span class="l">Actual stayed</span><span class="v">${actual!=null?num(actual)+'%':'—'}</span></div>
+      <div class="tl-pred-cell"><span class="l">Actual AVD</span><span class="v">${it.avd!=null?num(it.avd)+'%':'—'}</span></div>`:''}
+    </div>`);
+  if(pa.rationale) detailBits.push(`<div class="tl-pred-rationale"><b>AVD rationale:</b> ${esc(pa.rationale)}</div>`);
+  if(p.error) detailBits.push(`<div class="tl-pred-error">${esc(p.error)}</div>`);
+  if(p.scorecard!=null){
+    const sc = (typeof p.scorecard==='number') ? (Number.isInteger(p.scorecard)?p.scorecard:(+p.scorecard).toFixed(2)) : esc(p.scorecard);
+    detailBits.push(`<div class="tl-pred-score"><span class="l">Scorecard</span><span class="v">${sc}</span></div>`);
+  }
+  if(howto) detailBits.push(`<div class="sec-label" style="margin-top:4px">How to change it</div><ul class="howto">${howto}</ul>`);
+  // tested features (the prediction record's own feature scores)
+  if(it.raw && it.raw.features) detailBits.push(`<div class="sec-label" style="margin-top:4px">Tested features</div>${featuresHTML(it.raw.features)}`);
+
   return `
-    <div class="det-section static pred-block">
-      <div class="sec-label">Prediction → reconcile</div>
-      ${p.note?`<div class="finding-body" style="margin-bottom:12px">${esc(p.note)}</div>`:''}
-      <div class="pred-row">
-        <div class="pred-cell"><div class="l">Predicted stayed</div><div class="v">${ps.point!=null?num(ps.point)+'%':'—'}${esc(rangeTxt(ps))}</div><div class="band">${esc(ps.band||'')} ${esc(ps.vs_original||'')}</div></div>
-        <div class="pred-cell"><div class="l">Predicted AVD</div><div class="v">${pa.point!=null?num(pa.point)+'%':'—'}${esc(rangeTxt(pa))}</div><div class="band">${esc(pa.band||'')}</div></div>
-        <div class="pred-cell"><div class="l">Actual stayed</div><div class="v">${ac.swipe!=null?num(ac.swipe)+'%':'—'}</div></div>
-        <div class="pred-cell"><div class="l">Verdict</div><div class="v"><span class="verdict ${vclass}">${esc(vtext)}</span></div></div>
+    <div class="tl-pred ${vClass}">
+      <div class="tl-pred-head">
+        <span class="tl-pred-title">🔮 Prediction vs actual</span>
+        ${verdict?`<span class="tl-verdict ${vClass}">${esc(verdict)}</span>`:`<span class="tl-verdict tl-v-pending">PENDING</span>`}
       </div>
-      ${pa.rationale?`<div class="finding-body" style="margin-bottom:8px"><b>AVD rationale:</b> ${esc(pa.rationale)}</div>`:''}
-      ${howto?`<div class="sec-label" style="margin-top:6px">How to change it</div><ul class="howto">${howto}</ul>`:''}
+      <div class="tl-pred-line">${headline}</div>
+      ${ps.vs_original && pending?`<div class="tl-pred-vs">${esc(ps.vs_original)}</div>`:''}
+      <details class="tl-pred-more">
+        <summary>How it was changed · scorecard · tested features</summary>
+        <div class="tl-pred-more-body">${detailBits.join('')}</div>
+      </details>
     </div>`;
 }
 
@@ -862,6 +1017,8 @@ function wireForm(){
   // NOTE: form-level input/change delegation is attached ONCE in wireEvents()
   // (not here) so it does not accumulate each time the drawer is rebuilt.
   // The toggle/scale/multi listeners below are on freshly-rebuilt child nodes.
+  // onFormChange explicitly SKIPS .toggle/.scale/.multi so a single interaction
+  // does not double-fire markSet+updateCounter+saveDraft.
   // toggles
   $$('.toggle input', form).forEach(cb=>cb.addEventListener('change', e=>{
     e.target.closest('.toggle').querySelector('.tlabel').textContent = e.target.checked?'Yes':'No';
@@ -884,7 +1041,12 @@ function wireForm(){
 }
 function onFormChange(e){
   const el = e.target;
-  if(el.matches('[data-k]')){ markSet(el.closest('.field')); updateCounter(); saveDraft(); }
+  if(!el.matches('[data-k]')) return;
+  // toggle/scale/multi have their own dedicated listeners (attached per-rebuild
+  // in wireForm). Skip them here so a single interaction doesn't run
+  // markSet+updateCounter+saveDraft twice (redundant writes + counter flicker).
+  if(el.closest('.toggle, .scale, .multi')) return;
+  markSet(el.closest('.field')); updateCounter(); saveDraft();
 }
 function markSet(field){
   if(!field) return;

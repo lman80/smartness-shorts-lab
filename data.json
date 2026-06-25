@@ -1980,60 +1980,23 @@
  ],
  "predictions": [
   {
-   "kind": "prediction",
-   "id": "2026-06-22_plasma-blue-intro",
-   "slug": "plasma-ball-blue-intro-re-edit",
+   "kind": "posted",
+   "id": "sczLUWfbHZk",
+   "slug": "plasma-ballssssss",
    "url": "https://www.youtube.com/shorts/sczLUWfbHZk",
-   "title": "Plasma ball (blue intro re-edit)",
+   "title": "Plasma Ballssssss",
    "base": "Will This Plasma Ball Shock Me",
    "source_video_id": "pR1mqUNnYSo",
-   "version_label": "edited re-cut (predicted)",
-   "status": "resolved",
+   "version_label": "re-edit (blue intro)",
+   "status": "posted",
+   "publish": "2026-06-22",
    "bucket": "Short 20-35s",
    "duration": 22.9,
-   "note": "Re-edit of original Plasma Ball (video_id pR1mqUNnYSo, actual stayed 65.3%) — testing whether the blue/bright intro + zoom fixes the swipe.",
-   "pred_swipe": {
-    "point": 76,
-    "range": [
-     72,
-     80
-    ],
-    "band": "MID",
-    "vs_original": "+10.7 pts over original 65.3%"
-   },
-   "pred_avd": {
-    "point": 99,
-    "range": [
-     95,
-     102
-    ],
-    "band": "HIGH",
-    "rationale": "Watch-through was never the problem — the original hit 101.6%. This version opens strong (buildup -0.03), few pauses; the body retains well."
-   },
+   "swipe": 77.93,
+   "avd": 98.7,
+   "views": 47774,
    "strip": "filmstrips/PREDICT_plasma_blue.jpg",
    "script": "   0s: This is called a plasma\n   1s: ball.\n   2s: And when I turn it on,\n   3s: it seems\n   4s: like nothing happens.\n   5s: But to see\n   6s: the magic, we have\n   7s: to turn the lights off.\n   8s: It's filled with\n   9s: electricity,\n  10s: but will it shock me?\n  11s: Ooh!\n  12s: This is scary!\n  13s: Plasma!\n  14s: Alright,\n  15s: let\n  16s: me touch it.\n  19s: Ah!\n  20s: I'm just\n  21s: kidding. I can't feel\n  22s: anything.",
-   "how_to_change_it": [
-    {
-     "change": "Open ON the spectacle, not the setup",
-     "detail": "Frame 1 should be the plasma ball already GLOWING/arcing (ideally in the dark), or your finger drawing an arc — not the inert off-ball. Lead with the payoff.",
-     "fixes": "swipe"
-    },
-    {
-     "change": "Cut the narration intro",
-     "detail": "Drop 'This is called a plasma ball, and when I turn it on…'. Replace with a stake/curiosity line over the glow, e.g. 'Will this shock me if I touch it?' — said over motion, not a static head.",
-     "fixes": "swipe"
-    },
-    {
-     "change": "Kill the first-second stall",
-     "detail": "All 3 blind runs flagged a near-static talking-head in the first ~1s. First cut/zoom should land before 0.5s; keep the camera moving toward the glow.",
-     "fixes": "swipe"
-    },
-    {
-     "change": "Keep what's working",
-     "detail": "The bright/blue look and your face in frame are good — keep them. AVD/body is already strong; do NOT change the back half.",
-     "fixes": "keep"
-    }
-   ],
    "features": {
     "Visual (AI ensemble)": {
      "subject_size_1to5": 4.6,
@@ -2079,6 +2042,52 @@
     "Scorecard": {
      "value": 5.0
     }
+   },
+   "prediction": {
+    "pred_swipe": {
+     "point": 76,
+     "range": [
+      72,
+      80
+     ],
+     "band": "MID",
+     "vs_original": "+10.7 pts over original 65.3%"
+    },
+    "pred_avd": {
+     "point": 99,
+     "range": [
+      95,
+      102
+     ],
+     "band": "HIGH",
+     "rationale": "Watch-through was never the problem — the original hit 101.6%. This version opens strong (buildup -0.03), few pauses; the body retains well."
+    },
+    "verdict": "HIT",
+    "error": "swipe +1.93 pts (pred 76 → actual 77.93); AVD -0.3 pts (pred 99 → actual 98.7)",
+    "how_to_change_it": [
+     {
+      "change": "Open ON the spectacle, not the setup",
+      "detail": "Frame 1 should be the plasma ball already GLOWING/arcing (ideally in the dark), or your finger drawing an arc — not the inert off-ball. Lead with the payoff.",
+      "fixes": "swipe"
+     },
+     {
+      "change": "Cut the narration intro",
+      "detail": "Drop 'This is called a plasma ball, and when I turn it on…'. Replace with a stake/curiosity line over the glow, e.g. 'Will this shock me if I touch it?' — said over motion, not a static head.",
+      "fixes": "swipe"
+     },
+     {
+      "change": "Kill the first-second stall",
+      "detail": "All 3 blind runs flagged a near-static talking-head in the first ~1s. First cut/zoom should land before 0.5s; keep the camera moving toward the glow.",
+      "fixes": "swipe"
+     },
+     {
+      "change": "Keep what's working",
+      "detail": "The bright/blue look and your face in frame are good — keep them. AVD/body is already strong; do NOT change the back half.",
+      "fixes": "keep"
+     }
+    ],
+    "scorecard": 5.0,
+    "note": "Re-edit of original Plasma Ball (video_id pR1mqUNnYSo, actual stayed 65.3%) — testing whether the blue/bright intro + zoom fixes the swipe."
    },
    "actual": {
     "swipe": 77.93,
