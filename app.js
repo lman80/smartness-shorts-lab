@@ -177,6 +177,9 @@ function toItem(rec, kind){
       url: e.youtube_url || null,
       script: '',
       status,
+      // an experiment is its own standalone iteration line (no shared track)
+      track: e.track || e.id,
+      attempt: numOrNull(e.attempt),
       ts: (e._ts!=null ? +e._ts : (Number(String(e.id||'').replace(/\D/g,'')) || 0)),
     };
   }
@@ -232,6 +235,12 @@ function toItem(rec, kind){
     url: rec.url || (rec.id && realKind!=='prediction' ? `https://www.youtube.com/shorts/${rec.id}` : null),
     script: rec.script || '',
     status: realStatus,
+    // ITERATION TRACK: items sharing a `track` are ONE iteration line (an edit
+    // that was analyzed, scrapped, re-cut, re-analyzed… until one is uploaded).
+    // A posted ORIGINAL has its own unique track (standalone). Fall back to the
+    // record id so every item always belongs to exactly one track node.
+    track: rec.track || rec.id,
+    attempt: numOrNull(rec.attempt),
     // lifecycle ∈ {uploaded, awaiting, scrapped} — carried through so the
     // timeline + tiles can render unmistakable in-progress / superseded states.
     // Falls back to status (awaiting/scrapped) then derives from kind/metrics.
@@ -270,6 +279,11 @@ function lifecycleOf(it){
   if(it.status==='scrapped') return 'scrapped';
   if(it.status==='awaiting') return 'awaiting';
   if(isPostedItem(it)) return 'uploaded';
+  // a not-yet-posted prediction (legacy/AI-authored shape kind:'prediction'
+  // with no explicit lifecycle and no real metrics) is a planned future
+  // version → awaiting upload, NOT a shipped 'draft' that would fall through
+  // statusMeta() to the green '✓ Uploaded' default.
+  if(it.kind==='prediction' && !isPostedItem(it)) return 'awaiting';
   return 'draft';
 }
 function numOrNull(v){ return (v==null || v===''||isNaN(v)) ? null : +v; }
@@ -491,20 +505,27 @@ function renderGrid(groups){
       ? `<span class="badge range">${num(g.swMin)}–${num(g.swMax)}%</span>` : '';
     const ytBtn = r.url ? `<a class="btn btn-yt card-yt" href="${esc(r.url)}" target="_blank" rel="noopener" data-stop>▶ YouTube</a>` : '';
     // BIG version-count pill — reads at a glance how many cuts this short has.
-    const verPill = `<span class="ver-pill">▦ ${g.versionCount} version${g.versionCount>1?'s':''}</span>`;
-    // amber in-progress chip on the filmstrip when any version awaits upload
-    const awaitChip = g.hasAwaiting ? `<span class="tile-await">⏳ awaiting upload</span>` : '';
+    // Suppressed for a standalone original (one version) so it doesn't show a
+    // redundant "▦ 1 version" pill.
+    const verPill = g.versionCount>1
+      ? `<span class="ver-pill">▦ ${g.versionCount} versions</span>` : '';
+    // count of versions awaiting upload (each attempt counts) for the body chip
+    const awaitN = g.items.filter(i=>lifecycleOf(i)==='awaiting').length;
+    // clean amber chip in the CARD BODY (not floating over the filmstrip) when
+    // any version awaits upload; tile also gets a simple 2px amber border.
+    const awaitChip = awaitN
+      ? `<span class="tile-await">⏳ ${awaitN} awaiting upload</span>` : '';
     return `
       <article class="card ${g.hasAwaiting?'card-awaiting':''}" data-key="${esc(g.key)}">
         <div class="card-strip">
           ${kindTag(g)}
-          ${awaitChip}
           ${ytBtn}
           ${r.strip?`<img src="${esc(r.strip)}" alt="opening frames" loading="lazy">`:`<div class="no-strip">no filmstrip yet</div>`}
         </div>
         <div class="card-body">
           <h3 class="card-title">${esc(g.display)}</h3>
           <div class="card-date">${dateLine}</div>
+          ${awaitChip}
           <div class="card-metrics">
             <div class="metric-big ${stayedGood}">
               <span class="v">${rSwipe!=null?num(rSwipe):'—'}<span class="pct">${rSwipe!=null?'%':''}</span></span>
@@ -697,6 +718,10 @@ function statusMeta(it, isOriginal){
   // a resolved prediction = a posted re-edit that carried a nested prediction
   // and now has real metrics → distinct blue "Resolved" pill.
   if(it.prediction && it.swipe!=null) return {cls:'tl-pill-resolved', dot:'tl-dot-resolved', label:'✓ Resolved'};
+  // a never-posted prediction (no real metrics) must NEVER read as shipped —
+  // guard the green Uploaded default so a planned future version shows the
+  // amber awaiting state even if lifecycleOf didn't already catch it.
+  if(it.kind==='prediction' && it.swipe==null) return {cls:'tl-pill-await', dot:'tl-dot-await', label:'⏳ Awaiting upload'};
   // the very first original keeps the plain "Posted" label; later uploads read
   // "✓ Uploaded" so a re-edit obviously reads as a new shipped version.
   if(isOriginal) return {cls:'tl-pill-posted', dot:'tl-dot-posted', label:'Posted'};
@@ -715,7 +740,8 @@ function detailHTML(g){
     ? `<span class="tl-bucket">${esc(shortBucket(rep.bucket))} · ${esc(rep.bucket)}</span>` : '';
 
   // big version-count pill leads the header; dates fall to the sub-line text.
-  const verPill = `<span class="ver-pill ver-pill-lg">▦ ${g.versionCount} version${g.versionCount>1?'s':''}</span>`;
+  const verPill = g.versionCount>1
+    ? `<span class="ver-pill ver-pill-lg">▦ ${g.versionCount} versions</span>` : '';
   const awaitN = g.items.filter(i=>lifecycleOf(i)==='awaiting').length;
   const awaitPill = awaitN ? `<span class="ver-pill ver-pill-await">⏳ ${awaitN} awaiting upload</span>` : '';
   let subParts = [];
@@ -723,7 +749,11 @@ function detailHTML(g){
   if(latest && latest!==earliest) subParts.push(`latest ${esc(latest)}`);
   const sub = subParts.join(' · ');
 
-  const nodes = items.map((it,i)=>timelineNodeHTML(it, g, i===0)).join('');
+  // ITERATION TRACKS: one timeline node per `track`, not per version. Tracks are
+  // ordered by date (newest on top), intermixing posted originals with active /
+  // resolved iteration lines. Multiple awaiting tracks each get their own node.
+  const tracks = buildTracks(items);
+  const nodes = tracks.map((t,i)=>trackNodeHTML(t, g, i===0)).join('');
 
   return `
     <div class="drawer-head tl-head">
@@ -743,8 +773,126 @@ function detailHTML(g){
     </div>`;
 }
 
-// one timeline node = connector (dot + line) + a version card
-function timelineNodeHTML(it, g, isNewest){
+// GROUP the short's versions into ITERATION TRACKS. Items sharing a `track` are
+// one iteration line. For each track:
+//   head    = the surviving / representative version (non-scrapped: the awaiting
+//             candidate, the uploaded/resolved result, or a plain posted
+//             original). If every item is scrapped, the newest scrapped one is
+//             the head so the track still renders.
+//   scrapped = the scrapped predecessors, OLDEST→NEWEST (the edit/analyze/scrap
+//             history the owner can review before the surviving version).
+// Tracks are returned ordered by the head's ts DESC (newest on top), so posted
+// originals and active/resolved iteration lines intermix by date.
+function buildTracks(items){
+  const map = new Map();
+  for(const it of items){
+    // guaranteed-unique key: a record with neither track nor id (legacy/AI/
+    // human-authored data.json entry) must NOT collapse into a single
+    // `undefined` map key — that would silently merge distinct versions into
+    // one node. Fall back to a fresh unique key so each such item gets its own
+    // track.
+    const k = it.track || it.id || ('t_'+Math.random().toString(36).slice(2));
+    if(!map.has(k)) map.set(k, []);
+    map.get(k).push(it);
+  }
+  const tracks = [];
+  for(const [key, group] of map.entries()){
+    const live = group.filter(i=>lifecycleOf(i)!=='scrapped');
+    const scrapped = group.filter(i=>lifecycleOf(i)==='scrapped');
+    // head = newest non-scrapped; else newest scrapped (whole line was rejected)
+    const pickNewest = arr => arr.slice().sort((a,b)=>(b.ts||0)-(a.ts||0)
+      || (numOrNull(b.attempt)||0)-(numOrNull(a.attempt)||0))[0];
+    const head = live.length ? pickNewest(live) : pickNewest(group);
+    // scrapped history oldest→newest (by attempt then ts) so it reads as a log
+    const history = scrapped
+      .filter(i=>i!==head)
+      .sort((a,b)=> (numOrNull(a.attempt)||0)-(numOrNull(b.attempt)||0)
+        || (a.ts||0)-(b.ts||0));
+    tracks.push({ key, head, history });
+  }
+  // ORDER: an awaiting (in-progress, pre-upload) head floats to the TOP so the
+  // active candidate sits first and receives the is-newest accent — matching
+  // buildGroups' awaiting-first ranking. Awaiting heads carry publish=null
+  // (ts=0), so a pure ts-desc sort would sink them below already-posted
+  // originals. Sort by [isAwaiting desc, ts desc].
+  const isAwaitingHead = t => lifecycleOf(t.head)==='awaiting' ? 1 : 0;
+  tracks.sort((a,b)=>{
+    const aw = isAwaitingHead(b) - isAwaitingHead(a);
+    if(aw!==0) return aw;
+    return (b.head.ts||0)-(a.head.ts||0);
+  });
+  return tracks;
+}
+
+// one timeline node = connector (dot + line) + the track's HEAD version card,
+// with a collapsible "scrapped attempts" history beneath it.
+function trackNodeHTML(track, g, isNewest){
+  const it = track.head;
+  const lc = lifecycleOf(it);
+  const isScrapped = lc==='scrapped';
+  const meta = statusMeta(it, g.originalId && it.id===g.originalId);
+  const card = versionCardHTML(it, g, true);
+  const history = track.history.length ? scrappedSectionHTML(track.history, g) : '';
+  return `
+    <li class="tl-node ${isNewest?'is-newest':''} ${isScrapped?'tl-node-scrapped':''}">
+      <div class="tl-rail"><span class="tl-dot ${meta.dot}"></span></div>
+      <div class="tl-track">
+        ${card}
+        ${history}
+      </div>
+    </li>`;
+}
+
+// the collapsible "▸ N scrapped attempt(s)" section under a track head. Shows the
+// rejected predecessors OLDEST→NEWEST as compact rows; each row expands to that
+// attempt's full details (filmstrip, predicted swipe/AVD, how-to-change, script).
+function scrappedSectionHTML(history, g){
+  const n = history.length;
+  const rows = history.map(it=>scrappedRowHTML(it, g)).join('');
+  return `
+    <details class="tl-scrapped">
+      <summary>${n} scrapped attempt${n>1?'s':''}</summary>
+      <div class="tl-scrapped-body">${rows}</div>
+    </details>`;
+}
+
+// one compact scrapped-attempt row: small filmstrip thumb + "Attempt N · date" +
+// ✗ SCRAPPED tag + predicted swipe % + the scrap/change note, expandable to the
+// attempt's full details.
+function scrappedRowHTML(it, g){
+  const abs = fmtDateAbs(it.publish);
+  const attemptN = numOrNull(it.attempt);
+  const label = attemptN!=null ? `Attempt ${attemptN}` : esc(it.version_label||'Attempt');
+  const dateTxt = abs ? ` · ${esc(abs)}` : '';
+  const ps = (it.prediction && it.prediction.pred_swipe) || {};
+  const predPt = ps.point!=null ? ps.point : repSwipe(it);
+  const predTxt = predPt!=null ? `<span class="tl-sc-pred">pred. ${num(predPt)}%</span>` : '';
+  const note = it.notes || it.version_label || '';
+  const thumb = it.strip
+    ? `<img class="tl-sc-thumb" src="${esc(it.strip)}" alt="" loading="lazy">`
+    : `<span class="tl-sc-thumb tl-sc-thumb-empty"></span>`;
+  return `
+    <details class="tl-sc-row">
+      <summary>
+        ${thumb}
+        <span class="tl-sc-main">
+          <span class="tl-sc-line">
+            <span class="tl-sc-attempt">${esc(label)}${dateTxt}</span>
+            <span class="tl-sc-tag">✗ Scrapped</span>
+            ${predTxt}
+          </span>
+          ${note?`<span class="tl-sc-note">${esc(note)}</span>`:''}
+        </span>
+      </summary>
+      <div class="tl-sc-detail">${versionCardHTML(it, g, false)}</div>
+    </details>`;
+}
+
+// render a single version card (the timeline node's body). `isHead` styles the
+// surviving/representative version (full amber-awaiting / posted treatment); a
+// scrapped predecessor expanded inside its row passes isHead=false for a quieter
+// nested presentation. This is the same card shape used since the first timeline.
+function versionCardHTML(it, g, isHead){
   const isOriginal = g.originalId && it.id===g.originalId;
   const meta = statusMeta(it, isOriginal);
   const lc = lifecycleOf(it);
@@ -755,14 +903,14 @@ function timelineNodeHTML(it, g, isNewest){
   // BEST star: only meaningful when comparing 2+ REAL posted versions. Gate the
   // count on the same posted set that g.bestId was computed from so a pending
   // prediction can never inflate the count and flip the star on a lone post.
+  // Gate on the count of posted versions that actually carry a swipe value,
+  // matching how g.bestId was derived (posted + swipe!=null). A lone post with
+  // a metric must not show ★ BEST against a metric-less sibling.
   const isBest = g.bestId && it.id===g.bestId &&
-                 g.items.filter(isPostedItem).length>1;
+                 g.items.filter(i=>isPostedItem(i) && i.swipe!=null).length>1;
   const stayedGood = it.swipe!=null && it.swipe>=75;
 
-  // node dot colour mirrors the status pill
-  const dotCls = meta.dot;
-
-  // date block — prominent on the node
+  // date block — prominent on the card
   const dateBlock = abs
     ? `<div class="tl-date"><span class="tl-date-abs">${esc(abs)}</span>${rel?`<span class="tl-date-rel">${esc(rel)}</span>`:''}</div>`
     : (isAwaiting
@@ -794,13 +942,12 @@ function timelineNodeHTML(it, g, isNewest){
       <div class="tl-expand-body">${featuresHTML(it.raw.features)}</div>
     </details>` : '';
 
-  // card state classes: amber border/tint for awaiting; dim + grayscale for
-  // scrapped so several rejected tests can stack quietly.
+  // card state classes: clean amber border/tint for awaiting; dim + grayscale
+  // for a scrapped head (whole line rejected) so it stacks quietly.
   const cardState = isAwaiting ? 'tl-card-awaiting' : (isScrapped ? 'tl-card-scrapped' : '');
+  // AWAITING pill belongs in the header row (top-right), never over the filmstrip.
   return `
-    <li class="tl-node ${isNewest?'is-newest':''} ${isScrapped?'tl-node-scrapped':''}">
-      <div class="tl-rail"><span class="tl-dot ${dotCls}"></span></div>
-      <div class="tl-card ${cardState}">
+      <div class="tl-card ${cardState} ${isHead?'':'tl-card-nested'}">
         <div class="tl-card-top">
           ${dateBlock}
           <div class="tl-pills">
@@ -832,8 +979,7 @@ function timelineNodeHTML(it, g, isNewest){
         </div>
         ${scriptBlock}
         ${featBlock}
-      </div>
-    </li>`;
+      </div>`;
 }
 
 // 🔮 prediction-vs-actual panel — rendered INSIDE a version card that carries
