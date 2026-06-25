@@ -21,6 +21,53 @@
    "strip": "filmstrips/2rmsO9oDzUo.jpg",
    "url": "https://www.youtube.com/shorts/2rmsO9oDzUo",
    "script": "   0s: Today, I'm testing\n   1s: the world's dumbest\n   2s: science experiments to\n   3s: prove to you that they\n   4s: are fake, including one\n   5s: I really hope is\n   6s: true. Wo!\n   7s: Up first, razor\n   8s: apple peeler. Apparently,\n   9s: if you put an\n  10s: apple inside of\n  11s: a jar of water\n  12s: with a razor\n  13s: blade and then\n  14s: shake it all up. I don't\n  15s: know. I don't know about this one.\n  16s: It somehow\n  17s: peels the\n  19s: apple.\n  20s: What the heck?\n  21s: Does this count as\n  22s: shaved? This is\n  23s: not shaved. This is\n  24s: illegal. Failed.\n  25s: Next. Fanta\n  26s: orange smoke.\n  27s: Apparently, if\n  28s: you put an ice cube in\n  29s: your mouth,\n  30s: I don't like\n  31s: the ice. And\n  32s: then take a drink of Fanta,\n  33s: you will then be able\n  34s: to blow out orange\n  35s: smoke.\n  37s: [Music]\n  38s: Did you really\n  39s: think that was going to work? Up\n  40s: next, Mega Oreo.\n  41s: Apparently,\n  42s: if you put an\n  43s: Oreo inside\n  44s: of milk and then microwave\n  45s: it, it will grow\n  46s: into a big\n  47s: Oreo. I\n  48s: guess we just have to microwave\n  49s: it.\n  50s: Wo!\n  51s: It actually did something.",
+   "transcript": "Today, I'm testing the world's dumbest science experiments to prove to you that they are fake, including one I really hope is true. Wo! Up first, razor apple peeler. Apparently, if you put an apple inside of a jar of water with a razor blade and then shake it all up. I don't know. I don't know about this one. It somehow peels the apple. What the heck? Does this count as shaved? This is not shaved. This is illegal. Failed. Next. Fanta orange smoke. Apparently, if you put an ice cube in your mouth, I don't like the ice. And then take a drink of Fanta, you will then be able to blow out orange smoke. [Music] Did you really think that was going to work? Up next, Mega Oreo. Apparently, if you put an Oreo inside of milk and then microwave it, it will grow into a big Oreo. I guess we just have to microwave it. Wo! It actually did something.",
+   "hook_first_sentence": "Today, I'm testing the world's dumbest science experiments to prove to you that they are fake, including one I really hope is true.",
+   "tx_words": 164,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": true,
+    "hk_brand": false,
+    "hk_twist": true,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 3,
+    "hk_specificity": 4,
+    "opening_line_type": "statement",
+    "list_or_numbered": true,
+    "against_the_norm": false,
+    "payoff_timing": "middle",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "energetic, skeptical",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Introduces the promise to test dumb experiments and prove them fake, with a personal twist."
+     },
+     {
+      "label": "test_1_razor_apple",
+      "what": "Tests razor blade in water to peel an apple; it fails and is deemed 'illegal'."
+     },
+     {
+      "label": "test_2_fanta_smoke",
+      "what": "Tests ice cube plus Fanta to produce orange smoke; fails with skeptical reaction."
+     },
+     {
+      "label": "test_3_mega_oreo",
+      "what": "Tests microwaving Oreo in milk to grow it; shows some success with mild excitement."
+     },
+     {
+      "label": "payoff",
+      "what": "Ends mid-test with genuine surprise at the Oreo reacting to microwave."
+     }
+    ],
+    "why_it_works": "The combination of superlatives ('world's dumbest'), personal stakes ('I really hope is true'), and rapid test-fail-test rhythm keeps viewers guessing which experiment might actually work. The escalating skepticism in the host's delivery matches the pattern-breaking when the Oreo actually reacts.",
+    "script_risk": "Incomplete transcript cuts off mid-test, losing the resolution of whether the Oreo actually grows. The 'prove they are fake' premise conflicts with genuine surprise, which may confuse intent. If viewers believe these are all debunked, engagement drops if one seems real."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -75,6 +122,45 @@
    "strip": "filmstrips/4AX2xSob3bY.jpg",
    "url": "https://www.youtube.com/shorts/4AX2xSob3bY",
    "script": "   0s: $100,000\n   1s: dog versus\n   2s: $50 dog.\n   3s: One of them almost\n   4s: killed my real dog.\n   5s: Apparently, a\n   6s: unitary robot dog\n   7s: cost $100,000,\n   9s: but this one only\n  10s: cost 50.\n  11s: It comes with\n  12s: a remote, but I can't\n  13s: read it. However,\n  14s: every time you press\n  15s: it, something magical\n  16s: happens. I mean, you can\n  17s: kind of call it magical,\n  18s: but can I control\n  19s: the dog without speaking\n  20s: Chinese?\n  21s: No.\n  22s: I almost crashed into\n  23s: my real",
+   "transcript": "$100,000 dog versus $50 dog. One of them almost killed my real dog. Apparently, a unitary robot dog cost $100,000, but this one only cost 50. It comes with a remote, but I can't read it. However, every time you press it, something magical happens. I mean, you can kind of call it magical, but can I control the dog without speaking Chinese? No. I almost crashed into my real",
+   "hook_first_sentence": "$100,000 dog versus $50 dog.",
+   "tx_words": 70,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": true,
+    "hk_superlative": false,
+    "hk_brand": true,
+    "hk_twist": false,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 5,
+    "hk_stakes": 5,
+    "hk_specificity": 5,
+    "opening_line_type": "statement",
+    "list_or_numbered": true,
+    "against_the_norm": false,
+    "payoff_timing": "immediate",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "casual, excited",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Opens with stark price contrast ($100,000 vs $50) and escalates with personal danger claim."
+     },
+     {
+      "label": "setup",
+      "what": "Explains both dogs—expensive robot dog vs cheap knockoff; remote control introduces complication."
+     },
+     {
+      "label": "demo_attempt",
+      "what": "Tries to control cheap dog; language barrier and control issues emerge; nearly crashes into real dog."
+     }
+    ],
+    "why_it_works": "The $100k-vs-$50 price comparison is instantly compelling and specific. The escalation to 'almost killed my real dog' injects real stakes and danger—viewers want to see what went wrong. The language barrier gag (can't read Chinese remote) adds unexpected humor to a simple comparison.",
+    "script_risk": "Transcript cuts off mid-story at 'I almost crashed into my real', leaving the payoff unresolved. The stakes promise isn't paid off, which frustrates viewers. Without the resolution, the danger claim feels clickbaity rather than earned."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -129,6 +215,57 @@
    "strip": "filmstrips/8fI8XdI5cgg.jpg",
    "url": "https://www.youtube.com/shorts/8fI8XdI5cgg",
    "script": "   0s: China makes some\n   1s: of the craziest\n   2s: products in the world,\n   3s: like this\n   4s: nose masks.\n   5s: They only cover your nose\n   6s: providing protection\n   7s: while leaving your mouth\n   8s: exposed.\n   9s: This might be the\n  10s: dumbest thing I've ever seen.\n  11s: And this product is\n  12s: for anyone who wants heavy\n  13s: duty protection.\n  16s: I'm preventing diseases\n  17s: one step at a\n  18s: time. >> And how could that\n  19s: work with a disinfecting\n  20s: wet wipe? >> Inside the\n  21s: plastic is a compressed\n  22s: towel. Press\n  23s: it once and a wet\n  24s: wipe will come out absorbing\n  25s: the disinfectant at\n  26s: the same time. >> Wow,\n  27s: this is so cool.\n  28s: >> This is innovation,\n  29s: baby. Or\n  30s: these disinfect\n  31s: iodine Q-tips.\n  32s: Just snap it\n  33s: and disinfectant comes\n  34s: out. >> Wow,\n  35s: that worked really well.\n  36s: >> But this last product\n  37s: is next\n  38s: level protection.\n  39s: >> someone who's immunocompromised,\n  41s: you quickly come to\n  42s: terms with the limitations\n  43s: of face\n  44s: masks. >> This\n  45s: is the most intense\n  46s: mask in the\n  47s: world. It fully\n  48s: covers\n  49s: your head.\n  50s: Power it on with\n  51s: a battery bank.\n  52s: Oh,\n  53s: there's a vent\n  54s: in here. I feel\n  55s: safer than ever.\n  56s: Now, let's see how good\n  57s: this protects me from\n  58s: germs in public.\n  60s: >> We needed something with a\n  61s: robust seal.\n  62s: It had to be\n  63s: easy to breathe in\n  64s: and comfortable to\n  65s: wear for a prolonged\n  66s: period of time.\n  67s: >> Cody,\n  68s: this is too embarrassing.",
+   "transcript": "China makes some of the craziest products in the world, like this nose masks. They only cover your nose providing protection while leaving your mouth exposed. This might be the dumbest thing I've ever seen. And this product is for anyone who wants heavy duty protection. I'm preventing diseases one step at a time. >> And how could that work with a disinfecting wet wipe? >> Inside the plastic is a compressed towel. Press it once and a wet wipe will come out absorbing the disinfectant at the same time. >> Wow, this is so cool. >> This is innovation, baby. Or these disinfect iodine Q-tips. Just snap it and disinfectant comes out. >> Wow, that worked really well. >> But this last product is next level protection. >> someone who's immunocompromised, you quickly come to terms with the limitations of face masks. >> This is the most intense mask in the world. It fully covers your head. Power it on with a battery bank. Oh, there's a vent in here. I feel safer than ever. Now, let's see how good this protects me from germs in public. >> We needed something with a robust seal. It had to be easy to breathe in and comfortable to wear for a prolonged period of time. >> Cody, this is too embarrassing.",
+   "hook_first_sentence": "China makes some of the craziest products in the world, like this nose masks.",
+   "tx_words": 220,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": true,
+    "hk_brand": true,
+    "hk_twist": false,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 2,
+    "hk_specificity": 3,
+    "opening_line_type": "statement",
+    "list_or_numbered": true,
+    "against_the_norm": true,
+    "payoff_timing": "end",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "enthusiastic, ironic",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Opens with 'China makes craziest products' and introduces bizarre nose mask covering only nose."
+     },
+     {
+      "label": "product_1_mask",
+      "what": "Dismisses nose-only mask as 'dumbest thing ever' due to exposed mouth."
+     },
+     {
+      "label": "product_2_wet_wipe",
+      "what": "Tests compressed disinfectant towel; shows impressive on-screen transformation and guest praise."
+     },
+     {
+      "label": "product_3_qtips",
+      "what": "Demonstrates snap-activated iodine Q-tips; quick success with guest enthusiasm."
+     },
+     {
+      "label": "product_4_full_head_mask",
+      "what": "Introduces 'most intense mask' with full head coverage, battery power, and vent system."
+     },
+     {
+      "label": "payoff",
+      "what": "Cuts to customer testimonial about seal quality and comfort, then ends with self-deprecating admission of embarrassment."
+     }
+    ],
+    "why_it_works": "The list format of escalating absurdity (nose mask → wet wipe → Q-tips → full head bubble) creates building momentum. The ironic tone (calling the nose mask 'dumbest' while products get crazier) and genuine guest reactions to innovations balance skepticism with discovery. The final testimonial lends credibility to the climactic mask before the self-aware ending.",
+    "script_risk": "The payload of solutions to 'never get sick' shifts midway from mockery to sincere product showcase. Viewers may feel the tone whiplash between 'this is dumb' and treating the final mask as legitimate. The testimonial cuts to an external voice, breaking the main presenter's control of the narrative."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -183,6 +320,53 @@
    "strip": "filmstrips/9rtnBwUluV8.jpg",
    "url": "https://www.youtube.com/shorts/9rtnBwUluV8",
    "script": "   0s: What happens if I touch\n   1s: a Tesla coil?\n   2s: This thing looks like\n   3s: a toy. It has colorful\n   4s: lights, tiny\n   5s: sparks, and\n   6s: a power button like\n   7s: a normal desk gadget.\n   8s: Honestly, it\n   9s: feels like just turning\n  10s: on a lamp. And it's so\n  11s: small, how dangerous\n  12s: could it really be?\n  13s: And it's not plugged\n  14s: into some giant machine,\n  15s: and I've seen\n  16s: it in videos a thousand\n  17s: times. So, I\n  18s: thought maybe [music] it just looked\n  19s: dangerous, but it actually\n  20s: wasn't. >> not think\n  21s: you're supposed to touch it,\n  22s: but I want to touch it.\n  23s: >> It shocked\n  24s: me through [laughter] the air.",
+   "transcript": "What happens if I touch a Tesla coil? This thing looks like a toy. It has colorful lights, tiny sparks, and a power button like a normal desk gadget. Honestly, it feels like just turning on a lamp. And it's so small, how dangerous could it really be? And it's not plugged into some giant machine, and I've seen it in videos a thousand times. So, I thought maybe [music] it just looked dangerous, but it actually wasn't. >> not think you're supposed to touch it, but I want to touch it. >> It shocked me through [laughter] the air.",
+   "hook_first_sentence": "What happens if I touch a Tesla coil?",
+   "tx_words": 100,
+   "script_analysis": {
+    "hk_question": true,
+    "hk_number": false,
+    "hk_superlative": false,
+    "hk_brand": true,
+    "hk_twist": false,
+    "hk_null_state": false,
+    "hk_payoff": false,
+    "hk_curiosity": 5,
+    "hk_stakes": 4,
+    "hk_specificity": 4,
+    "opening_line_type": "question",
+    "list_or_numbered": false,
+    "against_the_norm": false,
+    "payoff_timing": "end",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "fast",
+    "tone": "curious, playful",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Poses direct question: 'What happens if I touch a Tesla coil?'"
+     },
+     {
+      "label": "rationalizing",
+      "what": "Describes the device as harmless (toy-like, colorful, small, like a lamp) and viewer familiarity with it."
+     },
+     {
+      "label": "false_confidence",
+      "what": "Concludes it might just look dangerous but actually isn't, signaling certainty before action."
+     },
+     {
+      "label": "stunt",
+      "what": "Touches the Tesla coil and gets shocked through the air, defying his prediction."
+     },
+     {
+      "label": "reaction",
+      "what": "Laughter and shared amazement that the prediction was wrong."
+     }
+    ],
+    "why_it_works": "The question format immediately engages the viewer's curiosity. The rationalization build-up (minimizing the device's danger through multiple reassurances) creates false confidence that gets shattered in the final second. Fast talking pace and compressed timeline amplify the surprise payoff. The 'shocked through the air' moment is the pure payoff—unexpected and instantly rewatchable.",
+    "script_risk": "The entire hook is prediction-based, so if viewers already know Tesla coils shock, the payoff lands as obvious rather than surprising. The rationalization monologue, while pacing-building, risks boring tech-savvy viewers before the actual stunt. The clip relies entirely on the shock moment; without that delivery, it collapses."
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -237,6 +421,53 @@
    "strip": "filmstrips/AS6Upzl3cZc.jpg",
    "url": "https://www.youtube.com/shorts/AS6Upzl3cZc",
    "script": "   0s: this is a magic\n   1s: cutting board which\n   2s: has the ability to pick\n   3s: up anything off a\n   4s: table without messing\n   5s: it up at all\n   6s: on top of that\n   7s: it can put it back down like\n   8s: it was never even moved\n   9s: in the first place\n  10s: so I have to see if\n  11s: I can fully assemble\n  12s: a sandwich just using\n  13s: this board\n  14s: okay so as I slide\n  15s: the sheet forward\n  16s: the ingredients\n  17s: should come off under\n  18s: this bread starting\n  19s: with mayonnaise I need\n  20s: to assemble all the ingredients\n  21s: on this board\n  22s: in the order I want to\n  23s: place them on the\n  24s: sandwich\n  25s: oh yeah that that\n  26s: looks nice and finally\n  27s: catchup\n  28s: it's ready\n  29s: all I should have to do\n  30s: is push and pull this and\n  31s: it should make a\n  32s: perfect sandwich\n  33s: all right here we\n  38s: go\n  39s: oh\n  40s: [Music]\n  47s: [Music]",
+   "transcript": "this is a magic cutting board which has the ability to pick up anything off a table without messing it up at all on top of that it can put it back down like it was never even moved in the first place so I have to see if I can fully assemble a sandwich just using this board okay so as I slide the sheet forward the ingredients should come off under this bread starting with mayonnaise I need to assemble all the ingredients on this board in the order I want to place them on the sandwich oh yeah that that looks nice and finally catchup it's ready all I should have to do is push and pull this and it should make a perfect sandwich all right here we go oh [Music] [Music]",
+   "hook_first_sentence": "this is a magic cutting board which has the ability to pick up anything off a table without messing it up at all on top",
+   "tx_words": 136,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": false,
+    "hk_brand": false,
+    "hk_twist": false,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 2,
+    "hk_specificity": 5,
+    "opening_line_type": "statement",
+    "list_or_numbered": false,
+    "against_the_norm": true,
+    "payoff_timing": "end",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "slow",
+    "tone": "methodical, amazed",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Introduces 'magic cutting board' with dual ability: pick up items without disturbing and replace them perfectly."
+     },
+     {
+      "label": "premise",
+      "what": "Sets challenge: assemble a sandwich using only this board as the mechanism."
+     },
+     {
+      "label": "setup_ingredients",
+      "what": "Lays out sandwich ingredients on the board in order (mayo, other items, ketchup) with clear methodology."
+     },
+     {
+      "label": "execution",
+      "what": "Performs the sandwich-building push-pull motion, trusting the board to work as promised."
+     },
+     {
+      "label": "payoff",
+      "what": "Music swells as the motion completes; outcome implied to be successful but transcript ends ambiguously."
+     }
+    ],
+    "why_it_works": "The specific, almost too-good-to-be-true product promise ('pick up anything without messing it up') immediately raises skepticism and intrigue. The concrete challenge (build a sandwich) gives viewers a clear success metric to root for. Slow delivery and methodical setup build tension and patience, making the payoff moment feel earned and dramatic when music kicks in.",
+    "script_risk": "Slow pace (2.67 wps) risks losing fast-scrolling Shorts viewers before the payoff moment arrives. The transcript ends during the critical payoff with only '[Music]', so the actual success/failure is ambiguous. Without a clear resolution shown, the viewer doesn't know if the challenge succeeded—the promise goes unfulfilled onscreen. The board gimmick may feel too niche or gimmicky for skeptical audiences."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -291,6 +522,61 @@
    "strip": "filmstrips/AkIj45fimL4.jpg",
    "url": "https://www.youtube.com/shorts/AkIj45fimL4",
    "script": "   0s: Today, I'm testing\n   1s: the world's dumbest science\n   2s: experiments to\n   3s: prove to you that they're\n   4s: fake, including one\n   5s: that seems really dangerous.\n   6s: >> Going to fall on\n   7s: me. >> Up first,\n   8s: floating dry\n   9s: erasers.\n  10s: Apparently, if you take a\n  11s: glass plate and\n  12s: draw on the bottom of\n  13s: it, then pour in\n  14s: water slowly,\n  15s: everything you draw\n  16s: will float up to the\n  17s: surface. But does it\n  18s: actually work? >> It works\n  19s: perfect. >> Yes,\n  20s: it does. Next, shrinking\n  21s: Cheetos.\n  22s: >> Wo! Apparently,\n  23s: if you take\n  24s: Cheeto puffs and\n  25s: put them in a salad\n  26s: spinner, the high\n  27s: speed from the spinning\n  28s: will cause the puffs\n  29s: to shrink\n  30s: into regular Cheetos.\n  31s: But does this actually\n  32s: work?\n  33s: Of course not. They're\n  34s: exactly the same. How\n  35s: they really do it? They added\n  36s: it. No.\n  37s: Flaming ear wax\n  38s: remover. Apparently,\n  39s: with this device\n  40s: called an ear candle,\n  41s: if you put it in\n  42s: your ear and light it on\n  43s: fire and let it\n  44s: burn, >> we're\n  45s: the flame will suck all\n  46s: the ear wax out of\n  47s: your ear. To compare,\n  48s: I'll do one in my\n  49s: ear and I'll do one\n  50s: in the open air.\n  51s: Does this actually work?\n  52s: It seems like it. >> It\n  53s: looks pretty ear waxy\n  54s: to me. >> But is it actually true?\n  55s: >> What is this?",
+   "transcript": "Today, I'm testing the world's dumbest science experiments to prove to you that they're fake, including one that seems really dangerous. >> Going to fall on me. >> Up first, floating dry erasers. Apparently, if you take a glass plate and draw on the bottom of it, then pour in water slowly, everything you draw will float up to the surface. But does it actually work? >> It works perfect. >> Yes, it does. Next, shrinking Cheetos. >> Wo! Apparently, if you take Cheeto puffs and put them in a salad spinner, the high speed from the spinning will cause the puffs to shrink into regular Cheetos. But does this actually work? Of course not. They're exactly the same. How they really do it? They added it. No. Flaming ear wax remover. Apparently, with this device called an ear candle, if you put it in your ear and light it on fire and let it burn, >> we're the flame will suck all the ear wax out of your ear. To compare, I'll do one in my ear and I'll do one in the open air. Does this actually work? It seems like it. >> It looks pretty ear waxy to me. >> But is it actually true? >> What is this?",
+   "hook_first_sentence": "Today, I'm testing the world's dumbest science experiments to prove to you that they're fake, including one that seems really dangerous.",
+   "tx_words": 212,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": true,
+    "hk_brand": false,
+    "hk_twist": true,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 4,
+    "hk_specificity": 2,
+    "opening_line_type": "statement",
+    "list_or_numbered": true,
+    "against_the_norm": true,
+    "payoff_timing": "early",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "fast",
+    "tone": "energetic",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Host declares testing dumbest experiments to prove they're fake, with one being dangerous."
+     },
+     {
+      "label": "test_1",
+      "what": "Floating dry erasers: draws on glass plate bottom, adds water slowly, checks if drawing floats."
+     },
+     {
+      "label": "reveal_1",
+      "what": "Experiment works—erasers float to surface as claimed."
+     },
+     {
+      "label": "test_2",
+      "what": "Shrinking Cheetos: spins Cheeto puffs in salad spinner to supposedly shrink them."
+     },
+     {
+      "label": "reveal_2",
+      "what": "Doesn't work; Cheetos are the same size (they're fake by adding regular ones)."
+     },
+     {
+      "label": "test_3",
+      "what": "Ear candle: lights device in ear and open air to compare claimed ear-wax extraction."
+     },
+     {
+      "label": "reveal_3",
+      "what": "Appears to work but skepticism lingers about whether it's actually true."
+     }
+    ],
+    "why_it_works": "The format creates repeating tension-and-release cycles: each experiment opens with a wild claim, tests it, then reveals whether it's real or fake. The 'dangerous' promise in the hook hooks skepticism (are these actually dangerous?) and the variety of products keeps pacing fresh despite the formulaic structure.",
+    "script_risk": "The experiments could feel repetitive by the third one; without stronger payoffs or escalation, viewers might start tuning out before the ear-candle finale. The ear-candle reveal is ambiguous (\"seems like it works\" is not definitive), which could leave viewers unsatisfied."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -345,6 +631,53 @@
    "strip": "filmstrips/D0Ia0Hq_z0o.jpg",
    "url": "https://www.youtube.com/shorts/D0Ia0Hq_z0o",
    "script": "   0s: China makes some of the\n   1s: world's craziest\n   2s: products, like\n   3s: this indestructible\n   4s: pig that's whole job\n   5s: is to just be\n   6s: beat up. It's thick.\n   7s: Or this egg\n   8s: dog. It doesn't do\n   9s: anything. It's just\n  10s: a dog shaped like an\n  11s: egg. Egg dog.\n  15s: It's an egg dog.\n  16s: I also bought this\n  17s: whole carton of eggs just\n  18s: to do this. Or\n  19s: this dog umbrella. There's\n  20s: a chain on it what\n  21s: you can't walk your dog\n  22s: without on rainy days.\n  23s: Yeah.\n  28s: It's an upside down\n  29s: umbrella for your\n  30s: dog. You just\n  31s: like hook on your dog.\n  32s: It's a dog.\n  33s: Boom! My dog\n  34s: is never getting wet.\n  35s: But I think the most\n  36s: ingenious invention\n  37s: is this personal\n  38s: lawn. Also, it's\n  39s: a private ranch. It\n  40s: comes with real grass.\n  41s: It's alive.\n  42s: A spray bottle for watering\n  43s: and a little\n  44s: sheep. You can put a sheep in\n  45s: it.\n  46s: I bought a container\n  47s: of moss and\n  48s: a little sheep. It's\n  49s: so weird,\n  50s: but it's a real-life\n  51s: personal lawn.",
+   "transcript": "China makes some of the world's craziest products, like this indestructible pig that's whole job is to just be beat up. It's thick. Or this egg dog. It doesn't do anything. It's just a dog shaped like an egg. Egg dog. It's an egg dog. I also bought this whole carton of eggs just to do this. Or this dog umbrella. There's a chain on it what you can't walk your dog without on rainy days. Yeah. It's an upside down umbrella for your dog. You just like hook on your dog. It's a dog. Boom! My dog is never getting wet. But I think the most ingenious invention is this personal lawn. Also, it's a private ranch. It comes with real grass. It's alive. A spray bottle for watering and a little sheep. You can put a sheep in it. I bought a container of moss and a little sheep. It's so weird, but it's a real-life personal lawn.",
+   "hook_first_sentence": "China makes some of the world's craziest products, like this indestructible pig that's whole job is to just be beat up.",
+   "tx_words": 160,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": true,
+    "hk_brand": false,
+    "hk_twist": true,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 1,
+    "hk_specificity": 3,
+    "opening_line_type": "statement",
+    "list_or_numbered": true,
+    "against_the_norm": true,
+    "payoff_timing": "end",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "comedic",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "China makes craziest products; opens with indestructible pig designed to be beaten up."
+     },
+     {
+      "label": "product_1",
+      "what": "Egg dog: useless dog-shaped egg product presented with repetition and confusion."
+     },
+     {
+      "label": "product_2",
+      "what": "Dog umbrella: upside-down umbrella with chain to attach to dog on rainy days."
+     },
+     {
+      "label": "product_3",
+      "what": "Personal lawn: container with real grass, spray bottle, and tiny sheep included."
+     },
+     {
+      "label": "cta",
+      "what": "Closes by calling personal lawn the most ingenious invention, reinforcing its absurdity."
+     }
+    ],
+    "why_it_works": "Escalating absurdity creates a comedy curve: pig (destructible) → egg dog (pointless) → dog umbrella (impractical) → personal lawn (delusional luxury). The host's deadpan delivery and repetition (\"It's an egg dog. Egg dog. It's an egg dog.\") amplifies the humor. The personal lawn is the perfect peak: it's elaborate, nonsensical, and presented earnestly.",
+    "script_risk": "No clear stakes or consequence—this is pure novelty listing without tension. The humor relies entirely on absurdism; if the audience doesn't find the products inherently funny, there's nothing else holding their attention. The 'real-life personal lawn' ending doesn't have a payoff beyond 'look how weird this is.'"
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -399,6 +732,57 @@
    "strip": "filmstrips/DWvxAAfxsis.jpg",
    "url": "https://www.youtube.com/shorts/DWvxAAfxsis",
    "script": "   0s: If you buy [music] yourself\n   1s: a flower, it\n   2s: dies in just a\n   3s: few days. But if\n   4s: you get yourself a piece\n   5s: of plastic that looks\n   6s: like a petal and\n   7s: connect them all together on\n   8s: a base, [music] you\n   9s: make yourself a flower\n  10s: that never dies.\n  11s: However, this\n  12s: flower doesn't bloom\n  13s: yet. So you connect\n  14s: the petals with a spinning\n  15s: system made\n  16s: of gears that's\n  17s: powered by a motor.\n  18s: When the motor\n  19s: spins, it\n  20s: spins every single\n  21s: piece at\n  22s: the same time. Add\n  23s: some LED lights\n  24s: >> [music] >> and congratulations,\n  25s: you just made\n  26s: yourself a mechanical\n  27s: flower that blooms\n  28s: forever.",
+   "transcript": "If you buy [music] yourself a flower, it dies in just a few days. But if you get yourself a piece of plastic that looks like a petal and connect them all together on a base, [music] you make yourself a flower that never dies. However, this flower doesn't bloom yet. So you connect the petals with a spinning system made of gears that's powered by a motor. When the motor spins, it spins every single piece at the same time. Add some LED lights >> [music] >> and congratulations, you just made yourself a mechanical flower that blooms forever.",
+   "hook_first_sentence": "If you buy [music] yourself a flower, it dies in just a few days.",
+   "tx_words": 100,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": false,
+    "hk_brand": false,
+    "hk_twist": true,
+    "hk_null_state": true,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 3,
+    "hk_specificity": 3,
+    "opening_line_type": "null_state",
+    "list_or_numbered": false,
+    "against_the_norm": false,
+    "payoff_timing": "end",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "fast",
+    "tone": "energetic",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Problem: real flowers die in a few days—relatable emotional stake."
+     },
+     {
+      "label": "twist",
+      "what": "But if you use plastic petals on a base, you can make a flower that never dies."
+     },
+     {
+      "label": "tension",
+      "what": "However, this flower doesn't bloom yet—creates unresolved problem."
+     },
+     {
+      "label": "solution_1",
+      "what": "Add gears and motor spinning system to make petals move."
+     },
+     {
+      "label": "solution_2",
+      "what": "Add LED lights to complete the effect."
+     },
+     {
+      "label": "payoff",
+      "what": "Congratulations—you've made a mechanical flower that blooms forever."
+     }
+    ],
+    "why_it_works": "Problem-solution structure with escalating complexity creates satisfying progression: real problem → simple solution → complication → layered fixes → full payoff. The 'forever' angle gives emotional resonance (permanence) that elevates it beyond just a gadget. Fast pacing and music cues propel momentum.",
+    "script_risk": "The payoff is cerebral ('you made a flower that blooms forever') rather than visceral. If viewers are expecting to see the flower actually bloom on-screen at the climax, the script delivery might feel anticlimactic if the visuals don't land. The 'you' framing (\"you make\") is didactic, which works for tutorials but may feel preachy for entertainment."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -453,6 +837,61 @@
    "strip": "filmstrips/H0tGQVrEXz0.jpg",
    "url": "https://www.youtube.com/shorts/H0tGQVrEXz0",
    "script": "   0s: This device is\n   1s: actually a thermometer.\n   2s: It has no batteries,\n   3s: no screen,\n   4s: and no mercury.\n   5s: >> It just quietly\n   6s: tells you the temperature.\n   7s: >> So then, how does it work?\n   8s: If you look more closely,\n   9s: at the bottom, we've\n  10s: got 14 C,\n  11s: and at the top, we've\n  12s: got 32.\n  13s: When you heat it, the\n  14s: balls sink. >> The 14\n  15s: is dropping.\n  16s: You see this? >> When you cool\n  17s: it with ice, the\n  18s: balls rise. To\n  19s: see what the temperature\n  20s: is, you just read the\n  21s: lowest ball\n  22s: that's still floating at\n  23s: the top. >> What temperature\n  24s: is it exactly?\n  25s: 24 Celsius,",
+   "transcript": "This device is actually a thermometer. It has no batteries, no screen, and no mercury. >> It just quietly tells you the temperature. >> So then, how does it work? If you look more closely, at the bottom, we've got 14 C, and at the top, we've got 32. When you heat it, the balls sink. >> The 14 is dropping. You see this? >> When you cool it with ice, the balls rise. To see what the temperature is, you just read the lowest ball that's still floating at the top. >> What temperature is it exactly? 24 Celsius,",
+   "hook_first_sentence": "This device is actually a thermometer.",
+   "tx_words": 100,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": false,
+    "hk_brand": false,
+    "hk_twist": true,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 5,
+    "hk_stakes": 0,
+    "hk_specificity": 4,
+    "opening_line_type": "statement",
+    "list_or_numbered": false,
+    "against_the_norm": true,
+    "payoff_timing": "immediate",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "fast",
+    "tone": "calm",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "This device is actually a thermometer—mystery hook with zero context."
+     },
+     {
+      "label": "negation",
+      "what": "It has no batteries, no screen, no mercury—establishes constraints."
+     },
+     {
+      "label": "intrigue",
+      "what": "It just quietly tells you the temperature—payoff promise."
+     },
+     {
+      "label": "reveal_mechanism",
+      "what": "Bottom shows 14 C, top shows 32; balls sink when heated, rise when cooled."
+     },
+     {
+      "label": "demo_hot",
+      "what": "Heat applied; balls visibly drop showing rising temperature."
+     },
+     {
+      "label": "demo_cold",
+      "what": "Ice applied; balls rise showing temperature drop."
+     },
+     {
+      "label": "usage",
+      "what": "Read the lowest floating ball at top to get exact temperature (example: 24 Celsius)."
+     }
+    ],
+    "why_it_works": "Pure curiosity-driven hook: 'This device is a thermometer' without explanation forces viewers to keep watching to understand why. The 'no batteries/screen/mercury' negations build mystery. Concrete visual demonstration (balls moving, temperature readings) satisfies the curiosity with immediate gratification. Calm tone matches the elegance of the device itself.",
+    "script_risk": "The payoff is technical and requires visual literacy (understanding Galileo's thermometer physics). Audio-only listeners or viewers who aren't paying full attention to the ball-movement visuals may leave confused. The ending example (24 Celsius) might not land as impressive if the preceding demo visuals don't match the narration timing."
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -507,6 +946,57 @@
    "strip": "filmstrips/JIiHnrX0200.jpg",
    "url": "https://www.youtube.com/shorts/JIiHnrX0200",
    "script": "   0s: China makes some of\n   1s: the world's craziest\n   2s: products. So,\n   3s: today we're going to test\n   4s: them out and see if they're\n   5s: actually worth it.\n   6s: >> Why didn't I buy this?\n   7s: >> Like this indestructible\n   8s: pig approved.\n   9s: Or these lazy\n  10s: reading glasses\n  11s: that allow you to read\n  12s: at a 90°\n  13s: angle.\n  18s: I'm\n  19s: suiting up. Wow,\n  20s: they work\n  21s: way better than I thought.\n  22s: Can you see my eyes?\n  23s: Let me see if\n  24s: I can read what's inside\n  25s: of this box.\n  26s: Yes, I can't read\n  27s: it, but not\n  28s: for the reasons you think.\n  29s: I don't know what\n  30s: this is. They actually work\n  31s: like so much better than\n  32s: I thought. This is an\n  33s: innovation. However,\n  34s: the products get weirder\n  35s: with the standing\n  36s: chair. Apparently,\n  37s: you can strap this\n  38s: device to your legs\n  39s: and have a chair\n  40s: whenever you want.\n  41s: But does this actually\n  42s: work? >> So, now if\n  43s: I sit down anywhere.\n  48s: Wow.\n  49s: It's like way\n  50s: more stable than\n  51s: I thought.",
+   "transcript": "China makes some of the world's craziest products. So, today we're going to test them out and see if they're actually worth it. >> Why didn't I buy this? >> Like this indestructible pig approved. Or these lazy reading glasses that allow you to read at a 90° angle. I'm suiting up. Wow, they work way better than I thought. Can you see my eyes? Let me see if I can read what's inside of this box. Yes, I can't read it, but not for the reasons you think. I don't know what this is. They actually work like so much better than I thought. This is an innovation. However, the products get weirder with the standing chair. Apparently, you can strap this device to your legs and have a chair whenever you want. But does this actually work? >> So, now if I sit down anywhere. Wow. It's like way more stable than I thought.",
+   "hook_first_sentence": "China makes some of the world's craziest products.",
+   "tx_words": 156,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": true,
+    "hk_brand": false,
+    "hk_twist": false,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 3,
+    "hk_stakes": 2,
+    "hk_specificity": 1,
+    "opening_line_type": "statement",
+    "list_or_numbered": true,
+    "against_the_norm": true,
+    "payoff_timing": "middle",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "energetic",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "China makes craziest products; today testing them to see if they're worth it."
+     },
+     {
+      "label": "product_1",
+      "what": "Indestructible pig: presented as approved product."
+     },
+     {
+      "label": "product_2",
+      "what": "Lazy reading glasses: allow reading at 90° angle; host tests and finds them surprisingly effective."
+     },
+     {
+      "label": "escalation",
+      "what": "Host expresses genuine surprise; reading glasses work 'way better than thought' and calls it 'an innovation.'"
+     },
+     {
+      "label": "transition",
+      "what": "Introduces standing chair as products get weirder."
+     },
+     {
+      "label": "product_3",
+      "what": "Standing chair: strap to legs to have a chair anywhere; host tests and finds it more stable than expected."
+     }
+    ],
+    "why_it_works": "Testing framework creates built-in stakes: will the products work or fail? Host's genuine surprise and admission that products work better than expected (reading glasses, standing chair) creates moments of earned delight. The 'again' in the title suggests follow-up entertainment, and the middle escalation keeps pacing alive.",
+    "script_risk": "The opening hook is generic ('craziest products') and the 'test them to see if they're worth it' is vague—unclear what 'worth it' means (price? utility? entertainment?). The pig product appears twice but gets minimal testing; reading glasses gets real testing, but the standing chair's final verdict is cut off mid-demonstration. Incomplete payoffs may leave viewers frustrated."
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -561,6 +1051,57 @@
    "strip": "filmstrips/PguoRniUuUg.jpg",
    "url": "https://www.youtube.com/shorts/PguoRniUuUg",
    "script": "   0s: this is a LIF straw\n   1s: and it's supposed to be able to\n   2s: make any water clean\n   3s: enough to drink\n   4s: so today I'm going to test\n   5s: it by seeing if I can\n   6s: tell the difference between\n   7s: tap water\n   8s: literal swamp water\n   9s: and to really put it to the\n  10s: test Coca-Cola\n  11s: round one\n  12s: tap water\n  13s: okay\n  14s: okay I'm getting really\n  15s: distinct tastes of\n  16s: um\n  17s: water it just tastes\n  18s: like water I'm saying\n  19s: this one is a\n  20s: tap water round\n  21s: two\n  22s: Coca-Cola\n  23s: get this\n  24s: tuck really hard\n  25s: M this one\n  26s: is obviously Coke\n  27s: now the last one\n  28s: round three\n  29s: swamp water\n  34s: this one tastes like\n  35s: water\n  36s: I need\n  37s: to go back and check\n  38s: maybe this\n  39s: one has a little bit more\n  40s: chemicals in it this one\n  41s: tastes more fresh\n  42s: and good I don't know\n  43s: if this is swamp\n  44s: water but this one tastes\n  45s: like chlorine which\n  46s: makes me think it's City water\n  47s: so okay my final\n  48s: guesses are tap\n  49s: water obviously\n  50s: Coke and swamp\n  51s: water which somehow\n  52s: tastes the best\n  53s: ew",
+   "transcript": "this is a LIF straw and it's supposed to be able to make any water clean enough to drink so today I'm going to test it by seeing if I can tell the difference between tap water literal swamp water and to really put it to the test Coca-Cola round one tap water okay okay I'm getting really distinct tastes of um water it just tastes like water I'm saying this one is a tap water round two Coca-Cola get this tuck really hard M this one is obviously Coke now the last one round three swamp water this one tastes like water I need to go back and check maybe this one has a little bit more chemicals in it this one tastes more fresh and good I don't know if this is swamp water but this one tastes like chlorine which makes me think it's City water so okay my final guesses are tap water obviously Coke and swamp water which somehow tastes the best ew",
+   "hook_first_sentence": "this is a LIF straw and it's supposed to be able to make any water clean enough to drink so today I'm going to test it b",
+   "tx_words": 168,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": false,
+    "hk_brand": true,
+    "hk_twist": false,
+    "hk_null_state": true,
+    "hk_payoff": false,
+    "hk_curiosity": 2,
+    "hk_stakes": 2,
+    "hk_specificity": 4,
+    "opening_line_type": "statement",
+    "list_or_numbered": false,
+    "against_the_norm": false,
+    "payoff_timing": "end",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "exploratory",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Introduces the LifeStraw and states the testing premise"
+     },
+     {
+      "label": "setup",
+      "what": "Explains the three water types to test: tap, swamp, and Coke"
+     },
+     {
+      "label": "test_round_1",
+      "what": "Tastes tap water and correctly identifies it as water"
+     },
+     {
+      "label": "test_round_2",
+      "what": "Tastes Coke and recognizes it immediately"
+     },
+     {
+      "label": "test_round_3",
+      "what": "Tastes swamp water and identifies it as fresh and chlorinated"
+     },
+     {
+      "label": "payoff",
+      "what": "Reveals final guesses and shows the swamp water paradoxically tastes the best"
+     }
+    ],
+    "why_it_works": "The blind taste test format creates curiosity through implicit mystery—viewers want to see if the straw actually works. The ironic payoff (swamp water tasting best) is unexpected and memorable.",
+    "script_risk": "The opening lacks immediate hook strength; viewers might scroll before the test reveals the premise. The null-state description of testing delays the intrigue by 3 seconds."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -615,6 +1156,53 @@
    "strip": "filmstrips/Pq_cPrRTkv0.jpg",
    "url": "https://www.youtube.com/shorts/Pq_cPrRTkv0",
    "script": "   0s: this is me activating\n   1s: my mamillion dive\n   2s: reflex which apparently\n   3s: shuts down your body\n   4s: and allows you to hold your\n   5s: breath for long periods\n   6s: of time all by slowing\n   7s: down your heart rate\n   8s: rapidly okay let's\n   9s: see what this does to me first\n  10s: to see if this works I\n  11s: needed to see what my heart\n  12s: rate and breath hold were\n  13s: normal 48\n  14s: seconds and 113\n  15s: beats per minute\n  16s: now let's see\n  17s: if the reflex really\n  18s: works this\n  19s: reflex is activated\n  20s: by your face touching\n  21s: freezing cold\n  22s: water this activates\n  23s: a survival Instinct\n  24s: that rapidly\n  25s: decreases your heart\n  26s: rate contracts\n  27s: your blood vessels\n  28s: and makes your lungs larger\n  29s: your body does\n  30s: does this to preserve\n  31s: the oxygen you have\n  32s: left in your lungs\n  33s: thus allowing you to hold\n  34s: your breath for longer\n  35s: and potentially saving your\n  36s: life so cold",
+   "transcript": "this is me activating my mamillion dive reflex which apparently shuts down your body and allows you to hold your breath for long periods of time all by slowing down your heart rate rapidly okay let's see what this does to me first to see if this works I needed to see what my heart rate and breath hold were normal 48 seconds and 113 beats per minute now let's see if the reflex really works this reflex is activated by your face touching freezing cold water this activates a survival Instinct that rapidly decreases your heart rate contracts your blood vessels and makes your lungs larger your body does does this to preserve the oxygen you have left in your lungs thus allowing you to hold your breath for longer and potentially saving your life so cold",
+   "hook_first_sentence": "this is me activating my mamillion dive reflex which apparently shuts down your body and allows you to hold your breath",
+   "tx_words": 138,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": false,
+    "hk_brand": false,
+    "hk_twist": true,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 4,
+    "hk_specificity": 3,
+    "opening_line_type": "statement",
+    "list_or_numbered": false,
+    "against_the_norm": true,
+    "payoff_timing": "immediate",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "fast",
+    "tone": "energetic",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Claims to activate the mammalian dive reflex for breath-holding"
+     },
+     {
+      "label": "setup",
+      "what": "Establishes baseline: 48 seconds breath hold, 113 bpm heart rate"
+     },
+     {
+      "label": "explanation",
+      "what": "Explains the science of how cold water triggers survival instinct"
+     },
+     {
+      "label": "mechanism",
+      "what": "Details the physiological effects: slows heart rate, constricts vessels, enlarges lungs"
+     },
+     {
+      "label": "payoff",
+      "what": "Implies the test will prove the reflex works (script cuts before full result)"
+     }
+    ],
+    "why_it_works": "The hook delivers an immediate, counterintuitive claim (activating a reflex to hold breath longer) paired with scientific credibility. Fast pacing (3.63 wps) maintains momentum through explanation. The high stakes (survival instinct language) create emotional investment.",
+    "script_risk": "The script ends mid-payoff without showing the full result, relying on visual demonstration to land the punchline. If the visual moment is weak, the entire payoff collapses."
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -669,6 +1257,61 @@
    "strip": "filmstrips/QeO1sEZWBb4.jpg",
    "url": "https://www.youtube.com/shorts/QeO1sEZWBb4",
    "script": "   0s: Your MacBook can turn\n   1s: into a scale.\n   2s: What? Today, while rotting\n   3s: my mind away on\n   4s: X, I saw a\n   5s: post by Chris Shaw\n   6s: claiming he coded\n   7s: an app for your\n   8s: MacBook that can\n   9s: use the touchpad\n  10s: to weigh anything\n  11s: accurate to\n  12s: within a gram.\n  13s: Okay, let's get this app\n  14s: running. First, download Xcode\n  15s: and clone from\n  16s: Git Repository. >> Go to\n  17s: the GitHub link. Copy\n  18s: the URL. Paste\n  19s: it right here. Clone.\n  20s: Now that the project's\n  21s: open, it should be as\n  22s: simple as just clicking this play\n  23s: button. Let's see.\n  24s: Something's happening.\n  25s: Something is happening,\n  26s: people. Oh, yeah.\n  27s: Full screen\n  28s: it. Begin.\n  29s: First,\n  30s: we have to see how much it actually\n  31s: weighs. And\n  32s: it is\n  33s: 484\n  34s: g.\n  35s: Okay. Now, let's\n  36s: see if the MacBook trackpad\n  37s: is at\n  38s: all close.\n  39s: I have to lay down my\n  40s: thumb here to activate it.\n  41s: Click to zero\n  42s: the scale. And now, if\n  43s: I put this on,\n  44s: it should be\n  45s: 484\n  46s: g. 3\n  47s: 2 1.\n  50s: Why can it\n  51s: do this?",
+   "transcript": "Your MacBook can turn into a scale. What? Today, while rotting my mind away on X, I saw a post by Chris Shaw claiming he coded an app for your MacBook that can use the touchpad to weigh anything accurate to within a gram. Okay, let's get this app running. First, download Xcode and clone from Git Repository. >> Go to the GitHub link. Copy the URL. Paste it right here. Clone. Now that the project's open, it should be as simple as just clicking this play button. Let's see. Something's happening. Something is happening, people. Oh, yeah. Full screen it. Begin. First, we have to see how much it actually weighs. And it is 484 g. Okay. Now, let's see if the MacBook trackpad is at all close. I have to lay down my thumb here to activate it. Click to zero the scale. And now, if I put this on, it should be 484 g. 3 2 1. Why can it do this?",
+   "hook_first_sentence": "Your MacBook can turn into a scale.",
+   "tx_words": 165,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": true,
+    "hk_brand": true,
+    "hk_twist": true,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 5,
+    "hk_stakes": 3,
+    "hk_specificity": 3,
+    "opening_line_type": "superlative_claim",
+    "list_or_numbered": false,
+    "against_the_norm": true,
+    "payoff_timing": "early",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "astonished",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Makes superlative claim: MacBook can become a scale"
+     },
+     {
+      "label": "twist",
+      "what": "Immediate audience reaction (What?) signals impossibility"
+     },
+     {
+      "label": "setup",
+      "what": "Explains finding the idea on X/Twitter from developer Chris Shaw"
+     },
+     {
+      "label": "build",
+      "what": "Step-by-step walkthrough of downloading, installing, and running the app"
+     },
+     {
+      "label": "test_baseline",
+      "what": "Weighs physical object (484g) to establish ground truth"
+     },
+     {
+      "label": "test_app",
+      "what": "Places object on trackpad and demonstrates the app reading weight"
+     },
+     {
+      "label": "payoff",
+      "what": "Asks rhetorical question about how the trackpad can measure weight"
+     }
+    ],
+    "why_it_works": "The one-two punch of superlative claim + immediate skeptical reaction (\"What?\") is a pattern interrupt that hijacks attention. The audience's disbelief mirrors viewer skepticism, creating identification. Specificity (exact gram measurements, developer credit) builds credibility.",
+    "script_risk": "The long technical walkthrough (downloading, cloning, running code) may bore viewers unfamiliar with development. If the final app test doesn't visually wow, the buildup feels wasted."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -723,6 +1366,61 @@
    "strip": "filmstrips/Scmw9lIo2cE.jpg",
    "url": "https://www.youtube.com/shorts/Scmw9lIo2cE",
    "script": "   0s: What can you do with\n   1s: this anti-gravity\n   2s: ball? Just shake\n   3s: it around? No,\n   4s: it's actually\n   5s: the simplest model\n   6s: of how an electric\n   7s: generator works. The principle\n   8s: is called\n   9s: Lenz's law. As\n  10s: the magnet falls through\n  11s: the conductive material,\n  12s: aluminum,\n  13s: it induces electric\n  14s: currents in that\n  15s: material. [music] Those currents\n  16s: create their own magnetic\n  17s: fields,\n  18s: and those fields\n  19s: always oppose\n  20s: the change [music]\n  21s: that created it,\n  22s: which is the magnetic ball.\n  23s: Therefore,\n  24s: slowing it down,\n  25s: making it look\n  26s: like it defies\n  27s: gravity. And just\n  28s: as a reminder,\n  29s: this is what a ball\n  30s: looks like that isn't magnetic.\n  34s: It does exactly what\n  35s: you expect it to. It\n  36s: drops straight through.",
+   "transcript": "What can you do with this anti-gravity ball? Just shake it around? No, it's actually the simplest model of how an electric generator works. The principle is called Lenz's law. As the magnet falls through the conductive material, aluminum, it induces electric currents in that material. [music] Those currents create their own magnetic fields, and those fields always oppose the change [music] that created it, which is the magnetic ball. Therefore, slowing it down, making it look like it defies gravity. And just as a reminder, this is what a ball looks like that isn't magnetic. It does exactly what you expect it to. It drops straight through.",
+   "hook_first_sentence": "What can you do with this anti-gravity ball?",
+   "tx_words": 108,
+   "script_analysis": {
+    "hk_question": true,
+    "hk_number": false,
+    "hk_superlative": false,
+    "hk_brand": false,
+    "hk_twist": false,
+    "hk_null_state": false,
+    "hk_payoff": false,
+    "hk_curiosity": 3,
+    "hk_stakes": 2,
+    "hk_specificity": 2,
+    "opening_line_type": "question",
+    "list_or_numbered": false,
+    "against_the_norm": true,
+    "payoff_timing": "middle",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "educational",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Opens with question about what an anti-gravity ball can do"
+     },
+     {
+      "label": "misdirection",
+      "what": "Suggests shaking it around before revealing its true purpose"
+     },
+     {
+      "label": "reveal",
+      "what": "Introduces Lenz's law as the underlying principle"
+     },
+     {
+      "label": "explanation_1",
+      "what": "Explains how magnets falling through aluminum induce electric currents"
+     },
+     {
+      "label": "explanation_2",
+      "what": "Describes how induced currents create opposing magnetic fields"
+     },
+     {
+      "label": "consequence",
+      "what": "Concludes this opposition creates the anti-gravity effect"
+     },
+     {
+      "label": "contrast",
+      "what": "Shows a non-magnetic ball dropping normally for comparison"
+     }
+    ],
+    "why_it_works": "The misdirection (\"just shake it?\") followed by the \"actually\" reveal leverages curiosity and a mild pattern interrupt. The visual contrast between magnetic and non-magnetic balls provides a satisfying anchor. Tying the demo to a physics law (Lenz's) elevates perceived value.",
+    "script_risk": "The educational tone and slower pacing (2.84 wps) may not sustain casual viewers who want entertainment over education. The opening question is fairly generic and doesn't promise specific entertainment value."
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -777,6 +1475,69 @@
    "strip": "filmstrips/TFmwmtZIndw.jpg",
    "url": "https://www.youtube.com/shorts/TFmwmtZIndw",
    "script": "   0s: Today, I'm testing\n   1s: Temu's dumbest products\n   2s: to prove to you\n   3s: that they're [music] a scam,\n   4s: including one that\n   5s: should be illegal. First\n   6s: up, cold spray.\n   7s: Apparently,\n   8s: this spray can\n   9s: get [music] things so cold\n  10s: that if you spray\n  11s: a leaf, it'll\n  12s: shatter when you touch\n  13s: it. So, let's see if\n  14s: it actually works.\n  15s: Okay.\n  16s: Ah, yeah,\n  17s: okay, it's frozen.\n  18s: Why do you need this though?\n  19s: Next up, a Tinder\n  20s: swiper that [music]\n  21s: can swipe your Tinder\n  22s: automatically.\n  23s: But, does it actually work?\n  24s: How do I operate\n  25s: it? Maybe I'm wrong.\n  27s: No,\n  28s: it only\n  29s: taps your phone.\n  30s: Next up, the standing\n  31s: chair. Apparently,\n  32s: you can strap\n  33s: this device to your legs\n  34s: and have a chair\n  35s: whenever you\n  36s: want. But, does this\n  37s: actually work?\n  39s: YES. HOHO!\n  41s: HOWEVER, the products\n  42s: get weirder with\n  43s: this foot. Apparently,\n  44s: this foot\n  45s: is so [music] flexible\n  46s: that it can be bent into\n  47s: any shape. But, does\n  48s: it actually work?\n  51s: Yes.",
+   "transcript": "Today, I'm testing Temu's dumbest products to prove to you that they're [music] a scam, including one that should be illegal. First up, cold spray. Apparently, this spray can get [music] things so cold that if you spray a leaf, it'll shatter when you touch it. So, let's see if it actually works. Okay. Ah, yeah, okay, it's frozen. Why do you need this though? Next up, a Tinder swiper that [music] can swipe your Tinder automatically. But, does it actually work? How do I operate it? Maybe I'm wrong. No, it only taps your phone. Next up, the standing chair. Apparently, you can strap this device to your legs and have a chair whenever you want. But, does this actually work? YES. HOHO! HOWEVER, the products get weirder with this foot. Apparently, this foot is so [music] flexible that it can be bent into any shape. But, does it actually work? Yes.",
+   "hook_first_sentence": "Today, I'm testing Temu's dumbest products to prove to you that they're [music] a scam, including one that should be illegal.",
+   "tx_words": 153,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": true,
+    "hk_brand": true,
+    "hk_twist": false,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 5,
+    "hk_specificity": 4,
+    "opening_line_type": "statement",
+    "list_or_numbered": true,
+    "against_the_norm": false,
+    "payoff_timing": "immediate",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "comedic",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Claims testing Temu's dumbest products to prove they're scams, with one being illegal"
+     },
+     {
+      "label": "product_1",
+      "what": "Tests cold spray that allegedly freezes and shatters objects"
+     },
+     {
+      "label": "product_1_result",
+      "what": "Confirms cold spray works but questions its utility"
+     },
+     {
+      "label": "product_2",
+      "what": "Tests Tinder swiper automation device"
+     },
+     {
+      "label": "product_2_result",
+      "what": "Reveals device only taps the screen ineffectively"
+     },
+     {
+      "label": "product_3",
+      "what": "Tests standing chair leg harness device"
+     },
+     {
+      "label": "product_3_result",
+      "what": "Surprisingly confirms it actually works"
+     },
+     {
+      "label": "product_4",
+      "what": "Tests hyper-flexible prosthetic foot"
+     },
+     {
+      "label": "product_4_result",
+      "what": "Confirms extreme flexibility is real"
+     }
+    ],
+    "why_it_works": "The superlative + specificity combo (\"dumbest products,\" \"should be illegal\") creates high stakes immediately. The list format provides repeatable tension arcs—each product is a mini test with a reveal. Mixed results (some work, some don't) create unpredictability and sustained curiosity.",
+    "script_risk": "Slower pacing (2.83 wps) combined with list format risks monotony if products feel interchangeable. The hook's promise of illegality is never fulfilled, potentially frustrating viewers expecting a payoff on that threat."
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -831,6 +1592,10 @@
    "strip": "filmstrips/TWeUH2QjpqQ.jpg",
    "url": "https://www.youtube.com/shorts/TWeUH2QjpqQ",
    "script": "",
+   "transcript": "",
+   "hook_first_sentence": "",
+   "tx_words": 0,
+   "script_analysis": null,
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -885,6 +1650,49 @@
    "strip": "filmstrips/UYQM_yfgxr0.jpg",
    "url": "https://www.youtube.com/shorts/UYQM_yfgxr0",
    "script": "   0s: Today I'm testing the\n   1s: world's dumbest science\n   2s: experiments to\n   3s: prove to you that they are\n   4s: fake, including one\n   5s: I'm really hoping\n   6s: will work.\n   7s: Now, first, lockpicking\n   8s: magnet. Apparently,\n   9s: by just putting really\n  10s: strong magnets on the\n  11s: side of a padlock,\n  12s: you can pick a padlock.\n  13s: I have\n  15s: hope.\n  16s: Come on,\n  17s: it broke\n  18s: my magnet.\n  19s: Fake. Next\n  20s: up, marker\n  21s: phone charger.\n  22s: Apparently, if you\n  23s: cut your charger,\n  24s: which this pains\n  25s: me to do, and then place\n  26s: it down on a piece of\n  27s: paper, I feel unintelligent\n  28s: even attempting\n  29s: this one. Now,\n  30s: apparently, if I just draw a\n  31s: line with this marker,\n  32s: it will start charging. Here\n  33s: we\n  35s: go.\n  36s: This is\n  37s: stupid. Dang\n  38s: it. Fails\n  39s: these hacks. Next,\n  40s: wine glass\n  41s: projector. Apparently,\n  42s: if you take a wine\n  43s: glass and tin foil,\n  44s: wrap the base\n  45s: of the glass with the tin\n  46s: foil. It looks\n  47s: illegal, actually.\n  48s: And attached.\n  49s: I think I accidentally\n  50s: built a fence reactor.\n  51s: and then hold\n  52s: your phone to the side\n  53s: of the wine glass.\n  54s: It will turn into a\n  55s: projector.\n  59s: [Music]",
+   "transcript": "Today I'm testing the world's dumbest science experiments to prove to you that they are fake, including one I'm really hoping will work. Now, first, lockpicking magnet. Apparently, by just putting really strong magnets on the side of a padlock, you can pick a padlock. I have hope. Come on, it broke my magnet. Fake. Next up, marker phone charger. Apparently, if you cut your charger, which this pains me to do, and then place it down on a piece of paper, I feel unintelligent even attempting this one. Now, apparently, if I just draw a line with this marker, it will start charging. Here we go. This is stupid. Dang it. Fails these hacks. Next, wine glass projector. Apparently, if you take a wine glass and tin foil, wrap the base of the glass with the tin foil. It looks illegal, actually. And attached. I think I accidentally built a fence reactor. and then hold your phone to the side of the wine glass. It will turn into a projector. [Music]",
+   "hook_first_sentence": "Today I'm testing the world's dumbest science experiments to prove to you that they are fake, including one I'm really hoping will work.",
+   "tx_words": 172,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": true,
+    "hk_brand": false,
+    "hk_twist": true,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 3,
+    "hk_specificity": 4,
+    "opening_line_type": "statement",
+    "list_or_numbered": true,
+    "against_the_norm": false,
+    "payoff_timing": "middle",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "comedic",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Establishes premise of testing dumb experiments with a twist — one he hopes actually works."
+     },
+     {
+      "label": "test_1_lockpicking_magnet",
+      "what": "Tests placing magnets on a padlock; magnet breaks and fails."
+     },
+     {
+      "label": "test_2_marker_charger",
+      "what": "Tests drawing a marker line to charge a phone; deliberately fails and narrator self-deprecates."
+     },
+     {
+      "label": "test_3_wine_glass_projector",
+      "what": "Tests wrapping wine glass in foil and holding phone to create projector; trail cuts off mid-attempt with comedic interruption."
+     }
+    ],
+    "why_it_works": "The opening promise ('including one I'm really hoping will work') creates anticipation that pays off through repeated failures plus comedic self-awareness. Pacing is quick enough to hold attention through the fail-fest format, and narrator personality carries the entertainment value despite the fake experiments.",
+    "script_risk": "The script cuts off mid-test with no resolution to the wine glass projector, leaving the viewer without narrative closure or confirmation of whether any experiment worked as hoped. This incomplete ending may frustrate viewers expecting a payoff."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -939,6 +1747,49 @@
    "strip": "filmstrips/V4tMGdw7OUo.jpg",
    "url": "https://www.youtube.com/shorts/V4tMGdw7OUo",
    "script": "   0s: Today, I'm testing\n   1s: the world's dumbest science\n   2s: experiments to\n   3s: prove to you that they are\n   4s: fake, including one that\n   5s: just seems racist.\n   6s: Up first, clear\n   7s: coke. Apparently,\n   8s: if you take vitamin\n   9s: C powder, dump\n  10s: it inside of a Coke,\n  11s: and shake it all up,\n  12s: the Coke will become clear.\n  13s: Here we go. Warning,\n  14s: this might be toxic.\n  15s: Please do not\n  16s: try this. But does it\n  17s: actually work? It became\n  18s: less clear.\n  19s: But how does it taste?\n  21s: Next,\n  22s: lemon battery magic\n  23s: finger. Apparently,\n  24s: you take your finger,\n  25s: rub a lemon,\n  26s: then rub a battery.\n  27s: You can make a coin\n  28s: wiggle\n  29s: with just your finger.\n  30s: This one actually makes\n  31s: a lot of sense because\n  32s: I was thinking about it\n  33s: and uh it\n  34s: doesn't make any sense.\n  35s: And then touch a battery.\n  36s: Now I should\n  37s: be able to make it\n  38s: spin with my\n  44s: finger.\n  45s: Up next, ramen\n  46s: Chinese text.\n  47s: Apparently, if\n  48s: you take a marker,\n  49s: cover one side of\n  50s: ramen with the ink.\n  51s: I think this\n  52s: could go down as a real\n  53s: low point in my life.\n  54s: and press it down on\n  55s: a paper. It\n  56s: will make Chinese text.",
+   "transcript": "Today, I'm testing the world's dumbest science experiments to prove to you that they are fake, including one that just seems racist. Up first, clear coke. Apparently, if you take vitamin C powder, dump it inside of a Coke, and shake it all up, the Coke will become clear. Here we go. Warning, this might be toxic. Please do not try this. But does it actually work? It became less clear. But how does it taste? Next, lemon battery magic finger. Apparently, you take your finger, rub a lemon, then rub a battery. You can make a coin wiggle with just your finger. This one actually makes a lot of sense because I was thinking about it and uh it doesn't make any sense. And then touch a battery. Now I should be able to make it spin with my finger. Up next, ramen Chinese text. Apparently, if you take a marker, cover one side of ramen with the ink. I think this could go down as a real low point in my life. and press it down on a paper. It will make Chinese text.",
+   "hook_first_sentence": "Today, I'm testing the world's dumbest science experiments to prove to you that they are fake, including one that just seems racist.",
+   "tx_words": 186,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": true,
+    "hk_brand": true,
+    "hk_twist": true,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 5,
+    "hk_stakes": 4,
+    "hk_specificity": 4,
+    "opening_line_type": "statement",
+    "list_or_numbered": true,
+    "against_the_norm": false,
+    "payoff_timing": "early",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "fast",
+    "tone": "comedic, edgy",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Opens with premise of testing dumb experiments, but escalates with edgy twist: 'including one that just seems racist.'"
+     },
+     {
+      "label": "test_1_clear_coke",
+      "what": "Tests vitamin C powder in Coke; it becomes less clear, includes toxicity warning, narrator tastes it."
+     },
+     {
+      "label": "test_2_lemon_battery",
+      "what": "Tests lemon battery finger trick; narrator acknowledges it makes no sense while attempting it."
+     },
+     {
+      "label": "test_3_ramen_chinese_text",
+      "what": "Tests using ramen as stamp with marker ink to create Chinese characters; self-deprecating about life choices."
+     }
+    ],
+    "why_it_works": "The opening's edge ('seems racist') is a pattern interrupt that hooks harder than the first video. Fast pacing (3.15 wps) and the narrator's self-aware running commentary ('it doesn't make any sense') pull viewers through—they're entertained by both the experiments failing AND the personality.",
+    "script_risk": "The edgy 'racist' joke in the hook works to catch attention but carries slight risk of alienating some viewers or appearing performatively provocative if not perfectly timed. Also, like the previous video, no clear resolution to the final test."
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -993,6 +1844,53 @@
    "strip": "filmstrips/W5KivClPTd4.jpg",
    "url": "https://www.youtube.com/shorts/W5KivClPTd4",
    "script": "   0s: Today, I'm [music] testing\n   1s: Temu's cheapest\n   2s: knockoff product\n   3s: to see if they're scams,\n   4s: including one\n   5s: that beats the original.\n   6s: First up,\n   7s: Red Hero, [music]\n   8s: which is supposed to be\n   9s: fake Red\n  10s: Bull. They even put the\n  11s: text the same. The cans\n  12s: look almost\n  13s: the same, but the horns\n  14s: are up. But how does\n  15s: Red Hero taste?\n  16s: The Red\n  17s: Hero tastes better.\n  18s: Kind of. Next\n  19s: up, the Walter\n  20s: White mask.\n  21s: Apparently, the normal\n  22s: Walter [music] White masks\n  23s: cost $1,000.\n  25s: So, will this $5\n  26s: Temu mask\n  27s: look realistic?\n  28s: >> life, believe it or\n  29s: not, it does not\n  30s: look that real.\n  31s: This is Halloween.\n  32s: Next up, the North\n  33s: Face t-shirt.\n  34s: Normally, this t-shirt\n  35s: costs $50,\n  36s: but on Temu,\n  37s: it only costs five.\n  38s: So, how good is it?\n  39s: >> not North Face.\n  41s: Beijing Face.\n  42s: This is great fabric\n  43s: quality. [music] >> Next up,\n  44s: Temu AirPods.\n  45s: Big P\n  46s: headphones. Apple AirPods\n  47s: normally cost\n  48s: $250, [music]\n  49s: but on Temu,\n  50s: this costs only\n  51s: $5.\n  52s: >> not at all what I thought\n  53s: I was going to get. >> So, can\n  54s: it play? Come on.\n  56s: >> [music]\n  58s: >> Woah!",
+   "transcript": "Today, I'm [music] testing Temu's cheapest knockoff product to see if they're scams, including one that beats the original. First up, Red Hero, [music] which is supposed to be fake Red Bull. They even put the text the same. The cans look almost the same, but the horns are up. But how does Red Hero taste? The Red Hero tastes better. Kind of. Next up, the Walter White mask. Apparently, the normal Walter [music] White masks cost $1,000. So, will this $5 Temu mask look realistic? >> life, believe it or not, it does not look that real. This is Halloween. Next up, the North Face t-shirt. Normally, this t-shirt costs $50, but on Temu, it only costs five. So, how good is it? >> not North Face. Beijing Face. This is great fabric quality. [music] >> Next up, Temu AirPods. Big P headphones. Apple AirPods normally cost $250, [music] but on Temu, this costs only $5. >> not at all what I thought I was going to get. >> So, can it play? Come on. >> [music] >> Woah!",
+   "hook_first_sentence": "Today, I'm [music] testing Temu's cheapest knockoff product to see if they're scams, including one that beats the original.",
+   "tx_words": 180,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": false,
+    "hk_brand": true,
+    "hk_twist": true,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 3,
+    "hk_specificity": 4,
+    "opening_line_type": "statement",
+    "list_or_numbered": true,
+    "against_the_norm": true,
+    "payoff_timing": "early",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "comedic, irreverent",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Promises testing cheap Temu knockoffs, with twist that one beats the original."
+     },
+     {
+      "label": "test_1_red_hero_energy",
+      "what": "Tests fake Red Bull knockoff; tastes better than original, subverting expectation."
+     },
+     {
+      "label": "test_2_walter_white_mask",
+      "what": "Tests $5 Walter White mask vs $1000 original; looks unrealistic despite low price."
+     },
+     {
+      "label": "test_3_north_face_shirt",
+      "what": "Tests $5 North Face knockoff vs $50 original; reveals 'Beijing Face' branding with good fabric quality."
+     },
+     {
+      "label": "test_4_airpods_knockoff",
+      "what": "Tests cheap Temu AirPods knockoff vs $250 originals; not what expected but can play audio."
+     }
+    ],
+    "why_it_works": "The twist in the hook ('one that beats the original') is immediately proven true with the Red Hero tasting better, validating the premise early and rewarding viewer attention. Against-the-norm positioning (knockoffs being better) is surprising and maintains engagement through a longer list format.",
+    "script_risk": "Four product tests in 60 seconds creates potential pacing issues despite steady 3.0 wps; viewers may feel rushed or lose track of which product is being tested. The final AirPods test cuts off without clear resolution ('Woah!' followed by silence)."
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -1047,6 +1945,53 @@
    "strip": "filmstrips/ZUhlSyvddOM.jpg",
    "url": "https://www.youtube.com/shorts/ZUhlSyvddOM",
    "script": "   0s: Does this phone air conditioner\n   1s: actually work?\n   2s: When you play\n   3s: games, your phone\n   4s: can get too hot\n   5s: to use properly.\n   6s: So, I plugged\n   7s: in this phone air conditioner\n   8s: to see if\n   9s: I could play games smoother,\n  10s: but then I remembered\n  11s: I don't play\n  12s: games. Is it getting cold?\n  13s: I can't tell.\n  14s: So, is there any\n  15s: other way to prove it\n  16s: works? This is supposed to\n  17s: get so cold\n  18s: that ice will\n  19s: form on it. But, I waited forever\n  20s: and nothing\n  21s: happened. However, just\n  22s: when I thought this product\n  23s: had failed,\n  24s: I found another way to test\n  25s: it. And yes,\n  26s: it actually works.",
+   "transcript": "Does this phone air conditioner actually work? When you play games, your phone can get too hot to use properly. So, I plugged in this phone air conditioner to see if I could play games smoother, but then I remembered I don't play games. Is it getting cold? I can't tell. So, is there any other way to prove it works? This is supposed to get so cold that ice will form on it. But, I waited forever and nothing happened. However, just when I thought this product had failed, I found another way to test it. And yes, it actually works.",
+   "hook_first_sentence": "Does this phone air conditioner actually work?",
+   "tx_words": 102,
+   "script_analysis": {
+    "hk_question": true,
+    "hk_number": false,
+    "hk_superlative": false,
+    "hk_brand": true,
+    "hk_twist": false,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 2,
+    "hk_specificity": 3,
+    "opening_line_type": "question",
+    "list_or_numbered": false,
+    "against_the_norm": false,
+    "payoff_timing": "end",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "fast",
+    "tone": "comedic, inquisitive",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Opens with simple question: Does this phone air conditioner actually work?"
+     },
+     {
+      "label": "setup_problem",
+      "what": "Explains the phone heating problem during gaming and plugs in the device."
+     },
+     {
+      "label": "test_1_gameplay",
+      "what": "Narrator realizes they don't play games, so cannot test gameplay smoothness."
+     },
+     {
+      "label": "test_2_ice_formation",
+      "what": "Tests whether ice will form on the device as promised; waits but nothing happens."
+     },
+     {
+      "label": "payoff_reveal",
+      "what": "Narrator finds 'another way' to test and confirms the device actually works."
+     }
+    ],
+    "why_it_works": "The simple yes/no question hook is direct and immediately clear. The narrator's self-aware detour ('I don't play games') adds personality while stalling, creating tension that resolves with the final discovery that it 'actually works.' The delayed payoff (right at the end) rewards patience.",
+    "script_risk": "The script doesn't specify what the 'other way' to test the device actually IS — viewers are left hanging without seeing proof. This breaks the promise of verification and feels like an incomplete arc. The short format (28s) means less room to recover from this ambiguity."
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -1101,6 +2046,53 @@
    "strip": "filmstrips/aA2yk1zRKTY.jpg",
    "url": "https://www.youtube.com/shorts/aA2yk1zRKTY",
    "script": "   0s: The internet is full\n   1s: of crazy\n   2s: life hacks like sealing\n   3s: a watermelon with\n   4s: just a balloon\n   5s: or a whole new\n   6s: way to eat\n   7s: Nutella. All you're\n   8s: supposed to do, take your spoon,\n   9s: dip it in the\n  10s: Nutella. This is a\n  11s: lot. Put it here.\n  12s: Put it here. Pull\n  13s: out. Sugar sandwich.\n  14s: It's perfect.\n  16s: >> However, it gets crazier\n  17s: because apparently\n  18s: you can empty a\n  19s: can completely\n  20s: with a tennis racket.\n  21s: All you're supposed to do is\n  22s: open the can from both\n  23s: sides and push.\n  24s: Pushing.\n  26s: Success.\n  27s: Clean.\n  28s: But it gets even\n  29s: crazier with DIY\n  30s: portable\n  31s: soap. You'll just have\n  32s: to watch and see this one\n  33s: for yourself.\n  34s: [music]\n  42s: Soap\n  43s: to go, baby.\n  44s: So now you're able\n  45s: to pop out a soap\n  46s: whenever you need\n  47s: and wash your hands\n  48s: on the go. But was\n  49s: it really worth all\n  50s: this effort?",
+   "transcript": "The internet is full of crazy life hacks like sealing a watermelon with just a balloon or a whole new way to eat Nutella. All you're supposed to do, take your spoon, dip it in the Nutella. This is a lot. Put it here. Put it here. Pull out. Sugar sandwich. It's perfect. >> However, it gets crazier because apparently you can empty a can completely with a tennis racket. All you're supposed to do is open the can from both sides and push. Pushing. Success. Clean. But it gets even crazier with DIY portable soap. You'll just have to watch and see this one for yourself. [music] Soap to go, baby. So now you're able to pop out a soap whenever you need and wash your hands on the go. But was it really worth all this effort?",
+   "hook_first_sentence": "The internet is full of crazy life hacks like sealing a watermelon with just a balloon or a whole new way to eat Nutella.",
+   "tx_words": 139,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": true,
+    "hk_brand": true,
+    "hk_twist": false,
+    "hk_null_state": true,
+    "hk_payoff": false,
+    "hk_curiosity": 4,
+    "hk_stakes": 2,
+    "hk_specificity": 4,
+    "opening_line_type": "statement",
+    "list_or_numbered": true,
+    "against_the_norm": false,
+    "payoff_timing": "middle",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "slow",
+    "tone": "comedic, casual",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Establishes the internet is full of crazy life hacks, listing specific examples (watermelon seal, Nutella hack)."
+     },
+     {
+      "label": "test_1_nutella_sandwich",
+      "what": "Demonstrates Nutella dipping hack; creates 'sugar sandwich' by coating bread with Nutella."
+     },
+     {
+      "label": "test_2_can_tennis_racket",
+      "what": "Tests opening can from both sides and pushing with tennis racket for clean removal."
+     },
+     {
+      "label": "test_3_diy_portable_soap",
+      "what": "Teases DIY portable soap hack without showing full process; demonstrates popping out soap for on-the-go washing."
+     },
+     {
+      "label": "meta_reflection",
+      "what": "Narrator questions whether the effort was worth the result."
+     }
+    ],
+    "why_it_works": "The opening establishes a null state ('the internet is full of...' — before proving/testing) but then shows functional hacks with satisfying results (the can actually empties cleanly). The narrator's final question ('was it really worth all this effort?') adds a meta-humorous layer that works because most hacks DO work.",
+    "script_risk": "The pacing is notably slower (2.67 wps) which may feel draggy compared to the other videos in this batch. The third hack (portable soap) is under-demonstrated — viewers don't see the full DIY process, only the payoff, which breaks the template of showing the experiment. The final reflection doesn't land as a clear conclusion."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -1155,6 +2147,49 @@
    "strip": "filmstrips/alP_F0JTxmM.jpg",
    "url": "https://www.youtube.com/shorts/alP_F0JTxmM",
    "script": "   0s: Today I'm testing\n   1s: the world's dumbest science\n   2s: experiments to\n   3s: prove to you that they're\n   4s: fake, including one that\n   5s: was magical. >> Wo!\n   6s: >> First up,\n   7s: hopping rice.\n   8s: What? >> Apparently, if\n   9s: you put rice, an\n  10s: egg, and some oil\n  11s: into a pan\n  12s: and then heated up,\n  13s: it will pop\n  14s: like popcorn.\n  15s: Does this work? >> This is\n  16s: an omelette. >> Absolutely\n  17s: not. How do they\n  18s: really do it? They bought\n  19s: pre-popped rice and\n  20s: edited it in.\n  21s: Next up, sand\n  22s: and glue slime.\n  23s: >> Nice. >> Apparently,\n  24s: if you take Elmer's\n  25s: glue, dump\n  26s: it into sand, and mix\n  27s: it up. Oh, what a\n  28s: terrible feeling. >> It'll turn\n  29s: into slime. Does\n  30s: this actually work? >> It'll\n  31s: turn into the slime. How\n  32s: they really do it? Besides\n  33s: the glue, you also\n  34s: have to add >> contact\n  35s: solution >> and baking\n  36s: soda. >> Magic, people.\n  37s: >> Which basically means this\n  38s: was just slime with sand\n  39s: mixed in. >> This looks\n  40s: like a massive turd.\n  41s: >> Finally,\n  42s: ferrofluid\n  43s: magic. This black\n  44s: liquid is called ferrofluid.\n  45s: >> It's super\n  46s: magnetic. >> And if\n  47s: you take magnetic balls\n  48s: and wrap them\n  49s: around your hand\n  50s: and then put a glove on\n  51s: and touch the liquid,\n  52s: it'll climb up\n  53s: your fingers like\n  54s: venom. Oh my\n  55s: gosh. >> Does this\n  56s: work? Yeah.",
+   "transcript": "Today I'm testing the world's dumbest science experiments to prove to you that they're fake, including one that was magical. >> Wo! >> First up, hopping rice. What? >> Apparently, if you put rice, an egg, and some oil into a pan and then heated up, it will pop like popcorn. Does this work? >> This is an omelette. >> Absolutely not. How do they really do it? They bought pre-popped rice and edited it in. Next up, sand and glue slime. >> Nice. >> Apparently, if you take Elmer's glue, dump it into sand, and mix it up. Oh, what a terrible feeling. >> It'll turn into slime. Does this actually work? >> It'll turn into the slime. How they really do it? Besides the glue, you also have to add >> contact solution >> and baking soda. >> Magic, people. >> Which basically means this was just slime with sand mixed in. >> This looks like a massive turd. >> Finally, ferrofluid magic. This black liquid is called ferrofluid. >> It's super magnetic. >> And if you take magnetic balls and wrap them around your hand and then put a glove on and touch the liquid, it'll climb up your fingers like venom. Oh my gosh. >> Does this work? Yeah.",
+   "hook_first_sentence": "Today I'm testing the world's dumbest science experiments to prove to you that they're fake, including one that was magical.",
+   "tx_words": 213,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": true,
+    "hk_brand": false,
+    "hk_twist": true,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 3,
+    "hk_specificity": 4,
+    "opening_line_type": "superlative_claim",
+    "list_or_numbered": true,
+    "against_the_norm": false,
+    "payoff_timing": "early",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "fast",
+    "tone": "energetic, comedic",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Presenter claims to test the world's dumbest science experiments and debunk them, teasing one magical one."
+     },
+     {
+      "label": "test-1",
+      "what": "Hopping rice: expectations vs reality—claims to pop like popcorn, actually just an omelette."
+     },
+     {
+      "label": "test-2",
+      "what": "Sand and glue slime: debunks by revealing the real ingredients (contact solution, baking soda) needed."
+     },
+     {
+      "label": "test-3",
+      "what": "Ferrofluid venom effect: demonstrates the one experiment that actually works, delivers on the magical promise."
+     }
+    ],
+    "why_it_works": "The opening superlative teases a magical payoff, which arrives early (test 3 succeeds), keeping energy high through systematic debunking of earlier fails. The pattern of setup-debunk-payoff-success maintains momentum.",
+    "script_risk": "Three quick test sequences risk blurring together; the rapid pacing (3.74 wps) and lack of build-up between experiments could lose viewers midway if individual debunks feel repetitive."
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -1209,6 +2244,53 @@
    "strip": "filmstrips/dEMqWgw8R7w.jpg",
    "url": "https://www.youtube.com/shorts/dEMqWgw8R7w",
    "script": "   0s: Today, I'm testing the\n   1s: world's dumbest science\n   2s: experiments to\n   3s: prove to you that they are\n   4s: fake, including one\n   5s: I actually think might work.\n   6s: Up first,\n   7s: toothpaste beauty\n   8s: blender. Apparently,\n   9s: if you have a cracked\n  10s: beauty blender, you\n  11s: can take toothpaste,\n  12s: put it in the crack. This\n  13s: is really weird,\n  14s: actually. Place it in a\n  15s: Ziploc bag, add\n  16s: water, and shake\n  17s: it all\n  18s: up.\n  19s: Here we go.\n  20s: It's still\n  21s: cracked.\n  22s: Next up, nose\n  23s: power.\n  24s: Apparently, if you take\n  25s: a charger and a balloon,\n  26s: rub the balloon on\n  27s: your head to generate electricity.\n  29s: Okay, I think we're ready\n  30s: now. My iPad\n  31s: was hard charging. 3\n  32s: 2\n  34s: 1\n  35s: Next.\n  36s: All apples are green.\n  37s: Apparently, if you\n  38s: take boiling water and\n  39s: dump it on top of\n  40s: any red apple, it's\n  41s: true color, green\n  42s: will appear.\n  43s: I don't know. This one's\n  44s: plausible. Maybe. Here we\n  45s: go.\n  46s: Something is happening.\n  47s: Something's happening.\n  48s: Something's happening. Holy\n  49s: crap. Something's happening,\n  50s: guys. Oh my gosh. Something's\n  51s: happening, guys. Oh\n  52s: my gosh. Something's happening.\n  53s: Something is happening.\n  54s: You want to know what's happening?\n  55s: Nothing.",
+   "transcript": "Today, I'm testing the world's dumbest science experiments to prove to you that they are fake, including one I actually think might work. Up first, toothpaste beauty blender. Apparently, if you have a cracked beauty blender, you can take toothpaste, put it in the crack. This is really weird, actually. Place it in a Ziploc bag, add water, and shake it all up. Here we go. It's still cracked. Next up, nose power. Apparently, if you take a charger and a balloon, rub the balloon on your head to generate electricity. Okay, I think we're ready now. My iPad was hard charging. 3 2 1 Next. All apples are green. Apparently, if you take boiling water and dump it on top of any red apple, it's true color, green will appear. I don't know. This one's plausible. Maybe. Here we go. Something is happening. Something's happening. Something's happening. Holy crap. Something's happening, guys. Oh my gosh. Something's happening, guys. Oh my gosh. Something's happening. Something is happening. You want to know what's happening? Nothing.",
+   "hook_first_sentence": "Today, I'm testing the world's dumbest science experiments to prove to you that they are fake, including one I actually think might work.",
+   "tx_words": 174,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": true,
+    "hk_brand": false,
+    "hk_twist": true,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 3,
+    "hk_specificity": 4,
+    "opening_line_type": "superlative_claim",
+    "list_or_numbered": true,
+    "against_the_norm": true,
+    "payoff_timing": "end",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "skeptical, comedic",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Presenter frames testing dumbest experiments, but teases that one might actually work."
+     },
+     {
+      "label": "test-1",
+      "what": "Cracked beauty blender with toothpaste: fails to repair, is still cracked."
+     },
+     {
+      "label": "test-2",
+      "what": "Nose power: rubs balloon to generate electricity on iPad—setup only, no result shown."
+     },
+     {
+      "label": "test-3",
+      "what": "Apples turning green with boiling water: builds suspense with repeated 'something's happening' before reveal of anticlimactic nothing."
+     },
+     {
+      "label": "payoff",
+      "what": "Final reveal after buildup: 'You want to know what's happening? Nothing.'"
+     }
+    ],
+    "why_it_works": "The twist promise (one might work) inverts expectations and drives curiosity. The apple test uses escalating vocal repetition to build tension, then undercuts it with a deadpan reversal—the comedic timing of the reveal lands precisely at the end.",
+    "script_risk": "The buildup strategy (especially the repetitive 'something's happening') relies on payoff delivery; if viewers don't reach the final punchline or predict the nothing-happens twist early, the middle section feels padded and loses them."
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -1263,6 +2345,49 @@
    "strip": "filmstrips/ed2e5yVY1Z4.jpg",
    "url": "https://www.youtube.com/shorts/ed2e5yVY1Z4",
    "script": "   0s: Today I'm testing the\n   1s: world's dumbest science\n   2s: experiments to\n   3s: prove to you that they are\n   4s: fake. Including one\n   5s: I can't believe people\n   6s: thought was real. Up\n   7s: first, battery water\n   8s: tornado. Apparently,\n   9s: if you take two\n  10s: AA batteries\n  11s: and place them on\n  12s: the side of a glass of\n  13s: water, it will turn into\n  14s: a tornado. But\n  15s: will it work? Okay, here we\n  16s: go.\n  18s: No.\n  19s: Up next, saltwater\n  20s: magnet light\n  21s: bulbs. Apparently,\n  22s: if you mix\n  23s: salt into water\n  24s: and then place a magnet\n  25s: inside, this will\n  26s: activate the electron\n  27s: ions in the atmosphere\n  28s: to turbocharge\n  29s: the flux\n  30s: drive, which will then power\n  31s: the light bulb. But does\n  32s: it actually work?\n  33s: No. Fail.\n  34s: Next. Fork\n  35s: battery sorcery.\n  36s: Apparently, if\n  37s: you take four forks,\n  38s: assemble them in a square.\n  39s: Everyone knows that\n  40s: squares are how force\n  41s: fields are made. Place\n  42s: a large battery on\n  43s: each corner and\n  44s: place a coin in the\n  45s: middle. The coin will\n  46s: start rotating and\n  47s: floating.",
+   "transcript": "Today I'm testing the world's dumbest science experiments to prove to you that they are fake. Including one I can't believe people thought was real. Up first, battery water tornado. Apparently, if you take two AA batteries and place them on the side of a glass of water, it will turn into a tornado. But will it work? Okay, here we go. No. Up next, saltwater magnet light bulbs. Apparently, if you mix salt into water and then place a magnet inside, this will activate the electron ions in the atmosphere to turbocharge the flux drive, which will then power the light bulb. But does it actually work? No. Fail. Next. Fork battery sorcery. Apparently, if you take four forks, assemble them in a square. Everyone knows that squares are how force fields are made. Place a large battery on each corner and place a coin in the middle. The coin will start rotating and floating.",
+   "hook_first_sentence": "Today I'm testing the world's dumbest science experiments to prove to you that they are fake.",
+   "tx_words": 156,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": true,
+    "hk_brand": false,
+    "hk_twist": false,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 3,
+    "hk_stakes": 2,
+    "hk_specificity": 3,
+    "opening_line_type": "superlative_claim",
+    "list_or_numbered": true,
+    "against_the_norm": false,
+    "payoff_timing": "middle",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "deadpan, matter-of-fact",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Presenter introduces world's dumbest experiments and promises to prove them fake."
+     },
+     {
+      "label": "test-1",
+      "what": "Battery water tornado: places batteries on water, immediately fails with single 'No.'"
+     },
+     {
+      "label": "test-2",
+      "what": "Saltwater magnet light: mixes salt and magnet supposedly to power bulb, fails and calls it 'Fail.'"
+     },
+     {
+      "label": "test-3",
+      "what": "Fork battery sorcery: begins setting up four forks and coin test, transcript cuts off mid-experiment."
+     }
+    ],
+    "why_it_works": "The steady, systematic rhythm of rapid-fire fails (setup, quick debunk, move on) keeps the pace consistent and satisfying; each failure is dispatched cleanly without dwelling.",
+    "script_risk": "No payoff variety or surprise—every test simply fails with minimal fanfare. The script feels incomplete (cuts off mid-test 3), and the lack of any successful experiment or comedic twist (unlike videos 1 and 2) may feel repetitive and unmotivating."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -1317,6 +2442,49 @@
    "strip": "filmstrips/g4F0P8qq_-g.jpg",
    "url": "https://www.youtube.com/shorts/g4F0P8qq_-g",
    "script": "   0s: Today, I'm testing\n   1s: the world's most impossible\n   2s: science gadgets\n   3s: [music] to see if they're\n   4s: scams, including\n   5s: one that looks\n   6s: like magic. First up,\n   7s: the mechanical\n   8s: flower. Apparently,\n   9s: if you attach each\n  10s: metal petal to\n  11s: the center and turn\n  12s: it on, you get a flower\n  13s: that looks like\n  14s: it's blooming. But,\n  15s: does [music] it actually work?\n  16s: When you look at it from this\n  17s: angle, it actually\n  18s: looks ridiculous.\n  19s: Yes. >> What\n  20s: the heck? It looks like an\n  21s: alien. >> But, how\n  22s: about this Prince Rupert's\n  23s: drop from Temu?\n  24s: [music] Apparently, this\n  25s: thing is both super\n  26s: fragile and\n  27s: indestructible. If\n  28s: you break the tail,\n  29s: it will [music] explode.\n  30s: >> It turned into dust.\n  31s: >> But, its head is\n  32s: supposed to be indestructible.\n  33s: So, let's test it\n  34s: out and see if [music] it's actually\n  35s: indestructible.\n  37s: No, not quite.\n  38s: >> Where did it go?\n  39s: >> [laughter]\n  40s: >> Indestructible.\n  41s: >> But, this is\n  42s: nothing compared\n  43s: to our [music] magic vase.\n  44s: Apparently, if\n  45s: you plug in the base\n  46s: and place the vase\n  47s: >> perfect sweet spot,\n  48s: the two magnets\n  49s: [music] will perfectly\n  50s: repel each other.\n  51s: But, is it safe\n  52s: to move the base? >> It will\n  53s: stay perfectly\n  54s: in place.\n  55s: Just make sure not to tip it\n  56s: sideways.",
+   "transcript": "Today, I'm testing the world's most impossible science gadgets [music] to see if they're scams, including one that looks like magic. First up, the mechanical flower. Apparently, if you attach each metal petal to the center and turn it on, you get a flower that looks like it's blooming. But, does [music] it actually work? When you look at it from this angle, it actually looks ridiculous. Yes. >> What the heck? It looks like an alien. >> But, how about this Prince Rupert's drop from Temu? [music] Apparently, this thing is both super fragile and indestructible. If you break the tail, it will [music] explode. >> It turned into dust. >> But, its head is supposed to be indestructible. So, let's test it out and see if [music] it's actually indestructible. No, not quite. >> Where did it go? >> [laughter] >> Indestructible. >> But, this is nothing compared to our [music] magic vase. Apparently, if you plug in the base and place the vase >> perfect sweet spot, the two magnets [music] will perfectly repel each other. But, is it safe to move the base? >> It will stay perfectly in place. Just make sure not to tip it sideways.",
+   "hook_first_sentence": "Today, I'm testing the world's most impossible science gadgets [music] to see if they're scams, including one that looks like magic.",
+   "tx_words": 202,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": true,
+    "hk_brand": false,
+    "hk_twist": true,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 3,
+    "hk_specificity": 4,
+    "opening_line_type": "superlative_claim",
+    "list_or_numbered": true,
+    "against_the_norm": false,
+    "payoff_timing": "end",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "fast",
+    "tone": "energetic, wonder-filled",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Presenter tests impossible science gadgets to spot scams, teasing one that looks like magic."
+     },
+     {
+      "label": "test-1",
+      "what": "Mechanical flower: petals should bloom, looks ridiculous from one angle, barely works as intended."
+     },
+     {
+      "label": "test-2",
+      "what": "Prince Rupert's drop: promises fragile tail and indestructible head, tail explodes but head breaks on impact."
+     },
+     {
+      "label": "test-3",
+      "what": "Magic vase with magnets: base and vase repel each other, stays perfectly in place, actually delivers magic payoff."
+     }
+    ],
+    "why_it_works": "Opens with an impossible-gadgets premise and magic tease, then delivers fails followed by genuine success at the end, inverting the expectation from videos 1-3. The magic vase works, rewarding the premise.",
+    "script_risk": "The fast pacing (3.48 wps) and music placeholders make the middle tests feel rushed; if the mechanical flower and Prince Rupert's drop tests blend together as mere fails, viewers may lose engagement before the final payoff."
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -1371,6 +2539,53 @@
    "strip": "filmstrips/gEqjP9y3ofI.jpg",
    "url": "https://www.youtube.com/shorts/gEqjP9y3ofI",
    "script": "   0s: this is how Hollywood\n   1s: actors Cry On Demand\n   2s: it's called a tear stick\n   3s: and if you rub it under your eyes\n   4s: it's supposed to make you\n   5s: cry instantly so\n   6s: I did just that and within\n   7s: seconds my eyes\n   8s: were water oh wow\n   9s: my eyes are watering it\n  10s: feels like wind is\n  11s: constantly blowing in\n  12s: my eyes I let it sit\n  13s: for just 3 minutes\n  14s: and I came\n  15s: back like this\n  16s: it's working so good\n  17s: now I'm just kind of wondering\n  18s: when will it go\n  19s: away it hurts\n  20s: it's even\n  21s: making my nose\n  22s: water\n  23s: why\n  24s: do they have to take the MC rib\n  25s: away",
+   "transcript": "this is how Hollywood actors Cry On Demand it's called a tear stick and if you rub it under your eyes it's supposed to make you cry instantly so I did just that and within seconds my eyes were water oh wow my eyes are watering it feels like wind is constantly blowing in my eyes I let it sit for just 3 minutes and I came back like this it's working so good now I'm just kind of wondering when will it go away it hurts it's even making my nose water why do they have to take the MC rib away",
+   "hook_first_sentence": "this is how Hollywood actors Cry On Demand it's called a tear stick and if you rub it under your eyes it's supposed to m",
+   "tx_words": 103,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": false,
+    "hk_brand": true,
+    "hk_twist": false,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 2,
+    "hk_specificity": 5,
+    "opening_line_type": "demonstration",
+    "list_or_numbered": false,
+    "against_the_norm": false,
+    "payoff_timing": "immediate",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "fast",
+    "tone": "breathless, discovery",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Names Hollywood actors and reveals the tear stick technique for instant crying."
+     },
+     {
+      "label": "application",
+      "what": "Presenter applies tear stick under eyes and experiences immediate watering sensation."
+     },
+     {
+      "label": "payoff",
+      "what": "Within seconds, eyes water as promised, delivering on the hook's promise instantly."
+     },
+     {
+      "label": "duration",
+      "what": "After 3 minutes, effect intensifies dramatically, now clearly working very well."
+     },
+     {
+      "label": "reveal",
+      "what": "Unexpected side effects emerge: nose waters, discomfort sets in, raises question about removal."
+     }
+    ],
+    "why_it_works": "Opens with a brand name (Hollywood) and specific technique (tear stick), then delivers the promised payoff within seconds. The quick progression from setup to visible effect to intensification holds attention through novelty and visceral relatability.",
+    "script_risk": "Single-demo format with no comparison or debunking; if the mechanism isn't scientifically explained, curious viewers may feel unsatisfied. Also, the discomfort revealed at the end may deter rather than intrigue—no clear resolution shown."
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -1425,6 +2640,61 @@
    "strip": "filmstrips/hgaqgKtAQrM.jpg",
    "url": "https://www.youtube.com/shorts/hgaqgKtAQrM",
    "script": "   0s: Today I'm testing the\n   1s: world's dumbest science\n   2s: experiments to\n   3s: prove to you that they're fake,\n   4s: including one that\n   5s: sadly work.\n   6s: First up, invisible\n   7s: flame. Apparently, if\n   8s: you put hand sanitizer\n   9s: on ice cubes,\n  10s: it'll create an invisible\n  11s: flame that's\n  12s: capable of catching\n  13s: paper on fire,\n  14s: apparently.\n  15s: But is it actually true?\n  16s: Nothing happened.\n  17s: How' they really do it?\n  18s: They use a lighter and the\n  19s: flame is actually invisible.\n  20s: Oh my gosh.\n  21s: Next up,\n  22s: potato charger.\n  23s: If you take a potato,\n  24s: dump coke on it, and then\n  25s: plug your charger into\n  26s: the potato.\n  27s: Wow. This is a\n  28s: firm potato. It'll\n  29s: charge your phone.\n  30s: But does it actually\n  31s: charge your phone?\n  32s: Believe it or not,\n  33s: not how they\n  34s: really do it. A second\n  35s: charger.\n  36s: Up next, exploding\n  37s: egg.\n  38s: Apparently, if\n  39s: you take a boiled egg\n  40s: and put it in the microwave\n  41s: for 30 seconds\n  42s: and then take it\n  43s: out and cut it,\n  44s: it\n  45s: will\n  47s: explode.\n  48s: Oh gosh.\n  49s: Please don't work. For once,\n  50s: please don't work.",
+   "transcript": "Today I'm testing the world's dumbest science experiments to prove to you that they're fake, including one that sadly work. First up, invisible flame. Apparently, if you put hand sanitizer on ice cubes, it'll create an invisible flame that's capable of catching paper on fire, apparently. But is it actually true? Nothing happened. How' they really do it? They use a lighter and the flame is actually invisible. Oh my gosh. Next up, potato charger. If you take a potato, dump coke on it, and then plug your charger into the potato. Wow. This is a firm potato. It'll charge your phone. But does it actually charge your phone? Believe it or not, not how they really do it. A second charger. Up next, exploding egg. Apparently, if you take a boiled egg and put it in the microwave for 30 seconds and then take it out and cut it, it will explode. Oh gosh. Please don't work. For once, please don't work.",
+   "hook_first_sentence": "Today I'm testing the world's dumbest science experiments to prove to you that they're fake, including one that sadly work.",
+   "tx_words": 163,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": true,
+    "hk_superlative": true,
+    "hk_brand": false,
+    "hk_twist": false,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 3,
+    "hk_stakes": 3,
+    "hk_specificity": 4,
+    "opening_line_type": "statement",
+    "list_or_numbered": true,
+    "against_the_norm": false,
+    "payoff_timing": "immediate",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "energetic, skeptical",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Frames the video as testing 'world's dumbest science experiments' to prove they're fake, with one caveat that works."
+     },
+     {
+      "label": "test_1_setup",
+      "what": "Introduces invisible flame experiment with explanation of claimed method."
+     },
+     {
+      "label": "test_1_debunk",
+      "what": "Attempt fails, then reveals the real method uses a lighter with invisible flame."
+     },
+     {
+      "label": "test_2_setup",
+      "what": "Introduces potato charger myth with specific steps."
+     },
+     {
+      "label": "test_2_debunk",
+      "what": "Doesn't work; reveal is that they use a second charger instead."
+     },
+     {
+      "label": "test_3_setup",
+      "what": "Introduces exploding egg experiment with fear/anticipation."
+     },
+     {
+      "label": "test_3_payoff",
+      "what": "Expresses hope it won't work as he cuts the boiled egg."
+     }
+    ],
+    "why_it_works": "Multiple rapid experiments with consistent debunking structure create pattern-interrupt satisfaction — viewer anticipates failure, enjoys the reveal of how they really do it. Ending builds suspense with the egg test.",
+    "script_risk": "The script cuts off mid-experiment; without seeing the egg explode, the payoff feels incomplete and may leave viewers unsatisfied or unclear about the conclusion."
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -1479,6 +2749,53 @@
    "strip": "filmstrips/iF2-JEVTqa4.jpg",
    "url": "https://www.youtube.com/shorts/iF2-JEVTqa4",
    "script": "   0s: this strange green\n   1s: substance is apparently\n   2s: alive and when you add\n   3s: it to water it grows\n   4s: into an edible snack\n   5s: in just 3 minutes\n   6s: these things are called sea\n   7s: grapes and are supposed\n   8s: to be really nutritious\n   9s: and they're often\n  10s: eight in Asian countries\n  11s: they got so big\n  12s: it's so satisfying\n  13s: it's like squishy little\n  14s: balls so as\n  15s: an American I\n  16s: have one question\n  17s: what happens when you soak these\n  18s: in Coca-Cola\n  19s: instead of water 3\n  20s: 2 1\n  21s: and\n  22s: 5 minutes later\n  23s: they were ready okay\n  24s: first let's compare the regular\n  25s: water sea\n  28s: grapes\n  30s: micro natural\n  31s: popping Boba\n  32s: that tastes like\n  33s: fish okay now\n  34s: Coca-Cola sea\n  35s: grapes they came out way\n  36s: smaller but they were\n  37s: full of Fizz and\n  38s: popped really\n  42s: intensely\n  43s: fish Coke it's so\n  44s: salty though",
+   "transcript": "this strange green substance is apparently alive and when you add it to water it grows into an edible snack in just 3 minutes these things are called sea grapes and are supposed to be really nutritious and they're often eight in Asian countries they got so big it's so satisfying it's like squishy little balls so as an American I have one question what happens when you soak these in Coca-Cola instead of water 3 2 1 and 5 minutes later they were ready okay first let's compare the regular water sea grapes micro natural popping Boba that tastes like fish okay now Coca-Cola sea grapes they came out way smaller but they were full of Fizz and popped really intensely fish Coke it's so salty though",
+   "hook_first_sentence": "this strange green substance is apparently alive and when you add it to water it grows into an edible snack in just 3 mi",
+   "tx_words": 128,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": true,
+    "hk_superlative": false,
+    "hk_brand": false,
+    "hk_twist": true,
+    "hk_null_state": true,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 2,
+    "hk_specificity": 4,
+    "opening_line_type": "statement",
+    "list_or_numbered": false,
+    "against_the_norm": true,
+    "payoff_timing": "early",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "playful, curious",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Introduces mysterious 'alive' green substance that grows into edible snack in 3 minutes."
+     },
+     {
+      "label": "product_intro",
+      "what": "Reveals it's sea grapes, nutritious, eaten in Asian countries, satisfying tactile experience."
+     },
+     {
+      "label": "test_setup",
+      "what": "Stakes personal claim ('as an American') and introduces unexpected test variable: Coca-Cola instead of water."
+     },
+     {
+      "label": "test_execute",
+      "what": "Soaks sea grapes in Coca-Cola for 5 minutes."
+     },
+     {
+      "label": "compare_results",
+      "what": "Tastes and compares water-grown vs. Coca-Cola-grown sea grapes, noting differences in size, fizz, pop intensity, and flavor."
+     }
+    ],
+    "why_it_works": "Opening narrates the 'boring before' (normal sea grapes) then pivots to an absurd twist (Coca-Cola) that subverts expectations — the American-specific angle adds personality and stakes. The sensory details (squishy, fizzy, popping) drive engagement.",
+    "script_risk": "Lacks a clear conclusion or takeaway; the script ends with comparing tastes without stating which is better or recommending anything, leaving the payoff ambiguous."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -1533,6 +2850,57 @@
    "strip": "filmstrips/iNgJny91jWk.jpg",
    "url": "https://www.youtube.com/shorts/iNgJny91jWk",
    "script": "   0s: If you had a weighted triangle\n   1s: shape, added a flywheel\n   2s: and a motor\n   3s: to make it twerk,\n   4s: and use that flywheel\n   5s: to let the triangle\n   6s: >> stabilize itself.\n   7s: >> triangle could stand\n   8s: up on its tip.\n   9s: However, [laughter] if you move it,\n  10s: it'll fall down.\n  11s: So, you put a sensor\n  12s: on the triangle >> It measures\n  13s: its position and\n  14s: then makes small adjustments\n  15s: on this heavy\n  16s: flywheel inside,\n  17s: >> which allows your\n  18s: triangle to magically\n  19s: balance itself\n  20s: instantly and stand\n  21s: up all on its own.\n  22s: Congratulations,\n  23s: you just invented a Reuleaux\n  24s: triangle.\n  25s: >> Woah.",
+   "transcript": "If you had a weighted triangle shape, added a flywheel and a motor to make it twerk, and use that flywheel to let the triangle >> stabilize itself. >> triangle could stand up on its tip. However, [laughter] if you move it, it'll fall down. So, you put a sensor on the triangle >> It measures its position and then makes small adjustments on this heavy flywheel inside, >> which allows your triangle to magically balance itself instantly and stand up all on its own. Congratulations, you just invented a Reuleaux triangle. >> Woah.",
+   "hook_first_sentence": "If you had a weighted triangle shape, added a flywheel and a motor to make it twerk, and use that flywheel to let the triangle >> stabilize itself.",
+   "tx_words": 94,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": false,
+    "hk_brand": false,
+    "hk_twist": false,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 2,
+    "hk_specificity": 5,
+    "opening_line_type": "demonstration",
+    "list_or_numbered": false,
+    "against_the_norm": false,
+    "payoff_timing": "immediate",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "fast",
+    "tone": "technical, excited",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Describes the construction: weighted triangle + flywheel + motor to 'make it twerk' and stabilize."
+     },
+     {
+      "label": "setup",
+      "what": "Explains that flywheel lets triangle stand on its tip."
+     },
+     {
+      "label": "problem",
+      "what": "Triangle falls if moved, requiring a solution."
+     },
+     {
+      "label": "mechanism",
+      "what": "Introduces sensor that measures position and makes small flywheel adjustments."
+     },
+     {
+      "label": "payoff",
+      "what": "Triangle magically balances itself and stands alone."
+     },
+     {
+      "label": "reveal",
+      "what": "Reveals this is the Reuleaux triangle with audience reaction."
+     }
+    ],
+    "why_it_works": "Fast-paced technical explanation builds intellectual curiosity; the reveal that this is a named mathematical concept (Reuleaux triangle) satisfies the setup. The 'twerk' colloquialism brings humor to technical content.",
+    "script_risk": "Extremely dense technical language compressed into fast speech may lose viewers who aren't following the physics; the payoff (balancing) is described but not visually confirmed in the transcript."
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -1587,6 +2955,61 @@
    "strip": "filmstrips/jXq-F48uNWU.jpg",
    "url": "https://www.youtube.com/shorts/jXq-F48uNWU",
    "script": "   0s: Today I'm testing the\n   1s: world's dumbest science\n   2s: experiments to prove\n   3s: to you that they're\n   4s: fake, >> including\n   5s: ones that were surprisingly\n   6s: delicious.\n   7s: A first magic\n   8s: growing soap.\n   9s: Apparently,\n  10s: if you take ivory\n  11s: soap and put it\n  12s: in the microwave, the\n  13s: heat will cause it\n  14s: to grow and become\n  15s: huge.\n  16s: But does it actually work?\n  17s: >> What the heck? Smells\n  18s: like a burnt grandma.\n  20s: Yes, it does.\n  21s: Up\n  22s: next, banana\n  23s: and ice smoke.\n  24s: Apparently, if\n  25s: you put an ice cube\n  26s: in your mouth and then take\n  27s: a bite of a banana,\n  28s: you will be able to\n  29s: blow out smoke.\n  30s: Did it work?\n  31s: No,\n  32s: of course not.\n  33s: How did they really do it?\n  34s: A pocket-size smoke\n  35s: machine. Up next,\n  36s: gummy bear\n  37s: cotton candy. Apparently,\n  38s: if you take\n  39s: a waffle cone maker\n  40s: and fill it with gummy\n  41s: bears, maximum heat.\n  42s: When the gummy bears melt\n  43s: and you open the\n  44s: waffle maker, it\n  45s: will string into cotton.\n  46s: >> Smoking.\n  47s: It's delicious smelling\n  48s: smoke. All right, here we go.\n  49s: Oh,\n  50s: many times.\n  51s: Oh\n  53s: wow.",
+   "transcript": "Today I'm testing the world's dumbest science experiments to prove to you that they're fake, >> including ones that were surprisingly delicious. A first magic growing soap. Apparently, if you take ivory soap and put it in the microwave, the heat will cause it to grow and become huge. But does it actually work? >> What the heck? Smells like a burnt grandma. Yes, it does. Up next, banana and ice smoke. Apparently, if you put an ice cube in your mouth and then take a bite of a banana, you will be able to blow out smoke. Did it work? No, of course not. How did they really do it? A pocket-size smoke machine. Up next, gummy bear cotton candy. Apparently, if you take a waffle cone maker and fill it with gummy bears, maximum heat. When the gummy bears melt and you open the waffle maker, it will string into cotton. >> Smoking. It's delicious smelling smoke. All right, here we go. Oh, many times. Oh wow.",
+   "hook_first_sentence": "Today I'm testing the world's dumbest science experiments to prove to you that they're fake, >> including ones that were surprisingly delicious.",
+   "tx_words": 169,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": true,
+    "hk_brand": false,
+    "hk_twist": true,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 3,
+    "hk_stakes": 3,
+    "hk_specificity": 4,
+    "opening_line_type": "statement",
+    "list_or_numbered": true,
+    "against_the_norm": false,
+    "payoff_timing": "middle",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "energetic, humorous",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Frames testing 'dumbest science experiments' to prove fake, with twist that some are surprisingly delicious."
+     },
+     {
+      "label": "test_1_setup",
+      "what": "Introduces magic growing soap experiment with mechanism."
+     },
+     {
+      "label": "test_1_payoff",
+      "what": "Soap expands in microwave; notes burnt smell but confirms it works."
+     },
+     {
+      "label": "test_2_setup",
+      "what": "Introduces banana-ice smoke trick with claim of breath smoke production."
+     },
+     {
+      "label": "test_2_debunk",
+      "what": "Attempt fails, reveals they use a pocket smoke machine instead."
+     },
+     {
+      "label": "test_3_setup",
+      "what": "Introduces gummy bear cotton candy using waffle cone maker at max heat."
+     },
+     {
+      "label": "test_3_payoff",
+      "what": "Gummy bears melt and create cotton candy-like strands, confirms delicious smell and success multiple times."
+     }
+    ],
+    "why_it_works": "Opening twist (experiments are delicious, not just fake) reframes the video and pays off in the final experiment. Alternating between success and failure creates pacing; sensory reactions (burnt grandma smell, delicious smoke) make abstract experiments concrete.",
+    "script_risk": "The 'burnt grandma' comment may read as insensitive to some viewers; the rapid-fire experiments without much elaboration may feel shallow if not backed by strong visuals."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -1641,6 +3064,65 @@
    "strip": "filmstrips/mzdxWPBzXRc.jpg",
    "url": "https://www.youtube.com/shorts/mzdxWPBzXRc",
    "script": "   0s: Today, I'm testing\n   1s: the world's most impossible\n   2s: science\n   3s: gadgets to see if they're\n   4s: scams,\n   5s: including one that\n   6s: breaks [music] physics.\n   7s: >> god. >> First\n   8s: up, the plasma ball.\n   9s: Apparently, when\n  10s: you turn this thing on,\n  11s: high voltage creates\n  12s: lightning inside\n  13s: of the glass.\n  14s: And if you [music] touch it,\n  15s: you'll get electrocuted.\n  16s: But is that actually true?\n  17s: >> LET ME TOUCH IT.\n  18s: AH!\n  19s: I'M JUST KIDDING.\n  20s: >> NO, I CAN'T FEEL ANYTHING.\n  21s: >> Next up,\n  22s: Reuleaux triangle. [music]\n  23s: Apparently,\n  24s: it can use motors to\n  25s: stand itself up,\n  26s: no matter how you place\n  27s: it. But does it actually\n  28s: work? >> Balance.\n  30s: It's\n  31s: just jumping.\n  32s: >> This is Oh, now\n  33s: it's Yes, it does.\n  34s: >> Wow!\n  35s: This is so\n  36s: cool. >> Next\n  37s: up, the perpetual\n  38s: motion bird.\n  39s: Apparently, if you\n  40s: give this bird a cup\n  41s: of water, [music] it'll\n  42s: drink it forever.\n  43s: >> a drink. >> Every\n  44s: time it looks like it's about\n  45s: to stop, it'll go\n  46s: in for another drink.\n  47s: But does it actually [music]\n  48s: work? >> Yeah,\n  49s: he's thirsty. Look at him.\n  50s: Look at him. Look at him.\n  51s: Ah!\n  52s: >> [screaming]",
+   "transcript": "Today, I'm testing the world's most impossible science gadgets to see if they're scams, including one that breaks [music] physics. >> god. >> First up, the plasma ball. Apparently, when you turn this thing on, high voltage creates lightning inside of the glass. And if you [music] touch it, you'll get electrocuted. But is that actually true? >> LET ME TOUCH IT. AH! I'M JUST KIDDING. >> NO, I CAN'T FEEL ANYTHING. >> Next up, Reuleaux triangle. [music] Apparently, it can use motors to stand itself up, no matter how you place it. But does it actually work? >> Balance. It's just jumping. >> This is Oh, now it's Yes, it does. >> Wow! This is so cool. >> Next up, the perpetual motion bird. Apparently, if you give this bird a cup of water, [music] it'll drink it forever. >> a drink. >> Every time it looks like it's about to stop, it'll go in for another drink. But does it actually [music] work? >> Yeah, he's thirsty. Look at him. Look at him. Look at him. Ah! >> [screaming]",
+   "hook_first_sentence": "Today, I'm testing the world's most impossible science gadgets to see if they're scams, including one that breaks [music] physics.",
+   "tx_words": 181,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": true,
+    "hk_brand": false,
+    "hk_twist": false,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 4,
+    "hk_specificity": 4,
+    "opening_line_type": "statement",
+    "list_or_numbered": true,
+    "against_the_norm": false,
+    "payoff_timing": "immediate",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "fast",
+    "tone": "energetic, playful",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Tests 'world's most impossible science gadgets' to determine if they're scams, with one that 'breaks physics'."
+     },
+     {
+      "label": "test_1_setup",
+      "what": "Introduces plasma ball with high voltage and claimed electrocution risk."
+     },
+     {
+      "label": "test_1_payoff",
+      "what": "Touches plasma ball and jokes about being electrocuted, then confirms he feels nothing."
+     },
+     {
+      "label": "test_2_setup",
+      "what": "Introduces Reuleaux triangle that supposedly stands itself up no matter placement."
+     },
+     {
+      "label": "test_2_attempt",
+      "what": "First attempt fails (jumping behavior), second attempt succeeds (balances)."
+     },
+     {
+      "label": "test_2_reaction",
+      "what": "Expresses amazement at working gadget."
+     },
+     {
+      "label": "test_3_setup",
+      "what": "Introduces perpetual motion bird that continuously drinks water."
+     },
+     {
+      "label": "test_3_execution",
+      "what": "Observes bird repeatedly drinking, expressing excitement at continuous behavior before cutting to screaming."
+     }
+    ],
+    "why_it_works": "Opens with superlative stakes (impossible, breaks physics) then delivers immediate thrills (electrocution fake-out, working gadgets). Three escalating gadgets with increasing spectacle and physical demonstration create sustained excitement.",
+    "script_risk": "Script ends abruptly with screaming, leaving the outcome of the perpetual motion bird test unresolved; viewers may be confused about whether the experiment succeeded or if something went wrong."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -1695,6 +3177,49 @@
    "strip": "filmstrips/ofOqZYfDFwg.jpg",
    "url": "https://www.youtube.com/shorts/ofOqZYfDFwg",
    "script": "   0s: This is an automatic\n   1s: drink dispenser,\n   2s: and it's supposed to\n   3s: use a sensor and a\n   4s: motor to perfectly\n   5s: dispense a little drink\n   6s: every time. So, today,\n   7s: let's see if this\n   8s: actually works and can dispense\n   9s: a perfect shot of\n  10s: soju every time.\n  11s: And if you didn't know, this\n  12s: stuff is alcoholic.\n  13s: But alcohol\n  14s: equals brain\n  15s: damage, so I'm\n  16s: using soda. Here\n  17s: it is. Looks very sleek\n  18s: and modern. I guess all\n  19s: I need to do is put the\n  20s: four batteries in the back,\n  21s: attach this\n  22s: rubber dangly hose\n  23s: to reach the bottom of the\n  24s: bottle, and finally,\n  25s: it's time for the\n  26s: moment of truth.\n  27s: I just have to\n  28s: push this\n  29s: on here.\n  30s: Okay, that's\n  31s: a a tight\n  32s: seal. Okay, it's time for\n  33s: the big test. Let's see\n  34s: if it can fill it up perfectly\n  35s: automatically.\n  37s: 3\n  38s: 2\n  39s: 1",
+   "transcript": "This is an automatic drink dispenser, and it's supposed to use a sensor and a motor to perfectly dispense a little drink every time. So, today, let's see if this actually works and can dispense a perfect shot of soju every time. And if you didn't know, this stuff is alcoholic. But alcohol equals brain damage, so I'm using soda. Here it is. Looks very sleek and modern. I guess all I need to do is put the four batteries in the back, attach this rubber dangly hose to reach the bottom of the bottle, and finally, it's time for the moment of truth. I just have to push this on here. Okay, that's a a tight seal. Okay, it's time for the big test. Let's see if it can fill it up perfectly automatically. 3 2 1",
+   "hook_first_sentence": "This is an automatic drink dispenser, and it's supposed to use a sensor and a motor to perfectly dispense a little drink every time.",
+   "tx_words": 138,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": false,
+    "hk_brand": false,
+    "hk_twist": false,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 3,
+    "hk_stakes": 2,
+    "hk_specificity": 4,
+    "opening_line_type": "statement",
+    "list_or_numbered": false,
+    "against_the_norm": false,
+    "payoff_timing": "early",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "casual, explanatory",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Narrator introduces the automatic drink dispenser and its purpose to perfectly dispense shots"
+     },
+     {
+      "label": "setup",
+      "what": "Explains it will test on soda instead of alcohol, then shows the device and describes it as sleek and modern"
+     },
+     {
+      "label": "assembly",
+      "what": "Inserts four batteries, attaches the rubber hose to the bottle, and pushes on the seal"
+     },
+     {
+      "label": "anticipation",
+      "what": "Announces 'it's time for the big test' and counts down '3 2 1' to see if it fills perfectly"
+     }
+    ],
+    "why_it_works": "The opening promises a clear mechanical payoff (perfect dispensing) and the assembly process builds suspense before the countdown creates urgency. The pacing is measured enough to follow the steps but quick enough to maintain interest.",
+    "script_risk": "The script cuts off mid-test without showing the result, relying on viewer curiosity to seek the full video, but this cliffhanger strategy may frustrate viewers if the payoff feels delayed too long."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -1749,6 +3274,53 @@
    "strip": "filmstrips/pR1mqUNnYSo.jpg",
    "url": "https://www.youtube.com/shorts/pR1mqUNnYSo",
    "script": "   0s: Ah! This is called\n   1s: a plasma ball,\n   2s: and when I turn it\n   3s: on,\n   4s: it seems\n   5s: like nothing happens.\n   6s: But to see the magic,\n   7s: we have to turn the lights\n   8s: off.\n   9s: It's filled with electricity,\n  10s: but will it shock\n  11s: me? Woah!\n  12s: This\n  13s: is scary.\n  14s: Plasma!\n  15s: All right.\n  16s: Let me touch it.\n  20s: AH!\n  21s: I'M JUST KIDDING.\n  22s: I can't feel anything.",
+   "transcript": "Ah! This is called a plasma ball, and when I turn it on, it seems like nothing happens. But to see the magic, we have to turn the lights off. It's filled with electricity, but will it shock me? Woah! This is scary. Plasma! All right. Let me touch it. AH! I'M JUST KIDDING. I can't feel anything.",
+   "hook_first_sentence": "Ah!",
+   "tx_words": 58,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": false,
+    "hk_brand": false,
+    "hk_twist": true,
+    "hk_null_state": false,
+    "hk_payoff": false,
+    "hk_curiosity": 4,
+    "hk_stakes": 3,
+    "hk_specificity": 2,
+    "opening_line_type": "exclamation",
+    "list_or_numbered": false,
+    "against_the_norm": true,
+    "payoff_timing": "middle",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "energetic, playful",
+    "beats": [
+     {
+      "label": "hook_twist",
+      "what": "Opens with 'Ah!' exclamation—an unexpected sound that contradicts the calm title question"
+     },
+     {
+      "label": "explanation",
+      "what": "Explains what a plasma ball is and that it appears inactive in normal light"
+     },
+     {
+      "label": "revelation",
+      "what": "Turns off the lights and reveals the electrical plasma phenomenon with 'Woah'"
+     },
+     {
+      "label": "stakes_raise",
+      "what": "Questions aloud whether touching it will deliver a shock, building fear"
+     },
+     {
+      "label": "fake_out",
+      "what": "Dramatically pretends to touch and scream, then reveals it was a joke—no feeling at all"
+     }
+    ],
+    "why_it_works": "The opening exclamation is a pattern interrupt that creates immediate intrigue and matches the physical/emotional reaction viewers expect. The lights-off reveal is a visual/experiential payoff, and the fake-out punchline lands because the buildup genuinely convinced the viewer there was danger.",
+    "script_risk": "If the plasma ball does not activate visibly during the lights-off sequence, the core moment fails entirely. The humor of the fake-out also relies on audience investment in the fake danger, which could fall flat if pacing feels rushed."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -1803,6 +3375,49 @@
    "strip": "filmstrips/q_N8ovH2KAQ.jpg",
    "url": "https://www.youtube.com/shorts/q_N8ovH2KAQ",
    "script": "   0s: Today, I'm testing\n   1s: Temu's [music] cheapest\n   2s: knockoff dogs\n   3s: to see if\n   4s: they're scams, including\n   5s: one that beats\n   6s: the original.\n   8s: Apparently, a real\n   9s: dog costs over $1,000.\n  11s: >> Here's our sample.\n  12s: >> But, this one costs just\n  13s: $3.\n  14s: So, how dog is it?\n  15s: This is not a dog.\n  17s: I got scammed.\n  18s: >> Round two. >> [music]\n  19s: >> dog.\n  20s: >> Apparently, if you just\n  21s: put in batteries, it'll\n  22s: start singing and walking.\n  24s: >> Woah. >> Just like\n  25s: a real dog. [music]\n  26s: But, can it convince my real\n  27s: dog? >> So, how\n  28s: do you like it, Steve?\n  30s: >> No. >> [music]\n  31s: >> I've never seen\n  32s: a dog do that.\n  34s: >> Round\n  35s: three, the $50\n  36s: [music] robot\n  37s: dog. Apparently,\n  38s: a Unitree\n  39s: robot dog costs\n  40s: $100,000,\n  41s: but this one\n  42s: only costs 50.\n  43s: It\n  44s: comes with a remote,\n  45s: but I can't read it.\n  46s: >> However, [music] every\n  47s: time you press it, >> something\n  48s: magical happens.\n  49s: >> I mean, you can kind of\n  50s: call it magical. But,\n  51s: can I control the dog\n  52s: without speaking Chinese?\n  54s: No. I almost\n  55s: crashed into my real\n  56s: dog.",
+   "transcript": "Today, I'm testing Temu's [music] cheapest knockoff dogs to see if they're scams, including one that beats the original. Apparently, a real dog costs over $1,000. >> Here's our sample. >> But, this one costs just $3. So, how dog is it? This is not a dog. I got scammed. >> Round two. >> [music] >> dog. >> Apparently, if you just put in batteries, it'll start singing and walking. >> Woah. >> Just like a real dog. [music] But, can it convince my real dog? >> So, how do you like it, Steve? >> No. >> [music] >> I've never seen a dog do that. >> Round three, the $50 [music] robot dog. Apparently, a Unitree robot dog costs $100,000, but this one only costs 50. It comes with a remote, but I can't read it. >> However, [music] every time you press it, >> something magical happens. >> I mean, you can kind of call it magical. But, can I control the dog without speaking Chinese? No. I almost crashed into my real dog.",
+   "hook_first_sentence": "Today, I'm testing Temu's [music] cheapest knockoff dogs to see if they're scams, including one that beats the original.",
+   "tx_words": 176,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": true,
+    "hk_brand": true,
+    "hk_twist": false,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 3,
+    "hk_specificity": 4,
+    "opening_line_type": "statement",
+    "list_or_numbered": true,
+    "against_the_norm": false,
+    "payoff_timing": "immediate",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "comedic, skeptical",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Narrator frames testing Temu's cheapest knockoff dogs and hints that one beats the original"
+     },
+     {
+      "label": "round_1",
+      "what": "Tests a cheap $3 knockoff dog versus $1,000+ real dogs; finds it is 'not a dog' and declares a scam"
+     },
+     {
+      "label": "round_2",
+      "what": "Tests a battery-powered singing and walking dog; compares it to a real dog using Steve, the narrator's real dog, who rejects it"
+     },
+     {
+      "label": "round_3",
+      "what": "Tests a $50 robot dog modeled after a $100,000 Unitree; finds it uncontrollable without reading Chinese, nearly crashing into real dog"
+     }
+    ],
+    "why_it_works": "The opening combines brand specificity (Temu), superlative claim (cheapest, one beats original), and clear payoff curiosity. The three-round structure is easy to follow, and each escalates in comedy—from obvious scam to funny fake-out to chaotic uncontrol. The repeated comparison with 'Steve' the real dog anchors relatability.",
+    "script_risk": "Three rounds risk feeling repetitive if each comparison with Steve plays too similarly. The script also assumes viewers find 'can't read Chinese' humor acceptable, which depends on cultural sensitivity and audience values. Pacing through three products in 57 seconds leaves each test feeling somewhat rushed."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -1857,6 +3472,49 @@
    "strip": "filmstrips/twnijuGYoOM.jpg",
    "url": "https://www.youtube.com/shorts/twnijuGYoOM",
    "script": "   0s: I thought the head of this\n   1s: Prince Rupert's drop was\n   2s: indestructible,\n   3s: but that's not true.\n   4s: There are actually two\n   5s: versions being sold.\n   6s: An explosive version\n   7s: with a long tail\n   8s: and an indestructible\n   9s: version with a short\n  10s: tail. So, the\n  11s: explosive one\n  12s: isn't indestructible.\n  13s: It shatters whether\n  14s: you break the tail\n  15s: or hit the head.\n  16s: >> Where did it go?\n  17s: [laughter]\n  18s: Indestructible\n  19s: one. >> But the indestructible\n  20s: version doesn't\n  21s: explode no matter how\n  22s: you hit it or even\n  23s: if the tail breaks.",
+   "transcript": "I thought the head of this Prince Rupert's drop was indestructible, but that's not true. There are actually two versions being sold. An explosive version with a long tail and an indestructible version with a short tail. So, the explosive one isn't indestructible. It shatters whether you break the tail or hit the head. >> Where did it go? [laughter] Indestructible one. >> But the indestructible version doesn't explode no matter how you hit it or even if the tail breaks.",
+   "hook_first_sentence": "I thought the head of this Prince Rupert's drop was indestructible, but that's not true.",
+   "tx_words": 81,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": false,
+    "hk_brand": false,
+    "hk_twist": true,
+    "hk_null_state": true,
+    "hk_payoff": false,
+    "hk_curiosity": 4,
+    "hk_stakes": 3,
+    "hk_specificity": 3,
+    "opening_line_type": "statement",
+    "list_or_numbered": false,
+    "against_the_norm": true,
+    "payoff_timing": "middle",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "fast",
+    "tone": "informative, dramatic",
+    "beats": [
+     {
+      "label": "hook_contradiction",
+      "what": "Opens by contradicting the title claim—'I thought the head was indestructible, but that's not true'"
+     },
+     {
+      "label": "revelation",
+      "what": "Reveals two versions exist: an explosive version (long tail) and an indestructible version (short tail)"
+     },
+     {
+      "label": "test_explosive",
+      "what": "Demonstrates that the explosive version shatters when the tail breaks or head is hit"
+     },
+     {
+      "label": "test_indestructible",
+      "what": "Shows the indestructible version survives hits and tail breakage without exploding"
+     }
+    ],
+    "why_it_works": "The opening twist directly contradicts viewer expectations set by the title, forcing cognitive dissonance that makes them lean in to understand. The binary comparison (explosive vs. indestructible) is clean and the dramatic audio cue (laughter) marks the payoff moments.",
+    "script_risk": "The fast pacing (3.24 wps) combined with dense information (two product variants, tail vs. head distinctions) may confuse viewers who miss the first explanation. If the shattering moments are not visually clear or well-timed, the script loses its dramatic payoff beats."
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -1911,6 +3569,53 @@
    "strip": "filmstrips/vPfRmw40O-s.jpg",
    "url": "https://www.youtube.com/shorts/vPfRmw40O-s",
    "script": "   0s: Temu dog versus\n   1s: a real dog.\n   2s: This is a $20\n   3s: dog. Will it\n   4s: be better than my real\n   5s: dog? [music] This is Steve.\n   6s: He is our sample.\n   7s: Apparently, if you just\n   8s: put in batteries,\n   9s: it'll start singing and\n  10s: walking.\n  11s: >> Woah, it's coming\n  12s: out of its butt.\n  13s: >> Just like a real dog.\n  14s: But, can it convince\n  15s: my real dog?\n  16s: >> So, how do you like it, Steve?\n  19s: >> No, but why? I've\n  20s: never seen a dog do\n  21s: that.\n  22s: >> [music]",
+   "transcript": "Temu dog versus a real dog. This is a $20 dog. Will it be better than my real dog? [music] This is Steve. He is our sample. Apparently, if you just put in batteries, it'll start singing and walking. >> Woah, it's coming out of its butt. >> Just like a real dog. But, can it convince my real dog? >> So, how do you like it, Steve? >> No, but why? I've never seen a dog do that. >> [music]",
+   "hook_first_sentence": "Temu dog versus a real dog.",
+   "tx_words": 81,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": false,
+    "hk_brand": false,
+    "hk_twist": false,
+    "hk_null_state": false,
+    "hk_payoff": false,
+    "hk_curiosity": 3,
+    "hk_stakes": 2,
+    "hk_specificity": 2,
+    "opening_line_type": "statement",
+    "list_or_numbered": false,
+    "against_the_norm": false,
+    "payoff_timing": "middle",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "fast",
+    "tone": "comedic, casual",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Narrator sets up a direct comparison between Temu dog and a real dog"
+     },
+     {
+      "label": "intro_real_dog",
+      "what": "Introduces Steve, the real dog, as the reference sample"
+     },
+     {
+      "label": "temu_reveal",
+      "what": "Shows the Temu dog has batteries and will sing and walk like a real dog"
+     },
+     {
+      "label": "awkward_moment",
+      "what": "Plays the comedy of the Temu dog's 'butt' producing the singing/walking effect"
+     },
+     {
+      "label": "comparison_test",
+      "what": "Steve the real dog rejects the fake dog, and the narrator calls out Steve's judgment with humor"
+     }
+    ],
+    "why_it_works": "The fast pacing (3.38 wps) and quick cuts maintain momentum. The repeated comparison with Steve creates an anchor for relatability, and the absurdist moment of the Temu dog producing sound from its 'butt' lands as unexpected comedic contrast.",
+    "script_risk": "The opening is weak—'Temu dog versus a real dog' is generic and offers no curiosity hook or stakes. At only 24 seconds, there is minimal time to develop stakes, so the payoff (Steve's rejection) may feel abrupt. Heavy reliance on visual humor (the butt-sound gag) means the script underperforms if the visual timing is off."
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -1965,6 +3670,53 @@
    "strip": "filmstrips/ySSbXWtC2lE.jpg",
    "url": "https://www.youtube.com/shorts/ySSbXWtC2lE",
    "script": "   0s: these are called smelling\n   1s: salts which powerlifters\n   2s: often\n   3s: use\n   4s: for a super\n   5s: boost while working\n   6s: out so let's see what they\n   7s: do to me\n   8s: a regularized\n   9s: human being\n  10s: I\n  11s: can already smell\n  16s: it\n  17s: okay I'm going to go\n  18s: a full\n  19s: sniff\n  20s: ready\n  21s: 3 2\n  22s: 1\n  23s: [Music]\n  29s: [Music]\n  32s: oh it burns\n  33s: I'm going\n  34s: to close this up I don't want to\n  35s: smell anymore",
+   "transcript": "these are called smelling salts which powerlifters often use for a super boost while working out so let's see what they do to me a regularized human being I can already smell it okay I'm going to go a full sniff ready 3 2 1 [Music] [Music] oh it burns I'm going to close this up I don't want to smell anymore",
+   "hook_first_sentence": "these are called smelling salts which powerlifters often use for a super boost while working out so let's see what they",
+   "tx_words": 62,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": false,
+    "hk_brand": false,
+    "hk_twist": false,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 4,
+    "hk_stakes": 3,
+    "hk_specificity": 4,
+    "opening_line_type": "statement",
+    "list_or_numbered": false,
+    "against_the_norm": false,
+    "payoff_timing": "early",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "slow",
+    "tone": "casual, experimental",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Introduce smelling salts and their powerlifter use, promise to test effect on regular person."
+     },
+     {
+      "label": "anticipation",
+      "what": "Narrator already smells the product before testing, nose begins reacting."
+     },
+     {
+      "label": "test",
+      "what": "Countdown (3, 2, 1) and narrator takes a full sniff of the smelling salts."
+     },
+     {
+      "label": "immediate_reaction",
+      "what": "Narrator experiences burning sensation and quickly closes the product to stop inhaling."
+     },
+     {
+      "label": "conclusion",
+      "what": "Narrator expresses discomfort and desire to end the experience."
+     }
+    ],
+    "why_it_works": "The promise is delivered fast: a countdown creates urgency and anticipation, then the sensory payoff (burning sensation) validates the premise within seconds. The physical reaction is the entire point, making the short runtime an asset rather than liability.",
+    "script_risk": "Very short script (62 words) leaves little room for variation or engagement beyond the reaction moment. If the on-camera burn effect doesn't read clearly, the entire video loses impact."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -2019,6 +3771,73 @@
    "strip": "filmstrips/zA0rs99ldW4.jpg",
    "url": "https://www.youtube.com/shorts/zA0rs99ldW4",
    "script": "   0s: China makes some\n   1s: of the craziest\n   2s: products in the\n   3s: world. Like\n   4s: this basketball face\n   5s: mask that's\n   6s: literally just a\n   7s: hand. >> It's a hand in\n   8s: my face. >> Or an O\n   9s: cannon that makes\n  10s: smoke rings out of\n  11s: water. Okay,\n  12s: come on.\n  14s: >> Oh, >> did I\n  15s: waste my money? >> No.\n  16s: They also make cans\n  17s: of cold spray. And\n  18s: don't ask me what this is\n  19s: for cuz I\n  20s: don't know.\n  21s: So,\n  22s: let's see if it actually works.\n  24s: I think it's poisonous.\n  26s: Okay.\n  28s: Yeah. Okay. It's\n  29s: frozen. Does it\n  30s: work? Yes. Why do\n  31s: you need this though?\n  32s: Next up, a phone\n  33s: air conditioner\n  34s: for gaming.\n  36s: >> This is an air\n  37s: conditioner for your\n  38s: phone. Now, if I turn\n  39s: this on. Oh,\n  40s: my phone should never get\n  41s: doing something. Is\n  42s: it getting cold? Oh,\n  43s: it's\n  44s: freezing cold.\n  45s: Honestly, I don't know when\n  46s: I would ever use this.",
+   "transcript": "China makes some of the craziest products in the world. Like this basketball face mask that's literally just a hand. >> It's a hand in my face. >> Or an O cannon that makes smoke rings out of water. Okay, come on. >> Oh, >> did I waste my money? >> No. They also make cans of cold spray. And don't ask me what this is for cuz I don't know. So, let's see if it actually works. I think it's poisonous. Okay. Yeah. Okay. It's frozen. Does it work? Yes. Why do you need this though? Next up, a phone air conditioner for gaming. >> This is an air conditioner for your phone. Now, if I turn this on. Oh, my phone should never get doing something. Is it getting cold? Oh, it's freezing cold. Honestly, I don't know when I would ever use this.",
+   "hook_first_sentence": "China makes some of the craziest products in the world.",
+   "tx_words": 146,
+   "script_analysis": {
+    "hk_question": false,
+    "hk_number": false,
+    "hk_superlative": true,
+    "hk_brand": false,
+    "hk_twist": false,
+    "hk_null_state": false,
+    "hk_payoff": true,
+    "hk_curiosity": 5,
+    "hk_stakes": 2,
+    "hk_specificity": 2,
+    "opening_line_type": "statement",
+    "list_or_numbered": true,
+    "against_the_norm": true,
+    "payoff_timing": "immediate",
+    "has_cta": false,
+    "cta_text": "",
+    "talking_pace": "medium",
+    "tone": "energetic, humorous, skeptical",
+    "beats": [
+     {
+      "label": "hook",
+      "what": "Open with superlative claim that China makes the world's craziest products."
+     },
+     {
+      "label": "product_1_absurdity",
+      "what": "Present basketball face mask that is literally just a hand; express disbelief at design absurdity."
+     },
+     {
+      "label": "product_2_novelty",
+      "what": "Introduce O cannon that makes smoke rings from water; react with surprise to the effect."
+     },
+     {
+      "label": "product_2_reflection",
+      "what": "Question whether money was wasted; conclude it was not based on novelty."
+     },
+     {
+      "label": "product_3_mystery",
+      "what": "Present cans of cold spray with admitted ignorance about intended purpose; express skepticism about safety."
+     },
+     {
+      "label": "product_3_test",
+      "what": "Demo the cold spray effect; confirm it works and freezes objects."
+     },
+     {
+      "label": "product_3_critique",
+      "what": "Question practical utility with 'Why do you need this though?'"
+     },
+     {
+      "label": "product_4_pitch",
+      "what": "Introduce phone air conditioner marketed for gaming and turn it on."
+     },
+     {
+      "label": "product_4_test",
+      "what": "Observe phone rapidly freezing cold and confirm effectiveness."
+     },
+     {
+      "label": "product_4_critique",
+      "what": "Conclude with repeated sentiment: don't see when this would be useful."
+     }
+    ],
+    "why_it_works": "High-curiosity superlative hook immediately pulls viewers in. Rapid-fire product reveals with genuine reactions (absurdity, skepticism, surprise) maintain momentum. The recurring theme of 'this is cool but why' creates relatable humor and sets up viral-worthy 'useless but fascinating' appeal.",
+    "script_risk": "Repetitive critique structure by video's end—both the cold spray and phone air conditioner segments end with nearly identical dismissals ('Why do you need this' vs. 'I don't know when I would use this'). This pattern risks viewer fatigue in the second half, potentially causing drops before the conclusion."
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,

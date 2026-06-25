@@ -283,6 +283,10 @@ function toItem(rec, kind){
     strip: rec.strip || null,
     url: rec.url || (rec.id && realKind!=='prediction' ? `https://www.youtube.com/shorts/${rec.id}` : null),
     script: rec.script || '',
+    transcript: rec.transcript || '',
+    hook_first_sentence: rec.hook_first_sentence || '',
+    tx_words: numOrNull(rec.tx_words),
+    script_analysis: rec.script_analysis || null,
     status: realStatus,
     // ITERATION TRACK: items sharing a `track` are ONE iteration line (an edit
     // that was analyzed, scrapped, re-cut, re-analyzed… until one is uploaded).
@@ -1239,6 +1243,15 @@ function versionCardHTML(it, g, isHead){
       <div class="tl-expand-body"><pre class="script-pre">${esc(it.script)}</pre></div>
     </details>` : '';
 
+  // FULL transcript + deep SCRIPT ANALYSIS (same scan as competitors) — for own posted videos
+  const transcriptBlock = it.transcript ? `
+    <details class="ref-scan ref-script">
+      <summary>📜 Full script <span class="rs-meta">${it.tx_words||'?'} words</span></summary>
+      ${it.hook_first_sentence?`<p class="rs-note"><b>Hook:</b> "${esc(it.hook_first_sentence)}"</p>`:''}
+      <p class="ref-transcript">${esc(it.transcript)}</p>
+    </details>` : '';
+  const analysisBlock = it.script_analysis ? renderScriptAnalysis(it.script_analysis) : '';
+
   // expandable AI features
   const featBlock = (it.raw && it.raw.features) ? `
     <details class="tl-expand">
@@ -1293,6 +1306,8 @@ function versionCardHTML(it, g, isHead){
           ${isAwaiting?`<button type="button" class="btn btn-sm btn-mark" data-mark-uploaded="${esc(it.pin||'')}">📤 Mark uploaded</button>`:''}
           <button type="button" class="btn btn-sm" data-clone="${esc(it.id)}">+ Add Test (clone this)</button>
         </div>
+        ${transcriptBlock}
+        ${analysisBlock}
         ${scriptBlock}
         ${featBlock}
       </div>`;
