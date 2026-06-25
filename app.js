@@ -58,6 +58,12 @@ const LS = {
   ui:       'smartness_ui_v1',   // {sort,dir,filter,view} mirror
 };
 const TOTAL_FIELDS = 33; // fallback; recomputed from schema after load
+// DATA REMINDER: once a version is POSTED to YouTube (status uploaded_pending),
+// performance data typically lands after this many whole days. Before then we
+// show a calm "data usually ready in ~N day(s)" note; on/after it we show a
+// prominent "⏰ Data should be ready — pull a fresh report" reminder on the
+// version card AND on the short's library tile.
+const DATA_LAG_DAYS = 2;
 
 /* ------------------------------------------------------------- app state -- */
 const state = {
@@ -135,6 +141,26 @@ function relTime(iso){
   if(!iso) return '';
   return fmtDateRel(iso) || '';
 }
+// whole CALENDAR days from a "YYYY-MM-DD" (or iso) date until today. Compares on
+// calendar days (both anchors zeroed to LOCAL midnight) rather than fixed 24h
+// chunks anchored at a possibly-UTC instant — so the count flips on a real
+// date boundary, not the upload's clock-hour or the parse's timezone. Never
+// returns negative (a future upload_date reads as 0 days ago). Used by the DATA
+// REMINDER timer on uploaded_pending versions.
+function daysSince(s){
+  const d = parseDate(s);
+  if(!d) return null;
+  const a = new Date(d); a.setHours(0,0,0,0);
+  const b = new Date();  b.setHours(0,0,0,0);
+  return Math.max(0, Math.round((b.getTime()-a.getTime())/86400000));
+}
+// timestamp from the first parseable of (publish, uploaded_date), else 0.
+// Explicit guards (no optional chaining) so older webviews don't hard-fail.
+function tsFrom(a, b){
+  const da = parseDate(a); if(da) return da.getTime();
+  const db = parseDate(b); if(db) return db.getTime();
+  return 0;
+}
 function slugify(s){
   return String(s||'').toLowerCase().normalize('NFKD').replace(/[^\w\s-]/g,'').trim().replace(/[\s_]+/g,'-').replace(/-+/g,'-') || ('x'+Date.now());
 }
@@ -159,8 +185,16 @@ function toItem(rec, kind){
   if(kind==='experiment'){
     const e = rec;
     const swipe = e.stayed_to_watch_pct, avd = e.avd_pct, views = e.views;
-    const status = /posted/i.test(e.status||'') ? 'posted'
-                 : (/edited/i.test(e.status||'') ? 'edited' : 'idea');
+    // preserve the AUTHORITATIVE status verbatim when it is one of the known
+    // lifecycle states (experiments.json is hand/AI-editable — a human or AI may
+    // author 'uploaded_pending'/'awaiting'/'scrapped' directly). Only fall back
+    // to the regex collapse for free-text/legacy status strings, so an
+    // uploaded_pending experiment is NOT silently downgraded to 'idea' (which
+    // would hide it from uploadState's awaiting/pending/overdue treatment).
+    const KNOWN_STATUS = ['posted','uploaded_pending','awaiting','scrapped','edited','idea'];
+    const status = KNOWN_STATUS.includes(e.status) ? e.status
+                 : (/posted/i.test(e.status||'') ? 'posted'
+                 : (/edited/i.test(e.status||'') ? 'edited' : 'idea'));
     return {
       kind:'experiment', raw:e, id:e.id,
       gkey: e._short || groupKey({base:e.product, title:e.product, slug:e.id}),
@@ -177,6 +211,9 @@ function toItem(rec, kind){
       url: e.youtube_url || null,
       script: '',
       status,
+      // pass the upload date through so the DATA REMINDER timer works for a
+      // hand/AI-authored uploaded_pending experiment (status preserved above).
+      uploaded_date: e.uploaded_date || null,
       // an experiment is its own standalone iteration line (no shared track)
       track: e.track || e.id,
       attempt: numOrNull(e.attempt),
@@ -249,7 +286,15 @@ function toItem(rec, kind){
                 : (realKind==='prediction' ? 'awaiting' : 'uploaded')),
     prediction: predObj,            // nested prediction (or null)
     actual: rec.actual || null,
-    ts: parseDate(rec.publish)?.getTime() || 0,
+    // UPLOADED-PENDING support: a version POSTED to YouTube whose performance
+    // data hasn't landed yet (status 'uploaded_pending') carries the date it was
+    // posted. The DATA REMINDER timer reads this to compute "uploaded Nd ago".
+    uploaded_date: rec.uploaded_date || null,
+    // an uploaded-pending version sorts/floats by the day it was posted (so it
+    // sits above never-posted awaiting candidates) even though publish is null
+    // until results land. Real posts keep their publish ts. Explicit guards (no
+    // optional chaining) so older webviews don't hard-fail on a SyntaxError.
+    ts: tsFrom(rec.publish, rec.uploaded_date),
   };
 }
 
@@ -285,6 +330,72 @@ function lifecycleOf(it){
   // statusMeta() to the green '✓ Uploaded' default.
   if(it.kind==='prediction' && !isPostedItem(it)) return 'awaiting';
   return 'draft';
+}
+
+/* ----------------------------------------------------------------------------
+ * UPLOAD STATE — the THREE distinct pre-/post-upload states the owner cares
+ * about, derived from the version's own `status` (the authoritative new field).
+ * This is intentionally separate from lifecycleOf(): the data sets
+ * lifecycle:"awaiting" on an uploaded_pending record, so we must key the
+ * uploaded-pending case on status FIRST so it never collapses into plain
+ * awaiting. Returns one of:
+ *   'awaiting'          — edited, NOT uploaded yet (the to-upload queue)
+ *   'uploaded_pending'  — POSTED to YouTube, performance data not in yet
+ *   'posted'            — uploaded AND has data (normal/clean rendering)
+ *   'scrapped'          — superseded pre-upload test (dimmed)
+ *   'idea' | 'draft'    — experiment idea / draft (unchanged grey treatment)
+ * -------------------------------------------------------------------------- */
+function uploadState(it){
+  // explicit status wins; it is the new authoritative field
+  if(it.status==='uploaded_pending') return 'uploaded_pending';
+  if(it.status==='scrapped') return 'scrapped';
+  if(it.status==='awaiting')  return 'awaiting';
+  // posted-with-data: a real posted video / posted experiment / resolved
+  // prediction (a posted re-edit carrying real metrics).
+  if(isPostedItem(it)) return 'posted';
+  // a never-resolved prediction with no real metrics is still pre-upload
+  if(it.kind==='prediction' && it.swipe==null) return 'awaiting';
+  // experiment ideas / drafts keep their own grey states
+  if(it.kind==='experiment'){
+    if(it.status==='edited') return 'draft';
+    return 'idea';
+  }
+  return lifecycleOf(it);
+}
+// is an uploaded_pending version OVERDUE for a data pull? (>= DATA_LAG_DAYS since
+// it was posted). Drives the prominent "⏰ Data should be ready" reminder on the
+// card + the red "⏰ data ready?" chip on the library tile.
+function isOverdue(it){
+  if(uploadState(it)!=='uploaded_pending') return false;
+  const d = daysSince(it.uploaded_date);
+  return d!=null && d>=DATA_LAG_DAYS;
+}
+// the representative uploaded_pending version of a group — the soonest-overdue
+// (most days since upload) so the tile/row reminder reflects the most pressing
+// in-flight post. Returns null when the group has no uploaded_pending version.
+function pendingItem(g){
+  const pend = g.items.filter(i=>uploadState(i)==='uploaded_pending');
+  if(!pend.length) return null;
+  return pend.slice().sort((a,b)=>(daysSince(b.uploaded_date)||0)-(daysSince(a.uploaded_date)||0))[0];
+}
+// the SAME data-reminder wording as the detail-drawer timer, condensed for a
+// library tile / table row. For an uploaded_pending item: "Uploaded Nd ago"
+// plus either the calm "~N day(s)" ETA note or, once due, the prominent
+// "⏰ Data should be ready" reminder. Returns '' if not uploaded_pending.
+//   variant: 'tile' (card) | 'row' (table cell)
+function pendingReminderHTML(it, variant){
+  if(!it || uploadState(it)!=='uploaded_pending') return '';
+  const cls = variant==='row' ? 'tr-data-reminder' : 'tile-data-reminder';
+  const d = daysSince(it.uploaded_date);
+  const ago = d==null ? 'Uploaded' : `Uploaded ${d}d ago`;
+  if(d!=null && d>=DATA_LAG_DAYS){
+    return `<div class="${cls} is-due"><span class="dr-ago">${esc(ago)}</span>`+
+           `<span class="dr-due">⏰ Data should be ready — pull a fresh report</span></div>`;
+  }
+  const left = d==null ? null : (DATA_LAG_DAYS - d);
+  const note = left!=null ? `data usually ready in ~${left} day${left>1?'s':''}` : '';
+  return `<div class="${cls}"><span class="dr-ago">${esc(ago)}</span>`+
+         (note?`<span class="dr-note">${esc(note)}</span>`:'')+`</div>`;
 }
 function numOrNull(v){ return (v==null || v===''||isNaN(v)) ? null : +v; }
 function bucketFromLen(L){
@@ -322,6 +433,7 @@ function buildGroups(){
     // carrying a nested .prediction) ranks below a fresh post; a pending
     // prediction ranks between resolved and edited drafts.
     const sortStatus = it => {
+      if(it.status==='uploaded_pending') return 'uploaded_pending'; // posted, results pending
       if(it.status==='awaiting') return 'awaiting';
       if(it.status==='scrapped') return 'scrapped';
       if(it.kind==='prediction') return 'prediction';   // pending prediction
@@ -329,7 +441,10 @@ function buildGroups(){
       if(isPostedItem(it)) return 'posted';
       return it.status; // edited / idea / other experiment states
     };
-    const rank = {awaiting:0, posted:1, resolved:2, prediction:3, edited:4, idea:5, scrapped:8};
+    // awaiting-upload (the active to-upload candidate) floats highest; an
+    // uploaded-pending version (posted, waiting on data) sits just below it so
+    // both in-flight states surface above already-resolved posts.
+    const rank = {awaiting:0, uploaded_pending:1, posted:2, resolved:3, prediction:4, edited:5, idea:6, scrapped:8};
     g.items.sort((a,b)=>{
       const ra = rank[sortStatus(a)]==null?7:rank[sortStatus(a)];
       const rb = rank[sortStatus(b)]==null?7:rank[sortStatus(b)];
@@ -357,7 +472,8 @@ function buildGroups(){
     g.display = displayName(g.key, nameRep.title);
     // the ORIGINAL = earliest posted version; keeps the plain "Posted" label so
     // only later uploads read "✓ Uploaded".
-    g.originalId = (byDate.filter(isPostedItem)[0] || null)?.id || null;
+    const origItem = byDate.filter(isPostedItem)[0] || null;
+    g.originalId = origItem ? (origItem.id || null) : null;
     g.versionCount = g.items.length;
     // swipe range across versions w/ swipe
     const sw = g.items.map(i=>i.swipe).filter(v=>v!=null);
@@ -370,7 +486,15 @@ function buildGroups(){
     g.hasExperiment = g.items.some(i=>i.kind==='experiment');
     // ANY version awaiting upload (active in-progress candidate) → flags the
     // tile with an amber chip + accent so in-progress shorts pop in the grid.
-    g.hasAwaiting = g.items.some(i=>lifecycleOf(i)==='awaiting');
+    // Use uploadState (not lifecycleOf) so an uploaded_pending version — which
+    // carries lifecycle:"awaiting" in the data — is NOT miscounted as
+    // awaiting-upload; it is its own distinct "posted, awaiting results" state.
+    g.hasAwaiting = g.items.some(i=>uploadState(i)==='awaiting');
+    // ANY version POSTED but still waiting on performance data → blue tile chip.
+    g.hasUploadedPending = g.items.some(i=>uploadState(i)==='uploaded_pending');
+    // ANY uploaded_pending version OVERDUE for a data pull → red "data ready?"
+    // tile chip + a red dot on the "Awaiting results" filter.
+    g.hasOverdue = g.items.some(isOverdue);
     // BEST = highest stayed-to-watch among POSTED versions (for the timeline badge)
     let best=null;
     for(const i of posted){ if(i.swipe!=null && (best==null || i.swipe>best.swipe)) best=i; }
@@ -402,8 +526,9 @@ function matchesQuery(g, q){
 }
 function passesFilter(g, f){
   switch(f){
+    case 'awaiting':   return g.hasAwaiting;         // ⏳ awaiting upload
+    case 'pending':    return g.hasUploadedPending;  // 📤 awaiting results
     case 'posted':     return g.hasPosted;
-    case 'predicted':  return g.hasPrediction;
     case 'mine':       return g.hasExperiment;
     case 'short':      return g.items.some(i=>isShort(i.bucket));
     case 'long':       return g.items.some(i=>isLong(i.bucket));
@@ -436,30 +561,45 @@ function computeView(){
   return groups;
 }
 
-// filter chip counts (independent of active filter — always vs query only)
+// filter chip counts (independent of active filter — always vs query only).
+// `overdue` is not a chip itself — it's the count of "awaiting results" shorts
+// that are OVERDUE, surfaced as a small red dot/count on the pending chip.
 function chipCounts(){
   let groups = getGroups().filter(g => matchesQuery(g, state.q));
   return {
-    all:   groups.length,
-    posted:groups.filter(g=>g.hasPosted).length,
-    predicted:groups.filter(g=>g.hasPrediction).length,
-    mine:  groups.filter(g=>g.hasExperiment).length,
-    short: groups.filter(g=>g.items.some(i=>isShort(i.bucket))).length,
-    long:  groups.filter(g=>g.items.some(i=>isLong(i.bucket))).length,
+    all:     groups.length,
+    awaiting:groups.filter(g=>g.hasAwaiting).length,
+    pending: groups.filter(g=>g.hasUploadedPending).length,
+    posted:  groups.filter(g=>g.hasPosted).length,
+    mine:    groups.filter(g=>g.hasExperiment).length,
+    short:   groups.filter(g=>g.items.some(i=>isShort(i.bucket))).length,
+    long:    groups.filter(g=>g.items.some(i=>isLong(i.bucket))).length,
+    overdue: groups.filter(g=>g.hasOverdue).length,
   };
 }
 
+// ORGANIZATION FILTERS by UPLOAD STATE:
+//   All · ⏳ Awaiting upload · 📤 Awaiting results · Posted · My experiments ·
+//   Short 20-35s · Long 45-65s
 const CHIP_DEFS = [
-  ['all','All'],['posted','Posted'],['predicted','Predicted'],['mine','My experiments'],
+  ['all','All'],
+  ['awaiting','⏳ Awaiting upload'],
+  ['pending','📤 Awaiting results'],
+  ['posted','Posted'],
+  ['mine','My experiments'],
   ['short','Short 20-35s'],['long','Long 45-65s'],
 ];
 function renderChips(){
   const counts = chipCounts();
-  $('#chips').innerHTML = CHIP_DEFS.map(([k,label])=>
-    `<button type="button" role="radio" aria-checked="${state.filter===k}" class="chip ${state.filter===k?'is-active':''}" data-filter="${k}">
-       ${esc(label)} <span class="ct">${counts[k]}</span>
-     </button>`
-  ).join('');
+  $('#chips').innerHTML = CHIP_DEFS.map(([k,label])=>{
+    // a red overdue dot/count rides on the "Awaiting results" chip when any
+    // uploaded_pending short is >= DATA_LAG_DAYS old (data should be ready).
+    const overdueDot = (k==='pending' && counts.overdue)
+      ? `<span class="chip-overdue" title="${counts.overdue} short(s) overdue for a data pull">⏰ ${counts.overdue}</span>` : '';
+    return `<button type="button" role="radio" aria-checked="${state.filter===k}" class="chip ${state.filter===k?'is-active':''}" data-filter="${k}">
+       ${esc(label)} <span class="ct">${counts[k]}</span>${overdueDot}
+     </button>`;
+  }).join('');
 }
 
 const SORT_LABELS = {date:'Date',views:'Views',stayed:'Stayed-to-watch',avd:'AVD',versions:'# versions',az:'A–Z'};
@@ -498,8 +638,21 @@ function renderGrid(groups){
     const r = g.rep;
     const rSwipe = repSwipe(r);          // real metric, or predicted point for a pending prediction
     const abs = fmtDateAbs(r.publish), rel = fmtDateRel(r.publish);
-    const dateLine = abs ? `Posted ${esc(abs)} <span class="rel">· ${esc(rel)}</span>` :
-                     (r.kind==='prediction' ? 'Predicted — not posted' : 'Not posted');
+    // DATE LINE. A standalone uploaded_pending rep (posted to YouTube, results
+    // not in, publish=null) must NOT fall through to "Predicted — not posted" /
+    // "Not posted" — it IS posted. Show "Uploaded <abs> · <rel>" from
+    // uploaded_date so the line agrees with the "📤 awaiting results" chip.
+    let dateLine;
+    if(abs){
+      dateLine = `Posted ${esc(abs)} <span class="rel">· ${esc(rel)}</span>`;
+    } else if(uploadState(r)==='uploaded_pending'){
+      const uAbs = fmtDateAbs(r.uploaded_date), uRel = fmtDateRel(r.uploaded_date);
+      dateLine = uAbs
+        ? `Uploaded ${esc(uAbs)} <span class="rel">· ${esc(uRel)}</span>`
+        : `Uploaded — awaiting results`;
+    } else {
+      dateLine = r.kind==='prediction' ? 'Predicted — not posted' : 'Not posted';
+    }
     const stayedGood = rSwipe!=null && rSwipe>=75 ? 'stayed-good' : '';
     const range = (g.swMin!=null && g.swMax!=null && g.versionCount>1 && g.swMin!==g.swMax)
       ? `<span class="badge range">${num(g.swMin)}–${num(g.swMax)}%</span>` : '';
@@ -509,14 +662,36 @@ function renderGrid(groups){
     // redundant "▦ 1 version" pill.
     const verPill = g.versionCount>1
       ? `<span class="ver-pill">▦ ${g.versionCount} versions</span>` : '';
-    // count of versions awaiting upload (each attempt counts) for the body chip
-    const awaitN = g.items.filter(i=>lifecycleOf(i)==='awaiting').length;
-    // clean amber chip in the CARD BODY (not floating over the filmstrip) when
-    // any version awaits upload; tile also gets a simple 2px amber border.
-    const awaitChip = awaitN
-      ? `<span class="tile-await">⏳ ${awaitN} awaiting upload</span>` : '';
+    // UPLOAD-STATE chip in the CARD BODY (not floating over the filmstrip). A
+    // short can carry several in-flight versions; show the MOST action-needed
+    // one (overdue data pull > awaiting results > awaiting upload). Tile border
+    // accent follows the same priority: red overdue, blue pending, amber await.
+    const awaitN   = g.items.filter(i=>uploadState(i)==='awaiting').length;
+    const pendingN = g.items.filter(i=>uploadState(i)==='uploaded_pending').length;
+    const tileChip = tileStateChip(g, awaitN, pendingN);
+    const tileCls  = g.hasOverdue ? 'card-overdue'
+                   : g.hasUploadedPending ? 'card-pending'
+                   : g.hasAwaiting ? 'card-awaiting' : '';
+    // DATA REMINDER on the tile (spec: "on card AND tile"). Surface the full
+    // "Uploaded Nd ago" + ~N-day ETA / overdue "Data should be ready" wording —
+    // the same text the detail-drawer timer shows — not just the compressed
+    // chip. When the rep is a posted sibling (rep is NOT the pending version),
+    // prefix it with the in-flight version label so the headline metrics (the
+    // best post's) aren't confused with the awaiting-results version.
+    const pendRep = pendingItem(g);
+    const repIsPending = pendRep && r.id===pendRep.id;
+    const tileReminder = pendRep
+      ? (repIsPending
+          ? pendingReminderHTML(pendRep, 'tile')
+          : `<div class="tile-data-reminder${isOverdue(pendRep)?' is-due':''}">`+
+              `<span class="dr-vlabel">${esc(pendRep.version_label||'new version')} uploaded ${daysSince(pendRep.uploaded_date)!=null?daysSince(pendRep.uploaded_date)+'d ago':''} — awaiting results</span>`+
+              (isOverdue(pendRep)
+                 ? `<span class="dr-due">⏰ Data should be ready — pull a fresh report</span>`
+                 : (()=>{ const dl=daysSince(pendRep.uploaded_date); const lf=dl==null?null:(DATA_LAG_DAYS-dl); return lf!=null?`<span class="dr-note">data usually ready in ~${lf} day${lf>1?'s':''}</span>`:''; })())+
+            `</div>`)
+      : '';
     return `
-      <article class="card ${g.hasAwaiting?'card-awaiting':''}" data-key="${esc(g.key)}">
+      <article class="card ${tileCls}" data-key="${esc(g.key)}">
         <div class="card-strip">
           ${kindTag(g)}
           ${ytBtn}
@@ -525,7 +700,8 @@ function renderGrid(groups){
         <div class="card-body">
           <h3 class="card-title">${esc(g.display)}</h3>
           <div class="card-date">${dateLine}</div>
-          ${awaitChip}
+          ${tileChip}
+          ${tileReminder}
           <div class="card-metrics">
             <div class="metric-big ${stayedGood}">
               <span class="v">${rSwipe!=null?num(rSwipe):'—'}<span class="pct">${rSwipe!=null?'%':''}</span></span>
@@ -554,6 +730,29 @@ function renderGrid(groups){
       </article>`;
   }).join('');
 }
+// the single MOST action-needed upload-state chip for a library tile. Priority:
+//   ⏰ data ready?   (red)   — an uploaded_pending version is OVERDUE (>=lag)
+//   📤 awaiting results (blue) — has an uploaded_pending version (not overdue)
+//   ⏳ awaiting upload  (amber) — has an awaiting-upload version (to-upload queue)
+// Returns '' when the short has none of these in-flight states (clean posted).
+// SINGLE SOURCE OF TRUTH: the chip branches on the SAME group flags
+// (g.hasOverdue / g.hasUploadedPending / g.hasAwaiting) the tile border keys
+// on, so the accent and the chip can never disagree. The awaitN/pendingN counts
+// are used ONLY to pluralize the label, not to decide which chip shows.
+function tileStateChip(g, awaitN, pendingN){
+  if(g.hasOverdue){
+    return `<span class="tile-state tile-overdue">⏰ data ready? · pull report</span>`;
+  }
+  if(g.hasUploadedPending){
+    const lbl = pendingN>1 ? `📤 ${pendingN} awaiting results` : `📤 awaiting results`;
+    return `<span class="tile-state tile-pending">${lbl}</span>`;
+  }
+  if(g.hasAwaiting){
+    const lbl = awaitN>1 ? `⏳ ${awaitN} awaiting upload` : `⏳ awaiting upload`;
+    return `<span class="tile-state tile-await">${lbl}</span>`;
+  }
+  return '';
+}
 function shortBucket(b){
   if(isShort(b)) return 'Short';
   if(isLong(b)) return 'Long';
@@ -572,11 +771,33 @@ function renderTable(groups){
     const abs=fmtDateAbs(r.publish);
     const good = rSwipe!=null && rSwipe>=75 ? 't-good':'';
     const ytBtn = r.url?`<a class="btn btn-yt btn-sm" href="${esc(r.url)}" target="_blank" rel="noopener" data-stop>▶</a>`:'';
-    const tAwait = g.hasAwaiting ? `<span class="t-await">⏳ awaiting upload</span>` : '';
-    return `<tr data-key="${esc(g.key)}" class="${g.hasAwaiting?'tr-awaiting':''}">
+    // upload-state row tag (most action-needed): red overdue > blue pending >
+    // amber awaiting-upload; the left rail accent follows the same priority.
+    const tState = g.hasOverdue
+      ? `<span class="t-state t-overdue">⏰ data ready?</span>`
+      : g.hasUploadedPending
+        ? `<span class="t-state t-pending">📤 awaiting results</span>`
+        : g.hasAwaiting
+          ? `<span class="t-state t-await">⏳ awaiting upload</span>` : '';
+    const rowCls = g.hasOverdue ? 'tr-overdue'
+                 : g.hasUploadedPending ? 'tr-pending'
+                 : g.hasAwaiting ? 'tr-awaiting' : '';
+    // DATA REMINDER on the row (spec: "on card AND tile"): full "Uploaded Nd
+    // ago" + ~N-day ETA / overdue "Data should be ready" wording under the
+    // state tag, mirroring the tile + detail-drawer timer.
+    const pendRep = pendingItem(g);
+    const rowReminder = pendingReminderHTML(pendRep, 'row');
+    // Date-posted cell: a standalone uploaded_pending rep (publish=null) reads
+    // as "Uploaded <abs>", never "predicted"/"—", consistent with its chip.
+    const dateCell = abs
+      ? esc(abs)
+      : (uploadState(r)==='uploaded_pending'
+          ? (fmtDateAbs(r.uploaded_date)?('Uploaded '+esc(fmtDateAbs(r.uploaded_date))):'Uploaded')
+          : (r.kind==='prediction'?'predicted':'—'));
+    return `<tr data-key="${esc(g.key)}" class="${rowCls}">
       <td class="t-thumb">${r.strip?`<img src="${esc(r.strip)}" alt="" loading="lazy">`:''}</td>
-      <td class="t-title">${esc(g.display)}<small>${esc(r.version_label)}</small>${tAwait}</td>
-      <td>${abs?esc(abs):(r.kind==='prediction'?'predicted':'—')}</td>
+      <td class="t-title">${esc(g.display)}<small>${esc(r.version_label)}</small>${tState}${rowReminder}</td>
+      <td>${dateCell}</td>
       <td class="num ${good}">${rSwipe!=null?num(rSwipe)+(r.kind==='prediction'?'%*':'%'):'—'}</td>
       <td class="num">${r.avd!=null?num(r.avd)+'%':'—'}</td>
       <td class="num">${fmtViews(r.views)}</td>
@@ -706,22 +927,26 @@ function sparkHTML(raw){
 //   uploaded  → "✓ UPLOADED" (green)          — posted (first original keeps POSTED)
 // Experiment ideas/drafts keep their grey IDEA/DRAFT badges (unchanged).
 function statusMeta(it, isOriginal){
-  const lc = lifecycleOf(it);
-  if(lc==='awaiting') return {cls:'tl-pill-await', dot:'tl-dot-await', label:'⏳ Awaiting upload'};
-  if(lc==='scrapped') return {cls:'tl-pill-scrapped', dot:'tl-dot-scrapped', label:'✗ Scrapped'};
+  const st = uploadState(it);
+  // UPLOADED · awaiting results — POSTED to YouTube, performance data not in
+  // yet. A DISTINCT blue/teal badge, clearly different from amber awaiting-
+  // upload. Overdue gets a red-accented pill variant.
+  if(st==='uploaded_pending'){
+    return isOverdue(it)
+      ? {cls:'tl-pill-pending tl-pill-overdue', dot:'tl-dot-overdue', label:'📤 Uploaded · data due'}
+      : {cls:'tl-pill-pending', dot:'tl-dot-pending', label:'📤 Uploaded · awaiting results'};
+  }
+  // AWAITING UPLOAD — edited, NOT uploaded yet (the to-upload queue). Amber.
+  if(st==='awaiting') return {cls:'tl-pill-await', dot:'tl-dot-await', label:'⏳ Awaiting upload'};
+  if(st==='scrapped') return {cls:'tl-pill-scrapped', dot:'tl-dot-scrapped', label:'✗ Scrapped'};
   // experiment ideas / drafts (not yet a real upload)
-  if(it.kind==='experiment'){
-    if(it.status==='posted') return {cls:'tl-pill-posted', dot:'tl-dot-posted', label:'✓ Uploaded'};
-    if(it.status==='edited') return {cls:'tl-pill-exp', dot:'tl-dot-exp', label:'Draft'};
+  if(it.kind==='experiment' && st!=='posted'){
+    if(st==='draft') return {cls:'tl-pill-exp', dot:'tl-dot-exp', label:'Draft'};
     return {cls:'tl-pill-exp', dot:'tl-dot-exp', label:'Idea'};
   }
   // a resolved prediction = a posted re-edit that carried a nested prediction
   // and now has real metrics → distinct blue "Resolved" pill.
   if(it.prediction && it.swipe!=null) return {cls:'tl-pill-resolved', dot:'tl-dot-resolved', label:'✓ Resolved'};
-  // a never-posted prediction (no real metrics) must NEVER read as shipped —
-  // guard the green Uploaded default so a planned future version shows the
-  // amber awaiting state even if lifecycleOf didn't already catch it.
-  if(it.kind==='prediction' && it.swipe==null) return {cls:'tl-pill-await', dot:'tl-dot-await', label:'⏳ Awaiting upload'};
   // the very first original keeps the plain "Posted" label; later uploads read
   // "✓ Uploaded" so a re-edit obviously reads as a new shipped version.
   if(isOriginal) return {cls:'tl-pill-posted', dot:'tl-dot-posted', label:'Posted'};
@@ -742,8 +967,17 @@ function detailHTML(g){
   // big version-count pill leads the header; dates fall to the sub-line text.
   const verPill = g.versionCount>1
     ? `<span class="ver-pill ver-pill-lg">▦ ${g.versionCount} versions</span>` : '';
-  const awaitN = g.items.filter(i=>lifecycleOf(i)==='awaiting').length;
+  const awaitN   = g.items.filter(i=>uploadState(i)==='awaiting').length;
+  const pendingN = g.items.filter(i=>uploadState(i)==='uploaded_pending').length;
+  const overdueN = g.items.filter(isOverdue).length;
   const awaitPill = awaitN ? `<span class="ver-pill ver-pill-await">⏳ ${awaitN} awaiting upload</span>` : '';
+  // posted-but-results-pending pill (blue), with a red overdue variant when any
+  // is due for a data pull.
+  const pendingPill = pendingN
+    ? (overdueN
+        ? `<span class="ver-pill ver-pill-overdue">⏰ ${pendingN} awaiting results · data due</span>`
+        : `<span class="ver-pill ver-pill-pending">📤 ${pendingN} awaiting results</span>`)
+    : '';
   let subParts = [];
   if(earliest) subParts.push(`first posted ${esc(earliest)}`);
   if(latest && latest!==earliest) subParts.push(`latest ${esc(latest)}`);
@@ -759,7 +993,7 @@ function detailHTML(g){
     <div class="drawer-head tl-head">
       <div class="tl-head-main">
         <h2 class="drawer-title">${esc(g.display)}</h2>
-        <div class="dh-pills">${verPill}${awaitPill}</div>
+        <div class="dh-pills">${verPill}${awaitPill}${pendingPill}</div>
         ${sub?`<p class="drawer-sub">${sub}</p>`:''}
         <div class="dh-buttons">
           <button type="button" class="btn btn-primary" data-add-detail="${esc(g.key)}">+ Add Test (new version)</button>
@@ -797,8 +1031,8 @@ function buildTracks(items){
   }
   const tracks = [];
   for(const [key, group] of map.entries()){
-    const live = group.filter(i=>lifecycleOf(i)!=='scrapped');
-    const scrapped = group.filter(i=>lifecycleOf(i)==='scrapped');
+    const live = group.filter(i=>uploadState(i)!=='scrapped');
+    const scrapped = group.filter(i=>uploadState(i)==='scrapped');
     // head = newest non-scrapped; else newest scrapped (whole line was rejected)
     const pickNewest = arr => arr.slice().sort((a,b)=>(b.ts||0)-(a.ts||0)
       || (numOrNull(b.attempt)||0)-(numOrNull(a.attempt)||0))[0];
@@ -810,15 +1044,21 @@ function buildTracks(items){
         || (a.ts||0)-(b.ts||0));
     tracks.push({ key, head, history });
   }
-  // ORDER: an awaiting (in-progress, pre-upload) head floats to the TOP so the
-  // active candidate sits first and receives the is-newest accent — matching
-  // buildGroups' awaiting-first ranking. Awaiting heads carry publish=null
-  // (ts=0), so a pure ts-desc sort would sink them below already-posted
-  // originals. Sort by [isAwaiting desc, ts desc].
-  const isAwaitingHead = t => lifecycleOf(t.head)==='awaiting' ? 1 : 0;
+  // ORDER: in-flight heads float to the TOP so the active work sits first and
+  // receives the is-newest accent — matching buildGroups' awaiting-first
+  // ranking. Awaiting heads carry publish=null (ts=0) and uploaded_pending heads
+  // carry publish=null too (ts derives from uploaded_date), so a pure ts-desc
+  // sort would sink them below already-posted originals. Weight by upload state:
+  //   awaiting (to-upload candidate) = 2  → very top
+  //   uploaded_pending (posted, results due) = 1 → just below awaiting
+  //   everything resolved/posted = 0 → ordered by ts desc.
+  const inflightWeight = t => {
+    const st = uploadState(t.head);
+    return st==='awaiting' ? 2 : (st==='uploaded_pending' ? 1 : 0);
+  };
   tracks.sort((a,b)=>{
-    const aw = isAwaitingHead(b) - isAwaitingHead(a);
-    if(aw!==0) return aw;
+    const w = inflightWeight(b) - inflightWeight(a);
+    if(w!==0) return w;
     return (b.head.ts||0)-(a.head.ts||0);
   });
   return tracks;
@@ -828,8 +1068,7 @@ function buildTracks(items){
 // with a collapsible "scrapped attempts" history beneath it.
 function trackNodeHTML(track, g, isNewest){
   const it = track.head;
-  const lc = lifecycleOf(it);
-  const isScrapped = lc==='scrapped';
+  const isScrapped = uploadState(it)==='scrapped';
   const meta = statusMeta(it, g.originalId && it.id===g.originalId);
   const card = versionCardHTML(it, g, true);
   const history = track.history.length ? scrappedSectionHTML(track.history, g) : '';
@@ -895,9 +1134,11 @@ function scrappedRowHTML(it, g){
 function versionCardHTML(it, g, isHead){
   const isOriginal = g.originalId && it.id===g.originalId;
   const meta = statusMeta(it, isOriginal);
-  const lc = lifecycleOf(it);
-  const isAwaiting = lc==='awaiting';
-  const isScrapped = lc==='scrapped';
+  const st = uploadState(it);
+  const isAwaiting = st==='awaiting';            // edited, NOT uploaded yet
+  const isPending  = st==='uploaded_pending';    // POSTED, results not in yet
+  const isScrapped = st==='scrapped';
+  const overdue    = isPending && isOverdue(it);
   const abs = fmtDateAbs(it.publish);
   const rel = fmtDateRel(it.publish);
   // BEST star: only meaningful when comparing 2+ REAL posted versions. Gate the
@@ -910,11 +1151,39 @@ function versionCardHTML(it, g, isHead){
                  g.items.filter(i=>isPostedItem(i) && i.swipe!=null).length>1;
   const stayedGood = it.swipe!=null && it.swipe>=75;
 
-  // date block — prominent on the card
+  // DATA REMINDER TIMER — only for an uploaded_pending version. Shows how long
+  // since it was posted and either a calm "data usually ready in ~N day(s)" note
+  // or, once due, a prominent "⏰ Data should be ready — pull a fresh report"
+  // reminder (the AI then ingests a report to fill the results).
+  const dSince = isPending ? daysSince(it.uploaded_date) : null;
+  const timerBlock = isPending ? (()=>{
+    const ago = dSince==null ? '' :
+      `<span class="tl-timer-ago">Uploaded ${dSince}d ago</span>`;
+    if(dSince==null){
+      return `<div class="tl-timer"><div class="tl-timer-head">${ago}</div></div>`;
+    }
+    if(dSince < DATA_LAG_DAYS){
+      const left = DATA_LAG_DAYS - dSince;
+      return `<div class="tl-timer">
+        <div class="tl-timer-head">${ago}</div>
+        <div class="tl-timer-note">data usually ready in ~${left} day${left>1?'s':''}</div>
+      </div>`;
+    }
+    return `<div class="tl-timer tl-timer-due">
+      <div class="tl-timer-head">${ago}</div>
+      <div class="tl-timer-reminder">⏰ Data should be ready — pull a fresh report</div>
+    </div>`;
+  })() : '';
+
+  // date block — prominent on the card. An uploaded_pending version shows the
+  // date it was POSTED to YouTube (not a results date) with a blue/teal accent.
+  const upAbs = fmtDateAbs(it.uploaded_date), upRel = fmtDateRel(it.uploaded_date);
   const dateBlock = abs
     ? `<div class="tl-date"><span class="tl-date-abs">${esc(abs)}</span>${rel?`<span class="tl-date-rel">${esc(rel)}</span>`:''}</div>`
-    : (isAwaiting
-        ? `<div class="tl-date tl-date-future"><span class="tl-date-abs">Awaiting upload</span><span class="tl-date-rel">not uploaded yet</span></div>`
+    : (isPending
+        ? `<div class="tl-date tl-date-pending"><span class="tl-date-abs">${upAbs?'Uploaded '+esc(upAbs):'Uploaded'}</span><span class="tl-date-rel">${upRel?esc(upRel)+' · awaiting results':'awaiting results'}</span></div>`
+        : isAwaiting
+        ? `<div class="tl-date tl-date-future"><span class="tl-date-abs">Awaiting upload</span><span class="tl-date-rel">not posted yet</span></div>`
         : isScrapped
         ? `<div class="tl-date tl-date-scrapped"><span class="tl-date-abs">Scrapped</span><span class="tl-date-rel">never uploaded</span></div>`
         : `<div class="tl-date"><span class="tl-date-abs">Not posted</span></div>`);
@@ -942,9 +1211,14 @@ function versionCardHTML(it, g, isHead){
       <div class="tl-expand-body">${featuresHTML(it.raw.features)}</div>
     </details>` : '';
 
-  // card state classes: clean amber border/tint for awaiting; dim + grayscale
-  // for a scrapped head (whole line rejected) so it stacks quietly.
-  const cardState = isAwaiting ? 'tl-card-awaiting' : (isScrapped ? 'tl-card-scrapped' : '');
+  // card state classes:
+  //   awaiting          → clean 2px amber border/tint (to-upload queue)
+  //   uploaded_pending  → DISTINCT blue accent border (posted, results pending);
+  //                       overdue adds a red emphasis variant
+  //   scrapped          → dim + grayscale so rejected tests stack quietly
+  const cardState = isAwaiting ? 'tl-card-awaiting'
+                  : isPending  ? (overdue ? 'tl-card-pending tl-card-overdue' : 'tl-card-pending')
+                  : isScrapped ? 'tl-card-scrapped' : '';
   // AWAITING pill belongs in the header row (top-right), never over the filmstrip.
   return `
       <div class="tl-card ${cardState} ${isHead?'':'tl-card-nested'}">
@@ -957,6 +1231,7 @@ function versionCardHTML(it, g, isHead){
         </div>
         <div class="tl-version-label ${isScrapped?'tl-version-strike':''}">${esc(it.version_label)}</div>
         ${strip}
+        ${timerBlock}
         <div class="tl-metrics">
           <div class="tl-metric ${stayedGood?'is-good':''}">
             <span class="tl-mv">${it.swipe!=null?num(it.swipe)+'%':'—'}</span>
@@ -1002,11 +1277,15 @@ function predictionPanelHTML(it){
                : verdict==='MISS'?'tl-v-miss':'tl-v-pending';
   const rangeTxt = ps.range ? ` (${ps.range[0]}–${ps.range[1]})` : '';
 
-  // headline
+  // headline. Distinguish "uploaded, awaiting results" (posted to YouTube, data
+  // not in yet) from "awaiting upload" (not posted yet) so the pending line
+  // reads correctly for an uploaded_pending version.
+  const awaitingResults = uploadState(it)==='uploaded_pending';
   let headline;
   if(pending){
+    const awaitTxt = awaitingResults ? '— uploaded, awaiting results' : '— awaiting upload';
     headline = `<span class="tl-pred-pt">Predicted ${predPt!=null?num(predPt)+'%':'—'}${esc(rangeTxt)}</span>
-                <span class="tl-pred-await">— awaiting upload</span>`;
+                <span class="tl-pred-await">${awaitTxt}</span>`;
   } else {
     const delta = (actual!=null && predPt!=null) ? (actual - predPt) : null;
     const deltaTxt = delta!=null ? `<span class="tl-pred-delta ${delta>=0?'pos':'neg'}">${delta>=0?'+':''}${num(delta)} pts</span>` : '';

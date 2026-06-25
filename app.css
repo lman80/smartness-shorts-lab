@@ -24,6 +24,9 @@
   --green:#16a34a; --green-soft:#e7f6ec;
   --amber:#d97706; --amber-soft:#fdf2e1;
   --blue:#2563eb;  --blue-soft:#e8f0fe;
+  /* uploaded-pending = posted to YouTube, awaiting results. A distinct teal so
+     it never reads as the amber to-upload queue or the indigo accent. */
+  --teal:#0e7490;  --teal-ink:#0c6379; --teal-soft:#e2f3f6; --teal-line:#bfe4ea;
   --grey:#64748b;  --grey-soft:#eef1f5;
   --red:#dc2626;   --red-soft:#fdecec;
   --yt:#ff0033;
@@ -185,6 +188,14 @@ a{color:var(--accent);text-decoration:none}
   background:rgba(0,0,0,.06);border-radius:999px;padding:0 6px;font-size:11px;font-weight:700;
 }
 .chip.is-active .ct{background:rgba(255,255,255,.22)}
+/* red overdue count riding on the "📤 Awaiting results" chip when an uploaded
+   short is due for a data pull */
+.chip-overdue{
+  background:var(--red);color:#fff;border-radius:999px;
+  padding:0 6px;font-size:10.5px;font-weight:800;line-height:1.7;
+  display:inline-flex;align-items:center;gap:3px;
+}
+.chip.is-active .chip-overdue{background:#fff;color:var(--red)}
 
 /* ------------------------------------------------------------------- kpi --- */
 .kpi{
@@ -270,17 +281,62 @@ a{color:var(--accent);text-decoration:none}
 .ver-pill-lg{font-size:16px;padding:6px 14px}
 .ver-pill-sm{font-size:12.5px;padding:3px 9px}
 .ver-pill-await{background:var(--amber-soft);color:#a85d05;border-color:#f0dcb6}
+.ver-pill-pending{background:var(--teal-soft);color:var(--teal-ink);border-color:var(--teal-line)}
+.ver-pill-overdue{background:var(--red-soft);color:#b02020;border-color:#f3c9c9}
 
-/* clean amber "awaiting upload" chip in the CARD BODY (not floating over the
-   filmstrip) + a simple 2px amber border on the tile. Tidy + intentional. */
-.tile-await{
+/* UPLOAD-STATE chip in the CARD BODY (not floating over the filmstrip) + a
+   matching 2px border on the tile. One chip per tile (most action-needed):
+     amber  ⏳ awaiting upload     (to-upload queue)
+     teal   📤 awaiting results    (posted, results pending)
+     red    ⏰ data ready?         (uploaded_pending overdue for a data pull)
+   Tidy + intentional. */
+.tile-state{
   align-self:flex-start;
   display:inline-flex;align-items:center;gap:5px;
   font-size:11.5px;font-weight:800;letter-spacing:.01em;
-  background:var(--amber);color:#fff;border-radius:999px;padding:3px 10px;
+  color:#fff;border-radius:999px;padding:3px 10px;
 }
+.tile-await{background:var(--amber)}
+.tile-pending{background:var(--teal)}
+.tile-overdue{background:var(--red)}
 .card-awaiting{border:2px solid var(--amber)}
 .card-awaiting:hover{border-color:var(--amber)}
+.card-pending{border:2px solid var(--teal)}
+.card-pending:hover{border-color:var(--teal)}
+.card-overdue{border:2px solid var(--red)}
+.card-overdue:hover{border-color:var(--red)}
+
+/* DATA REMINDER on the library tile (spec: "on card AND tile"). The full
+   "Uploaded Nd ago" + ~N-day ETA wording the detail-drawer timer shows, sized
+   down for the card. A calm teal block; once data is due it escalates to red
+   with the prominent "Data should be ready" reminder. When the headline rep is
+   a posted sibling, .dr-vlabel names the in-flight version so the metrics above
+   aren't confused with the awaiting-results cut. */
+.tile-data-reminder{
+  align-self:stretch;display:flex;flex-direction:column;gap:2px;
+  border:1px solid var(--teal-line);background:var(--teal-soft);
+  border-radius:var(--radius-sm);padding:6px 9px;margin-top:1px;
+}
+.tile-data-reminder.is-due{border-color:#f3c9c9;background:var(--red-soft)}
+.tile-data-reminder .dr-ago{font-size:11.5px;font-weight:800;color:var(--teal-ink);font-variant-numeric:tabular-nums}
+.tile-data-reminder.is-due .dr-ago{color:#b02020}
+.tile-data-reminder .dr-vlabel{font-size:11.5px;font-weight:800;color:var(--teal-ink)}
+.tile-data-reminder.is-due .dr-vlabel{color:#b02020}
+.tile-data-reminder .dr-note{font-size:11px;font-weight:600;color:var(--teal-ink);opacity:.85}
+.tile-data-reminder .dr-due{
+  font-size:11px;font-weight:900;color:#fff;background:var(--red);
+  border-radius:6px;padding:4px 8px;letter-spacing:.005em;align-self:flex-start;margin-top:1px;
+}
+
+/* DATA REMINDER on a table row (compact, under the state tag) */
+.tr-data-reminder{display:flex;flex-direction:column;gap:1px;margin-top:4px}
+.tr-data-reminder .dr-ago{font-size:11px;font-weight:800;color:var(--teal-ink);font-variant-numeric:tabular-nums}
+.tr-data-reminder.is-due .dr-ago{color:#b02020}
+.tr-data-reminder .dr-note{font-size:10.5px;font-weight:600;color:var(--mut)}
+.tr-data-reminder .dr-due{
+  font-size:10px;font-weight:900;color:#fff;background:var(--red);
+  border-radius:5px;padding:2px 6px;letter-spacing:.01em;align-self:flex-start;margin-top:2px;
+}
 
 /* overflow menu */
 .menu-wrap{position:relative}
@@ -322,13 +378,17 @@ table.tbl{width:100%;border-collapse:collapse;font-size:13px}
 .tbl .t-title small{display:block;color:var(--mut);font-weight:500;font-size:11.5px}
 .tbl .t-good{color:var(--green)}
 .tbl .t-act{white-space:nowrap;text-align:right}
-.tbl .t-await{
+.tbl .t-state{
   display:inline-block;margin-top:3px;
   font-size:10.5px;font-weight:800;letter-spacing:.02em;
-  background:var(--amber-soft);color:#a85d05;border:1px solid #f0dcb6;
-  border-radius:6px;padding:1px 7px;
+  border-radius:6px;padding:1px 7px;border:1px solid transparent;
 }
+.tbl .t-await{background:var(--amber-soft);color:#a85d05;border-color:#f0dcb6}
+.tbl .t-pending{background:var(--teal-soft);color:var(--teal-ink);border-color:var(--teal-line)}
+.tbl .t-overdue{background:var(--red-soft);color:#b02020;border-color:#f3c9c9}
 .tbl tr.tr-awaiting td:first-child{box-shadow:inset 3px 0 0 var(--amber)}
+.tbl tr.tr-pending td:first-child{box-shadow:inset 3px 0 0 var(--teal)}
+.tbl tr.tr-overdue td:first-child{box-shadow:inset 3px 0 0 var(--red)}
 
 /* --------------------------------------------------------------- findings -- */
 .findings-head{margin:6px 0 18px}
@@ -472,6 +532,8 @@ dialog::backdrop{background:rgba(17,22,35,.42);backdrop-filter:blur(2px)}
 }
 .tl-dot-posted{background:var(--green)}
 .tl-dot-await{background:var(--amber);box-shadow:0 0 0 4px var(--bg), 0 0 0 6px #f0cd8e}
+.tl-dot-pending{background:var(--teal);box-shadow:0 0 0 4px var(--bg), 0 0 0 6px var(--teal-line)}
+.tl-dot-overdue{background:var(--red);box-shadow:0 0 0 4px var(--bg), 0 0 0 6px #f3c9c9}
 .tl-dot-scrapped{background:var(--mut-2)}
 .tl-dot-resolved{background:var(--blue)}
 .tl-dot-exp{background:var(--grey)}
@@ -497,6 +559,22 @@ dialog::backdrop{background:rgba(17,22,35,.42);backdrop-filter:blur(2px)}
   border:2px solid var(--amber);
   background:var(--amber-soft);
   box-shadow:var(--shadow);
+}
+
+/* UPLOADED · AWAITING RESULTS — DISTINCT teal accent border (clearly different
+   from the amber awaiting-upload treatment): posted to YouTube, performance
+   data not in yet. Overdue (data due) escalates to a red border. Wins over the
+   is-newest accent so the in-flight state reads unmistakably. */
+.tl-card.tl-card-pending,
+.tl-node.is-newest .tl-card.tl-card-pending{
+  border:2px solid var(--teal);
+  background:var(--teal-soft);
+  box-shadow:var(--shadow);
+}
+.tl-card.tl-card-pending.tl-card-overdue,
+.tl-node.is-newest .tl-card.tl-card-pending.tl-card-overdue{
+  border-color:var(--red);
+  background:var(--red-soft);
 }
 
 /* SCRAPPED — de-emphasised so several rejected tests can stack without clutter.
@@ -557,6 +635,7 @@ dialog::backdrop{background:rgba(17,22,35,.42);backdrop-filter:blur(2px)}
 .tl-date-abs{font-size:15px;font-weight:800;letter-spacing:-.01em;color:var(--ink)}
 .tl-date-rel{font-size:11.5px;font-weight:600;color:var(--mut-2);margin-top:1px}
 .tl-date-future .tl-date-abs{color:var(--amber)}
+.tl-date-pending .tl-date-abs{color:var(--teal-ink)}
 .tl-date-scrapped .tl-date-abs{color:var(--mut);text-decoration:line-through}
 .tl-pills{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
 .tl-pill{
@@ -567,6 +646,10 @@ dialog::backdrop{background:rgba(17,22,35,.42);backdrop-filter:blur(2px)}
 /* AWAITING UPLOAD — clean solid amber pill in the card header row (top-right),
    the loudest pill so it's impossible to miss, never over the filmstrip */
 .tl-pill-await{background:var(--amber);color:#fff;font-weight:900}
+/* UPLOADED · AWAITING RESULTS — solid teal pill, clearly different from amber */
+.tl-pill-pending{background:var(--teal);color:#fff;font-weight:900}
+/* overdue for a data pull — escalate the pending pill to red */
+.tl-pill-pending.tl-pill-overdue{background:var(--red);color:#fff}
 /* SCRAPPED — muted grey, quiet */
 .tl-pill-scrapped{background:var(--grey-soft);color:var(--grey)}
 .tl-pill-resolved{background:var(--blue-soft);color:#1d4ed8}
@@ -589,6 +672,26 @@ dialog::backdrop{background:rgba(17,22,35,.42);backdrop-filter:blur(2px)}
 .tl-metric.is-good .tl-mv{color:var(--green)}
 
 .tl-note{color:var(--ink-2);font-size:12.5px;line-height:1.55;background:var(--bg);border-radius:8px;padding:9px 11px}
+
+/* DATA REMINDER TIMER (uploaded_pending version cards). A calm teal block with
+   "Uploaded Nd ago" + an ETA note; once the data is due it flips to a prominent
+   amber/red reminder to pull a fresh report. */
+.tl-timer{
+  border:1px solid var(--teal-line);background:var(--teal-soft);
+  border-radius:var(--radius-sm);padding:9px 12px;display:flex;flex-direction:column;gap:3px;
+}
+.tl-timer-head{font-size:12.5px;font-weight:800;color:var(--teal-ink);display:flex;align-items:center;gap:6px}
+.tl-timer-ago{font-variant-numeric:tabular-nums}
+.tl-timer-note{font-size:11.5px;font-weight:600;color:var(--teal-ink);opacity:.85}
+.tl-timer.tl-timer-due{
+  border-color:#f3c9c9;background:var(--red-soft);
+}
+.tl-timer.tl-timer-due .tl-timer-head{color:#b02020}
+.tl-timer-reminder{
+  font-size:12.5px;font-weight:900;color:#fff;background:var(--red);
+  border-radius:7px;padding:6px 10px;letter-spacing:.005em;
+  display:inline-flex;align-items:center;gap:6px;align-self:flex-start;
+}
 
 .tl-card-actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .tl-yt{font-size:12.5px}
