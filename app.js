@@ -114,6 +114,12 @@ function pct(n, d){
   if(n==null || isNaN(n)) return '—';
   return (+n).toFixed(d==null?0:d)+'%';
 }
+// video length: "23s" under a minute, "1:05" at/over a minute
+function fmtDur(s){
+  if(s==null || s==='' || isNaN(s)) return null;
+  s = Math.round(+s);
+  return s<60 ? s+'s' : Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
+}
 function num(n, d){
   if(n==null || isNaN(n)) return '—';
   return (+n).toFixed(d==null?0:d);
@@ -269,6 +275,7 @@ function toItem(rec, kind){
     topic: rec.topic || '',
     publish: rec.publish || null,
     bucket: rec.bucket || '',
+    duration: numOrNull(rec.duration),
     swipe: numOrNull(swipeVal),
     avd: numOrNull(avdVal),
     views: numOrNull(viewsVal),
@@ -738,6 +745,7 @@ function renderGrid(groups){
           <div class="card-foot">
             ${verPill}
             ${range}
+            ${fmtDur(r.duration)?`<span class="badge dur">⏱ ${fmtDur(r.duration)}</span>`:''}
             ${r.bucket?`<span class="badge bucket">${esc(shortBucket(r.bucket))}</span>`:''}
             <div class="card-actions" data-stop>
               <button type="button" class="btn btn-sm btn-primary" data-add="${esc(g.key)}">+ Add Test</button>
@@ -1272,6 +1280,10 @@ function versionCardHTML(it, g, isHead){
           <div class="tl-metric">
             <span class="tl-mv">${fmtViews(it.views)}</span>
             <span class="tl-ml">Views</span>
+          </div>
+          <div class="tl-metric">
+            <span class="tl-mv">${fmtDur(it.duration)||'—'}</span>
+            <span class="tl-ml">Length</span>
           </div>
         </div>
         ${it.notes?`<div class="tl-note">${esc(it.notes)}</div>`:''}
@@ -2018,7 +2030,9 @@ function renderScriptAnalysis(sc){
 function refCardHTML(v){
   const ai = v.ai||{}, px = v.pixel||{}, full = v.full||{};
   const ov = full.opening_visual||{}, oa = full.opening_audio||{}, sc = full.script||null;
+  const dur = fmtDur(v.duration!=null ? v.duration : (full.real_duration));
   const tags = [];
+  if(dur) tags.push(`<span class="badge dur">⏱ ${dur}</span>`);
   if(v.format) tags.push(`<span class="badge fmt">${esc(prettyTag(v.format))}</span>`);
   if(v.niche)  tags.push(`<span class="badge">${esc(prettyTag(v.niche))}</span>`);
   if(ai.hook_archetype) tags.push(`<span class="badge hook">${esc(prettyTag(ai.hook_archetype))}</span>`);
