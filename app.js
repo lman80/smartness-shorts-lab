@@ -217,6 +217,7 @@ function toItem(rec, kind){
       // an experiment is its own standalone iteration line (no shared track)
       track: e.track || e.id,
       attempt: numOrNull(e.attempt),
+      pin: e.pin || null,
       ts: (e._ts!=null ? +e._ts : (Number(String(e.id||'').replace(/\D/g,'')) || 0)),
     };
   }
@@ -284,6 +285,7 @@ function toItem(rec, kind){
     lifecycle: rec.lifecycle || (realStatus==='awaiting' ? 'awaiting'
                 : realStatus==='scrapped' ? 'scrapped'
                 : (realKind==='prediction' ? 'awaiting' : 'uploaded')),
+    pin: rec.pin || null,           // stable 4-digit reference number
     prediction: predObj,            // nested prediction (or null)
     actual: rec.actual || null,
     // UPLOADED-PENDING support: a version POSTED to YouTube whose performance
@@ -410,9 +412,25 @@ function bucketFromLen(L){
 // build all items + groups
 function buildGroups(){
   const items = [];
-  state.videos.forEach(v => items.push(toItem(v,'posted')));
-  state.predictions.forEach(p => items.push(toItem(p,'prediction')));
-  state.experiments.forEach(e => items.push(toItem(e,'experiment')));
+  // UPLOAD MARKERS: when the owner clicks "Mark uploaded" we store a record in
+  // experiments.json (_kind:'upload', keyed by the version's PIN) instead of
+  // editing the read-only data.json. Overlay it here so an 'awaiting' version
+  // flips to 'uploaded_pending' (with its URL + date) until the AI folds it into
+  // the prediction JSON on the next "scan". These markers are NOT shown as cards.
+  const uploads = {};
+  state.experiments.forEach(e => { if(e._kind==='upload' && e.pin) uploads[String(e.pin)] = e; });
+  const applyUpload = (it) => {
+    const u = it.pin ? uploads[String(it.pin)] : null;
+    if(u && uploadState(it)==='awaiting'){
+      it.status='uploaded_pending'; it.lifecycle='uploaded';
+      it.url = u.url || it.url; it.uploaded_date = u.uploaded_date || it.uploaded_date;
+      it.ts = tsFrom(it.publish, it.uploaded_date);
+    }
+    return it;
+  };
+  state.videos.forEach(v => items.push(applyUpload(toItem(v,'posted'))));
+  state.predictions.forEach(p => items.push(applyUpload(toItem(p,'prediction'))));
+  state.experiments.forEach(e => { if(e._kind!=='upload') items.push(toItem(e,'experiment')); });
 
   const map = new Map();
   for(const it of items){
@@ -1225,6 +1243,7 @@ function versionCardHTML(it, g, isHead){
         <div class="tl-card-top">
           ${dateBlock}
           <div class="tl-pills">
+            ${it.pin?`<span class="tl-pill tl-pill-pin" title="Reference number — tell the AI this to act on this version">#${esc(it.pin)}</span>`:''}
             <span class="tl-pill ${meta.cls}">${esc(meta.label)}</span>
             ${isBest?`<span class="tl-pill tl-pill-best">★ BEST</span>`:''}
           </div>
@@ -1250,6 +1269,7 @@ function versionCardHTML(it, g, isHead){
         ${predPanel}
         <div class="tl-card-actions">
           ${ytBtn}
+          ${isAwaiting?`<button type="button" class="btn btn-sm btn-mark" data-mark-uploaded="${esc(it.pin||'')}">📤 Mark uploaded</button>`:''}
           <button type="button" class="btn btn-sm" data-clone="${esc(it.id)}">+ Add Test (clone this)</button>
         </div>
         ${scriptBlock}
@@ -1369,6 +1389,31 @@ function wireDetail(dlg, g){
   $('[data-close-detail]', dlg)?.addEventListener('click', ()=>closeDetail());
   $('[data-add-detail]', dlg)?.addEventListener('click', ()=>openAddTest(g.key));
   $$('[data-clone]', dlg).forEach(b=>b.addEventListener('click', ()=>openAddTest(g.key, b.dataset.clone)));
+  $$('[data-mark-uploaded]', dlg).forEach(b=>b.addEventListener('click', ()=>markUploaded(b.dataset.markUploaded)));
+}
+
+// pull the 11-char video id out of any YouTube URL form
+function extractVideoId(url){
+  const m = String(url||'').match(/(?:shorts\/|watch\?v=|youtu\.be\/|\/embed\/|\/v\/)([A-Za-z0-9_-]{6,})/);
+  return m ? m[1] : null;
+}
+// "Mark uploaded": record that an AWAITING version was posted to YouTube + its URL.
+// Stored as an upload marker in experiments.json (synced) keyed by PIN; the overlay
+// in buildGroups flips it to 'uploaded_pending' until the AI scans + folds it in.
+function markUploaded(pin){
+  if(!pin){ alert('This version has no reference number yet — rebuild the dashboard.'); return; }
+  const url = prompt('Paste the YouTube URL for #'+pin+' (the version you just uploaded):', '');
+  if(url===null) return;                       // cancelled
+  const u = (url||'').trim();
+  state.experiments = state.experiments.filter(e=>!(e._kind==='upload' && String(e.pin)===String(pin)));
+  state.experiments.push({
+    id:'upload_'+pin, _kind:'upload', pin:String(pin), url:u,
+    video_id: extractVideoId(u), uploaded_date: new Date().toISOString().slice(0,10), _ts: Date.now(),
+  });
+  persistLocal(); render();
+  const g = (state.groups||[]).find(gr=>gr.items.some(i=>String(i.pin)===String(pin)));
+  if(g) openDetail(g.key);
+  ghSave();
 }
 function closeDetail(){
   const dlg = $('#detail');

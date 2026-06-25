@@ -643,6 +643,9 @@ dialog::backdrop{background:rgba(17,22,35,.42);backdrop-filter:blur(2px)}
   border-radius:7px;padding:3px 9px;white-space:nowrap;
 }
 .tl-pill-posted{background:var(--green-soft);color:#0f7a36}
+.tl-pill-pin{background:#11182a;color:#fff;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.btn-mark{border-color:var(--blue);color:var(--blue);background:var(--blue-soft);font-weight:700}
+.btn-mark:hover{background:#dbe7fe}
 /* AWAITING UPLOAD — clean solid amber pill in the card header row (top-right),
    the loudest pill so it's impossible to miss, never over the filmstrip */
 .tl-pill-await{background:var(--amber);color:#fff;font-weight:900}

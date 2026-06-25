@@ -52,7 +52,8 @@
      "stakes": 4.0,
      "words_per_sec": 2.93
     }
-   }
+   },
+   "pin": "2797"
   },
   {
    "kind": "posted",
@@ -105,7 +106,8 @@
      "stakes": 5.0,
      "words_per_sec": 2.92
     }
-   }
+   },
+   "pin": "5705"
   },
   {
    "kind": "posted",
@@ -158,7 +160,8 @@
      "stakes": 2.0,
      "words_per_sec": 3.14
     }
-   }
+   },
+   "pin": "9078"
   },
   {
    "kind": "posted",
@@ -211,7 +214,8 @@
      "stakes": 4.0,
      "words_per_sec": 3.85
     }
-   }
+   },
+   "pin": "3252"
   },
   {
    "kind": "posted",
@@ -264,7 +268,8 @@
      "stakes": 4.0,
      "words_per_sec": 2.67
     }
-   }
+   },
+   "pin": "3952"
   },
   {
    "kind": "posted",
@@ -317,7 +322,8 @@
      "stakes": 4.0,
      "words_per_sec": 3.66
     }
-   }
+   },
+   "pin": "9456"
   },
   {
    "kind": "posted",
@@ -370,7 +376,8 @@
      "stakes": 1.0,
      "words_per_sec": 3.02
     }
-   }
+   },
+   "pin": "2574"
   },
   {
    "kind": "posted",
@@ -423,7 +430,8 @@
      "stakes": 1.0,
      "words_per_sec": 3.45
     }
-   }
+   },
+   "pin": "7251"
   },
   {
    "kind": "posted",
@@ -476,7 +484,8 @@
      "stakes": 2.0,
      "words_per_sec": 3.7
     }
-   }
+   },
+   "pin": "5133"
   },
   {
    "kind": "posted",
@@ -529,7 +538,8 @@
      "stakes": 4.0,
      "words_per_sec": 2.94
     }
-   }
+   },
+   "pin": "6282"
   },
   {
    "kind": "posted",
@@ -582,7 +592,8 @@
      "stakes": 4.0,
      "words_per_sec": 3.11
     }
-   }
+   },
+   "pin": "8512"
   },
   {
    "kind": "posted",
@@ -635,7 +646,8 @@
      "stakes": 4.0,
      "words_per_sec": 3.63
     }
-   }
+   },
+   "pin": "6053"
   },
   {
    "kind": "posted",
@@ -688,7 +700,8 @@
      "stakes": 4.0,
      "words_per_sec": 3.17
     }
-   }
+   },
+   "pin": "8616"
   },
   {
    "kind": "posted",
@@ -741,7 +754,8 @@
      "stakes": 2.0,
      "words_per_sec": 2.84
     }
-   }
+   },
+   "pin": "6933"
   },
   {
    "kind": "posted",
@@ -794,7 +808,8 @@
      "stakes": 4.0,
      "words_per_sec": 2.83
     }
-   }
+   },
+   "pin": "5808"
   },
   {
    "kind": "posted",
@@ -847,7 +862,8 @@
      "stakes": null,
      "words_per_sec": 0.0
     }
-   }
+   },
+   "pin": "9566"
   },
   {
    "kind": "posted",
@@ -900,7 +916,8 @@
      "stakes": 4.0,
      "words_per_sec": 2.87
     }
-   }
+   },
+   "pin": "6919"
   },
   {
    "kind": "posted",
@@ -953,7 +970,8 @@
      "stakes": 4.0,
      "words_per_sec": 3.15
     }
-   }
+   },
+   "pin": "4322"
   },
   {
    "kind": "posted",
@@ -1006,7 +1024,8 @@
      "stakes": 4.0,
      "words_per_sec": 3.0
     }
-   }
+   },
+   "pin": "9106"
   },
   {
    "kind": "posted",
@@ -1059,7 +1078,8 @@
      "stakes": 4.0,
      "words_per_sec": 3.64
     }
-   }
+   },
+   "pin": "8090"
   },
   {
    "kind": "posted",
@@ -1112,7 +1132,8 @@
      "stakes": 2.0,
      "words_per_sec": 2.67
     }
-   }
+   },
+   "pin": "4086"
   },
   {
    "kind": "posted",
@@ -1165,7 +1186,8 @@
      "stakes": 4.0,
      "words_per_sec": 3.74
     }
-   }
+   },
+   "pin": "3835"
   },
   {
    "kind": "posted",
@@ -1218,7 +1240,8 @@
      "stakes": 4.0,
      "words_per_sec": 3.11
     }
-   }
+   },
+   "pin": "6232"
   },
   {
    "kind": "posted",
@@ -1271,7 +1294,8 @@
      "stakes": 4.0,
      "words_per_sec": 3.12
     }
-   }
+   },
+   "pin": "4883"
   },
   {
    "kind": "posted",
@@ -1324,7 +1348,8 @@
      "stakes": 4.0,
      "words_per_sec": 3.48
     }
-   }
+   },
+   "pin": "2466"
   },
   {
    "kind": "posted",
@@ -1377,7 +1402,8 @@
      "stakes": 3.0,
      "words_per_sec": 3.81
     }
-   }
+   },
+   "pin": "6554"
   },
   {
    "kind": "posted",
@@ -1430,7 +1456,8 @@
      "stakes": 4.0,
      "words_per_sec": 2.96
     }
-   }
+   },
+   "pin": "2015"
   },
   {
    "kind": "posted",
@@ -1483,7 +1510,8 @@
      "stakes": 3.0,
      "words_per_sec": 2.78
     }
-   }
+   },
+   "pin": "7115"
   },
   {
    "kind": "posted",
@@ -1536,7 +1564,8 @@
      "stakes": 2.0,
      "words_per_sec": 3.62
     }
-   }
+   },
+   "pin": "5561"
   },
   {
    "kind": "posted",
@@ -1589,7 +1618,8 @@
      "stakes": 4.0,
      "words_per_sec": 3.07
     }
-   }
+   },
+   "pin": "5060"
   },
   {
    "kind": "posted",
@@ -1642,7 +1672,8 @@
      "stakes": 4.0,
      "words_per_sec": 3.42
     }
-   }
+   },
+   "pin": "6913"
   },
   {
    "kind": "posted",
@@ -1695,7 +1726,8 @@
      "stakes": 4.0,
      "words_per_sec": 3.0
     }
-   }
+   },
+   "pin": "7250"
   },
   {
    "kind": "posted",
@@ -1748,7 +1780,8 @@
      "stakes": 3.0,
      "words_per_sec": 2.42
     }
-   }
+   },
+   "pin": "4469"
   },
   {
    "kind": "posted",
@@ -1801,7 +1834,8 @@
      "stakes": 4.0,
      "words_per_sec": 3.09
     }
-   }
+   },
+   "pin": "7057"
   },
   {
    "kind": "posted",
@@ -1854,7 +1888,8 @@
      "stakes": 3.0,
      "words_per_sec": 3.24
     }
-   }
+   },
+   "pin": "2464"
   },
   {
    "kind": "posted",
@@ -1907,7 +1942,8 @@
      "stakes": 4.0,
      "words_per_sec": 3.38
     }
-   }
+   },
+   "pin": "3067"
   },
   {
    "kind": "posted",
@@ -1960,7 +1996,8 @@
      "stakes": 3.0,
      "words_per_sec": 1.72
     }
-   }
+   },
+   "pin": "8313"
   },
   {
    "kind": "posted",
@@ -2013,7 +2050,8 @@
      "stakes": 2.0,
      "words_per_sec": 2.98
     }
-   }
+   },
+   "pin": "4238"
   }
  ],
  "predictions": [
@@ -2157,7 +2195,8 @@
     "views": null,
     "verdict": null,
     "error": null
-   }
+   },
+   "pin": "6223"
   },
   {
    "kind": "prediction",
@@ -2285,7 +2324,8 @@
     "views": null,
     "verdict": null,
     "error": null
-   }
+   },
+   "pin": "9851"
   },
   {
    "kind": "prediction",
@@ -2438,7 +2478,8 @@
     "views": null,
     "verdict": null,
     "error": null
-   }
+   },
+   "pin": "6660"
   },
   {
    "kind": "prediction",
@@ -2578,7 +2619,8 @@
     "views": null,
     "verdict": null,
     "error": null
-   }
+   },
+   "pin": "4085"
   },
   {
    "kind": "prediction",
@@ -2706,7 +2748,8 @@
     "views": null,
     "verdict": null,
     "error": null
-   }
+   },
+   "pin": "8257"
   },
   {
    "kind": "posted",
@@ -2826,7 +2869,8 @@
     "views": 47774,
     "verdict": "HIT",
     "error": "swipe +1.93 pts (pred 76 → actual 77.93); AVD -0.3 pts (pred 99 → actual 98.7)"
-   }
+   },
+   "pin": "2616"
   }
  ],
  "schema": {
