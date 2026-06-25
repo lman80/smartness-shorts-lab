@@ -286,6 +286,7 @@ function toItem(rec, kind){
                 : realStatus==='scrapped' ? 'scrapped'
                 : (realKind==='prediction' ? 'awaiting' : 'uploaded')),
     pin: rec.pin || null,           // stable 4-digit reference number
+    uploaded_at: rec.uploaded_at || null,  // precise upload time (browser markers); else null
     prediction: predObj,            // nested prediction (or null)
     actual: rec.actual || null,
     // UPLOADED-PENDING support: a version POSTED to YouTube whose performance
@@ -424,6 +425,8 @@ function buildGroups(){
     if(u && uploadState(it)==='awaiting'){
       it.status='uploaded_pending'; it.lifecycle='uploaded';
       it.url = u.url || it.url; it.uploaded_date = u.uploaded_date || it.uploaded_date;
+      // precise mark time for "uploaded Nh ago" (fall back to _ts for older markers)
+      it.uploaded_at = u.uploaded_at || (u._ts ? new Date(u._ts).toISOString() : null);
       it.ts = tsFrom(it.publish, it.uploaded_date);
     }
     return it;
@@ -1173,10 +1176,12 @@ function versionCardHTML(it, g, isHead){
   // since it was posted and either a calm "data usually ready in ~N day(s)" note
   // or, once due, a prominent "⏰ Data should be ready — pull a fresh report"
   // reminder (the AI then ingests a report to fill the results).
-  const dSince = isPending ? daysSince(it.uploaded_date) : null;
+  const upTs = it.uploaded_at || it.uploaded_date;   // precise time if we have it
+  const dSince = isPending ? daysSince(it.uploaded_date) : null;  // calendar days -> reminder threshold
   const timerBlock = isPending ? (()=>{
-    const ago = dSince==null ? '' :
-      `<span class="tl-timer-ago">Uploaded ${dSince}d ago</span>`;
+    const agoTxt = fmtDateRel(upTs);   // "just now" / "1 hr ago" / "2 d ago" — accurate
+    const ago = !agoTxt ? '' :
+      `<span class="tl-timer-ago">Uploaded ${esc(agoTxt)}</span>`;
     if(dSince==null){
       return `<div class="tl-timer"><div class="tl-timer-head">${ago}</div></div>`;
     }
@@ -1195,7 +1200,7 @@ function versionCardHTML(it, g, isHead){
 
   // date block — prominent on the card. An uploaded_pending version shows the
   // date it was POSTED to YouTube (not a results date) with a blue/teal accent.
-  const upAbs = fmtDateAbs(it.uploaded_date), upRel = fmtDateRel(it.uploaded_date);
+  const upAbs = fmtDateAbs(it.uploaded_date), upRel = fmtDateRel(it.uploaded_at || it.uploaded_date);
   const dateBlock = abs
     ? `<div class="tl-date"><span class="tl-date-abs">${esc(abs)}</span>${rel?`<span class="tl-date-rel">${esc(rel)}</span>`:''}</div>`
     : (isPending
@@ -1406,9 +1411,13 @@ function markUploaded(pin){
   if(url===null) return;                       // cancelled
   const u = (url||'').trim();
   state.experiments = state.experiments.filter(e=>!(e._kind==='upload' && String(e.pin)===String(pin)));
+  const now = new Date();
   state.experiments.push({
     id:'upload_'+pin, _kind:'upload', pin:String(pin), url:u,
-    video_id: extractVideoId(u), uploaded_date: new Date().toISOString().slice(0,10), _ts: Date.now(),
+    video_id: extractVideoId(u),
+    uploaded_at: now.toISOString(),                  // precise moment (drives "uploaded Nh ago")
+    uploaded_date: now.toISOString().slice(0,10),    // calendar day (drives the 2-day reminder)
+    _ts: now.getTime(),
   });
   persistLocal(); render();
   const g = (state.groups||[]).find(gr=>gr.items.some(i=>String(i.pin)===String(pin)));
