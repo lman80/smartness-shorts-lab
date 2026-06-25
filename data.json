@@ -2010,7 +2010,7 @@
     "band": "HIGH",
     "rationale": "Short-bucket AVD model (90.25-134*buildup, buildup -0.005) -> 90.9%. Big lift over the original's 75.55% expected mainly from the 38s->22s shortening. DOWNSIDE risk: the opening audio is QUIET (loudness_first2s 0.061 vs a good ~0.16) — our strongest AVD lever is a loud open, so a quiet open could pull this lower."
    },
-   "strip": "filmstrips/PREDICT_plasma_blue.jpg",
+   "strip": "filmstrips/PREDICT_floating-ball-lenz-v2.jpg",
    "script": "0s: If you take an\n1s: aluminum shaft and\n2s: drill a hole down\n3s: the middle of it,\n4s: you have created a\n5s: metal pipe that you can\n6s: drop a ball down.\n7s: However,\n8s: it's actually much cooler\n9s: than this, because\n10s: it's really a\n11s: demonstration of lenses\n12s: long. Where\n13s: if you drop a magnetic\n14s: ball down the hole,\n15s: it creates\n16s: magnetic fields in\n17s: the aluminum that\n18s: slow the ball down\n19s: and make it look like\n20s: it's actually\n21s: floating.",
    "how_to_change_it": [
     {
