@@ -1925,27 +1925,50 @@ function flashSave(text, kind){
  * FINDINGS
  * ========================================================================== */
 const TRUST_LABEL = {validated:'✅ Validated', directional:'🟡 Directional', craft:'🔵 Craft', method:'⚙️ Method'};
+// THE RULEBOOK — actionable rules grouped by stage, what to follow every time.
+// Data: findings.json { stages:[{key,icon,title,sub}], rules:[{stage,rule,trust,why}
+// | {stage,kind:'checklist',rule,items:[{label,trust}],why}] }. (Legacy {findings:[]} still renders.)
 function renderFindings(){
   const wrap = $('#findings');
-  if(!state.findings){ wrap.innerHTML='<p class="empty">No findings loaded.</p>'; return; }
+  if(!state.findings){ wrap.innerHTML='<p class="empty">No rulebook loaded.</p>'; return; }
   const upd = state.findings.updated;
-  $('#findings-stamp').textContent = `Last updated ${upd?esc(upd):'—'} · AI-generated${state.findings.note?'':''}`;
+  $('#findings-stamp').textContent = `Updated ${upd?esc(upd):'—'} · AI-generated — grows as we research`;
+  const chip = t => `<span class="rb-trust t-${t}">${TRUST_LABEL[t]||esc(t)}</span>`;
+  const why  = r => r.why ? `<details class="rb-why"><summary>why</summary><p>${esc(r.why)}</p></details>` : '';
+  const rules = state.findings.rules;
+  if(rules && rules.length){
+    const stages = state.findings.stages || [];
+    const byStage = {}; rules.forEach(r=>{ (byStage[r.stage]=byStage[r.stage]||[]).push(r); });
+    // any stage keys not declared in `stages` still render (appended after)
+    const order = stages.map(s=>s.key); Object.keys(byStage).forEach(k=>{ if(!order.includes(k)){ order.push(k); stages.push({key:k,title:k}); } });
+    let html = state.findings.note ? `<div class="rb-intro">${esc(state.findings.note)}</div>` : '';
+    stages.forEach(st=>{
+      const rs = byStage[st.key]; if(!rs || !rs.length) return;
+      html += `<section class="rb-stage">
+        <div class="rb-stage-head"><span class="rb-stage-icon">${esc(st.icon||'•')}</span>
+          <div><h2>${esc(st.title)}</h2>${st.sub?`<p>${esc(st.sub)}</p>`:''}</div></div>`;
+      rs.forEach(r=>{
+        if(r.kind==='checklist'){
+          html += `<div class="rb-checklist">
+            <div class="rb-checklist-head">${esc(r.rule)}</div>
+            <ul class="rb-check-items">${(r.items||[]).map(it=>
+              `<li><span class="rb-check">✓</span><span class="rb-check-label">${esc(it.label)}</span>${it.trust?chip(it.trust):''}</li>`).join('')}</ul>
+            ${why(r)}</div>`;
+        } else {
+          html += `<div class="rb-rule t-${r.trust||'craft'}">
+            <div class="rb-rule-main"><span class="rb-rule-text">${esc(r.rule)}</span>${chip(r.trust)}</div>
+            ${why(r)}</div>`;
+        }
+      });
+      html += `</section>`;
+    });
+    wrap.innerHTML = html;
+    return;
+  }
+  // legacy {findings:[]} fallback
   wrap.innerHTML = (state.findings.findings||[]).map(f=>{
     const t = f.trust||'method';
-    const levers = (f.levers||[]).map(l=>`<span class="f-lever">${esc(l)}</span>`).join('');
-    return `<div class="finding t-${t}">
-      <div class="finding-top">
-        <span class="finding-icon">${esc(f.icon||'•')}</span>
-        <h3>${esc(f.title)}</h3>
-      </div>
-      <p class="finding-body">${esc(f.body)}</p>
-      <div class="finding-meta">
-        <span class="trust t-${t}">${TRUST_LABEL[t]||esc(t)}</span>
-        ${f.bucket?`<span class="f-bucket">${esc(f.bucket)}</span>`:''}
-        ${levers}
-      </div>
-      ${f.evidence?`<div class="f-evidence">${esc(f.evidence)}</div>`:''}
-    </div>`;
+    return `<div class="rb-rule t-${t}"><div class="rb-rule-main"><span class="rb-rule-text">${esc(f.title)}</span>${chip(t)}</div><details class="rb-why"><summary>why</summary><p>${esc(f.body)}</p></details></div>`;
   }).join('');
 }
 

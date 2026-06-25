@@ -393,8 +393,41 @@ table.tbl{width:100%;border-collapse:collapse;font-size:13px}
 /* --------------------------------------------------------------- findings -- */
 .findings-head{margin:6px 0 18px}
 .findings-head h1{font-size:24px;font-weight:800;letter-spacing:-.02em}
-.findings-stamp{color:var(--mut);font-size:12.5px;margin-top:4px}
-.findings{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.findings-stamp{color:var(--mut);font-size:12px;margin-top:6px}
+.rb-sub{color:var(--ink-2);font-size:14px;margin-top:6px}
+.findings{display:flex;flex-direction:column;gap:8px;max-width:780px}
+/* ---- THE RULEBOOK ---- */
+.rb-intro{color:var(--mut);font-size:12.5px;line-height:1.6;background:var(--line-soft);border-radius:10px;padding:11px 14px;margin-bottom:8px}
+.rb-stage{margin-top:18px}
+.rb-stage-head{display:flex;align-items:flex-start;gap:11px;padding-bottom:10px;margin-bottom:10px;border-bottom:2px solid var(--line)}
+.rb-stage-icon{font-size:22px;line-height:1}
+.rb-stage-head h2{font-size:17px;font-weight:800;letter-spacing:-.01em}
+.rb-stage-head p{color:var(--mut);font-size:12.5px;margin-top:2px}
+.rb-rule{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:11px;box-shadow:var(--shadow);padding:12px 15px;margin-bottom:9px}
+.rb-rule.t-validated{border-left-color:var(--green)}
+.rb-rule.t-directional{border-left-color:var(--amber)}
+.rb-rule.t-craft{border-left-color:var(--blue)}
+.rb-rule.t-method{border-left-color:var(--grey)}
+.rb-rule-main{display:flex;align-items:flex-start;gap:10px;justify-content:space-between}
+.rb-rule-text{font-size:14.5px;font-weight:650;line-height:1.4;color:var(--ink)}
+.rb-trust{font-size:10px;font-weight:800;border-radius:6px;padding:3px 7px;white-space:nowrap;flex:none}
+.rb-trust.t-validated{background:var(--green-soft);color:#0f7a36}
+.rb-trust.t-directional{background:var(--amber-soft);color:#a85d05}
+.rb-trust.t-craft{background:var(--blue-soft);color:#1d4ed8}
+.rb-trust.t-method{background:var(--grey-soft);color:var(--grey)}
+.rb-why{margin-top:7px}
+.rb-why>summary{cursor:pointer;color:var(--accent);font-size:12px;font-weight:650;list-style:none}
+.rb-why>summary::-webkit-details-marker{display:none}
+.rb-why>summary::before{content:"▸ ";}
+.rb-why[open]>summary::before{content:"▾ ";}
+.rb-why p{color:var(--ink-2);font-size:12.5px;line-height:1.55;margin-top:6px}
+/* the headline intro checklist */
+.rb-checklist{background:linear-gradient(180deg,#fffaf0,#fff);border:2px solid var(--amber);border-radius:14px;padding:15px 17px;margin-bottom:12px;box-shadow:var(--shadow)}
+.rb-checklist-head{font-size:16px;font-weight:850;letter-spacing:-.01em;margin-bottom:11px}
+.rb-check-items{list-style:none;display:flex;flex-direction:column;gap:8px}
+.rb-check-items li{display:flex;align-items:center;gap:10px}
+.rb-check{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:6px;background:var(--green);color:#fff;font-weight:900;font-size:13px;flex:none}
+.rb-check-label{font-size:14.5px;font-weight:700;flex:1}
 .finding{
   background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
   box-shadow:var(--shadow);padding:16px 17px;display:flex;flex-direction:column;gap:9px;
