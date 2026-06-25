@@ -1,0 +1,3934 @@
+{
+ "updated": "2026-06-25",
+ "count": 100,
+ "channels": {
+  "Hafu Go": 50,
+  "Disobey Normal": 50
+ },
+ "niches": {
+  "life_hack": 15,
+  "science_gadget": 35,
+  "product_test_knockoff": 25,
+  "physics_demo": 9,
+  "other": 4,
+  "food": 9,
+  "china_products": 3
+ },
+ "formats": {
+  "build_process": 24,
+  "versus_comparison": 6,
+  "challenge_test": 13,
+  "single_object_demo": 49,
+  "multi_item_compilation": 3,
+  "story_personal": 5
+ },
+ "insights": [
+  "⚠️ Reference only — PUBLIC metrics (views/likes/comments). No swipe/AVD for other channels, and this NEVER feeds your model. Use as ideas to TEST.",
+  "Opening CRAFT barely predicts views even here — views = topic + reach + luck (same as your channel).",
+  "Top-view openings have ~0% dead-air and are brighter & clearer than the rest.",
+  "FORMAT drives views: comparison/versus ≫ single-object demo (~23×).",
+  "Your own scripts score TIGHTER than both channels' — script craft isn't the bottleneck; reach is."
+ ],
+ "videos": [
+  {
+   "video_id": "ro13QvDrWrU",
+   "channel": "Hafu Go",
+   "title": "I Tested the Mosquito Snapper",
+   "url": "https://www.youtube.com/watch?v=ro13QvDrWrU",
+   "publish": "2025-12-10",
+   "duration": 23.0,
+   "bucket": "Short 20-35s",
+   "views": 189735248,
+   "likes": 932558,
+   "comments": 1800,
+   "like_ratio": 0.005,
+   "comment_ratio": 0.0,
+   "niche": "life_hack",
+   "format": "build_process",
+   "strip": "ref_filmstrips/ro13QvDrWrU.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 2.0,
+    "weird": 4.0,
+    "cuts": 6.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 115.4,
+    "colorful": 74.1
+   },
+   "audio": {
+    "loud_first2s": 0.136,
+    "buildup": 0.037
+   }
+  },
+  {
+   "video_id": "WMIlc9BmPcM",
+   "channel": "Hafu Go",
+   "title": "I Tested the Boiled Egg Prank!",
+   "url": "https://www.youtube.com/watch?v=WMIlc9BmPcM",
+   "publish": "2025-12-12",
+   "duration": 31.0,
+   "bucket": "Short 20-35s",
+   "views": 178151740,
+   "likes": 2149268,
+   "comments": 1700,
+   "like_ratio": 0.012,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "build_process",
+   "strip": "ref_filmstrips/WMIlc9BmPcM.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 3.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 131.3,
+    "colorful": 54.3
+   },
+   "audio": {
+    "loud_first2s": 0.121,
+    "buildup": 0.007
+   }
+  },
+  {
+   "video_id": "UJngV3XWt9w",
+   "channel": "Hafu Go",
+   "title": "$1 Knife vs $1,000 Knife",
+   "url": "https://www.youtube.com/watch?v=UJngV3XWt9w",
+   "publish": "2025-08-01",
+   "duration": 55.0,
+   "bucket": "Long 45-65s",
+   "views": 173018722,
+   "likes": 2629928,
+   "comments": 3900,
+   "like_ratio": 0.015,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "versus_comparison",
+   "strip": "ref_filmstrips/UJngV3XWt9w.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 5.0,
+    "weird": 2.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "contrast_versus",
+    "opening_line_type": "contrast_versus",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 126.9,
+    "colorful": 40.1
+   },
+   "audio": {
+    "loud_first2s": 0.162,
+    "buildup": -0.011
+   }
+  },
+  {
+   "video_id": "I_UudJZGqBU",
+   "channel": "Hafu Go",
+   "title": "What Happens If You Trap a Labubu in Smoke?",
+   "url": "https://www.youtube.com/watch?v=I_UudJZGqBU",
+   "publish": "2025-10-07",
+   "duration": 36.0,
+   "bucket": "Mid 36-44s",
+   "views": 147350476,
+   "likes": 1714484,
+   "comments": 1800,
+   "like_ratio": 0.012,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "challenge_test",
+   "strip": "ref_filmstrips/I_UudJZGqBU.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 5.0,
+    "cuts": 5.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 102.3,
+    "colorful": 66.5
+   },
+   "audio": {
+    "loud_first2s": 0.212,
+    "buildup": 0.011
+   }
+  },
+  {
+   "video_id": "4lyut2Rq98Y",
+   "channel": "Hafu Go",
+   "title": "I Tested the Sharpest Paper Knife",
+   "url": "https://www.youtube.com/watch?v=4lyut2Rq98Y",
+   "publish": "2025-08-16",
+   "duration": 38.0,
+   "bucket": "Mid 36-44s",
+   "views": 121546133,
+   "likes": 1573722,
+   "comments": 4500,
+   "like_ratio": 0.013,
+   "comment_ratio": 0.0,
+   "niche": "physics_demo",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/4lyut2Rq98Y.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 4.0,
+    "cuts": 1.0,
+    "escalation": 3.0,
+    "dead_air": 0,
+    "null_state": 1,
+    "subject_size": 2.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 155.7,
+    "colorful": 57.6
+   },
+   "audio": {
+    "loud_first2s": 0.158,
+    "buildup": -0.02
+   }
+  },
+  {
+   "video_id": "1jUBLvDP3bA",
+   "channel": "Hafu Go",
+   "title": "What Happens If You Trap a Basketball in Smoke?",
+   "url": "https://www.youtube.com/watch?v=1jUBLvDP3bA",
+   "publish": "2025-12-02",
+   "duration": 40.0,
+   "bucket": "Mid 36-44s",
+   "views": 118239494,
+   "likes": 1095617,
+   "comments": 746,
+   "like_ratio": 0.009,
+   "comment_ratio": 0.0,
+   "niche": "physics_demo",
+   "format": "multi_item_compilation",
+   "strip": "ref_filmstrips/1jUBLvDP3bA.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 107.6,
+    "colorful": 67.3
+   },
+   "audio": {
+    "loud_first2s": 0.182,
+    "buildup": -0.017
+   }
+  },
+  {
+   "video_id": "4Ug6ckjicec",
+   "channel": "Hafu Go",
+   "title": "Which Lighter is The Strongest?",
+   "url": "https://www.youtube.com/watch?v=4Ug6ckjicec",
+   "publish": "2025-08-23",
+   "duration": 43.0,
+   "bucket": "Mid 36-44s",
+   "views": 108859706,
+   "likes": 956394,
+   "comments": 773,
+   "like_ratio": 0.009,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "versus_comparison",
+   "strip": "ref_filmstrips/4Ug6ckjicec.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 5.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 74.9,
+    "colorful": 40.0
+   },
+   "audio": {
+    "loud_first2s": 0.189,
+    "buildup": -0.097
+   }
+  },
+  {
+   "video_id": "_VgteK_4aos",
+   "channel": "Hafu Go",
+   "title": "I Made a Giant Paper Popper",
+   "url": "https://www.youtube.com/watch?v=_VgteK_4aos",
+   "publish": "2025-08-12",
+   "duration": 27.0,
+   "bucket": "Short 20-35s",
+   "views": 88611656,
+   "likes": 1498399,
+   "comments": 1500,
+   "like_ratio": 0.017,
+   "comment_ratio": 0.0,
+   "niche": "other",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/_VgteK_4aos.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 5.0,
+    "weird": 4.0,
+    "cuts": 5.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "object_closeup"
+   },
+   "pixel": {
+    "brightness": 133.5,
+    "colorful": 55.4
+   },
+   "audio": {
+    "loud_first2s": 0.061,
+    "buildup": 0.009
+   }
+  },
+  {
+   "video_id": "O-BUpKssH28",
+   "channel": "Hafu Go",
+   "title": "I Tested the \"Strongest\" Water Gun",
+   "url": "https://www.youtube.com/watch?v=O-BUpKssH28",
+   "publish": "2025-07-01",
+   "duration": 38.0,
+   "bucket": "Mid 36-44s",
+   "views": 86744708,
+   "likes": 868767,
+   "comments": 1200,
+   "like_ratio": 0.01,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "versus_comparison",
+   "strip": "ref_filmstrips/O-BUpKssH28.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 5.0,
+    "weird": 3.0,
+    "cuts": 5.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "contrast_versus",
+    "opening_line_type": "contrast_versus",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 109.7,
+    "colorful": 99.7
+   },
+   "audio": {
+    "loud_first2s": 0.092,
+    "buildup": 0.006
+   }
+  },
+  {
+   "video_id": "-gJ1d1ksllE",
+   "channel": "Hafu Go",
+   "title": "Which Shoes Will Protect Your Feet?",
+   "url": "https://www.youtube.com/watch?v=-gJ1d1ksllE",
+   "publish": "2025-08-11",
+   "duration": 40.0,
+   "bucket": "Mid 36-44s",
+   "views": 80406662,
+   "likes": 790284,
+   "comments": 1700,
+   "like_ratio": 0.01,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "versus_comparison",
+   "strip": "ref_filmstrips/-gJ1d1ksllE.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 6.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 3.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 140.3,
+    "colorful": 61.3
+   },
+   "audio": {
+    "loud_first2s": 0.099,
+    "buildup": 0.005
+   }
+  },
+  {
+   "video_id": "ZAIdkkZllRs",
+   "channel": "Hafu Go",
+   "title": "Which Helmet is the Strongest?",
+   "url": "https://www.youtube.com/watch?v=ZAIdkkZllRs",
+   "publish": "2025-09-23",
+   "duration": 32.0,
+   "bucket": "Short 20-35s",
+   "views": 76505620,
+   "likes": 1122575,
+   "comments": 1500,
+   "like_ratio": 0.015,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "versus_comparison",
+   "strip": "ref_filmstrips/ZAIdkkZllRs.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 120.7,
+    "colorful": 38.9
+   },
+   "audio": {
+    "loud_first2s": 0.185,
+    "buildup": -0.045
+   }
+  },
+  {
+   "video_id": "UZG6eWb3xqU",
+   "channel": "Hafu Go",
+   "title": "Which Katana Is The Sharpest?",
+   "url": "https://www.youtube.com/watch?v=UZG6eWb3xqU",
+   "publish": "2025-08-15",
+   "duration": 29.0,
+   "bucket": "Short 20-35s",
+   "views": 61753871,
+   "likes": 957420,
+   "comments": 1000,
+   "like_ratio": 0.015,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "challenge_test",
+   "strip": "ref_filmstrips/UZG6eWb3xqU.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 5.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 132.0,
+    "colorful": 27.2
+   },
+   "audio": {
+    "loud_first2s": 0.149,
+    "buildup": 0.002
+   }
+  },
+  {
+   "video_id": "UW3WwJX0DLI",
+   "channel": "Hafu Go",
+   "title": "The IMPOSSIBLE Puzzle...",
+   "url": "https://www.youtube.com/watch?v=UW3WwJX0DLI",
+   "publish": "2026-02-23",
+   "duration": 43.0,
+   "bucket": "Mid 36-44s",
+   "views": 55564363,
+   "likes": 617669,
+   "comments": 2900,
+   "like_ratio": 0.011,
+   "comment_ratio": 0.0,
+   "niche": "physics_demo",
+   "format": "challenge_test",
+   "strip": "ref_filmstrips/UW3WwJX0DLI.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 3.0,
+    "cuts": 1.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 130.7,
+    "colorful": 49.9
+   },
+   "audio": {
+    "loud_first2s": 0.196,
+    "buildup": -0.004
+   }
+  },
+  {
+   "video_id": "gwjwxEq-vHc",
+   "channel": "Hafu Go",
+   "title": "How to Make the LOUDEST Paper Popper!",
+   "url": "https://www.youtube.com/watch?v=gwjwxEq-vHc",
+   "publish": "2026-02-11",
+   "duration": 26.0,
+   "bucket": "Short 20-35s",
+   "views": 52479532,
+   "likes": 525926,
+   "comments": 1000,
+   "like_ratio": 0.01,
+   "comment_ratio": 0.0,
+   "niche": "life_hack",
+   "format": "build_process",
+   "strip": "ref_filmstrips/gwjwxEq-vHc.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 3.0,
+    "cuts": 6.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "object_closeup"
+   },
+   "pixel": {
+    "brightness": 157.9,
+    "colorful": 47.8
+   },
+   "audio": {
+    "loud_first2s": 0.239,
+    "buildup": -0.059
+   }
+  },
+  {
+   "video_id": "IwlvQPjmXyY",
+   "channel": "Hafu Go",
+   "title": "I Tested the Illegal Dice Trick",
+   "url": "https://www.youtube.com/watch?v=IwlvQPjmXyY",
+   "publish": "2026-02-13",
+   "duration": 28.0,
+   "bucket": "Short 20-35s",
+   "views": 51294958,
+   "likes": 590211,
+   "comments": 1000,
+   "like_ratio": 0.011,
+   "comment_ratio": 0.0,
+   "niche": "life_hack",
+   "format": "build_process",
+   "strip": "ref_filmstrips/IwlvQPjmXyY.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 5.0,
+    "weird": 4.0,
+    "cuts": 5.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "object_closeup"
+   },
+   "pixel": {
+    "brightness": 142.3,
+    "colorful": 74.3
+   },
+   "audio": {
+    "loud_first2s": 0.165,
+    "buildup": -0.005
+   }
+  },
+  {
+   "video_id": "xCajxgSoZss",
+   "channel": "Disobey Normal",
+   "title": "Does this Apple Juice *ACTUALLY* Sound like an Apple?",
+   "url": "https://www.youtube.com/watch?v=xCajxgSoZss",
+   "publish": "2026-05-22",
+   "duration": 28.0,
+   "bucket": "Short 20-35s",
+   "views": 34797509,
+   "likes": 503159,
+   "comments": 1500,
+   "like_ratio": 0.015,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/xCajxgSoZss.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 5.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 120.0,
+    "colorful": 81.2
+   },
+   "audio": {
+    "loud_first2s": 0.171,
+    "buildup": 0.002
+   }
+  },
+  {
+   "video_id": "ZPdx4p17t1U",
+   "channel": "Hafu Go",
+   "title": "I Tested the Flower Painting Hack",
+   "url": "https://www.youtube.com/watch?v=ZPdx4p17t1U",
+   "publish": "2026-01-08",
+   "duration": 24.0,
+   "bucket": "Short 20-35s",
+   "views": 34621347,
+   "likes": 383632,
+   "comments": 900,
+   "like_ratio": 0.011,
+   "comment_ratio": 0.0,
+   "niche": "life_hack",
+   "format": "build_process",
+   "strip": "ref_filmstrips/ZPdx4p17t1U.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "challenge_test",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "object_closeup"
+   },
+   "pixel": {
+    "brightness": 108.9,
+    "colorful": 64.6
+   },
+   "audio": {
+    "loud_first2s": 0.168,
+    "buildup": 0.013
+   }
+  },
+  {
+   "video_id": "AV31zkYqq4Y",
+   "channel": "Hafu Go",
+   "title": "Which Sword is the Sharpest?",
+   "url": "https://www.youtube.com/watch?v=AV31zkYqq4Y",
+   "publish": "2025-08-29",
+   "duration": 34.0,
+   "bucket": "Short 20-35s",
+   "views": 32354638,
+   "likes": 470005,
+   "comments": 528,
+   "like_ratio": 0.015,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "multi_item_compilation",
+   "strip": "ref_filmstrips/AV31zkYqq4Y.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 76.9,
+    "colorful": 25.3
+   },
+   "audio": {
+    "loud_first2s": 0.158,
+    "buildup": -0.06
+   }
+  },
+  {
+   "video_id": "QZZVy_utPlk",
+   "channel": "Hafu Go",
+   "title": "How to Cut Fast with a Knife",
+   "url": "https://www.youtube.com/watch?v=QZZVy_utPlk",
+   "publish": "2025-08-02",
+   "duration": 37.0,
+   "bucket": "Mid 36-44s",
+   "views": 31072409,
+   "likes": 494520,
+   "comments": 639,
+   "like_ratio": 0.016,
+   "comment_ratio": 0.0,
+   "niche": "food",
+   "format": "story_personal",
+   "strip": "ref_filmstrips/QZZVy_utPlk.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 5.0,
+    "weird": 3.0,
+    "cuts": 2.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 5.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "object_closeup"
+   },
+   "pixel": {
+    "brightness": 123.7,
+    "colorful": 42.6
+   },
+   "audio": {
+    "loud_first2s": 0.125,
+    "buildup": 0.008
+   }
+  },
+  {
+   "video_id": "kaMFygKnFEQ",
+   "channel": "Disobey Normal",
+   "title": "Part 2 of Does this Apple Juice *ACTUALLY* Sound like an Apple?",
+   "url": "https://www.youtube.com/watch?v=kaMFygKnFEQ",
+   "publish": "2026-05-26",
+   "duration": 49.0,
+   "bucket": "Long 45-65s",
+   "views": 28771964,
+   "likes": 404531,
+   "comments": 4500,
+   "like_ratio": 0.014,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/kaMFygKnFEQ.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 5.0,
+    "weird": 4.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 118.6,
+    "colorful": 85.9
+   },
+   "audio": {
+    "loud_first2s": 0.213,
+    "buildup": -0.035
+   }
+  },
+  {
+   "video_id": "wG2SF9WMXlc",
+   "channel": "Disobey Normal",
+   "title": "what Rattlesnake Eggs look like",
+   "url": "https://www.youtube.com/watch?v=wG2SF9WMXlc",
+   "publish": "2026-06-09",
+   "duration": 19.0,
+   "bucket": "Short 20-35s",
+   "views": 28152214,
+   "likes": 315677,
+   "comments": 464,
+   "like_ratio": 0.011,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/wG2SF9WMXlc.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 1.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 124.5,
+    "colorful": 88.6
+   },
+   "audio": {
+    "loud_first2s": 0.193,
+    "buildup": 0.005
+   }
+  },
+  {
+   "video_id": "8cCBEDq-mOQ",
+   "channel": "Disobey Normal",
+   "title": "How I Accidentally Burned Myself",
+   "url": "https://www.youtube.com/watch?v=8cCBEDq-mOQ",
+   "publish": "2026-05-28",
+   "duration": 38.0,
+   "bucket": "Mid 36-44s",
+   "views": 27630036,
+   "likes": 304724,
+   "comments": 1700,
+   "like_ratio": 0.011,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "story_personal",
+   "strip": "ref_filmstrips/8cCBEDq-mOQ.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 2.0,
+    "weird": 5.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "story_personal",
+    "opening_line_type": "story",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 128.9,
+    "colorful": 53.3
+   },
+   "audio": {
+    "loud_first2s": 0.162,
+    "buildup": 0.016
+   }
+  },
+  {
+   "video_id": "SexycVUEd5w",
+   "channel": "Hafu Go",
+   "title": "I Made a Perfect Japanese Dirt Ball",
+   "url": "https://www.youtube.com/watch?v=SexycVUEd5w",
+   "publish": "2026-04-17",
+   "duration": 46.0,
+   "bucket": "Long 45-65s",
+   "views": 24528841,
+   "likes": 376739,
+   "comments": 3300,
+   "like_ratio": 0.015,
+   "comment_ratio": 0.0,
+   "niche": "life_hack",
+   "format": "build_process",
+   "strip": "ref_filmstrips/SexycVUEd5w.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 5.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 124.8,
+    "colorful": 42.2
+   },
+   "audio": {
+    "loud_first2s": 0.151,
+    "buildup": -0.029
+   }
+  },
+  {
+   "video_id": "_qA5pWFLxJk",
+   "channel": "Hafu Go",
+   "title": "I Made the World's Smoothest Pen",
+   "url": "https://www.youtube.com/watch?v=_qA5pWFLxJk",
+   "publish": "2026-03-26",
+   "duration": 31.0,
+   "bucket": "Short 20-35s",
+   "views": 23930167,
+   "likes": 264078,
+   "comments": 922,
+   "like_ratio": 0.011,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/_qA5pWFLxJk.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 3.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 3.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 158.0,
+    "colorful": 33.5
+   },
+   "audio": {
+    "loud_first2s": 0.173,
+    "buildup": 0.031
+   }
+  },
+  {
+   "video_id": "ybArAeWlyWU",
+   "channel": "Hafu Go",
+   "title": "Who Can Cut the Fastest?",
+   "url": "https://www.youtube.com/watch?v=ybArAeWlyWU",
+   "publish": "2025-08-03",
+   "duration": 38.0,
+   "bucket": "Mid 36-44s",
+   "views": 23677122,
+   "likes": 268388,
+   "comments": 186,
+   "like_ratio": 0.011,
+   "comment_ratio": 0.0,
+   "niche": "other",
+   "format": "challenge_test",
+   "strip": "ref_filmstrips/ybArAeWlyWU.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 3.0,
+    "cuts": 2.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 2.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "challenge_test",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 150.3,
+    "colorful": 38.3
+   },
+   "audio": {
+    "loud_first2s": 0.127,
+    "buildup": -0.082
+   }
+  },
+  {
+   "video_id": "2ykk7_VCsgk",
+   "channel": "Hafu Go",
+   "title": "How Does the \"Drinking Bird\" Work?",
+   "url": "https://www.youtube.com/watch?v=2ykk7_VCsgk",
+   "publish": "2025-07-18",
+   "duration": 22.0,
+   "bucket": "Short 20-35s",
+   "views": 18725546,
+   "likes": 215713,
+   "comments": 491,
+   "like_ratio": 0.011,
+   "comment_ratio": 0.0,
+   "niche": "physics_demo",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/2ykk7_VCsgk.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 3.0,
+    "weird": 4.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 3.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "object_closeup"
+   },
+   "pixel": {
+    "brightness": 72.7,
+    "colorful": 68.1
+   },
+   "audio": {
+    "loud_first2s": 0.114,
+    "buildup": -0.009
+   }
+  },
+  {
+   "video_id": "WG5HbeyAbeg",
+   "channel": "Hafu Go",
+   "title": "I Tested the Japanese Foam Cleaner",
+   "url": "https://www.youtube.com/watch?v=WG5HbeyAbeg",
+   "publish": "2026-05-09",
+   "duration": 35.0,
+   "bucket": "Short 20-35s",
+   "views": 18335310,
+   "likes": 243647,
+   "comments": 715,
+   "like_ratio": 0.013,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/WG5HbeyAbeg.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 1.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 185.7,
+    "colorful": 84.9
+   },
+   "audio": {
+    "loud_first2s": 0.181,
+    "buildup": -0.022
+   }
+  },
+  {
+   "video_id": "dP8viL_ToeQ",
+   "channel": "Hafu Go",
+   "title": "I Made a Perfect Japanese Paper Ball",
+   "url": "https://www.youtube.com/watch?v=dP8viL_ToeQ",
+   "publish": "2026-05-02",
+   "duration": 45.0,
+   "bucket": "Long 45-65s",
+   "views": 12302686,
+   "likes": 219554,
+   "comments": 1600,
+   "like_ratio": 0.018,
+   "comment_ratio": 0.0,
+   "niche": "life_hack",
+   "format": "build_process",
+   "strip": "ref_filmstrips/dP8viL_ToeQ.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 5.0,
+    "weird": 3.0,
+    "cuts": 3.0,
+    "escalation": 3.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 137.9,
+    "colorful": 46.8
+   },
+   "audio": {
+    "loud_first2s": 0.232,
+    "buildup": -0.035
+   }
+  },
+  {
+   "video_id": "T4qWE8-2HdY",
+   "channel": "Hafu Go",
+   "title": "I Tested the “Unbreakable” Mug",
+   "url": "https://www.youtube.com/watch?v=T4qWE8-2HdY",
+   "publish": "2025-07-24",
+   "duration": 33.0,
+   "bucket": "Short 20-35s",
+   "views": 10077811,
+   "likes": 118002,
+   "comments": 258,
+   "like_ratio": 0.012,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/T4qWE8-2HdY.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 5.0,
+    "weird": 3.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 114.4,
+    "colorful": 29.2
+   },
+   "audio": {
+    "loud_first2s": 0.177,
+    "buildup": -0.001
+   }
+  },
+  {
+   "video_id": "ekaqqn7D128",
+   "channel": "Hafu Go",
+   "title": "I Tested the Paper Spider Hack",
+   "url": "https://www.youtube.com/watch?v=ekaqqn7D128",
+   "publish": "2026-01-13",
+   "duration": 27.0,
+   "bucket": "Short 20-35s",
+   "views": 9993614,
+   "likes": 115103,
+   "comments": 197,
+   "like_ratio": 0.011,
+   "comment_ratio": 0.0,
+   "niche": "life_hack",
+   "format": "build_process",
+   "strip": "ref_filmstrips/ekaqqn7D128.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 98.5,
+    "colorful": 45.5
+   },
+   "audio": {
+    "loud_first2s": 0.2,
+    "buildup": -0.037
+   }
+  },
+  {
+   "video_id": "mMA7d-MBHrw",
+   "channel": "Hafu Go",
+   "title": "I Tested the Butterfly Painting Hack",
+   "url": "https://www.youtube.com/watch?v=mMA7d-MBHrw",
+   "publish": "2025-12-30",
+   "duration": 24.0,
+   "bucket": "Short 20-35s",
+   "views": 9234230,
+   "likes": 145341,
+   "comments": 332,
+   "like_ratio": 0.016,
+   "comment_ratio": 0.0,
+   "niche": "life_hack",
+   "format": "build_process",
+   "strip": "ref_filmstrips/mMA7d-MBHrw.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 3.0,
+    "cuts": 3.0,
+    "escalation": 5.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 127.7,
+    "colorful": 55.3
+   },
+   "audio": {
+    "loud_first2s": 0.107,
+    "buildup": 0.019
+   }
+  },
+  {
+   "video_id": "mWQGGiC4iH4",
+   "channel": "Hafu Go",
+   "title": "World's Strongest Eraser!",
+   "url": "https://www.youtube.com/watch?v=mWQGGiC4iH4",
+   "publish": "2026-03-06",
+   "duration": 45.0,
+   "bucket": "Long 45-65s",
+   "views": 9080858,
+   "likes": 98134,
+   "comments": 527,
+   "like_ratio": 0.011,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/mWQGGiC4iH4.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 4.0,
+    "weird": 3.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 210.7,
+    "colorful": 37.7
+   },
+   "audio": {
+    "loud_first2s": 0.132,
+    "buildup": -0.024
+   }
+  },
+  {
+   "video_id": "f0KcAs6PCeQ",
+   "channel": "Disobey Normal",
+   "title": "I Have a Weird Body..",
+   "url": "https://www.youtube.com/watch?v=f0KcAs6PCeQ",
+   "publish": "2026-06-12",
+   "duration": 23.0,
+   "bucket": "Short 20-35s",
+   "views": 8610995,
+   "likes": 68611,
+   "comments": 705,
+   "like_ratio": 0.008,
+   "comment_ratio": 0.0,
+   "niche": "other",
+   "format": "story_personal",
+   "strip": "ref_filmstrips/f0KcAs6PCeQ.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 4.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 124.2,
+    "colorful": 65.6
+   },
+   "audio": {
+    "loud_first2s": 0.18,
+    "buildup": 0.012
+   }
+  },
+  {
+   "video_id": "nhKtXODnCV4",
+   "channel": "Hafu Go",
+   "title": "I Tested “Edible” Metal",
+   "url": "https://www.youtube.com/watch?v=nhKtXODnCV4",
+   "publish": "2025-07-08",
+   "duration": 24.0,
+   "bucket": "Short 20-35s",
+   "views": 8241543,
+   "likes": 78323,
+   "comments": 355,
+   "like_ratio": 0.009,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/nhKtXODnCV4.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 5.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 105.4,
+    "colorful": 41.3
+   },
+   "audio": {
+    "loud_first2s": 0.183,
+    "buildup": 0.03
+   }
+  },
+  {
+   "video_id": "S4DjFBxu4XE",
+   "channel": "Disobey Normal",
+   "title": "what Mexican Jumping Beans look like",
+   "url": "https://www.youtube.com/watch?v=S4DjFBxu4XE",
+   "publish": "2026-05-20",
+   "duration": 19.0,
+   "bucket": "Short 20-35s",
+   "views": 7982277,
+   "likes": 100003,
+   "comments": 381,
+   "like_ratio": 0.013,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/S4DjFBxu4XE.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 3.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 142.0,
+    "colorful": 71.6
+   },
+   "audio": {
+    "loud_first2s": 0.154,
+    "buildup": -0.013
+   }
+  },
+  {
+   "video_id": "6gApoMhhFoE",
+   "channel": "Disobey Normal",
+   "title": "Are Seaweed Paintballs *ACTUALLY* Edible?",
+   "url": "https://www.youtube.com/watch?v=6gApoMhhFoE",
+   "publish": "2026-05-31",
+   "duration": 22.0,
+   "bucket": "Short 20-35s",
+   "views": 7650229,
+   "likes": 67687,
+   "comments": 529,
+   "like_ratio": 0.009,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/6gApoMhhFoE.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 3.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 129.3,
+    "colorful": 84.6
+   },
+   "audio": {
+    "loud_first2s": 0.166,
+    "buildup": 0.004
+   }
+  },
+  {
+   "video_id": "hQoQdEESiVQ",
+   "channel": "Disobey Normal",
+   "title": "Is it Possible to Make it to Pluto?",
+   "url": "https://www.youtube.com/watch?v=hQoQdEESiVQ",
+   "publish": "2026-05-23",
+   "duration": 25.0,
+   "bucket": "Short 20-35s",
+   "views": 7488700,
+   "likes": 49141,
+   "comments": 368,
+   "like_ratio": 0.007,
+   "comment_ratio": 0.0,
+   "niche": "physics_demo",
+   "format": "challenge_test",
+   "strip": "ref_filmstrips/hQoQdEESiVQ.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 128.2,
+    "colorful": 93.9
+   },
+   "audio": {
+    "loud_first2s": 0.163,
+    "buildup": 0.045
+   }
+  },
+  {
+   "video_id": "5V3P0WWqsMA",
+   "channel": "Hafu Go",
+   "title": "Making a Perfect Japanese Foil Ball",
+   "url": "https://www.youtube.com/watch?v=5V3P0WWqsMA",
+   "publish": "2026-05-01",
+   "duration": 39.0,
+   "bucket": "Mid 36-44s",
+   "views": 7008457,
+   "likes": 129507,
+   "comments": 678,
+   "like_ratio": 0.018,
+   "comment_ratio": 0.0,
+   "niche": "life_hack",
+   "format": "build_process",
+   "strip": "ref_filmstrips/5V3P0WWqsMA.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 5.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 127.1,
+    "colorful": 39.1
+   },
+   "audio": {
+    "loud_first2s": 0.152,
+    "buildup": -0.013
+   }
+  },
+  {
+   "video_id": "87aWuD_P0JE",
+   "channel": "Disobey Normal",
+   "title": "what edible bubbles look like",
+   "url": "https://www.youtube.com/watch?v=87aWuD_P0JE",
+   "publish": "2026-05-20",
+   "duration": 23.0,
+   "bucket": "Short 20-35s",
+   "views": 6732243,
+   "likes": 39071,
+   "comments": 344,
+   "like_ratio": 0.006,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/87aWuD_P0JE.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 4.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 3.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 110.4,
+    "colorful": 66.9
+   },
+   "audio": {
+    "loud_first2s": 0.162,
+    "buildup": -0.013
+   }
+  },
+  {
+   "video_id": "0cQt_jYWQrc",
+   "channel": "Disobey Normal",
+   "title": "Coca Cola vs Sea Grapes",
+   "url": "https://www.youtube.com/watch?v=0cQt_jYWQrc",
+   "publish": "2026-06-03",
+   "duration": 26.0,
+   "bucket": "Short 20-35s",
+   "views": 6377240,
+   "likes": 110022,
+   "comments": 503,
+   "like_ratio": 0.017,
+   "comment_ratio": 0.0,
+   "niche": "food",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/0cQt_jYWQrc.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 120.6,
+    "colorful": 59.8
+   },
+   "audio": {
+    "loud_first2s": 0.155,
+    "buildup": -0.016
+   }
+  },
+  {
+   "video_id": "GQ50GAroAyg",
+   "channel": "Disobey Normal",
+   "title": "Can you DeCloud Glass Putty?",
+   "url": "https://www.youtube.com/watch?v=GQ50GAroAyg",
+   "publish": "2026-06-17",
+   "duration": 18.0,
+   "bucket": "Short 20-35s",
+   "views": 6167429,
+   "likes": 102934,
+   "comments": 305,
+   "like_ratio": 0.017,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/GQ50GAroAyg.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 3.0,
+    "cuts": 4.0,
+    "escalation": 3.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 127.3,
+    "colorful": 92.7
+   },
+   "audio": {
+    "loud_first2s": 0.175,
+    "buildup": -0.001
+   }
+  },
+  {
+   "video_id": "cL1_xVSpWyk",
+   "channel": "Disobey Normal",
+   "title": "what a neophone looks like",
+   "url": "https://www.youtube.com/watch?v=cL1_xVSpWyk",
+   "publish": "2026-06-20",
+   "duration": 26.0,
+   "bucket": "Short 20-35s",
+   "views": 5972640,
+   "likes": 97287,
+   "comments": 1000,
+   "like_ratio": 0.016,
+   "comment_ratio": 0.0,
+   "niche": "china_products",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/cL1_xVSpWyk.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 121.8,
+    "colorful": 76.6
+   },
+   "audio": {
+    "loud_first2s": 0.17,
+    "buildup": 0.003
+   }
+  },
+  {
+   "video_id": "z8dWSRJ7TJo",
+   "channel": "Hafu Go",
+   "title": "I Tested “Invisible” Paint",
+   "url": "https://www.youtube.com/watch?v=z8dWSRJ7TJo",
+   "publish": "2025-07-29",
+   "duration": 34.0,
+   "bucket": "Short 20-35s",
+   "views": 5926356,
+   "likes": 48803,
+   "comments": 364,
+   "like_ratio": 0.008,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/z8dWSRJ7TJo.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 3.0,
+    "weird": 5.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 159.4,
+    "colorful": 43.3
+   },
+   "audio": {
+    "loud_first2s": 0.088,
+    "buildup": -0.021
+   }
+  },
+  {
+   "video_id": "RFTdEJxEaf4",
+   "channel": "Disobey Normal",
+   "title": "I Accidentally Burned Myself",
+   "url": "https://www.youtube.com/watch?v=RFTdEJxEaf4",
+   "publish": "2026-05-28",
+   "duration": 27.0,
+   "bucket": "Short 20-35s",
+   "views": 5903495,
+   "likes": 48106,
+   "comments": 632,
+   "like_ratio": 0.008,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/RFTdEJxEaf4.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 2.0,
+    "weird": 5.0,
+    "cuts": 6.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "story_personal",
+    "opening_line_type": "story",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 128.5,
+    "colorful": 61.7
+   },
+   "audio": {
+    "loud_first2s": 0.169,
+    "buildup": 0.008
+   }
+  },
+  {
+   "video_id": "29KFWEzV2Y0",
+   "channel": "Hafu Go",
+   "title": "I Tested the “Unbreakable” Watch",
+   "url": "https://www.youtube.com/watch?v=29KFWEzV2Y0",
+   "publish": "2025-07-13",
+   "duration": 32.0,
+   "bucket": "Short 20-35s",
+   "views": 5792179,
+   "likes": 58677,
+   "comments": 223,
+   "like_ratio": 0.01,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "challenge_test",
+   "strip": "ref_filmstrips/29KFWEzV2Y0.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 5.0,
+    "weird": 3.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "object_closeup"
+   },
+   "pixel": {
+    "brightness": 108.5,
+    "colorful": 59.0
+   },
+   "audio": {
+    "loud_first2s": 0.085,
+    "buildup": -0.006
+   }
+  },
+  {
+   "video_id": "QU9yGeOlgcU",
+   "channel": "Hafu Go",
+   "title": "I Tested the Banned Smoke Ring Shooter",
+   "url": "https://www.youtube.com/watch?v=QU9yGeOlgcU",
+   "publish": "2026-05-27",
+   "duration": 23.0,
+   "bucket": "Short 20-35s",
+   "views": 5757431,
+   "likes": 45465,
+   "comments": 77,
+   "like_ratio": 0.008,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "build_process",
+   "strip": "ref_filmstrips/QU9yGeOlgcU.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 122.3,
+    "colorful": 39.3
+   },
+   "audio": {
+    "loud_first2s": 0.169,
+    "buildup": 0.032
+   }
+  },
+  {
+   "video_id": "Mb5WuV09Oyo",
+   "channel": "Disobey Normal",
+   "title": "My $1485 Mistake",
+   "url": "https://www.youtube.com/watch?v=Mb5WuV09Oyo",
+   "publish": "2026-06-10",
+   "duration": 27.0,
+   "bucket": "Short 20-35s",
+   "views": 5618339,
+   "likes": 59823,
+   "comments": 216,
+   "like_ratio": 0.011,
+   "comment_ratio": 0.0,
+   "niche": "physics_demo",
+   "format": "challenge_test",
+   "strip": "ref_filmstrips/Mb5WuV09Oyo.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 1,
+    "subject_size": 4.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 130.9,
+    "colorful": 101.3
+   },
+   "audio": {
+    "loud_first2s": 0.177,
+    "buildup": 0.01
+   }
+  },
+  {
+   "video_id": "YP75g_3uHds",
+   "channel": "Disobey Normal",
+   "title": "I HATCHED A BABY MOTH!!",
+   "url": "https://www.youtube.com/watch?v=YP75g_3uHds",
+   "publish": "2026-05-21",
+   "duration": 28.0,
+   "bucket": "Short 20-35s",
+   "views": 5601276,
+   "likes": 69114,
+   "comments": 556,
+   "like_ratio": 0.012,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/YP75g_3uHds.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 2.0,
+    "weird": 4.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 2.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 133.7,
+    "colorful": 63.8
+   },
+   "audio": {
+    "loud_first2s": 0.176,
+    "buildup": -0.006
+   }
+  },
+  {
+   "video_id": "SRJppFNHGx8",
+   "channel": "Disobey Normal",
+   "title": "Nothing is NOT Free..",
+   "url": "https://www.youtube.com/watch?v=SRJppFNHGx8",
+   "publish": "2026-06-08",
+   "duration": 16.0,
+   "bucket": "Short 20-35s",
+   "views": 5457277,
+   "likes": 46091,
+   "comments": 622,
+   "like_ratio": 0.008,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/SRJppFNHGx8.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 5.0,
+    "weird": 5.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 1,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 119.5,
+    "colorful": 77.9
+   },
+   "audio": {
+    "loud_first2s": 0.202,
+    "buildup": -0.024
+   }
+  },
+  {
+   "video_id": "hC97dX0DvEg",
+   "channel": "Disobey Normal",
+   "title": "Does Spiral Coloring *ACTUALLY* Work?",
+   "url": "https://www.youtube.com/watch?v=hC97dX0DvEg",
+   "publish": "2026-06-05",
+   "duration": 26.0,
+   "bucket": "Short 20-35s",
+   "views": 5219561,
+   "likes": 97746,
+   "comments": 179,
+   "like_ratio": 0.019,
+   "comment_ratio": 0.0,
+   "niche": "life_hack",
+   "format": "build_process",
+   "strip": "ref_filmstrips/hC97dX0DvEg.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 4.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 151.0,
+    "colorful": 58.3
+   },
+   "audio": {
+    "loud_first2s": 0.183,
+    "buildup": -0.008
+   }
+  },
+  {
+   "video_id": "1HgvMSZXG6U",
+   "channel": "Disobey Normal",
+   "title": "Does Mark Robers Theory *ACTUALLY* Work?",
+   "url": "https://www.youtube.com/watch?v=1HgvMSZXG6U",
+   "publish": "2026-05-29",
+   "duration": 23.0,
+   "bucket": "Short 20-35s",
+   "views": 4621160,
+   "likes": 60575,
+   "comments": 332,
+   "like_ratio": 0.013,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "challenge_test",
+   "strip": "ref_filmstrips/1HgvMSZXG6U.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 5.0,
+    "weird": 2.0,
+    "cuts": 4.0,
+    "escalation": 3.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 112.1,
+    "colorful": 72.7
+   },
+   "audio": {
+    "loud_first2s": 0.175,
+    "buildup": 0.009
+   }
+  },
+  {
+   "video_id": "J96QlzaLzN4",
+   "channel": "Hafu Go",
+   "title": "You've Been Cutting Watermelons Wrong!",
+   "url": "https://www.youtube.com/watch?v=J96QlzaLzN4",
+   "publish": "2026-03-29",
+   "duration": 33.0,
+   "bucket": "Short 20-35s",
+   "views": 4310385,
+   "likes": 30671,
+   "comments": 151,
+   "like_ratio": 0.007,
+   "comment_ratio": 0.0,
+   "niche": "food",
+   "format": "build_process",
+   "strip": "ref_filmstrips/J96QlzaLzN4.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 5.0,
+    "weird": 2.0,
+    "cuts": 4.0,
+    "escalation": 3.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "object_closeup"
+   },
+   "pixel": {
+    "brightness": 123.3,
+    "colorful": 89.2
+   },
+   "audio": {
+    "loud_first2s": 0.213,
+    "buildup": -0.061
+   }
+  },
+  {
+   "video_id": "Hl2KVJC7zZU",
+   "channel": "Disobey Normal",
+   "title": "Whats the CORRECT Way to Eat Jelly Fruit",
+   "url": "https://www.youtube.com/watch?v=Hl2KVJC7zZU",
+   "publish": "2026-05-28",
+   "duration": 15.0,
+   "bucket": "Short 20-35s",
+   "views": 4199056,
+   "likes": 35085,
+   "comments": 465,
+   "like_ratio": 0.008,
+   "comment_ratio": 0.0,
+   "niche": "food",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/Hl2KVJC7zZU.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 3.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 3.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 117.1,
+    "colorful": 71.0
+   },
+   "audio": {
+    "loud_first2s": 0.186,
+    "buildup": 0.03
+   }
+  },
+  {
+   "video_id": "gReE6doheFU",
+   "channel": "Hafu Go",
+   "title": "I Made a Giant Butane Rocket!",
+   "url": "https://www.youtube.com/watch?v=gReE6doheFU",
+   "publish": "2025-11-28",
+   "duration": 25.0,
+   "bucket": "Short 20-35s",
+   "views": 3815348,
+   "likes": 39440,
+   "comments": 220,
+   "like_ratio": 0.01,
+   "comment_ratio": 0.0,
+   "niche": "physics_demo",
+   "format": "build_process",
+   "strip": "ref_filmstrips/gReE6doheFU.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 3.0,
+    "escalation": 5.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 130.5,
+    "colorful": 63.6
+   },
+   "audio": {
+    "loud_first2s": 0.11,
+    "buildup": 0.044
+   }
+  },
+  {
+   "video_id": "pF-QTsKWXO8",
+   "channel": "Hafu Go",
+   "title": "I Tested the Lifestraw",
+   "url": "https://www.youtube.com/watch?v=pF-QTsKWXO8",
+   "publish": "2025-12-18",
+   "duration": 30.0,
+   "bucket": "Short 20-35s",
+   "views": 3748275,
+   "likes": 38042,
+   "comments": 454,
+   "like_ratio": 0.01,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/pF-QTsKWXO8.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 5.0,
+    "weird": 4.0,
+    "cuts": 2.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 119.0,
+    "colorful": 66.5
+   },
+   "audio": {
+    "loud_first2s": 0.126,
+    "buildup": -0.015
+   }
+  },
+  {
+   "video_id": "17CqGGANfRU",
+   "channel": "Disobey Normal",
+   "title": "Can Potato Guns Shoot Anything *BESIDES* Potatos?",
+   "url": "https://www.youtube.com/watch?v=17CqGGANfRU",
+   "publish": "2026-05-30",
+   "duration": 29.0,
+   "bucket": "Short 20-35s",
+   "views": 3704304,
+   "likes": 40786,
+   "comments": 216,
+   "like_ratio": 0.011,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/17CqGGANfRU.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 119.2,
+    "colorful": 82.4
+   },
+   "audio": {
+    "loud_first2s": 0.191,
+    "buildup": -0.012
+   }
+  },
+  {
+   "video_id": "tkF_q9D9Fik",
+   "channel": "Disobey Normal",
+   "title": "How to *ACTUALLY* Open a Chocolate Orange",
+   "url": "https://www.youtube.com/watch?v=tkF_q9D9Fik",
+   "publish": "2026-06-16",
+   "duration": 20.0,
+   "bucket": "Short 20-35s",
+   "views": 3551816,
+   "likes": 40518,
+   "comments": 682,
+   "like_ratio": 0.011,
+   "comment_ratio": 0.0,
+   "niche": "food",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/tkF_q9D9Fik.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 3.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 3.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 111.8,
+    "colorful": 89.0
+   },
+   "audio": {
+    "loud_first2s": 0.179,
+    "buildup": -0.011
+   }
+  },
+  {
+   "video_id": "2QR1d1Dfj5s",
+   "channel": "Disobey Normal",
+   "title": "what the Viral Dot Cakes look like",
+   "url": "https://www.youtube.com/watch?v=2QR1d1Dfj5s",
+   "publish": "2026-06-13",
+   "duration": 17.0,
+   "bucket": "Short 20-35s",
+   "views": 2969501,
+   "likes": 33860,
+   "comments": 738,
+   "like_ratio": 0.011,
+   "comment_ratio": 0.0,
+   "niche": "food",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/2QR1d1Dfj5s.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 5.0,
+    "weird": 2.0,
+    "cuts": 3.0,
+    "escalation": 3.0,
+    "dead_air": 1,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "static",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 121.8,
+    "colorful": 70.8
+   },
+   "audio": {
+    "loud_first2s": 0.149,
+    "buildup": -0.009
+   }
+  },
+  {
+   "video_id": "iRmZa2YZVjQ",
+   "channel": "Disobey Normal",
+   "title": "Making the World's Most Boring Toy *actually* Entertaining",
+   "url": "https://www.youtube.com/watch?v=iRmZa2YZVjQ",
+   "publish": "2026-06-08",
+   "duration": 35.0,
+   "bucket": "Short 20-35s",
+   "views": 2749726,
+   "likes": 54579,
+   "comments": 776,
+   "like_ratio": 0.02,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/iRmZa2YZVjQ.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 3.0,
+    "cuts": 5.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 138.2,
+    "colorful": 68.8
+   },
+   "audio": {
+    "loud_first2s": 0.168,
+    "buildup": 0.009
+   }
+  },
+  {
+   "video_id": "apgxu2c0rkM",
+   "channel": "Hafu Go",
+   "title": "I Tested the “Invincible” Match",
+   "url": "https://www.youtube.com/watch?v=apgxu2c0rkM",
+   "publish": "2025-06-25",
+   "duration": 27.0,
+   "bucket": "Short 20-35s",
+   "views": 2743692,
+   "likes": 27094,
+   "comments": 66,
+   "like_ratio": 0.01,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "challenge_test",
+   "strip": "ref_filmstrips/apgxu2c0rkM.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "challenge_test",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 84.7,
+    "colorful": 49.9
+   },
+   "audio": {
+    "loud_first2s": 0.13,
+    "buildup": 0.021
+   }
+  },
+  {
+   "video_id": "gZG32Ih8yIg",
+   "channel": "Hafu Go",
+   "title": "I Tested The Sharpest Paper Dart!",
+   "url": "https://www.youtube.com/watch?v=gZG32Ih8yIg",
+   "publish": "2025-10-17",
+   "duration": 28.0,
+   "bucket": "Short 20-35s",
+   "views": 2660766,
+   "likes": 32059,
+   "comments": 171,
+   "like_ratio": 0.012,
+   "comment_ratio": 0.0,
+   "niche": "life_hack",
+   "format": "build_process",
+   "strip": "ref_filmstrips/gZG32Ih8yIg.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 4.0,
+    "cuts": 5.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 2.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 135.0,
+    "colorful": 50.1
+   },
+   "audio": {
+    "loud_first2s": 0.192,
+    "buildup": -0.045
+   }
+  },
+  {
+   "video_id": "N2PHGSbiHQE",
+   "channel": "Disobey Normal",
+   "title": "what Frozen Smoke looks like",
+   "url": "https://www.youtube.com/watch?v=N2PHGSbiHQE",
+   "publish": "2026-06-14",
+   "duration": 24.0,
+   "bucket": "Short 20-35s",
+   "views": 1977499,
+   "likes": 33455,
+   "comments": 216,
+   "like_ratio": 0.017,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/N2PHGSbiHQE.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 2.0,
+    "weird": 5.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 131.2,
+    "colorful": 72.5
+   },
+   "audio": {
+    "loud_first2s": 0.158,
+    "buildup": -0.005
+   }
+  },
+  {
+   "video_id": "jJugVpz9T_w",
+   "channel": "Hafu Go",
+   "title": "I Turned an Egg into a Bouncy Ball",
+   "url": "https://www.youtube.com/watch?v=jJugVpz9T_w",
+   "publish": "2025-07-02",
+   "duration": 37.0,
+   "bucket": "Mid 36-44s",
+   "views": 1965421,
+   "likes": 26766,
+   "comments": 440,
+   "like_ratio": 0.014,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "build_process",
+   "strip": "ref_filmstrips/jJugVpz9T_w.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 63.0,
+    "colorful": 38.2
+   },
+   "audio": {
+    "loud_first2s": 0.101,
+    "buildup": -0.031
+   }
+  },
+  {
+   "video_id": "mBn3bkhvXVA",
+   "channel": "Disobey Normal",
+   "title": "what Museum Wax looks like",
+   "url": "https://www.youtube.com/watch?v=mBn3bkhvXVA",
+   "publish": "2026-05-27",
+   "duration": 16.0,
+   "bucket": "Short 20-35s",
+   "views": 1642805,
+   "likes": 17625,
+   "comments": 166,
+   "like_ratio": 0.011,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/mBn3bkhvXVA.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 2.0,
+    "weird": 4.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 1,
+    "null_state": 0,
+    "subject_size": 3.0,
+    "motion_first_second": "static",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 124.0,
+    "colorful": 59.2
+   },
+   "audio": {
+    "loud_first2s": 0.165,
+    "buildup": 0.018
+   }
+  },
+  {
+   "video_id": "B9BYwviyJ1s",
+   "channel": "Disobey Normal",
+   "title": "Is Military Gum *ACTUALLY* useful?",
+   "url": "https://www.youtube.com/watch?v=B9BYwviyJ1s",
+   "publish": "2026-05-26",
+   "duration": 22.0,
+   "bucket": "Short 20-35s",
+   "views": 1618016,
+   "likes": 19083,
+   "comments": 103,
+   "like_ratio": 0.012,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/B9BYwviyJ1s.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 5.0,
+    "weird": 3.0,
+    "cuts": 5.0,
+    "escalation": 3.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 125.8,
+    "colorful": 58.4
+   },
+   "audio": {
+    "loud_first2s": 0.18,
+    "buildup": 0.004
+   }
+  },
+  {
+   "video_id": "pZUE_uwNHH4",
+   "channel": "Hafu Go",
+   "title": "What Happens If You Trap a Shoe in Smoke? ft. MrBeast",
+   "url": "https://www.youtube.com/watch?v=pZUE_uwNHH4",
+   "publish": "2026-01-07",
+   "duration": 29.0,
+   "bucket": "Short 20-35s",
+   "views": 1434814,
+   "likes": 29233,
+   "comments": 132,
+   "like_ratio": 0.02,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "build_process",
+   "strip": "ref_filmstrips/pZUE_uwNHH4.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 120.7,
+    "colorful": 43.8
+   },
+   "audio": {
+    "loud_first2s": 0.124,
+    "buildup": -0.003
+   }
+  },
+  {
+   "video_id": "GTKkomRZx6M",
+   "channel": "Hafu Go",
+   "title": "I Tested a Self-Moving Chess Board",
+   "url": "https://www.youtube.com/watch?v=GTKkomRZx6M",
+   "publish": "2026-06-04",
+   "duration": 31.0,
+   "bucket": "Short 20-35s",
+   "views": 1411107,
+   "likes": 13746,
+   "comments": 53,
+   "like_ratio": 0.01,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/GTKkomRZx6M.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 5.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 130.3,
+    "colorful": 40.4
+   },
+   "audio": {
+    "loud_first2s": 0.154,
+    "buildup": 0.025
+   }
+  },
+  {
+   "video_id": "D5BJS_ye_7s",
+   "channel": "Hafu Go",
+   "title": "I Tested the “Anti-Gravity” Machine",
+   "url": "https://www.youtube.com/watch?v=D5BJS_ye_7s",
+   "publish": "2025-07-09",
+   "duration": 19.0,
+   "bucket": "Short 20-35s",
+   "views": 1380197,
+   "likes": 12393,
+   "comments": 75,
+   "like_ratio": 0.009,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/D5BJS_ye_7s.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 3.0,
+    "weird": 5.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "object_closeup"
+   },
+   "pixel": {
+    "brightness": 96.6,
+    "colorful": 25.1
+   },
+   "audio": {
+    "loud_first2s": 0.107,
+    "buildup": -0.001
+   }
+  },
+  {
+   "video_id": "gagi3Hy16cQ",
+   "channel": "Disobey Normal",
+   "title": "what Limited Edition 4th of July Snacks look like",
+   "url": "https://www.youtube.com/watch?v=gagi3Hy16cQ",
+   "publish": "2026-06-12",
+   "duration": 21.0,
+   "bucket": "Short 20-35s",
+   "views": 1243142,
+   "likes": 17757,
+   "comments": 236,
+   "like_ratio": 0.014,
+   "comment_ratio": 0.0,
+   "niche": "food",
+   "format": "multi_item_compilation",
+   "strip": "ref_filmstrips/gagi3Hy16cQ.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 5.0,
+    "weird": 2.0,
+    "cuts": 4.0,
+    "escalation": 3.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 114.9,
+    "colorful": 82.2
+   },
+   "audio": {
+    "loud_first2s": 0.2,
+    "buildup": -0.005
+   }
+  },
+  {
+   "video_id": "YihzR-3RQJY",
+   "channel": "Disobey Normal",
+   "title": "what Chinese Finger Traps look like",
+   "url": "https://www.youtube.com/watch?v=YihzR-3RQJY",
+   "publish": "2026-05-26",
+   "duration": 23.0,
+   "bucket": "Short 20-35s",
+   "views": 1137645,
+   "likes": 9368,
+   "comments": 124,
+   "like_ratio": 0.008,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "challenge_test",
+   "strip": "ref_filmstrips/YihzR-3RQJY.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 4.0,
+    "cuts": 3.0,
+    "escalation": 3.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 117.0,
+    "colorful": 89.1
+   },
+   "audio": {
+    "loud_first2s": 0.185,
+    "buildup": 0.039
+   }
+  },
+  {
+   "video_id": "OqEUEjuYpuY",
+   "channel": "Disobey Normal",
+   "title": "Is Gatorade Water *ACTUALLY* Worth It?",
+   "url": "https://www.youtube.com/watch?v=OqEUEjuYpuY",
+   "publish": "2026-06-02",
+   "duration": 28.0,
+   "bucket": "Short 20-35s",
+   "views": 1100628,
+   "likes": 17681,
+   "comments": 116,
+   "like_ratio": 0.016,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/OqEUEjuYpuY.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 5.0,
+    "weird": 3.0,
+    "cuts": 6.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 5.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 120.3,
+    "colorful": 63.4
+   },
+   "audio": {
+    "loud_first2s": 0.21,
+    "buildup": -0.039
+   }
+  },
+  {
+   "video_id": "RHGO4eoUato",
+   "channel": "Disobey Normal",
+   "title": "what World Cup Peelerz look like",
+   "url": "https://www.youtube.com/watch?v=RHGO4eoUato",
+   "publish": "2026-06-19",
+   "duration": 15.0,
+   "bucket": "Short 20-35s",
+   "views": 1075701,
+   "likes": 12903,
+   "comments": 110,
+   "like_ratio": 0.012,
+   "comment_ratio": 0.0,
+   "niche": "china_products",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/RHGO4eoUato.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 2.0,
+    "cuts": 5.0,
+    "escalation": 3.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 129.0,
+    "colorful": 62.9
+   },
+   "audio": {
+    "loud_first2s": 0.169,
+    "buildup": 0.019
+   }
+  },
+  {
+   "video_id": "oFAr1ekSPPo",
+   "channel": "Disobey Normal",
+   "title": "what Big League Chew looks like",
+   "url": "https://www.youtube.com/watch?v=oFAr1ekSPPo",
+   "publish": "2026-06-17",
+   "duration": 20.0,
+   "bucket": "Short 20-35s",
+   "views": 1055122,
+   "likes": 13443,
+   "comments": 76,
+   "like_ratio": 0.013,
+   "comment_ratio": 0.0,
+   "niche": "food",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/oFAr1ekSPPo.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 5.0,
+    "weird": 4.0,
+    "cuts": 5.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 117.8,
+    "colorful": 94.3
+   },
+   "audio": {
+    "loud_first2s": 0.199,
+    "buildup": -0.016
+   }
+  },
+  {
+   "video_id": "hYct7B8gHrI",
+   "channel": "Disobey Normal",
+   "title": "How to Bubble",
+   "url": "https://www.youtube.com/watch?v=hYct7B8gHrI",
+   "publish": "2026-06-16",
+   "duration": 32.0,
+   "bucket": "Short 20-35s",
+   "views": 1037251,
+   "likes": 9011,
+   "comments": 108,
+   "like_ratio": 0.009,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/hYct7B8gHrI.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 4.0,
+    "cuts": 5.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 111.5,
+    "colorful": 59.2
+   },
+   "audio": {
+    "loud_first2s": 0.181,
+    "buildup": -0.017
+   }
+  },
+  {
+   "video_id": "yaoIPshi8K0",
+   "channel": "Disobey Normal",
+   "title": "How to Squeeze a Lemon",
+   "url": "https://www.youtube.com/watch?v=yaoIPshi8K0",
+   "publish": "2026-05-20",
+   "duration": 18.0,
+   "bucket": "Short 20-35s",
+   "views": 1010314,
+   "likes": 9831,
+   "comments": 62,
+   "like_ratio": 0.01,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/yaoIPshi8K0.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 5.0,
+    "weird": 2.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 126.3,
+    "colorful": 76.5
+   },
+   "audio": {
+    "loud_first2s": 0.182,
+    "buildup": -0.022
+   }
+  },
+  {
+   "video_id": "etTbCjgbnPI",
+   "channel": "Disobey Normal",
+   "title": "what Grow Capsules look like",
+   "url": "https://www.youtube.com/watch?v=etTbCjgbnPI",
+   "publish": "2026-06-11",
+   "duration": 19.0,
+   "bucket": "Short 20-35s",
+   "views": 1001644,
+   "likes": 16971,
+   "comments": 149,
+   "like_ratio": 0.017,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/etTbCjgbnPI.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 5.0,
+    "weird": 3.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 1,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "static",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 129.5,
+    "colorful": 84.1
+   },
+   "audio": {
+    "loud_first2s": 0.19,
+    "buildup": 0.004
+   }
+  },
+  {
+   "video_id": "5xAB2A2HJTY",
+   "channel": "Disobey Normal",
+   "title": "Can you Transform a Pool into Slime?",
+   "url": "https://www.youtube.com/watch?v=5xAB2A2HJTY",
+   "publish": "2026-06-20",
+   "duration": 27.0,
+   "bucket": "Short 20-35s",
+   "views": 902038,
+   "likes": 19400,
+   "comments": 150,
+   "like_ratio": 0.021,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/5xAB2A2HJTY.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 3.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 1,
+    "subject_size": 3.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 136.3,
+    "colorful": 79.2
+   },
+   "audio": {
+    "loud_first2s": 0.178,
+    "buildup": -0.007
+   }
+  },
+  {
+   "video_id": "HUHPTj5kbgk",
+   "channel": "Hafu Go",
+   "title": "I Made the Viral AI Lava Cake",
+   "url": "https://www.youtube.com/watch?v=HUHPTj5kbgk",
+   "publish": "2025-11-28",
+   "duration": 37.0,
+   "bucket": "Mid 36-44s",
+   "views": 898966,
+   "likes": 10957,
+   "comments": 93,
+   "like_ratio": 0.012,
+   "comment_ratio": 0.0,
+   "niche": "food",
+   "format": "build_process",
+   "strip": "ref_filmstrips/HUHPTj5kbgk.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 5.0,
+    "cuts": 2.0,
+    "escalation": 3.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 108.8,
+    "colorful": 74.8
+   },
+   "audio": {
+    "loud_first2s": 0.146,
+    "buildup": -0.018
+   }
+  },
+  {
+   "video_id": "zdLVRxsnnqU",
+   "channel": "Disobey Normal",
+   "title": "what Nickelodeon Slime Gum looks like",
+   "url": "https://www.youtube.com/watch?v=zdLVRxsnnqU",
+   "publish": "2026-05-22",
+   "duration": 19.0,
+   "bucket": "Short 20-35s",
+   "views": 861105,
+   "likes": 14284,
+   "comments": 86,
+   "like_ratio": 0.017,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/zdLVRxsnnqU.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 5.0,
+    "weird": 3.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 120.5,
+    "colorful": 86.2
+   },
+   "audio": {
+    "loud_first2s": 0.173,
+    "buildup": -0.003
+   }
+  },
+  {
+   "video_id": "0Kj5HqyEfW0",
+   "channel": "Disobey Normal",
+   "title": "what a $1 rubixs cube looks like",
+   "url": "https://www.youtube.com/watch?v=0Kj5HqyEfW0",
+   "publish": "2026-05-23",
+   "duration": 17.0,
+   "bucket": "Short 20-35s",
+   "views": 803526,
+   "likes": 7333,
+   "comments": 81,
+   "like_ratio": 0.009,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/0Kj5HqyEfW0.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 4.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 1,
+    "null_state": 0,
+    "subject_size": 3.0,
+    "motion_first_second": "static",
+    "hook_archetype": "contrast_versus",
+    "opening_line_type": "contrast_versus",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 121.7,
+    "colorful": 63.7
+   },
+   "audio": {
+    "loud_first2s": 0.197,
+    "buildup": -0.006
+   }
+  },
+  {
+   "video_id": "qG8zwLtdM0A",
+   "channel": "Hafu Go",
+   "title": "Can You Pick Up an Egg Without Breaking It?",
+   "url": "https://www.youtube.com/watch?v=qG8zwLtdM0A",
+   "publish": "2026-05-30",
+   "duration": 24.0,
+   "bucket": "Short 20-35s",
+   "views": 786748,
+   "likes": 6954,
+   "comments": 34,
+   "like_ratio": 0.009,
+   "comment_ratio": 0.0,
+   "niche": "life_hack",
+   "format": "challenge_test",
+   "strip": "ref_filmstrips/qG8zwLtdM0A.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 5.0,
+    "weird": 4.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 5.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "object_closeup"
+   },
+   "pixel": {
+    "brightness": 120.0,
+    "colorful": 52.7
+   },
+   "audio": {
+    "loud_first2s": 0.128,
+    "buildup": -0.068
+   }
+  },
+  {
+   "video_id": "8iDru7YE-PA",
+   "channel": "Disobey Normal",
+   "title": "Part 2 of Accidentally Burning my Hand",
+   "url": "https://www.youtube.com/watch?v=8iDru7YE-PA",
+   "publish": "2026-06-04",
+   "duration": 37.0,
+   "bucket": "Mid 36-44s",
+   "views": 776324,
+   "likes": 13143,
+   "comments": 181,
+   "like_ratio": 0.017,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/8iDru7YE-PA.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "story_personal",
+    "opening_line_type": "story",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 127.3,
+    "colorful": 58.4
+   },
+   "audio": {
+    "loud_first2s": 0.178,
+    "buildup": 0.002
+   }
+  },
+  {
+   "video_id": "iHKOiJlnb2Y",
+   "channel": "Hafu Go",
+   "title": "I Tested the Most Realistic AI Robot Pet",
+   "url": "https://www.youtube.com/watch?v=iHKOiJlnb2Y",
+   "publish": "2025-12-23",
+   "duration": 39.0,
+   "bucket": "Mid 36-44s",
+   "views": 605276,
+   "likes": 8940,
+   "comments": 100,
+   "like_ratio": 0.015,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/iHKOiJlnb2Y.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 5.0,
+    "weird": 3.0,
+    "cuts": 3.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 72.5,
+    "colorful": 19.3
+   },
+   "audio": {
+    "loud_first2s": 0.156,
+    "buildup": -0.007
+   }
+  },
+  {
+   "video_id": "Bv_XyBFcApU",
+   "channel": "Disobey Normal",
+   "title": "Does the Size of the Glass Matter?",
+   "url": "https://www.youtube.com/watch?v=Bv_XyBFcApU",
+   "publish": "2026-05-17",
+   "duration": 21.0,
+   "bucket": "Short 20-35s",
+   "views": 581436,
+   "likes": 8293,
+   "comments": 95,
+   "like_ratio": 0.014,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "challenge_test",
+   "strip": "ref_filmstrips/Bv_XyBFcApU.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 3.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 3.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 134.6,
+    "colorful": 48.5
+   },
+   "audio": {
+    "loud_first2s": 0.166,
+    "buildup": 0.014
+   }
+  },
+  {
+   "video_id": "px2Y7bHfW7c",
+   "channel": "Disobey Normal",
+   "title": "What Happened to the Baby Moths?",
+   "url": "https://www.youtube.com/watch?v=px2Y7bHfW7c",
+   "publish": "2026-06-04",
+   "duration": 21.0,
+   "bucket": "Short 20-35s",
+   "views": 574868,
+   "likes": 6761,
+   "comments": 71,
+   "like_ratio": 0.012,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "story_personal",
+   "strip": "ref_filmstrips/px2Y7bHfW7c.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 5.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 3.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "story_personal",
+    "opening_line_type": "story",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 154.2,
+    "colorful": 52.2
+   },
+   "audio": {
+    "loud_first2s": 0.188,
+    "buildup": 0.008
+   }
+  },
+  {
+   "video_id": "KbxdOb74OSs",
+   "channel": "Hafu Go",
+   "title": "Watermelon Smoothie Hack",
+   "url": "https://www.youtube.com/watch?v=KbxdOb74OSs",
+   "publish": "2026-06-20",
+   "duration": 31.0,
+   "bucket": "Short 20-35s",
+   "views": 556093,
+   "likes": 4135,
+   "comments": 18,
+   "like_ratio": 0.007,
+   "comment_ratio": 0.0,
+   "niche": "life_hack",
+   "format": "build_process",
+   "strip": "ref_filmstrips/KbxdOb74OSs.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 5.0,
+    "weird": 4.0,
+    "cuts": 2.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 115.7,
+    "colorful": 63.2
+   },
+   "audio": {
+    "loud_first2s": 0.201,
+    "buildup": -0.076
+   }
+  },
+  {
+   "video_id": "N7CJiYTrhYI",
+   "channel": "Disobey Normal",
+   "title": "Does Silly Putty Explode?",
+   "url": "https://www.youtube.com/watch?v=N7CJiYTrhYI",
+   "publish": "2026-06-09",
+   "duration": 24.0,
+   "bucket": "Short 20-35s",
+   "views": 530248,
+   "likes": 10890,
+   "comments": 65,
+   "like_ratio": 0.021,
+   "comment_ratio": 0.0,
+   "niche": "physics_demo",
+   "format": "challenge_test",
+   "strip": "ref_filmstrips/N7CJiYTrhYI.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 5.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 134.9,
+    "colorful": 78.9
+   },
+   "audio": {
+    "loud_first2s": 0.204,
+    "buildup": -0.027
+   }
+  },
+  {
+   "video_id": "nxHAU2vtuKw",
+   "channel": "Disobey Normal",
+   "title": "Does the Shape Change the Odds?",
+   "url": "https://www.youtube.com/watch?v=nxHAU2vtuKw",
+   "publish": "2026-05-19",
+   "duration": 17.0,
+   "bucket": "Short 20-35s",
+   "views": 482077,
+   "likes": 4350,
+   "comments": 23,
+   "like_ratio": 0.009,
+   "comment_ratio": 0.0,
+   "niche": "physics_demo",
+   "format": "versus_comparison",
+   "strip": "ref_filmstrips/nxHAU2vtuKw.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 3.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 123.1,
+    "colorful": 65.7
+   },
+   "audio": {
+    "loud_first2s": 0.161,
+    "buildup": 0.005
+   }
+  },
+  {
+   "video_id": "lhMpwsdiAcQ",
+   "channel": "Disobey Normal",
+   "title": "i messed up",
+   "url": "https://www.youtube.com/watch?v=lhMpwsdiAcQ",
+   "publish": "2026-06-04",
+   "duration": 19.0,
+   "bucket": "Short 20-35s",
+   "views": 443362,
+   "likes": 7009,
+   "comments": 40,
+   "like_ratio": 0.016,
+   "comment_ratio": 0.0,
+   "niche": "product_test_knockoff",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/lhMpwsdiAcQ.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 3.0,
+    "cuts": 4.0,
+    "escalation": 3.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 125.1,
+    "colorful": 80.6
+   },
+   "audio": {
+    "loud_first2s": 0.17,
+    "buildup": 0.002
+   }
+  },
+  {
+   "video_id": "oGQ2FgRTO4E",
+   "channel": "Disobey Normal",
+   "title": "How Many Books Can Superman Hold?",
+   "url": "https://www.youtube.com/watch?v=oGQ2FgRTO4E",
+   "publish": "2026-05-18",
+   "duration": 35.0,
+   "bucket": "Short 20-35s",
+   "views": 421838,
+   "likes": 6834,
+   "comments": 71,
+   "like_ratio": 0.016,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/oGQ2FgRTO4E.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 5.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "object_closeup"
+   },
+   "pixel": {
+    "brightness": 126.8,
+    "colorful": 47.4
+   },
+   "audio": {
+    "loud_first2s": 0.12,
+    "buildup": 0.031
+   }
+  },
+  {
+   "video_id": "9Bu1KMIBjX4",
+   "channel": "Disobey Normal",
+   "title": "what Multi-colored Spirals look like",
+   "url": "https://www.youtube.com/watch?v=9Bu1KMIBjX4",
+   "publish": "2026-06-18",
+   "duration": 27.0,
+   "bucket": "Short 20-35s",
+   "views": 402190,
+   "likes": 6459,
+   "comments": 38,
+   "like_ratio": 0.016,
+   "comment_ratio": 0.0,
+   "niche": "life_hack",
+   "format": "build_process",
+   "strip": "ref_filmstrips/9Bu1KMIBjX4.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 3.0,
+    "weird": 3.0,
+    "cuts": 5.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 140.0,
+    "colorful": 54.3
+   },
+   "audio": {
+    "loud_first2s": 0.212,
+    "buildup": -0.015
+   }
+  },
+  {
+   "video_id": "pMvCZjc7xtw",
+   "channel": "Hafu Go",
+   "title": "I Tested the Origami Phone Holder Hack",
+   "url": "https://www.youtube.com/watch?v=pMvCZjc7xtw",
+   "publish": "2026-05-28",
+   "duration": 23.0,
+   "bucket": "Short 20-35s",
+   "views": 320580,
+   "likes": 3154,
+   "comments": 57,
+   "like_ratio": 0.01,
+   "comment_ratio": 0.0,
+   "niche": "life_hack",
+   "format": "build_process",
+   "strip": "ref_filmstrips/pMvCZjc7xtw.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 3.0,
+    "weird": 3.0,
+    "cuts": 3.0,
+    "escalation": 3.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 3.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "problem_solution",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 157.2,
+    "colorful": 65.6
+   },
+   "audio": {
+    "loud_first2s": 0.175,
+    "buildup": 0.004
+   }
+  },
+  {
+   "video_id": "rI325L2r4pA",
+   "channel": "Disobey Normal",
+   "title": "what Fruit Power looks like",
+   "url": "https://www.youtube.com/watch?v=rI325L2r4pA",
+   "publish": "2026-06-20",
+   "duration": 17.0,
+   "bucket": "Short 20-35s",
+   "views": 291832,
+   "likes": 4322,
+   "comments": 74,
+   "like_ratio": 0.015,
+   "comment_ratio": 0.0,
+   "niche": "china_products",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/rI325L2r4pA.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 2.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "bold_claim_superlative",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 123.9,
+    "colorful": 79.8
+   },
+   "audio": {
+    "loud_first2s": 0.182,
+    "buildup": 0.005
+   }
+  },
+  {
+   "video_id": "qqbxO7JCCYI",
+   "channel": "Hafu Go",
+   "title": "I Tested the \"Unbreakable\" Bubble",
+   "url": "https://www.youtube.com/watch?v=qqbxO7JCCYI",
+   "publish": "2026-06-16",
+   "duration": 20.0,
+   "bucket": "Short 20-35s",
+   "views": 266699,
+   "likes": 2361,
+   "comments": 32,
+   "like_ratio": 0.009,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "build_process",
+   "strip": "ref_filmstrips/qqbxO7JCCYI.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 2.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 3.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 139.6,
+    "colorful": 40.8
+   },
+   "audio": {
+    "loud_first2s": 0.247,
+    "buildup": -0.106
+   }
+  },
+  {
+   "video_id": "ZV-aQ9hgqdg",
+   "channel": "Disobey Normal",
+   "title": "Can you Transform a Water Gun into a Bubble Gun?",
+   "url": "https://www.youtube.com/watch?v=ZV-aQ9hgqdg",
+   "publish": "2026-06-17",
+   "duration": 17.0,
+   "bucket": "Short 20-35s",
+   "views": 251557,
+   "likes": 4028,
+   "comments": 34,
+   "like_ratio": 0.016,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "build_process",
+   "strip": "ref_filmstrips/ZV-aQ9hgqdg.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 3.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 133.8,
+    "colorful": 89.3
+   },
+   "audio": {
+    "loud_first2s": 0.218,
+    "buildup": -0.02
+   }
+  },
+  {
+   "video_id": "CijZ4A1HHtU",
+   "channel": "Disobey Normal",
+   "title": "Can you *ACTUALLY* Make Something Disappear?",
+   "url": "https://www.youtube.com/watch?v=CijZ4A1HHtU",
+   "publish": "2026-06-12",
+   "duration": 17.0,
+   "bucket": "Short 20-35s",
+   "views": 246208,
+   "likes": 3703,
+   "comments": 40,
+   "like_ratio": 0.015,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/CijZ4A1HHtU.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 3.0,
+    "weird": 4.0,
+    "cuts": 1.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 126.2,
+    "colorful": 68.7
+   },
+   "audio": {
+    "loud_first2s": 0.187,
+    "buildup": -0.007
+   }
+  },
+  {
+   "video_id": "e8ASarQ264Y",
+   "channel": "Hafu Go",
+   "title": "How I Turned a Penny Into Gold",
+   "url": "https://www.youtube.com/watch?v=e8ASarQ264Y",
+   "publish": "2026-06-07",
+   "duration": 30.0,
+   "bucket": "Short 20-35s",
+   "views": 241660,
+   "likes": 3884,
+   "comments": 50,
+   "like_ratio": 0.016,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "build_process",
+   "strip": "ref_filmstrips/e8ASarQ264Y.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 5.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 1,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "static",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "demonstration",
+    "first_frame_subject": "object_closeup"
+   },
+   "pixel": {
+    "brightness": 125.2,
+    "colorful": 28.6
+   },
+   "audio": {
+    "loud_first2s": 0.154,
+    "buildup": 0.008
+   }
+  },
+  {
+   "video_id": "xEuE7E1Ax7I",
+   "channel": "Disobey Normal",
+   "title": "Can a Robot Dog Swim?",
+   "url": "https://www.youtube.com/watch?v=xEuE7E1Ax7I",
+   "publish": "2026-06-18",
+   "duration": 38.0,
+   "bucket": "Mid 36-44s",
+   "views": 220468,
+   "likes": 4136,
+   "comments": 54,
+   "like_ratio": 0.019,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/xEuE7E1Ax7I.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 5.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "question",
+    "opening_line_type": "question",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 116.2,
+    "colorful": 46.3
+   },
+   "audio": {
+    "loud_first2s": 0.188,
+    "buildup": 0.0
+   }
+  },
+  {
+   "video_id": "itRuzH7sWxU",
+   "channel": "Disobey Normal",
+   "title": "Strangers Dog on my Back",
+   "url": "https://www.youtube.com/watch?v=itRuzH7sWxU",
+   "publish": "2026-06-19",
+   "duration": 25.0,
+   "bucket": "Short 20-35s",
+   "views": 177018,
+   "likes": 3168,
+   "comments": 28,
+   "like_ratio": 0.018,
+   "comment_ratio": 0.0,
+   "niche": "other",
+   "format": "story_personal",
+   "strip": "ref_filmstrips/itRuzH7sWxU.jpg",
+   "ai": {
+    "face": 1,
+    "object_clarity": 4.0,
+    "weird": 4.0,
+    "cuts": 4.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "moderate",
+    "hook_archetype": "story_personal",
+    "opening_line_type": "story",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 125.7,
+    "colorful": 60.6
+   },
+   "audio": {
+    "loud_first2s": 0.178,
+    "buildup": -0.031
+   }
+  },
+  {
+   "video_id": "DgFX1kJcWtw",
+   "channel": "Hafu Go",
+   "title": "I Tested the Fireproof Money",
+   "url": "https://www.youtube.com/watch?v=DgFX1kJcWtw",
+   "publish": "2026-06-08",
+   "duration": 25.0,
+   "bucket": "Short 20-35s",
+   "views": 153760,
+   "likes": 1677,
+   "comments": 40,
+   "like_ratio": 0.011,
+   "comment_ratio": 0.0,
+   "niche": "science_gadget",
+   "format": "single_object_demo",
+   "strip": "ref_filmstrips/DgFX1kJcWtw.jpg",
+   "ai": {
+    "face": 0,
+    "object_clarity": 5.0,
+    "weird": 5.0,
+    "cuts": 2.0,
+    "escalation": 4.0,
+    "dead_air": 0,
+    "null_state": 0,
+    "subject_size": 4.0,
+    "motion_first_second": "dynamic",
+    "hook_archetype": "demonstration_visual",
+    "opening_line_type": "bold_claim",
+    "first_frame_subject": "person_with_object"
+   },
+   "pixel": {
+    "brightness": 66.6,
+    "colorful": 46.4
+   },
+   "audio": {
+    "loud_first2s": 0.18,
+    "buildup": -0.051
+   }
+  }
+ ]
+}

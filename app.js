@@ -73,6 +73,9 @@ const state = {
   experiments: [],   // human/AI tests (merged remote+local)
   groups:      [],   // memoized buildGroups() output; rebuilt on data mutation
   findings:    null,
+  reference:   null,         // competitor corpus (reference.json) — isolated, never merged
+  refChannel:  'all',
+  refSort:     'views',
   names:       loadJSON(LS.names, {}),     // {groupKey: displayName}
   generated:   null,
   // sha + connection
@@ -1973,6 +1976,88 @@ function renderFindings(){
 }
 
 /* ============================================================================
+ * COMPETITORS  (reference.json — public metrics only, NEVER merged into model)
+ * ========================================================================== */
+function prettyTag(s){ return String(s||'').replace(/[_-]+/g,' ').replace(/\b\w/g,c=>c.toUpperCase()); }
+function fmtScore(n){
+  if(n==null || n==='' || isNaN(n)) return '—';
+  return Number.isInteger(+n) ? String(+n) : (+n).toFixed(1);
+}
+function refCardHTML(v){
+  const ai = v.ai||{}, px = v.pixel||{};
+  const tags = [];
+  if(v.format) tags.push(`<span class="badge fmt">${esc(prettyTag(v.format))}</span>`);
+  if(v.niche)  tags.push(`<span class="badge">${esc(prettyTag(v.niche))}</span>`);
+  if(ai.hook_archetype) tags.push(`<span class="badge hook">${esc(prettyTag(ai.hook_archetype))}</span>`);
+  if(v.bucket) tags.push(`<span class="badge bucket">${esc(shortBucket(v.bucket))}</span>`);
+  const scan = [
+    ['Face in frame 1', ai.face ? 'Yes' : 'No'],
+    ['Object clarity',  ai.object_clarity!=null ? fmtScore(ai.object_clarity)+'/5' : '—'],
+    ['Mystery / weird', ai.weird!=null ? fmtScore(ai.weird)+'/5' : '—'],
+    ['Cuts in first 4s', fmtScore(ai.cuts)],
+    ['Dead-air / stall', ai.dead_air ? 'Yes' : 'No'],
+    ['Brightness (0–255)', px.brightness!=null ? Math.round(px.brightness) : '—'],
+    ['Loud first 2s',  v.audio&&v.audio.loud_first2s!=null ? fmtScore(v.audio.loud_first2s) : '—'],
+    ['Subject size',   ai.subject_size!=null ? fmtScore(ai.subject_size)+'/5' : '—'],
+  ];
+  const likeRate = v.like_ratio!=null ? (v.like_ratio*100).toFixed(1)+'%' : '—';
+  return `
+    <article class="card ref-card">
+      <div class="card-strip">
+        <span class="kind-tag ref-tag">REFERENCE</span>
+        <a class="yt-btn" href="${esc(v.url)}" target="_blank" rel="noopener" title="Watch on YouTube">▶</a>
+        ${v.strip?`<img src="${esc(v.strip)}" alt="opening frames" loading="lazy">`:`<div class="no-strip">no filmstrip</div>`}
+      </div>
+      <div class="card-body">
+        <div class="ref-chan">${esc(v.channel||'')}${v.publish?` · ${esc(fmtDateAbs(v.publish)||v.publish)}`:''}</div>
+        <h3 class="card-title">${esc(v.title||'(untitled)')}</h3>
+        <div class="card-metrics">
+          <div class="metric-big"><span class="v">${fmtViews(v.views)}</span><span class="l">views</span></div>
+          <div class="metric-sm"><span class="v">${likeRate}</span><span class="l">like rate</span></div>
+          <div class="metric-sm"><span class="v">${fmtViews(v.comments)}</span><span class="l">comments</span></div>
+        </div>
+        <div class="ref-tags">${tags.join('')}</div>
+        <details class="ref-scan">
+          <summary>🔬 What I scanned</summary>
+          <div class="ref-scan-grid">
+            ${scan.map(([k,val])=>`<div class="rs-cell"><span class="rs-k">${esc(k)}</span><span class="rs-v">${esc(String(val))}</span></div>`).join('')}
+          </div>
+          ${ai.first_frame_subject?`<p class="rs-note"><b>First frame:</b> ${esc(ai.first_frame_subject)}</p>`:''}
+          ${ai.opening_line_type?`<p class="rs-note"><b>Opening line:</b> ${esc(prettyTag(ai.opening_line_type))}</p>`:''}
+          <p class="rs-disclaimer">Public metrics only — no swipe/AVD for other channels. Reference, not a model input.</p>
+        </details>
+      </div>
+    </article>`;
+}
+function renderReference(){
+  const wrap = $('#ref-grid'); if(!wrap) return;
+  const R = state.reference;
+  if(!R || !R.videos){ wrap.innerHTML='<p class="empty">No competitor data loaded.</p>'; return; }
+  const chans = R.channels||{};
+  $('#ref-stamp').textContent =
+    `${R.count||R.videos.length} videos scanned · ${Object.keys(chans).join(' · ')} · updated ${esc(R.updated||'—')}`;
+  const ins = R.insights||[];
+  $('#ref-warn').innerHTML = ins[0] ? esc(ins[0]) : '';
+  $('#ref-insights').innerHTML = ins.slice(1).map(s=>`<li>${esc(s)}</li>`).join('');
+  // channel chips
+  const keys = ['all', ...Object.keys(chans)];
+  $('#ref-chips').innerHTML = keys.map(c=>{
+    const n = c==='all' ? (R.count||R.videos.length) : chans[c];
+    return `<button type="button" class="chip${state.refChannel===c?' is-active':''}" data-refchan="${esc(c)}">`
+         + `${c==='all'?'All channels':esc(c)} <span class="chip-n">${n}</span></button>`;
+  }).join('');
+  // filter + sort
+  let vids = R.videos.slice();
+  if(state.refChannel!=='all') vids = vids.filter(v=>v.channel===state.refChannel);
+  const s = state.refSort;
+  vids.sort((a,b)=>
+    s==='likes' ? ((b.like_ratio||0)-(a.like_ratio||0)) :
+    s==='date'  ? String(b.publish||'').localeCompare(String(a.publish||'')) :
+                  ((b.views||0)-(a.views||0)));
+  wrap.innerHTML = vids.map(refCardHTML).join('');
+}
+
+/* ============================================================================
  * TABS
  * ========================================================================== */
 function switchTab(tab){
@@ -1982,9 +2067,12 @@ function switchTab(tab){
   });
   $('#view-library').hidden = tab!=='library';
   $('#view-library').classList.toggle('is-active', tab==='library');
+  $('#view-reference').hidden = tab!=='reference';
+  $('#view-reference').classList.toggle('is-active', tab==='reference');
   $('#view-findings').hidden = tab!=='findings';
   $('#view-findings').classList.toggle('is-active', tab==='findings');
-  if(tab==='findings') renderFindings();
+  if(tab==='findings')  renderFindings();
+  if(tab==='reference') renderReference();
   syncURL();
 }
 
@@ -2003,6 +2091,13 @@ function wireEvents(){
   });
   // tabs
   $$('.tab').forEach(t=>t.addEventListener('click', ()=>switchTab(t.dataset.tab)));
+
+  // competitors toolbar
+  $('#ref-chips').addEventListener('click', e=>{
+    const c=e.target.closest('[data-refchan]'); if(!c) return;
+    state.refChannel=c.dataset.refchan; renderReference();
+  });
+  $('#ref-sort').addEventListener('change', e=>{ state.refSort=e.target.value; renderReference(); });
 
   // grid (delegated): card click, add, menu, rename, edit, delete
   $('#grid').addEventListener('click', onLibraryClick);
@@ -2122,6 +2217,9 @@ async function boot(){
   try{ state.findings = await (await fetch('findings.json',{cache:'no-cache'})).json(); }
   catch(e){ state.findings = null; }
 
+  try{ state.reference = await (await fetch('reference.json',{cache:'no-cache'})).json(); }
+  catch(e){ state.reference = null; }
+
   // experiments: GitHub first, then localStorage, then static experiments.json (seed-only)
   let remoteExps = null, gotRemote = false;
   try{
@@ -2154,7 +2252,7 @@ async function boot(){
   setStatus(state.token ? (state.online?'synced':'ro') : 'ro');
 
   // tab + render
-  if(state.tab==='findings') switchTab('findings'); else switchTab('library');
+  if(state.tab==='findings'||state.tab==='reference') switchTab(state.tab); else switchTab('library');
   render();
 
   // deep link to a short
