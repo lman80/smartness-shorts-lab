@@ -944,4 +944,29 @@ dialog::backdrop{background:rgba(17,22,35,.42);backdrop-filter:blur(2px)}
 .rs-v{color:var(--ink);font-weight:800;white-space:nowrap}
 .rs-note{font-size:12px;color:var(--ink-2);line-height:1.5;margin-top:9px}
 .rs-note b{color:var(--ink)}
+.rs-note.good{background:#eef9f3;border-left:3px solid #16a34a;padding:7px 10px;border-radius:6px}
+.rs-note.risk{background:#fdf2f2;border-left:3px solid #dc2626;padding:7px 10px;border-radius:6px}
 .rs-disclaimer{font-size:11px;color:var(--mut-2);font-style:italic;margin-top:9px;line-height:1.5}
+.rs-meta{font-weight:600;color:var(--mut-2);font-size:11px;margin-left:6px}
+/* full script */
+.ref-transcript{font-size:12.5px;line-height:1.65;color:var(--ink-2);margin-top:9px;
+  max-height:200px;overflow:auto;background:var(--line-soft);border-radius:8px;padding:10px 12px;white-space:pre-wrap}
+/* script analysis */
+.ref-analysis>summary{color:#a4316f}
+.sa-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.sa-pill{font-size:11px;font-weight:700;background:#f3eefc;color:#6b35b8;border-radius:999px;padding:3px 9px}
+.hk-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.hk-chip{font-size:11px;font-weight:700;background:var(--accent-soft);color:var(--accent-ink);border-radius:6px;padding:3px 8px}
+.sa-meters{display:flex;flex-direction:column;gap:6px;margin-top:11px}
+.sa-meter{display:grid;grid-template-columns:74px 1fr 34px;align-items:center;gap:8px;font-size:11.5px}
+.sm-l{color:var(--mut);font-weight:600}
+.sm-bar{height:7px;background:var(--line);border-radius:99px;overflow:hidden}
+.sm-bar>span{display:block;height:100%;background:linear-gradient(90deg,#8b5cf6,#a4316f);border-radius:99px}
+.sm-v{color:var(--ink);font-weight:800;text-align:right}
+.sa-beats{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:7px;
+  border-left:2px solid var(--line);padding-left:12px}
+.sa-beats li{display:grid;grid-template-columns:auto auto 1fr;gap:8px;align-items:baseline;font-size:12px;line-height:1.45}
+.beat-n{width:18px;height:18px;flex:none;display:inline-grid;place-items:center;border-radius:99px;
+  background:var(--accent);color:#fff;font-size:10px;font-weight:800;margin-left:-22px}
+.beat-l{font-weight:800;color:var(--ink);text-transform:uppercase;font-size:10.5px;letter-spacing:.02em;white-space:nowrap}
+.beat-w{color:var(--ink-2)}

@@ -1983,14 +1983,63 @@ function fmtScore(n){
   if(n==null || n==='' || isNaN(n)) return '—';
   return Number.isInteger(+n) ? String(+n) : (+n).toFixed(1);
 }
+// the LLM script analysis block (hk_* flags, 1-5 meters, beat-by-beat, why/risk)
+function renderScriptAnalysis(sc){
+  if(!sc) return '';
+  const flags = [
+    ['hk_payoff','promises payoff'],['hk_superlative','superlative'],['hk_number','number/price'],
+    ['hk_brand','names brand'],['hk_twist','twist'],['hk_question','question'],
+    ['hk_null_state','null-state'],['list_or_numbered','list / steps'],
+    ['against_the_norm','against the norm'],['has_cta','has CTA'],
+  ];
+  const chips = flags.filter(([k])=>sc[k]).map(([,l])=>`<span class="hk-chip">${esc(l)}</span>`).join('');
+  const meters = [['Curiosity',sc.hk_curiosity],['Stakes',sc.hk_stakes],['Specificity',sc.hk_specificity]]
+    .map(([l,n])=>`<div class="sa-meter"><span class="sm-l">${l}</span><span class="sm-bar"><span style="width:${Math.max(0,Math.min(5,+n||0))/5*100}%"></span></span><span class="sm-v">${n!=null?n:'–'}/5</span></div>`).join('');
+  const beats = (sc.beats||[]).map((b,i)=>`<li><span class="beat-n">${i+1}</span><span class="beat-l">${esc(b.label||'')}</span><span class="beat-w">${esc(b.what||'')}</span></li>`).join('');
+  const pills = [
+    sc.opening_line_type && prettyTag(sc.opening_line_type),
+    sc.talking_pace && prettyTag(sc.talking_pace)+' pace',
+    sc.payoff_timing && 'payoff: '+sc.payoff_timing,
+    sc.tone && prettyTag(sc.tone),
+  ].filter(Boolean).map(p=>`<span class="sa-pill">${esc(p)}</span>`).join('');
+  return `
+    <details class="ref-scan ref-analysis">
+      <summary>🧠 Script analysis</summary>
+      ${pills?`<div class="sa-pills">${pills}</div>`:''}
+      ${chips?`<div class="hk-chips">${chips}</div>`:''}
+      ${meters?`<div class="sa-meters">${meters}</div>`:''}
+      ${beats?`<ol class="sa-beats">${beats}</ol>`:''}
+      ${sc.cta_text?`<p class="rs-note"><b>CTA:</b> "${esc(sc.cta_text)}"</p>`:''}
+      ${sc.why_it_works?`<p class="rs-note good"><b>Why it works:</b> ${esc(sc.why_it_works)}</p>`:''}
+      ${sc.script_risk?`<p class="rs-note risk"><b>Risk:</b> ${esc(sc.script_risk)}</p>`:''}
+    </details>`;
+}
 function refCardHTML(v){
-  const ai = v.ai||{}, px = v.pixel||{};
+  const ai = v.ai||{}, px = v.pixel||{}, full = v.full||{};
+  const ov = full.opening_visual||{}, oa = full.opening_audio||{}, sc = full.script||null;
   const tags = [];
   if(v.format) tags.push(`<span class="badge fmt">${esc(prettyTag(v.format))}</span>`);
   if(v.niche)  tags.push(`<span class="badge">${esc(prettyTag(v.niche))}</span>`);
   if(ai.hook_archetype) tags.push(`<span class="badge hook">${esc(prettyTag(ai.hook_archetype))}</span>`);
   if(v.bucket) tags.push(`<span class="badge bucket">${esc(shortBucket(v.bucket))}</span>`);
-  const scan = [
+  // scanned grid — richer when the deep scan (opening_visual/audio + transcript) is present
+  const deep = full.opening_visual && Object.keys(ov).length;
+  const scan = deep ? [
+    ['Face in frame 1', ai.face ? 'Yes' : 'No'],
+    ['Object clarity',  ai.object_clarity!=null ? fmtScore(ai.object_clarity)+'/5' : '—'],
+    ['Mystery / weird', ai.weird!=null ? fmtScore(ai.weird)+'/5' : '—'],
+    ['Cuts (opening)',  fmtScore(ov.cuts)],
+    ['Motion',          fmtScore(ov.motion)],
+    ['Dead-air / stall',ai.dead_air ? 'Yes' : 'No'],
+    ['Brightness',      ov.brightness!=null ? Math.round(ov.brightness) : '—'],
+    ['Contrast',        ov.contrast!=null ? Math.round(ov.contrast) : '—'],
+    ['Colorfulness',    ov.colorfulness!=null ? Math.round(ov.colorfulness) : '—'],
+    ['Saturation',      ov.saturation!=null ? Math.round(ov.saturation) : '—'],
+    ['Loudness (open)', oa.loudness!=null ? fmtScore(oa.loudness) : '—'],
+    ['Pause ratio',     oa.pause_ratio!=null ? fmtScore(oa.pause_ratio) : '—'],
+    ['Script words',    full.tx_words!=null ? full.tx_words : '—'],
+    ['Words / sec',     full.tx_words_per_sec!=null ? fmtScore(full.tx_words_per_sec) : '—'],
+  ] : [
     ['Face in frame 1', ai.face ? 'Yes' : 'No'],
     ['Object clarity',  ai.object_clarity!=null ? fmtScore(ai.object_clarity)+'/5' : '—'],
     ['Mystery / weird', ai.weird!=null ? fmtScore(ai.weird)+'/5' : '—'],
@@ -2001,6 +2050,12 @@ function refCardHTML(v){
     ['Subject size',   ai.subject_size!=null ? fmtScore(ai.subject_size)+'/5' : '—'],
   ];
   const likeRate = v.like_ratio!=null ? (v.like_ratio*100).toFixed(1)+'%' : '—';
+  const scriptSection = full.transcript ? `
+    <details class="ref-scan ref-script">
+      <summary>📜 Full script <span class="rs-meta">${full.tx_words||'?'} words${full.tx_words_per_sec?` · ${fmtScore(full.tx_words_per_sec)}/s`:''}</span></summary>
+      ${full.hook_first_sentence?`<p class="rs-note"><b>Hook:</b> "${esc(full.hook_first_sentence)}"</p>`:''}
+      <p class="ref-transcript">${esc(full.transcript)}</p>
+    </details>` : '';
   return `
     <article class="card ref-card">
       <div class="card-strip">
@@ -2017,14 +2072,15 @@ function refCardHTML(v){
           <div class="metric-sm"><span class="v">${fmtViews(v.comments)}</span><span class="l">comments</span></div>
         </div>
         <div class="ref-tags">${tags.join('')}</div>
+        ${scriptSection}
+        ${renderScriptAnalysis(sc)}
         <details class="ref-scan">
-          <summary>🔬 What I scanned</summary>
+          <summary>🔬 What I scanned <span class="rs-meta">opening visual + audio</span></summary>
           <div class="ref-scan-grid">
             ${scan.map(([k,val])=>`<div class="rs-cell"><span class="rs-k">${esc(k)}</span><span class="rs-v">${esc(String(val))}</span></div>`).join('')}
           </div>
           ${ai.first_frame_subject?`<p class="rs-note"><b>First frame:</b> ${esc(ai.first_frame_subject)}</p>`:''}
-          ${ai.opening_line_type?`<p class="rs-note"><b>Opening line:</b> ${esc(prettyTag(ai.opening_line_type))}</p>`:''}
-          <p class="rs-disclaimer">Public metrics only — no swipe/AVD for other channels. Reference, not a model input.</p>
+          <p class="rs-disclaimer">Visual/audio = the 8s opening (the swipe lever); script = full video. Public metrics only — no swipe/AVD for other channels. Reference, not a model input.</p>
         </details>
       </div>
     </article>`;
