@@ -2118,6 +2118,155 @@
    }
   },
   {
+   "kind": "prediction",
+   "id": "2026-06-25_phone-ac-v2",
+   "slug": "air-conditioner-for-phone-v2-statement-re-cut",
+   "url": null,
+   "title": "Air Conditioner for Phone (v2 — statement re-cut)",
+   "base": "Air Conditioner for Phone",
+   "source_video_id": "ZUhlSyvddOM",
+   "version_label": "planned re-edit (predicted)",
+   "status": "prediction",
+   "bucket": "Short 20-35s",
+   "duration": 27.8,
+   "note": "v2 of 'Air Conditioner for Phone!?' (original video_id ZUhlSyvddOM: stayed 69.52%, AVD 93.32%). Original opened with a QUESTION ('Does this actually work?') = weak swipe; v2 opens with a STATEMENT ('Air conditioners used to only cool houses, but now they can cool your phone') to fix the swipe while keeping the strong watch-through.",
+   "pred_swipe": {
+    "point": 75,
+    "range": [
+     70,
+     78
+    ],
+    "band": "MID",
+    "vs_original": "model 76 vs original 69.52% (statement now replaces the question + face in frame). RISK: model may OVER-read — here low clarity (2) comes from a CLUTTERED multi-object opening, not a clean 'what is that?' mystery, and the first second is slow/near-static (mild stall). Could land closer to the original."
+   },
+   "pred_avd": {
+    "point": 93,
+    "range": [
+     90,
+     95
+    ],
+    "band": "HIGH",
+    "rationale": "Short-bucket AVD model (90.25-134*buildup, buildup -0.02) -> 92.9%. Holds the original's strong 93.32%. LOUD open (loudness_first2s 0.178) + flat buildup = good per the AVD lever. Most reliable of our predictions (LOO +-2.1)."
+   },
+   "strip": "filmstrips/PREDICT_phoneac-v2.jpg",
+   "script": "0s: Eric conditioners use to\n1s: only cool down houses,\n2s: but now they\n3s: can cool down your phone.\n4s: When you play games,\n5s: your phone can get\n6s: too hot to use\n7s: properly.\n8s: So I plugged in this phone\n9s: air conditioner to\n10s: see if I could play\n11s: games smoother,\n12s: but then I remembered\n13s: I don't play games.\n14s: Is it getting cold?\n15s: I can't tell. So\n16s: is there any other way\n17s: to prove it works?\n18s: This is supposed to get so\n19s: cold that ice\n20s: will form on.\n21s: But I waited forever and\n22s: nothing happened.\n23s: However, just when\n24s: I thought this product had\n25s: failed, I found\n26s: another way to test it.",
+   "how_to_change_it": [
+    {
+     "change": "Tighten + declutter the first second",
+     "detail": "Highest-leverage swipe fix. The open is slow/near-static and busy (5/5 scored clarity 2 from too many objects). Lead with ONE arresting thing — the frosted disc with a finger drawing in the frost, or the phone visibly frosting over — and land a cut/zoom before 0.5s. A clean single-object mystery beats a cluttered table.",
+     "fixes": "swipe"
+    },
+    {
+     "change": "Keep the statement open",
+     "detail": "'Air conditioners used to only cool houses, but now they cool your phone' is the right fix vs the original question. Keep it.",
+     "fixes": "keep"
+    },
+    {
+     "change": "Keep the loud, flat-start audio",
+     "detail": "loudness_first2s 0.178, buildup -0.02 — exactly our AVD lever. Don't ramp loudness up later.",
+     "fixes": "keep"
+    },
+    {
+     "change": "Trim the mid-video deflating beats",
+     "detail": "'but then I remembered I don't play games' + 'I waited forever and nothing happened' deflate momentum before the payoff. Tightening could marginally help AVD (weak lever, optional).",
+     "fixes": "avd"
+    }
+   ],
+   "features": {
+    "Visual (AI ensemble)": {
+     "subject_size_1to5": 3.6,
+     "object_clarity_1to5": 2.0,
+     "weird_intrigue_1to5": 3.0,
+     "face_in_first_frame": 1.0,
+     "cuts_in_first_4s": 2.6,
+     "escalation_1to5": 3.0,
+     "dead_air_or_stall": 0.2,
+     "motion_first_second": "slow (4/5) / static (1/5)",
+     "_source": "blind 5-run"
+    },
+    "Pixel": {
+     "brightness": 130.8,
+     "contrast": 60.9,
+     "colorfulness": 25.7,
+     "saturation": 36.7,
+     "motion": 22.13,
+     "cuts_detected": 10,
+     "escalation_proxy": 5.86
+    },
+    "Audio": {
+     "loudness_first2s": 0.178,
+     "loudness_overall": 0.161,
+     "audio_buildup": -0.02,
+     "silent_ratio": 0.149
+    },
+    "Hook/words": {
+     "opens_with_question": false,
+     "narrates_null_state": true,
+     "hook_archetype": "contrast/reframe statement (now-they-can)",
+     "curiosity_gap_1to5": 3,
+     "promises_payoff": true,
+     "worst_line": "'but then I remembered I don't play games' (12s)",
+     "_source": "blind 3-run"
+    },
+    "Scorecard": {
+     "value": 5.0
+    }
+   },
+   "prediction": {
+    "pred_swipe": {
+     "point": 75,
+     "range": [
+      70,
+      78
+     ],
+     "band": "MID",
+     "vs_original": "model 76 vs original 69.52% (statement now replaces the question + face in frame). RISK: model may OVER-read — here low clarity (2) comes from a CLUTTERED multi-object opening, not a clean 'what is that?' mystery, and the first second is slow/near-static (mild stall). Could land closer to the original."
+    },
+    "pred_avd": {
+     "point": 93,
+     "range": [
+      90,
+      95
+     ],
+     "band": "HIGH",
+     "rationale": "Short-bucket AVD model (90.25-134*buildup, buildup -0.02) -> 92.9%. Holds the original's strong 93.32%. LOUD open (loudness_first2s 0.178) + flat buildup = good per the AVD lever. Most reliable of our predictions (LOO +-2.1)."
+    },
+    "verdict": null,
+    "error": null,
+    "how_to_change_it": [
+     {
+      "change": "Tighten + declutter the first second",
+      "detail": "Highest-leverage swipe fix. The open is slow/near-static and busy (5/5 scored clarity 2 from too many objects). Lead with ONE arresting thing — the frosted disc with a finger drawing in the frost, or the phone visibly frosting over — and land a cut/zoom before 0.5s. A clean single-object mystery beats a cluttered table.",
+      "fixes": "swipe"
+     },
+     {
+      "change": "Keep the statement open",
+      "detail": "'Air conditioners used to only cool houses, but now they cool your phone' is the right fix vs the original question. Keep it.",
+      "fixes": "keep"
+     },
+     {
+      "change": "Keep the loud, flat-start audio",
+      "detail": "loudness_first2s 0.178, buildup -0.02 — exactly our AVD lever. Don't ramp loudness up later.",
+      "fixes": "keep"
+     },
+     {
+      "change": "Trim the mid-video deflating beats",
+      "detail": "'but then I remembered I don't play games' + 'I waited forever and nothing happened' deflate momentum before the payoff. Tightening could marginally help AVD (weak lever, optional).",
+      "fixes": "avd"
+     }
+    ],
+    "scorecard": 5.0,
+    "note": "v2 of 'Air Conditioner for Phone!?' (original video_id ZUhlSyvddOM: stayed 69.52%, AVD 93.32%). Original opened with a QUESTION ('Does this actually work?') = weak swipe; v2 opens with a STATEMENT ('Air conditioners used to only cool houses, but now they can cool your phone') to fix the swipe while keeping the strong watch-through."
+   },
+   "actual": {
+    "swipe": null,
+    "avd": null,
+    "views": null,
+    "verdict": null,
+    "error": null
+   }
+  },
+  {
    "kind": "posted",
    "id": "sczLUWfbHZk",
    "slug": "plasma-ballssssss",
