@@ -2200,6 +2200,470 @@
   },
   {
    "kind": "prediction",
+   "id": "2026-06-25_floating-pot-blow",
+   "slug": "floating-plant-pot-blowing-intro-script-a",
+   "url": null,
+   "title": "Floating Plant Pot — blowing intro (Script A)",
+   "base": "Floating Plant Pot",
+   "source_video_id": null,
+   "lifecycle": "awaiting",
+   "track": "fpp-blow",
+   "attempt": 1,
+   "version_label": "blowing intro (Script A)",
+   "status": "awaiting",
+   "uploaded_date": null,
+   "bucket": "Short 20-35s",
+   "duration": null,
+   "note": "Close #2. Floating white pot in frame 1 + he BLOWS on it to spin (max mystery clarity 2 + motion) -> highest MODEL swipe (76). But only lower-half face, and Script A is a weaker explainer (lower AVD 91).",
+   "pred_swipe": {
+    "point": 76,
+    "range": [
+     72,
+     82
+    ],
+    "band": "MID",
+    "vs_original": "new product (no prior). Model 2*face+(5-clarity). "
+   },
+   "pred_avd": {
+    "point": 91,
+    "range": [
+     88,
+     93
+    ],
+    "band": "HIGH",
+    "rationale": "AVD model 90.25-134*buildup; loud open. Script B versions retain best."
+   },
+   "strip": "filmstrips/PREDICT_fpp_blow.jpg",
+   "script": "0s: If you take a sensor\n1s: and an electromagnet\n2s: and hide\n3s: them inside of a\n4s: wooden base, then\n5s: take a real magnet\n6s: and hide it inside\n7s: of a plant pot.\n8s: Place it down very\n9s: carefully in\n10s: the perfect sweet spot.\n11s: Then make the sensor\n12s: in the base continuously\n13s: check\n14s: where the pot\n15s: is, then adjust\n16s: the electromagnet's\n17s: strength to\n18s: hold the pot in\n19s: the perfect spot.\n20s: Congratulations,\n21s: you just invented\n22s: a magnetic covering\n23s: device.",
+   "how_to_change_it": [
+    {
+     "change": "Swap to Script B",
+     "detail": "Pair this strong blow-on-floating-pot visual with the '$100 / I thought it was just two magnets' hook (Script B) instead of the explainer — best of both.",
+     "fixes": "avd"
+    }
+   ],
+   "features": {
+    "Visual (AI ensemble)": {
+     "object_clarity_1to5": 2.0,
+     "weird_intrigue_1to5": 4.0,
+     "face_in_first_frame": 1.0,
+     "cuts_in_first_4s": 2.2,
+     "dead_air_or_stall": 0.0,
+     "_source": "blind 5-run"
+    },
+    "Pixel": {
+     "brightness": 129.2,
+     "contrast": 60.9,
+     "colorfulness": 31.6,
+     "saturation": 74.0,
+     "motion": 17.36,
+     "cuts_detected": 5,
+     "escalation_proxy": 3.17
+    },
+    "Audio": {
+     "loudness_first2s": 0.19,
+     "loudness_overall": 0.184,
+     "audio_buildup": -0.008,
+     "silent_ratio": 0.064
+    },
+    "Hook/words": {
+     "script": "A (explainer)",
+     "opens_with_question": false
+    },
+    "Scorecard": {
+     "value": 5.0
+    }
+   },
+   "prediction": {
+    "pred_swipe": {
+     "point": 76,
+     "range": [
+      72,
+      82
+     ],
+     "band": "MID",
+     "vs_original": "new product (no prior). Model 2*face+(5-clarity). "
+    },
+    "pred_avd": {
+     "point": 91,
+     "range": [
+      88,
+      93
+     ],
+     "band": "HIGH",
+     "rationale": "AVD model 90.25-134*buildup; loud open. Script B versions retain best."
+    },
+    "verdict": null,
+    "error": null,
+    "how_to_change_it": [
+     {
+      "change": "Swap to Script B",
+      "detail": "Pair this strong blow-on-floating-pot visual with the '$100 / I thought it was just two magnets' hook (Script B) instead of the explainer — best of both.",
+      "fixes": "avd"
+     }
+    ],
+    "scorecard": 5.0,
+    "note": "Close #2. Floating white pot in frame 1 + he BLOWS on it to spin (max mystery clarity 2 + motion) -> highest MODEL swipe (76). But only lower-half face, and Script A is a weaker explainer (lower AVD 91)."
+   },
+   "actual": {
+    "swipe": null,
+    "avd": null,
+    "views": null,
+    "verdict": null,
+    "error": null
+   },
+   "pin": "9792"
+  },
+  {
+   "kind": "prediction",
+   "id": "2026-06-25_floating-pot-intro2",
+   "slug": "floating-plant-pot-floating-pot-intro-100-hook-rec",
+   "url": null,
+   "title": "Floating Plant Pot — ⭐ floating-pot intro + $100 hook (recommended)",
+   "base": "Floating Plant Pot",
+   "source_video_id": null,
+   "lifecycle": "awaiting",
+   "track": "fpp-intro2",
+   "attempt": 1,
+   "version_label": "⭐ floating-pot intro + $100 hook (recommended)",
+   "status": "awaiting",
+   "uploaded_date": null,
+   "bucket": "Short 20-35s",
+   "duration": null,
+   "note": "RECOMMENDED to post. Bare white pot LEVITATING in frame 1 (max 'how is it floating?' mystery) + face + the stronger Script B (against-the-norm + $100 stake). Ranked #1 by all 3 reviewers; highest AVD.",
+   "pred_swipe": {
+    "point": 74,
+    "range": [
+     70,
+     80
+    ],
+    "band": "MID",
+    "vs_original": "new product (no prior). Model 2*face+(5-clarity). RANKED #1 of 4 — see note."
+   },
+   "pred_avd": {
+    "point": 94,
+    "range": [
+     91,
+     96
+    ],
+    "band": "HIGH",
+    "rationale": "AVD model 90.25-134*buildup; loud open. Script B versions retain best."
+   },
+   "strip": "filmstrips/PREDICT_fpp_intro2.jpg",
+   "script": "0s: I thought that this magic\n1s: was just two magnets\n2s: pushing each other\n3s: away, but if that was\n4s: the case, it wouldn't\n5s: cost $100.\n6s: Because\n7s: when you put two magnets\n8s: together,\n9s: they don't just float nicely.\n10s: So here's\n11s: the trick. You hide\n12s: a permanent magnet inside\n13s: of the cup\n14s: and an electronic\n15s: magnet and a tiny\n16s: position sensor\n17s: inside of\n18s: the base. The position\n19s: sensor constantly\n20s: detects where\n21s: the cup is,\n22s: while the base\n23s: constantly adjusts\n24s: the strength of\n25s: the electronic magnet\n26s: to pull it\n27s: back. In the perfect sweet\n28s: spot, it will stay perfectly\n29s: in place.",
+   "how_to_change_it": [
+    {
+     "change": "Add motion/a cut in the first second",
+     "detail": "The opening is a held shot (almost no cuts). Graft the blow-to-spin gesture from the 'blowing intro' version, or a quick push-in by 0.3s, to add the +0.65 cuts/motion lever on top of the mystery.",
+     "fixes": "swipe"
+    }
+   ],
+   "features": {
+    "Visual (AI ensemble)": {
+     "object_clarity_1to5": 2.6,
+     "weird_intrigue_1to5": 3.6,
+     "face_in_first_frame": 1.0,
+     "cuts_in_first_4s": 0.4,
+     "dead_air_or_stall": 0.0,
+     "_source": "blind 5-run"
+    },
+    "Pixel": {
+     "brightness": 130.2,
+     "contrast": 54.6,
+     "colorfulness": 37.3,
+     "saturation": 68.6,
+     "motion": 22.68,
+     "cuts_detected": 9,
+     "escalation_proxy": 0.64
+    },
+    "Audio": {
+     "loudness_first2s": 0.174,
+     "loudness_overall": 0.141,
+     "audio_buildup": -0.028,
+     "silent_ratio": 0.084
+    },
+    "Hook/words": {
+     "script": "B (against-norm + $100)",
+     "opens_with_question": false
+    },
+    "Scorecard": {
+     "value": 4.4
+    }
+   },
+   "prediction": {
+    "pred_swipe": {
+     "point": 74,
+     "range": [
+      70,
+      80
+     ],
+     "band": "MID",
+     "vs_original": "new product (no prior). Model 2*face+(5-clarity). RANKED #1 of 4 — see note."
+    },
+    "pred_avd": {
+     "point": 94,
+     "range": [
+      91,
+      96
+     ],
+     "band": "HIGH",
+     "rationale": "AVD model 90.25-134*buildup; loud open. Script B versions retain best."
+    },
+    "verdict": null,
+    "error": null,
+    "how_to_change_it": [
+     {
+      "change": "Add motion/a cut in the first second",
+      "detail": "The opening is a held shot (almost no cuts). Graft the blow-to-spin gesture from the 'blowing intro' version, or a quick push-in by 0.3s, to add the +0.65 cuts/motion lever on top of the mystery.",
+      "fixes": "swipe"
+     }
+    ],
+    "scorecard": 4.4,
+    "note": "RECOMMENDED to post. Bare white pot LEVITATING in frame 1 (max 'how is it floating?' mystery) + face + the stronger Script B (against-the-norm + $100 stake). Ranked #1 by all 3 reviewers; highest AVD."
+   },
+   "actual": {
+    "swipe": null,
+    "avd": null,
+    "views": null,
+    "verdict": null,
+    "error": null
+   },
+   "pin": "3157"
+  },
+  {
+   "kind": "prediction",
+   "id": "2026-06-25_floating-pot-s2var",
+   "slug": "floating-plant-pot-plant-in-pot-intro-100-hook-scr",
+   "url": null,
+   "title": "Floating Plant Pot — plant-in-pot intro + $100 hook (Script B)",
+   "base": "Floating Plant Pot",
+   "source_video_id": null,
+   "lifecycle": "awaiting",
+   "track": "fpp-s2",
+   "attempt": 1,
+   "version_label": "plant-in-pot intro + $100 hook (Script B)",
+   "status": "awaiting",
+   "uploaded_date": null,
+   "bucket": "Short 20-35s",
+   "duration": null,
+   "note": "Script B (good) BUT the green plant is in the pot in frame 1, which EXPLAINS the object and kills the 'how is it floating?' mystery (clarity 3.6) -> lower swipe than the bare-pot versions.",
+   "pred_swipe": {
+    "point": 71,
+    "range": [
+     66,
+     77
+    ],
+    "band": "MID",
+    "vs_original": "new product (no prior). Model 2*face+(5-clarity). "
+   },
+   "pred_avd": {
+    "point": 94,
+    "range": [
+     91,
+     96
+    ],
+    "band": "HIGH",
+    "rationale": "AVD model 90.25-134*buildup; loud open. Script B versions retain best."
+   },
+   "strip": "filmstrips/PREDICT_fpp_s2_1.jpg",
+   "script": "0s: I thought that this magic\n1s: was just two magnets\n2s: pushing each other\n3s: away, but if that was\n4s: the case, it wouldn't\n5s: cost $100.\n6s: Because\n7s: when you put two magnets\n8s: together, they\n9s: don't just float nicely.\n10s: So here's\n11s: the trick. You hide\n12s: a permanent magnet inside\n13s: of the cup,\n14s: and an electronic\n15s: magnet and a\n16s: tiny position sensor\n17s: inside of\n18s: the base. The position\n19s: sensor constantly\n20s: detects where\n21s: the cup is,\n22s: while the base\n23s: constantly adjusts\n24s: the strength of\n25s: the electronic magnet\n26s: to pull it\n27s: back. In the perfect sweet\n28s: spot, it will stay perfectly\n29s: in place.",
+   "how_to_change_it": [
+    {
+     "change": "Open on the BARE floating pot, add the plant later",
+     "detail": "Lead frame 1 with the empty white pot levitating (the mystery), then reveal the plant a couple seconds in. That's basically the 'different intro' version — post that instead.",
+     "fixes": "swipe"
+    }
+   ],
+   "features": {
+    "Visual (AI ensemble)": {
+     "object_clarity_1to5": 3.6,
+     "weird_intrigue_1to5": 2.4,
+     "face_in_first_frame": 1.0,
+     "cuts_in_first_4s": 2.6,
+     "dead_air_or_stall": 0.0,
+     "_source": "blind 5-run"
+    },
+    "Pixel": {
+     "brightness": 129.1,
+     "contrast": 60.9,
+     "colorfulness": 39.4,
+     "saturation": 77.0,
+     "motion": 22.47,
+     "cuts_detected": 8,
+     "escalation_proxy": 0.33
+    },
+    "Audio": {
+     "loudness_first2s": 0.176,
+     "loudness_overall": 0.141,
+     "audio_buildup": -0.031,
+     "silent_ratio": 0.085
+    },
+    "Hook/words": {
+     "script": "B (against-norm + $100)",
+     "opens_with_question": false
+    },
+    "Scorecard": {
+     "value": 3.4
+    }
+   },
+   "prediction": {
+    "pred_swipe": {
+     "point": 71,
+     "range": [
+      66,
+      77
+     ],
+     "band": "MID",
+     "vs_original": "new product (no prior). Model 2*face+(5-clarity). "
+    },
+    "pred_avd": {
+     "point": 94,
+     "range": [
+      91,
+      96
+     ],
+     "band": "HIGH",
+     "rationale": "AVD model 90.25-134*buildup; loud open. Script B versions retain best."
+    },
+    "verdict": null,
+    "error": null,
+    "how_to_change_it": [
+     {
+      "change": "Open on the BARE floating pot, add the plant later",
+      "detail": "Lead frame 1 with the empty white pot levitating (the mystery), then reveal the plant a couple seconds in. That's basically the 'different intro' version — post that instead.",
+      "fixes": "swipe"
+     }
+    ],
+    "scorecard": 3.4,
+    "note": "Script B (good) BUT the green plant is in the pot in frame 1, which EXPLAINS the object and kills the 'how is it floating?' mystery (clarity 3.6) -> lower swipe than the bare-pot versions."
+   },
+   "actual": {
+    "swipe": null,
+    "avd": null,
+    "views": null,
+    "verdict": null,
+    "error": null
+   },
+   "pin": "7042"
+  },
+  {
+   "kind": "prediction",
+   "id": "2026-06-25_floating-pot-vo0",
+   "slug": "floating-plant-pot-vo-at-0s-intro-script-a",
+   "url": null,
+   "title": "Floating Plant Pot — VO-at-0s intro (Script A)",
+   "base": "Floating Plant Pot",
+   "source_video_id": null,
+   "lifecycle": "awaiting",
+   "track": "fpp-vo0",
+   "attempt": 1,
+   "version_label": "VO-at-0s intro (Script A)",
+   "status": "awaiting",
+   "uploaded_date": null,
+   "bucket": "Short 20-35s",
+   "duration": null,
+   "note": "Weakest swipe. Frame 1 = pot HELD in hand on a busy gradient (not yet floating) -> the levitation payoff is delayed out of frame 1 (clarity 4 = low mystery). Script A explainer.",
+   "pred_swipe": {
+    "point": 70,
+    "range": [
+     65,
+     76
+    ],
+    "band": "MID",
+    "vs_original": "new product (no prior). Model 2*face+(5-clarity). "
+   },
+   "pred_avd": {
+    "point": 92,
+    "range": [
+     89,
+     94
+    ],
+    "band": "HIGH",
+    "rationale": "AVD model 90.25-134*buildup; loud open. Script B versions retain best."
+   },
+   "strip": "filmstrips/PREDICT_fpp_vo0.jpg",
+   "script": "0s: If you take a sensor\n1s: and an electromagnet\n2s: and hide\n3s: them inside of a\n4s: wooden base, then\n5s: take a real magnet\n6s: and hide it inside\n7s: of a plant pot.\n8s: Place it down very\n9s: carefully in\n10s: the perfect sweet spot.\n11s: Then make the sensor\n12s: in the base continuously\n13s: check\n14s: where the pot\n15s: is, then adjust\n16s: the electromagnet's\n17s: strength to\n18s: hold the pot in\n19s: the perfect spot.\n20s: Congratulations,\n21s: you just invented\n22s: a magnetic covering\n23s: device.",
+   "how_to_change_it": [
+    {
+     "change": "Lead with the pot already floating",
+     "detail": "Don't open on the held pot — show it levitating from frame 1 so the 'how?!' mystery lands immediately.",
+     "fixes": "swipe"
+    }
+   ],
+   "features": {
+    "Visual (AI ensemble)": {
+     "object_clarity_1to5": 4.0,
+     "weird_intrigue_1to5": 2.2,
+     "face_in_first_frame": 1.0,
+     "cuts_in_first_4s": 3.0,
+     "dead_air_or_stall": 0.0,
+     "_source": "blind 5-run"
+    },
+    "Pixel": {
+     "brightness": 111.6,
+     "contrast": 50.5,
+     "colorfulness": 43.8,
+     "saturation": 101.6,
+     "motion": 14.43,
+     "cuts_detected": 6,
+     "escalation_proxy": -4.68
+    },
+    "Audio": {
+     "loudness_first2s": 0.197,
+     "loudness_overall": 0.184,
+     "audio_buildup": -0.014,
+     "silent_ratio": 0.065
+    },
+    "Hook/words": {
+     "script": "A (explainer)",
+     "opens_with_question": false
+    },
+    "Scorecard": {
+     "value": 3.0
+    }
+   },
+   "prediction": {
+    "pred_swipe": {
+     "point": 70,
+     "range": [
+      65,
+      76
+     ],
+     "band": "MID",
+     "vs_original": "new product (no prior). Model 2*face+(5-clarity). "
+    },
+    "pred_avd": {
+     "point": 92,
+     "range": [
+      89,
+      94
+     ],
+     "band": "HIGH",
+     "rationale": "AVD model 90.25-134*buildup; loud open. Script B versions retain best."
+    },
+    "verdict": null,
+    "error": null,
+    "how_to_change_it": [
+     {
+      "change": "Lead with the pot already floating",
+      "detail": "Don't open on the held pot — show it levitating from frame 1 so the 'how?!' mystery lands immediately.",
+      "fixes": "swipe"
+     }
+    ],
+    "scorecard": 3.0,
+    "note": "Weakest swipe. Frame 1 = pot HELD in hand on a busy gradient (not yet floating) -> the levitation payoff is delayed out of frame 1 (clarity 4 = low mystery). Script A explainer."
+   },
+   "actual": {
+    "swipe": null,
+    "avd": null,
+    "views": null,
+    "verdict": null,
+    "error": null
+   },
+   "pin": "5342"
+  },
+  {
+   "kind": "prediction",
    "id": "2026-06-25_phone-ac-s7",
    "slug": "air-conditioner-for-phone-frost-led-face",
    "url": null,
