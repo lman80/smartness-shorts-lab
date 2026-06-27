@@ -287,6 +287,7 @@ function toItem(rec, kind){
     hook_first_sentence: rec.hook_first_sentence || '',
     tx_words: numOrNull(rec.tx_words),
     script_analysis: rec.script_analysis || null,
+    assessment: rec.assessment || null,
     status: realStatus,
     // ITERATION TRACK: items sharing a `track` are ONE iteration line (an edit
     // that was analyzed, scrapped, re-cut, re-analyzed… until one is uploaded).
@@ -1251,6 +1252,7 @@ function versionCardHTML(it, g, isHead){
       <p class="ref-transcript">${esc(it.transcript)}</p>
     </details>` : '';
   const analysisBlock = it.script_analysis ? renderScriptAnalysis(it.script_analysis) : '';
+  const assessBlock = it.assessment ? renderAssessment(it.assessment) : '';
 
   // expandable AI features
   const featBlock = (it.raw && it.raw.features) ? `
@@ -1306,6 +1308,7 @@ function versionCardHTML(it, g, isHead){
           ${isAwaiting?`<button type="button" class="btn btn-sm btn-mark" data-mark-uploaded="${esc(it.pin||'')}">📤 Mark uploaded</button>`:''}
           <button type="button" class="btn btn-sm" data-clone="${esc(it.id)}">+ Add Test (clone this)</button>
         </div>
+        ${assessBlock}
         ${transcriptBlock}
         ${analysisBlock}
         ${scriptBlock}
@@ -2040,6 +2043,38 @@ function renderScriptAnalysis(sc){
       ${sc.cta_text?`<p class="rs-note"><b>CTA:</b> "${esc(sc.cta_text)}"</p>`:''}
       ${sc.why_it_works?`<p class="rs-note good"><b>Why it works:</b> ${esc(sc.why_it_works)}</p>`:''}
       ${sc.script_risk?`<p class="rs-note risk"><b>Risk:</b> ${esc(sc.script_risk)}</p>`:''}
+    </details>`;
+}
+// 🎯 Viral Readiness panel (own videos) — the fused perception assessment. Honest: a structured
+// checklist of known levers, NOT yet a validated predictor at n=38.
+function renderAssessment(a){
+  if(!a || !a.scorecard) return '';
+  const s=a.scorecard, hr=a.avd_headroom||{}, st=a.structural||{}, fr=a.framing||{};
+  const bar=(label,val,max)=>`<div class="vr-bar"><span class="vr-bl">${esc(label)}</span>`
+    +`<span class="vr-track"><span style="width:${Math.round((val||0)/max*100)}%"></span></span>`
+    +`<span class="vr-bv">${val}/${max}</span></div>`;
+  const hrGood = hr.headroom!=null && hr.headroom>=0;
+  const facts=[];
+  if(st.cuts_per_sec!=null) facts.push(`${st.cuts_per_sec}/s cuts`);
+  if(st.n_swipes) facts.push(`${st.n_swipes} swipes`);
+  if(st.opening_loudness_dbfs!=null) facts.push(`open ${st.opening_loudness_dbfs}dBFS`);
+  if(st.loudness_ramp_db!=null) facts.push(`ramp ${st.loudness_ramp_db}dB`);
+  if(fr.shirt_color) facts.push(`shirt ${fr.shirt_color}`);
+  if(fr.face_center_x_median!=null) facts.push(`face x${fr.face_center_x_median}`);
+  return `
+    <details class="ref-scan vr-card">
+      <summary>🎯 Viral Readiness <span class="rs-meta">${s.total}/100 · limiting: ${esc(s.limiting_factor||'')}</span></summary>
+      <p class="vr-note">A structured checklist of the known levers — calibrating as we post; not yet a proven predictor at n=38.</p>
+      <div class="vr-bars">
+        ${bar('Ceiling (format)', s.ceiling, 35)}
+        ${bar('Hook → swipe', s.hook, 30)}
+        ${bar('Retention → AVD', s.retention, 25)}
+        ${bar('Loop / share', s.loop, 10)}
+      </div>
+      ${hr.headroom!=null?`<div class="vr-headroom ${hrGood?'good':'weak'}">AVD headroom <b>${hr.headroom>0?'+':''}${hr.headroom}</b> — got ${hr.actual}% vs ~${hr.required_for_length}% needed for this length (${hrGood?'strong':'weak'} for its length)</div>`:''}
+      ${a.format?`<div class="vr-fmt">format: <b>${esc(prettyTag(a.format.value||''))}</b>${a.format.source==='default'?' (assumed)':''}</div>`:''}
+      ${facts.length?`<div class="vr-facts">${facts.map(f=>`<span>${esc(f)}</span>`).join('')}</div>`:''}
+      ${(s.why&&(s.why.hook||s.why.retention))?`<details class="rb-why"><summary>why these scores</summary><p>${esc([s.why.hook,s.why.retention,s.why.loop].filter(Boolean).join(' · '))}</p></details>`:''}
     </details>`;
 }
 function refCardHTML(v){

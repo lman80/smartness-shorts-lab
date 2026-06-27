@@ -68,6 +68,48 @@
     "why_it_works": "The combination of superlatives ('world's dumbest'), personal stakes ('I really hope is true'), and rapid test-fail-test rhythm keeps viewers guessing which experiment might actually work. The escalating skepticism in the host's delivery matches the pattern-breaking when the Oreo actually reacts.",
     "script_risk": "Incomplete transcript cuts off mid-test, losing the resolution of whether the Oreo actually grows. The 'prove they are fake' premise conflicts with genuine surprise, which may confuse intent. If viewers believe these are all debunked, engagement drops if one seems real."
    },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 18,
+     "retention": 25,
+     "loop": 0,
+     "total": 78,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+8 loud open no ramp (-4.0dB); +5 payoff; +5 superlative",
+      "retention": "+8 multi-beat(5); +6 payoff middle; +6 pacing(0.89/s); +5 pace medium",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 75,
+     "actual": 83.56,
+     "headroom": 8.6
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 49,
+     "cuts_per_sec": 0.89,
+     "n_swipes": 5,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -14.8,
+     "loudness_ramp_db": -4.0
+    },
+    "framing": {
+     "face_detect_rate": 0.51,
+     "face_center_x_median": 0.493,
+     "face_center_y_median": 0.237,
+     "face_area_median_pct": 5.3,
+     "offcenter_rate": 0.36,
+     "cutoff_rate": 0.02,
+     "shirt_color": "beige/tan"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -160,6 +202,48 @@
     ],
     "why_it_works": "The $100k-vs-$50 price comparison is instantly compelling and specific. The escalation to 'almost killed my real dog' injects real stakes and danger—viewers want to see what went wrong. The language barrier gag (can't read Chinese remote) adds unexpected humor to a simple comparison.",
     "script_risk": "Transcript cuts off mid-story at 'I almost crashed into my real', leaving the payoff unresolved. The stakes promise isn't paid off, which frustrates viewers. Without the resolution, the danger claim feels clickbaity rather than earned."
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 13,
+     "retention": 25,
+     "loop": 0,
+     "total": 73,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+8 loud open no ramp (-0.7dB); +5 payoff",
+      "retention": "+8 multi-beat(3); +6 payoff immediate; +6 pacing(0.8/s); +5 pace medium",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 92,
+     "actual": 95.02,
+     "headroom": 3.0
+    },
+    "format": {
+     "value": "versus_comparison",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 19,
+     "cuts_per_sec": 0.8,
+     "n_swipes": 4,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -14.2,
+     "loudness_ramp_db": -0.7
+    },
+    "framing": {
+     "face_detect_rate": 0.6,
+     "face_center_x_median": 0.599,
+     "face_center_y_median": 0.234,
+     "face_area_median_pct": 5.7,
+     "offcenter_rate": 0.14,
+     "cutoff_rate": 0.0,
+     "shirt_color": "gray"
+    },
+    "has_semantic": false
    },
    "features": {
     "Visual (AI)": {
@@ -266,6 +350,48 @@
     "why_it_works": "The list format of escalating absurdity (nose mask → wet wipe → Q-tips → full head bubble) creates building momentum. The ironic tone (calling the nose mask 'dumbest' while products get crazier) and genuine guest reactions to innovations balance skepticism with discovery. The final testimonial lends credibility to the climactic mask before the self-aware ending.",
     "script_risk": "The payload of solutions to 'never get sick' shifts midway from mockery to sincere product showcase. Viewers may feel the tone whiplash between 'this is dumb' and treating the final mask as legitimate. The testimonial cuts to an external voice, breaking the main presenter's control of the narrative."
    },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 18,
+     "retention": 22,
+     "loop": 5,
+     "total": 80,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+8 loud open no ramp (-3.5dB); +5 payoff; +5 superlative",
+      "retention": "+8 multi-beat(6); +3 payoff end; +6 pacing(0.5/s); +5 pace medium",
+      "loop": "+contrast"
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 70,
+     "actual": 74.17,
+     "headroom": 4.2
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 35,
+     "cuts_per_sec": 0.5,
+     "n_swipes": 5,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -11.7,
+     "loudness_ramp_db": -3.5
+    },
+    "framing": {
+     "face_detect_rate": 0.39,
+     "face_center_x_median": 0.512,
+     "face_center_y_median": 0.324,
+     "face_area_median_pct": 4.3,
+     "offcenter_rate": 0.25,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/tan"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -367,6 +493,48 @@
     "why_it_works": "The question format immediately engages the viewer's curiosity. The rationalization build-up (minimizing the device's danger through multiple reassurances) creates false confidence that gets shattered in the final second. Fast talking pace and compressed timeline amplify the surprise payoff. The 'shocked through the air' moment is the pure payoff—unexpected and instantly rewatchable.",
     "script_risk": "The entire hook is prediction-based, so if viewers already know Tesla coils shock, the payoff lands as obvious rather than surprising. The rationalization monologue, while pacing-building, risks boring tech-savvy viewers before the actual stunt. The clip relies entirely on the shock moment; without that delivery, it collapses."
    },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 10,
+     "hook": 12,
+     "retention": 22,
+     "loop": 0,
+     "total": 44,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+12 face+mystery",
+      "retention": "+8 multi-beat(5); +3 payoff end; +6 pacing(0.79/s); +5 pace fast",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 86,
+     "actual": 89.81,
+     "headroom": 3.8
+    },
+    "format": {
+     "value": "single_object_demo",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 20,
+     "cuts_per_sec": 0.79,
+     "n_swipes": 2,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -17.8,
+     "loudness_ramp_db": 0.8
+    },
+    "framing": {
+     "face_detect_rate": 0.08,
+     "face_center_x_median": 0.34,
+     "face_center_y_median": 0.173,
+     "face_area_median_pct": 9.3,
+     "offcenter_rate": 0.25,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/gray"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -467,6 +635,48 @@
     ],
     "why_it_works": "The specific, almost too-good-to-be-true product promise ('pick up anything without messing it up') immediately raises skepticism and intrigue. The concrete challenge (build a sandwich) gives viewers a clear success metric to root for. Slow delivery and methodical setup build tension and patience, making the payoff moment feel earned and dramatic when music kicks in.",
     "script_risk": "Slow pace (2.67 wps) risks losing fast-scrolling Shorts viewers before the payoff moment arrives. The transcript ends during the critical payoff with only '[Music]', so the actual success/failure is ambiguous. Without a clear resolution shown, the viewer doesn't know if the challenge succeeded—the promise goes unfulfilled onscreen. The board gimmick may feel too niche or gimmicky for skeptical audiences."
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 10,
+     "hook": 5,
+     "retention": 17,
+     "loop": 5,
+     "total": 37,
+     "limiting_factor": "HOOK",
+     "why": {
+      "hook": "+5 payoff",
+      "retention": "+8 multi-beat(5); +3 payoff end; +6 pacing(0.65/s)",
+      "loop": "+contrast"
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 78,
+     "actual": 80.6,
+     "headroom": 2.6
+    },
+    "format": {
+     "value": "single_object_demo",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 33,
+     "cuts_per_sec": 0.65,
+     "n_swipes": 3,
+     "longest_static": 2.4,
+     "opening_loudness_dbfs": -18.9,
+     "loudness_ramp_db": 1.0
+    },
+    "framing": {
+     "face_detect_rate": 0.26,
+     "face_center_x_median": 0.331,
+     "face_center_y_median": 0.261,
+     "face_area_median_pct": 3.2,
+     "offcenter_rate": 0.44,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/tan"
+    },
+    "has_semantic": false
    },
    "features": {
     "Visual (AI)": {
@@ -577,6 +787,48 @@
     "why_it_works": "The format creates repeating tension-and-release cycles: each experiment opens with a wild claim, tests it, then reveals whether it's real or fake. The 'dangerous' promise in the hook hooks skepticism (are these actually dangerous?) and the variety of products keeps pacing fresh despite the formulaic structure.",
     "script_risk": "The experiments could feel repetitive by the third one; without stronger payoffs or escalation, viewers might start tuning out before the ear-candle finale. The ear-candle reveal is ambiguous (\"seems like it works\" is not definitive), which could leave viewers unsatisfied."
    },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 18,
+     "retention": 25,
+     "loop": 5,
+     "total": 83,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+8 loud open no ramp (-0.9dB); +5 payoff; +5 superlative",
+      "retention": "+8 multi-beat(7); +6 payoff early; +6 pacing(0.66/s); +5 pace fast",
+      "loop": "+contrast"
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 75,
+     "actual": 88.29,
+     "headroom": 13.3
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 38,
+     "cuts_per_sec": 0.66,
+     "n_swipes": 10,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -12.9,
+     "loudness_ramp_db": -0.9
+    },
+    "framing": {
+     "face_detect_rate": 0.22,
+     "face_center_x_median": 0.651,
+     "face_center_y_median": 0.296,
+     "face_area_median_pct": 2.1,
+     "offcenter_rate": 0.27,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/gray"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -677,6 +929,48 @@
     ],
     "why_it_works": "Escalating absurdity creates a comedy curve: pig (destructible) → egg dog (pointless) → dog umbrella (impractical) → personal lawn (delusional luxury). The host's deadpan delivery and repetition (\"It's an egg dog. Egg dog. It's an egg dog.\") amplifies the humor. The personal lawn is the perfect peak: it's elaborate, nonsensical, and presented earnestly.",
     "script_risk": "No clear stakes or consequence—this is pure novelty listing without tension. The humor relies entirely on absurdism; if the audience doesn't find the products inherently funny, there's nothing else holding their attention. The 'real-life personal lawn' ending doesn't have a payoff beyond 'look how weird this is.'"
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 24,
+     "retention": 22,
+     "loop": 5,
+     "total": 86,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+6 face; +8 loud open no ramp (-0.0dB); +5 payoff; +5 superlative",
+      "retention": "+8 multi-beat(5); +3 payoff end; +6 pacing(0.63/s); +5 pace medium",
+      "loop": "+contrast"
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 78,
+     "actual": 82.9,
+     "headroom": 4.9
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 33,
+     "cuts_per_sec": 0.63,
+     "n_swipes": 10,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -13.5,
+     "loudness_ramp_db": -0.0
+    },
+    "framing": {
+     "face_detect_rate": 0.3,
+     "face_center_x_median": 0.577,
+     "face_center_y_median": 0.364,
+     "face_area_median_pct": 3.8,
+     "offcenter_rate": 0.44,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/tan"
+    },
+    "has_semantic": false
    },
    "features": {
     "Visual (AI)": {
@@ -782,6 +1076,48 @@
     ],
     "why_it_works": "Problem-solution structure with escalating complexity creates satisfying progression: real problem → simple solution → complication → layered fixes → full payoff. The 'forever' angle gives emotional resonance (permanence) that elevates it beyond just a gadget. Fast pacing and music cues propel momentum.",
     "script_risk": "The payoff is cerebral ('you made a flower that blooms forever') rather than visceral. If viewers are expecting to see the flower actually bloom on-screen at the climax, the script delivery might feel anticlimactic if the visuals don't land. The 'you' framing (\"you make\") is didactic, which works for tutorials but may feel preachy for entertainment."
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 10,
+     "hook": 0,
+     "retention": 22,
+     "loop": 0,
+     "total": 32,
+     "limiting_factor": "HOOK",
+     "why": {
+      "hook": "+5 payoff; -5 null-state",
+      "retention": "+8 multi-beat(6); +3 payoff end; +6 pacing(0.97/s); +5 pace fast",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 86,
+     "actual": 91.89,
+     "headroom": 5.9
+    },
+    "format": {
+     "value": "single_object_demo",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 28,
+     "cuts_per_sec": 0.97,
+     "n_swipes": 1,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -21.2,
+     "loudness_ramp_db": 0.9
+    },
+    "framing": {
+     "face_detect_rate": 0.25,
+     "face_center_x_median": 0.572,
+     "face_center_y_median": 0.407,
+     "face_area_median_pct": 5.1,
+     "offcenter_rate": 0.36,
+     "cutoff_rate": 0.0,
+     "shirt_color": "gray"
+    },
+    "has_semantic": false
    },
    "features": {
     "Visual (AI)": {
@@ -892,6 +1228,48 @@
     "why_it_works": "Pure curiosity-driven hook: 'This device is a thermometer' without explanation forces viewers to keep watching to understand why. The 'no batteries/screen/mercury' negations build mystery. Concrete visual demonstration (balls moving, temperature readings) satisfies the curiosity with immediate gratification. Calm tone matches the elegance of the device itself.",
     "script_risk": "The payoff is technical and requires visual literacy (understanding Galileo's thermometer physics). Audio-only listeners or viewers who aren't paying full attention to the ball-movement visuals may leave confused. The ending example (24 Celsius) might not land as impressive if the preceding demo visuals don't match the narration timing."
    },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 10,
+     "hook": 25,
+     "retention": 25,
+     "loop": 5,
+     "total": 65,
+     "limiting_factor": "CEILING",
+     "why": {
+      "hook": "+12 face+mystery; +8 loud open no ramp (-0.6dB); +5 payoff",
+      "retention": "+8 multi-beat(7); +6 payoff immediate; +6 pacing(0.38/s); +5 pace fast",
+      "loop": "+contrast"
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 86,
+     "actual": 89.03,
+     "headroom": 3.0
+    },
+    "format": {
+     "value": "single_object_demo",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 10,
+     "cuts_per_sec": 0.38,
+     "n_swipes": 3,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -17.5,
+     "loudness_ramp_db": -0.6
+    },
+    "framing": {
+     "face_detect_rate": 0.15,
+     "face_center_x_median": 0.483,
+     "face_center_y_median": 0.442,
+     "face_area_median_pct": 34.3,
+     "offcenter_rate": 0.0,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/gray"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -996,6 +1374,48 @@
     ],
     "why_it_works": "Testing framework creates built-in stakes: will the products work or fail? Host's genuine surprise and admission that products work better than expected (reading glasses, standing chair) creates moments of earned delight. The 'again' in the title suggests follow-up entertainment, and the middle escalation keeps pacing alive.",
     "script_risk": "The opening hook is generic ('craziest products') and the 'test them to see if they're worth it' is vague—unclear what 'worth it' means (price? utility? entertainment?). The pig product appears twice but gets minimal testing; reading glasses gets real testing, but the standing chair's final verdict is cut off mid-demonstration. Incomplete payoffs may leave viewers frustrated."
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 24,
+     "retention": 25,
+     "loop": 5,
+     "total": 89,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+6 face; +8 loud open no ramp (-5.4dB); +5 payoff; +5 superlative",
+      "retention": "+8 multi-beat(6); +6 payoff middle; +6 pacing(0.53/s); +5 pace medium",
+      "loop": "+contrast"
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 78,
+     "actual": 73.57,
+     "headroom": -4.4
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 28,
+     "cuts_per_sec": 0.53,
+     "n_swipes": 11,
+     "longest_static": 2.05,
+     "opening_loudness_dbfs": -13.9,
+     "loudness_ramp_db": -5.4
+    },
+    "framing": {
+     "face_detect_rate": 0.65,
+     "face_center_x_median": 0.49,
+     "face_center_y_median": 0.332,
+     "face_area_median_pct": 3.1,
+     "offcenter_rate": 0.38,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/tan"
+    },
+    "has_semantic": false
    },
    "features": {
     "Visual (AI)": {
@@ -1102,6 +1522,48 @@
     "why_it_works": "The blind taste test format creates curiosity through implicit mystery—viewers want to see if the straw actually works. The ironic payoff (swamp water tasting best) is unexpected and memorable.",
     "script_risk": "The opening lacks immediate hook strength; viewers might scroll before the test reveals the premise. The null-state description of testing delays the intrigue by 3 seconds."
    },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 22,
+     "hook": 0,
+     "retention": 22,
+     "loop": 0,
+     "total": 44,
+     "limiting_factor": "HOOK",
+     "why": {
+      "hook": "-5 null-state",
+      "retention": "+8 multi-beat(6); +3 payoff end; +6 pacing(0.6/s); +5 pace medium",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 78,
+     "actual": 81.65,
+     "headroom": 3.7
+    },
+    "format": {
+     "value": "challenge_test",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 32,
+     "cuts_per_sec": 0.6,
+     "n_swipes": 7,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -21.3,
+     "loudness_ramp_db": 0.3
+    },
+    "framing": {
+     "face_detect_rate": 0.66,
+     "face_center_x_median": 0.856,
+     "face_center_y_median": 0.433,
+     "face_area_median_pct": 1.2,
+     "offcenter_rate": 0.92,
+     "cutoff_rate": 0.0,
+     "shirt_color": "green"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -1202,6 +1664,48 @@
     ],
     "why_it_works": "The hook delivers an immediate, counterintuitive claim (activating a reflex to hold breath longer) paired with scientific credibility. Fast pacing (3.63 wps) maintains momentum through explanation. The high stakes (survival instinct language) create emotional investment.",
     "script_risk": "The script ends mid-payoff without showing the full result, relying on visual demonstration to land the punchline. If the visual moment is weak, the entire payoff collapses."
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 10,
+     "hook": 19,
+     "retention": 25,
+     "loop": 5,
+     "total": 59,
+     "limiting_factor": "CEILING",
+     "why": {
+      "hook": "+6 face; +8 loud open no ramp (-1.1dB); +5 payoff",
+      "retention": "+8 multi-beat(5); +6 payoff immediate; +6 pacing(0.46/s); +5 pace fast",
+      "loop": "+contrast"
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 82,
+     "actual": 85.0,
+     "headroom": 3.0
+    },
+    "format": {
+     "value": "single_object_demo",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 17,
+     "cuts_per_sec": 0.46,
+     "n_swipes": 4,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -13.9,
+     "loudness_ramp_db": -1.1
+    },
+    "framing": {
+     "face_detect_rate": 0.4,
+     "face_center_x_median": 0.619,
+     "face_center_y_median": 0.283,
+     "face_area_median_pct": 2.2,
+     "offcenter_rate": 0.67,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/tan"
+    },
+    "has_semantic": false
    },
    "features": {
     "Visual (AI)": {
@@ -1312,6 +1816,48 @@
     "why_it_works": "The one-two punch of superlative claim + immediate skeptical reaction (\"What?\") is a pattern interrupt that hijacks attention. The audience's disbelief mirrors viewer skepticism, creating identification. Specificity (exact gram measurements, developer credit) builds credibility.",
     "script_risk": "The long technical walkthrough (downloading, cloning, running code) may bore viewers unfamiliar with development. If the final app test doesn't visually wow, the buildup feels wasted."
    },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 10,
+     "hook": 18,
+     "retention": 19,
+     "loop": 5,
+     "total": 52,
+     "limiting_factor": "CEILING",
+     "why": {
+      "hook": "+8 loud open no ramp (-2.1dB); +5 payoff; +5 superlative",
+      "retention": "+8 multi-beat(7); +6 payoff early; +5 pace medium",
+      "loop": "+contrast"
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 78,
+     "actual": 73.64,
+     "headroom": -4.4
+    },
+    "format": {
+     "value": "single_object_demo",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 9,
+     "cuts_per_sec": 0.17,
+     "n_swipes": 9,
+     "longest_static": 3.3,
+     "opening_loudness_dbfs": -14.7,
+     "loudness_ramp_db": -2.1
+    },
+    "framing": {
+     "face_detect_rate": 0.2,
+     "face_center_x_median": 0.692,
+     "face_center_y_median": 0.202,
+     "face_area_median_pct": 5.9,
+     "offcenter_rate": 0.43,
+     "cutoff_rate": 0.0,
+     "shirt_color": "gray"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -1420,6 +1966,48 @@
     ],
     "why_it_works": "The misdirection (\"just shake it?\") followed by the \"actually\" reveal leverages curiosity and a mild pattern interrupt. The visual contrast between magnetic and non-magnetic balls provides a satisfying anchor. Tying the demo to a physics law (Lenz's) elevates perceived value.",
     "script_risk": "The educational tone and slower pacing (2.84 wps) may not sustain casual viewers who want entertainment over education. The opening question is fairly generic and doesn't promise specific entertainment value."
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 10,
+     "hook": 20,
+     "retention": 25,
+     "loop": 5,
+     "total": 60,
+     "limiting_factor": "CEILING",
+     "why": {
+      "hook": "+12 face+mystery; +8 loud open no ramp (-3.9dB)",
+      "retention": "+8 multi-beat(7); +6 payoff middle; +6 pacing(0.38/s); +5 pace medium",
+      "loop": "+contrast"
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 82,
+     "actual": 75.55,
+     "headroom": -6.5
+    },
+    "format": {
+     "value": "single_object_demo",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 14,
+     "cuts_per_sec": 0.38,
+     "n_swipes": 0,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -17.2,
+     "loudness_ramp_db": -3.9
+    },
+    "framing": {
+     "face_detect_rate": 0.61,
+     "face_center_x_median": 0.429,
+     "face_center_y_median": 0.297,
+     "face_area_median_pct": 14.7,
+     "offcenter_rate": 0.07,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/tan"
+    },
+    "has_semantic": true
    },
    "features": {
     "Visual (AI)": {
@@ -1538,6 +2126,48 @@
     "why_it_works": "The superlative + specificity combo (\"dumbest products,\" \"should be illegal\") creates high stakes immediately. The list format provides repeatable tension arcs—each product is a mini test with a reveal. Mixed results (some work, some don't) create unpredictability and sustained curiosity.",
     "script_risk": "Slower pacing (2.83 wps) combined with list format risks monotony if products feel interchangeable. The hook's promise of illegality is never fulfilled, potentially frustrating viewers expecting a payoff on that threat."
    },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 22,
+     "retention": 25,
+     "loop": 0,
+     "total": 82,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+12 face+mystery; +5 payoff; +5 superlative",
+      "retention": "+8 multi-beat(9); +6 payoff immediate; +6 pacing(0.7/s); +5 pace medium",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 78,
+     "actual": 83.71,
+     "headroom": 5.7
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 37,
+     "cuts_per_sec": 0.7,
+     "n_swipes": 5,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -15.0,
+     "loudness_ramp_db": 0.1
+    },
+    "framing": {
+     "face_detect_rate": 0.37,
+     "face_center_x_median": 0.422,
+     "face_center_y_median": 0.283,
+     "face_area_median_pct": 6.4,
+     "offcenter_rate": 0.33,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/gray"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -1596,6 +2226,48 @@
    "hook_first_sentence": "",
    "tx_words": 0,
    "script_analysis": null,
+   "assessment": {
+    "scorecard": {
+     "ceiling": 10,
+     "hook": 14,
+     "retention": 0,
+     "loop": 0,
+     "total": 24,
+     "limiting_factor": "RETENTION",
+     "why": {
+      "hook": "+6 face; +8 loud open no ramp (-52.4dB)",
+      "retention": "",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 86,
+     "actual": 102.23,
+     "headroom": 16.2
+    },
+    "format": {
+     "value": "single_object_demo",
+     "source": "default"
+    },
+    "structural": {
+     "cuts": 2,
+     "cuts_per_sec": 0.06,
+     "n_swipes": 5,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -12.9,
+     "loudness_ramp_db": -52.4
+    },
+    "framing": {
+     "face_detect_rate": 0.91,
+     "face_center_x_median": 0.504,
+     "face_center_y_median": 0.533,
+     "face_area_median_pct": 11.3,
+     "offcenter_rate": 0.05,
+     "cutoff_rate": 0.0,
+     "shirt_color": "gray"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -1693,6 +2365,48 @@
     "why_it_works": "The opening promise ('including one I'm really hoping will work') creates anticipation that pays off through repeated failures plus comedic self-awareness. Pacing is quick enough to hold attention through the fail-fest format, and narrator personality carries the entertainment value despite the fake experiments.",
     "script_risk": "The script cuts off mid-test with no resolution to the wine glass projector, leaving the viewer without narrative closure or confirmation of whether any experiment worked as hoped. This incomplete ending may frustrate viewers expecting a payoff."
    },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 10,
+     "retention": 25,
+     "loop": 0,
+     "total": 70,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+5 payoff; +5 superlative",
+      "retention": "+8 multi-beat(4); +6 payoff middle; +6 pacing(0.82/s); +5 pace medium",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 75,
+     "actual": 89.54,
+     "headroom": 14.5
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 49,
+     "cuts_per_sec": 0.82,
+     "n_swipes": 5,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -14.6,
+     "loudness_ramp_db": 0.7
+    },
+    "framing": {
+     "face_detect_rate": 0.39,
+     "face_center_x_median": 0.482,
+     "face_center_y_median": 0.23,
+     "face_area_median_pct": 7.3,
+     "offcenter_rate": 0.32,
+     "cutoff_rate": 0.02,
+     "shirt_color": "beige/tan"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -1789,6 +2503,48 @@
     ],
     "why_it_works": "The opening's edge ('seems racist') is a pattern interrupt that hooks harder than the first video. Fast pacing (3.15 wps) and the narrator's self-aware running commentary ('it doesn't make any sense') pull viewers through—they're entertained by both the experiments failing AND the personality.",
     "script_risk": "The edgy 'racist' joke in the hook works to catch attention but carries slight risk of alienating some viewers or appearing performatively provocative if not perfectly timed. Also, like the previous video, no clear resolution to the final test."
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 24,
+     "retention": 25,
+     "loop": 0,
+     "total": 84,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+6 face; +8 loud open no ramp (-1.3dB); +5 payoff; +5 superlative",
+      "retention": "+8 multi-beat(4); +6 payoff early; +6 pacing(0.78/s); +5 pace fast",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 75,
+     "actual": 86.47,
+     "headroom": 11.5
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 46,
+     "cuts_per_sec": 0.78,
+     "n_swipes": 14,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -14.0,
+     "loudness_ramp_db": -1.3
+    },
+    "framing": {
+     "face_detect_rate": 0.24,
+     "face_center_x_median": 0.492,
+     "face_center_y_median": 0.223,
+     "face_area_median_pct": 5.4,
+     "offcenter_rate": 0.46,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/tan"
+    },
+    "has_semantic": false
    },
    "features": {
     "Visual (AI)": {
@@ -1891,6 +2647,48 @@
     "why_it_works": "The twist in the hook ('one that beats the original') is immediately proven true with the Red Hero tasting better, validating the premise early and rewarding viewer attention. Against-the-norm positioning (knockoffs being better) is surprising and maintains engagement through a longer list format.",
     "script_risk": "Four product tests in 60 seconds creates potential pacing issues despite steady 3.0 wps; viewers may feel rushed or lose track of which product is being tested. The final AirPods test cuts off without clear resolution ('Woah!' followed by silence)."
    },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 25,
+     "retention": 25,
+     "loop": 5,
+     "total": 90,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+12 face+mystery; +8 loud open no ramp (-0.9dB); +5 payoff",
+      "retention": "+8 multi-beat(5); +6 payoff early; +6 pacing(0.57/s); +5 pace medium",
+      "loop": "+contrast"
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 75,
+     "actual": 83.41,
+     "headroom": 8.4
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 34,
+     "cuts_per_sec": 0.57,
+     "n_swipes": 3,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -16.2,
+     "loudness_ramp_db": -0.9
+    },
+    "framing": {
+     "face_detect_rate": 0.59,
+     "face_center_x_median": 0.52,
+     "face_center_y_median": 0.334,
+     "face_area_median_pct": 11.8,
+     "offcenter_rate": 0.11,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/tan"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -1991,6 +2789,48 @@
     ],
     "why_it_works": "The simple yes/no question hook is direct and immediately clear. The narrator's self-aware detour ('I don't play games') adds personality while stalling, creating tension that resolves with the final discovery that it 'actually works.' The delayed payoff (right at the end) rewards patience.",
     "script_risk": "The script doesn't specify what the 'other way' to test the device actually IS — viewers are left hanging without seeing proof. This breaks the promise of verification and feels like an incomplete arc. The short format (28s) means less room to recover from this ambiguity."
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 22,
+     "hook": 11,
+     "retention": 22,
+     "loop": 0,
+     "total": 55,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+6 face; +5 payoff",
+      "retention": "+8 multi-beat(5); +3 payoff end; +6 pacing(0.9/s); +5 pace fast",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 86,
+     "actual": 93.32,
+     "headroom": 7.3
+    },
+    "format": {
+     "value": "challenge_test",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 25,
+     "cuts_per_sec": 0.9,
+     "n_swipes": 4,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -17.4,
+     "loudness_ramp_db": 0.4
+    },
+    "framing": {
+     "face_detect_rate": 0.36,
+     "face_center_x_median": 0.531,
+     "face_center_y_median": 0.254,
+     "face_area_median_pct": 12.2,
+     "offcenter_rate": 0.0,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/tan"
+    },
+    "has_semantic": false
    },
    "features": {
     "Visual (AI)": {
@@ -2093,6 +2933,48 @@
     "why_it_works": "The opening establishes a null state ('the internet is full of...' — before proving/testing) but then shows functional hacks with satisfying results (the can actually empties cleanly). The narrator's final question ('was it really worth all this effort?') adds a meta-humorous layer that works because most hacks DO work.",
     "script_risk": "The pacing is notably slower (2.67 wps) which may feel draggy compared to the other videos in this batch. The third hack (portable soap) is under-demonstrated — viewers don't see the full DIY process, only the payoff, which breaks the template of showing the experiment. The final reflection doesn't land as a clear conclusion."
    },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 8,
+     "retention": 20,
+     "loop": 0,
+     "total": 63,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+8 loud open no ramp (-4.0dB); +5 superlative; -5 null-state",
+      "retention": "+8 multi-beat(5); +6 payoff middle; +6 pacing(0.66/s)",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 78,
+     "actual": 82.44,
+     "headroom": 4.4
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 34,
+     "cuts_per_sec": 0.66,
+     "n_swipes": 8,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -11.4,
+     "loudness_ramp_db": -4.0
+    },
+    "framing": {
+     "face_detect_rate": 0.23,
+     "face_center_x_median": 0.529,
+     "face_center_y_median": 0.294,
+     "face_area_median_pct": 4.0,
+     "offcenter_rate": 0.21,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/tan"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -2189,6 +3071,48 @@
     ],
     "why_it_works": "The opening superlative teases a magical payoff, which arrives early (test 3 succeeds), keeping energy high through systematic debunking of earlier fails. The pattern of setup-debunk-payoff-success maintains momentum.",
     "script_risk": "Three quick test sequences risk blurring together; the rapid pacing (3.74 wps) and lack of build-up between experiments could lose viewers midway if individual debunks feel repetitive."
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 30,
+     "retention": 25,
+     "loop": 0,
+     "total": 90,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+12 face+mystery; +8 loud open no ramp (-1.1dB); +5 payoff; +5 superlative",
+      "retention": "+8 multi-beat(4); +6 payoff early; +6 pacing(0.72/s); +5 pace fast",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 75,
+     "actual": 87.47,
+     "headroom": 12.5
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 41,
+     "cuts_per_sec": 0.72,
+     "n_swipes": 11,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -11.1,
+     "loudness_ramp_db": -1.1
+    },
+    "framing": {
+     "face_detect_rate": 0.35,
+     "face_center_x_median": 0.527,
+     "face_center_y_median": 0.322,
+     "face_area_median_pct": 2.9,
+     "offcenter_rate": 0.4,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/tan"
+    },
+    "has_semantic": false
    },
    "features": {
     "Visual (AI)": {
@@ -2291,6 +3215,48 @@
     "why_it_works": "The twist promise (one might work) inverts expectations and drives curiosity. The apple test uses escalating vocal repetition to build tension, then undercuts it with a deadpan reversal—the comedic timing of the reveal lands precisely at the end.",
     "script_risk": "The buildup strategy (especially the repetitive 'something's happening') relies on payoff delivery; if viewers don't reach the final punchline or predict the nothing-happens twist early, the middle section feels padded and loses them."
    },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 30,
+     "retention": 22,
+     "loop": 5,
+     "total": 92,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+12 face+mystery; +8 loud open no ramp (-2.6dB); +5 payoff; +5 superlative",
+      "retention": "+8 multi-beat(5); +3 payoff end; +6 pacing(0.68/s); +5 pace medium",
+      "loop": "+contrast"
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 75,
+     "actual": 84.81,
+     "headroom": 9.8
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 38,
+     "cuts_per_sec": 0.68,
+     "n_swipes": 15,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -14.8,
+     "loudness_ramp_db": -2.6
+    },
+    "framing": {
+     "face_detect_rate": 0.26,
+     "face_center_x_median": 0.464,
+     "face_center_y_median": 0.281,
+     "face_area_median_pct": 5.9,
+     "offcenter_rate": 0.28,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/tan"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -2388,6 +3354,48 @@
     "why_it_works": "The steady, systematic rhythm of rapid-fire fails (setup, quick debunk, move on) keeps the pace consistent and satisfying; each failure is dispatched cleanly without dwelling.",
     "script_risk": "No payoff variety or surprise—every test simply fails with minimal fanfare. The script feels incomplete (cuts off mid-test 3), and the lack of any successful experiment or comedic twist (unlike videos 1 and 2) may feel repetitive and unmotivating."
    },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 18,
+     "retention": 25,
+     "loop": 0,
+     "total": 78,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+8 loud open no ramp (-0.4dB); +5 payoff; +5 superlative",
+      "retention": "+8 multi-beat(4); +6 payoff middle; +6 pacing(0.67/s); +5 pace medium",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 78,
+     "actual": 89.5,
+     "headroom": 11.5
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 33,
+     "cuts_per_sec": 0.67,
+     "n_swipes": 7,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -14.5,
+     "loudness_ramp_db": -0.4
+    },
+    "framing": {
+     "face_detect_rate": 0.26,
+     "face_center_x_median": 0.469,
+     "face_center_y_median": 0.256,
+     "face_area_median_pct": 6.8,
+     "offcenter_rate": 0.32,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/gray"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -2484,6 +3492,48 @@
     ],
     "why_it_works": "Opens with an impossible-gadgets premise and magic tease, then delivers fails followed by genuine success at the end, inverting the expectation from videos 1-3. The magic vase works, rewarding the premise.",
     "script_risk": "The fast pacing (3.48 wps) and music placeholders make the middle tests feel rushed; if the mechanical flower and Prince Rupert's drop tests blend together as mere fails, viewers may lose engagement before the final payoff."
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 30,
+     "retention": 22,
+     "loop": 0,
+     "total": 87,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+12 face+mystery; +8 loud open no ramp (-1.6dB); +5 payoff; +5 superlative",
+      "retention": "+8 multi-beat(4); +3 payoff end; +6 pacing(0.54/s); +5 pace fast",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 75,
+     "actual": 81.7,
+     "headroom": 6.7
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 31,
+     "cuts_per_sec": 0.54,
+     "n_swipes": 4,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -15.6,
+     "loudness_ramp_db": -1.6
+    },
+    "framing": {
+     "face_detect_rate": 0.18,
+     "face_center_x_median": 0.488,
+     "face_center_y_median": 0.4,
+     "face_area_median_pct": 30.8,
+     "offcenter_rate": 0.1,
+     "cutoff_rate": 0.0,
+     "shirt_color": "gray"
+    },
+    "has_semantic": false
    },
    "features": {
     "Visual (AI)": {
@@ -2585,6 +3635,48 @@
     ],
     "why_it_works": "Opens with a brand name (Hollywood) and specific technique (tear stick), then delivers the promised payoff within seconds. The quick progression from setup to visible effect to intensification holds attention through novelty and visceral relatability.",
     "script_risk": "Single-demo format with no comparison or debunking; if the mechanism isn't scientifically explained, curious viewers may feel unsatisfied. Also, the discomfort revealed at the end may deter rather than intrigue—no clear resolution shown."
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 10,
+     "hook": 17,
+     "retention": 25,
+     "loop": 0,
+     "total": 52,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+12 face+mystery; +5 payoff",
+      "retention": "+8 multi-beat(5); +6 payoff immediate; +6 pacing(0.76/s); +5 pace fast",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 86,
+     "actual": 93.57,
+     "headroom": 7.6
+    },
+    "format": {
+     "value": "single_object_demo",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 20,
+     "cuts_per_sec": 0.76,
+     "n_swipes": 3,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -16.8,
+     "loudness_ramp_db": 3.3
+    },
+    "framing": {
+     "face_detect_rate": 0.53,
+     "face_center_x_median": 0.574,
+     "face_center_y_median": 0.404,
+     "face_area_median_pct": 10.5,
+     "offcenter_rate": 0.25,
+     "cutoff_rate": 0.0,
+     "shirt_color": "brown"
+    },
+    "has_semantic": false
    },
    "features": {
     "Visual (AI)": {
@@ -2695,6 +3787,48 @@
     "why_it_works": "Multiple rapid experiments with consistent debunking structure create pattern-interrupt satisfaction — viewer anticipates failure, enjoys the reveal of how they really do it. Ending builds suspense with the egg test.",
     "script_risk": "The script cuts off mid-experiment; without seeing the egg explode, the payoff feels incomplete and may leave viewers unsatisfied or unclear about the conclusion."
    },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 24,
+     "retention": 25,
+     "loop": 0,
+     "total": 84,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+6 face; +8 loud open no ramp (-2.1dB); +5 payoff; +5 superlative",
+      "retention": "+8 multi-beat(7); +6 payoff immediate; +6 pacing(0.75/s); +5 pace medium",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 75,
+     "actual": 91.5,
+     "headroom": 16.5
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 41,
+     "cuts_per_sec": 0.75,
+     "n_swipes": 8,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -14.0,
+     "loudness_ramp_db": -2.1
+    },
+    "framing": {
+     "face_detect_rate": 0.36,
+     "face_center_x_median": 0.486,
+     "face_center_y_median": 0.245,
+     "face_area_median_pct": 5.5,
+     "offcenter_rate": 0.3,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/gray"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -2795,6 +3929,48 @@
     ],
     "why_it_works": "Opening narrates the 'boring before' (normal sea grapes) then pivots to an absurd twist (Coca-Cola) that subverts expectations — the American-specific angle adds personality and stakes. The sensory details (squishy, fizzy, popping) drive engagement.",
     "script_risk": "Lacks a clear conclusion or takeaway; the script ends with comparing tastes without stating which is better or recommending anything, leaving the payoff ambiguous."
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 22,
+     "hook": 8,
+     "retention": 25,
+     "loop": 5,
+     "total": 60,
+     "limiting_factor": "HOOK",
+     "why": {
+      "hook": "+8 loud open no ramp (-7.5dB); +5 payoff; -5 null-state",
+      "retention": "+8 multi-beat(5); +6 payoff early; +6 pacing(0.64/s); +5 pace medium",
+      "loop": "+contrast"
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 78,
+     "actual": 78.96,
+     "headroom": 1.0
+    },
+    "format": {
+     "value": "challenge_test",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 29,
+     "cuts_per_sec": 0.64,
+     "n_swipes": 5,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -19.8,
+     "loudness_ramp_db": -7.5
+    },
+    "framing": {
+     "face_detect_rate": 0.43,
+     "face_center_x_median": 0.533,
+     "face_center_y_median": 0.28,
+     "face_area_median_pct": 10.4,
+     "offcenter_rate": 0.28,
+     "cutoff_rate": 0.0,
+     "shirt_color": "brown"
+    },
+    "has_semantic": false
    },
    "features": {
     "Visual (AI)": {
@@ -2900,6 +4076,48 @@
     ],
     "why_it_works": "Fast-paced technical explanation builds intellectual curiosity; the reveal that this is a named mathematical concept (Reuleaux triangle) satisfies the setup. The 'twerk' colloquialism brings humor to technical content.",
     "script_risk": "Extremely dense technical language compressed into fast speech may lose viewers who aren't following the physics; the payoff (balancing) is described but not visually confirmed in the transcript."
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 10,
+     "hook": 11,
+     "retention": 25,
+     "loop": 0,
+     "total": 46,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+6 face; +5 payoff",
+      "retention": "+8 multi-beat(6); +6 payoff immediate; +6 pacing(0.79/s); +5 pace fast",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 86,
+     "actual": 84.54,
+     "headroom": -1.5
+    },
+    "format": {
+     "value": "single_object_demo",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 20,
+     "cuts_per_sec": 0.79,
+     "n_swipes": 0,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -19.7,
+     "loudness_ramp_db": 0.5
+    },
+    "framing": {
+     "face_detect_rate": 0.25,
+     "face_center_x_median": 0.494,
+     "face_center_y_median": 0.439,
+     "face_area_median_pct": 15.2,
+     "offcenter_rate": 0.15,
+     "cutoff_rate": 0.0,
+     "shirt_color": "gray"
+    },
+    "has_semantic": false
    },
    "features": {
     "Visual (AI)": {
@@ -3009,6 +4227,48 @@
     ],
     "why_it_works": "Opening twist (experiments are delicious, not just fake) reframes the video and pays off in the final experiment. Alternating between success and failure creates pacing; sensory reactions (burnt grandma smell, delicious smoke) make abstract experiments concrete.",
     "script_risk": "The 'burnt grandma' comment may read as insensitive to some viewers; the rapid-fire experiments without much elaboration may feel shallow if not backed by strong visuals."
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 18,
+     "retention": 25,
+     "loop": 0,
+     "total": 78,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+8 loud open no ramp (-2.2dB); +5 payoff; +5 superlative",
+      "retention": "+8 multi-beat(7); +6 payoff middle; +6 pacing(0.77/s); +5 pace medium",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 78,
+     "actual": 86.55,
+     "headroom": 8.5
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 42,
+     "cuts_per_sec": 0.77,
+     "n_swipes": 11,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -12.9,
+     "loudness_ramp_db": -2.2
+    },
+    "framing": {
+     "face_detect_rate": 0.28,
+     "face_center_x_median": 0.436,
+     "face_center_y_median": 0.257,
+     "face_area_median_pct": 11.4,
+     "offcenter_rate": 0.06,
+     "cutoff_rate": 0.0,
+     "shirt_color": "gray"
+    },
+    "has_semantic": false
    },
    "features": {
     "Visual (AI)": {
@@ -3123,6 +4383,48 @@
     "why_it_works": "Opens with superlative stakes (impossible, breaks physics) then delivers immediate thrills (electrocution fake-out, working gadgets). Three escalating gadgets with increasing spectacle and physical demonstration create sustained excitement.",
     "script_risk": "Script ends abruptly with screaming, leaving the outcome of the perpetual motion bird test unresolved; viewers may be confused about whether the experiment succeeded or if something went wrong."
    },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 18,
+     "retention": 25,
+     "loop": 0,
+     "total": 78,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+8 loud open no ramp (-2.3dB); +5 payoff; +5 superlative",
+      "retention": "+8 multi-beat(8); +6 payoff immediate; +6 pacing(0.68/s); +5 pace fast",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 78,
+     "actual": 87.75,
+     "headroom": 9.8
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 36,
+     "cuts_per_sec": 0.68,
+     "n_swipes": 8,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -14.6,
+     "loudness_ramp_db": -2.3
+    },
+    "framing": {
+     "face_detect_rate": 0.37,
+     "face_center_x_median": 0.569,
+     "face_center_y_median": 0.33,
+     "face_area_median_pct": 6.8,
+     "offcenter_rate": 0.13,
+     "cutoff_rate": 0.0,
+     "shirt_color": "gray"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -3219,6 +4521,48 @@
     ],
     "why_it_works": "The opening promises a clear mechanical payoff (perfect dispensing) and the assembly process builds suspense before the countdown creates urgency. The pacing is measured enough to follow the steps but quick enough to maintain interest.",
     "script_risk": "The script cuts off mid-test without showing the result, relying on viewer curiosity to seek the full video, but this cliffhanger strategy may frustrate viewers if the payoff feels delayed too long."
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 22,
+     "hook": 13,
+     "retention": 25,
+     "loop": 0,
+     "total": 60,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+8 loud open no ramp (-2.6dB); +5 payoff",
+      "retention": "+8 multi-beat(4); +6 payoff early; +6 pacing(0.35/s); +5 pace medium",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 78,
+     "actual": 77.16,
+     "headroom": -0.8
+    },
+    "format": {
+     "value": "challenge_test",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 16,
+     "cuts_per_sec": 0.35,
+     "n_swipes": 2,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -17.4,
+     "loudness_ramp_db": -2.6
+    },
+    "framing": {
+     "face_detect_rate": 0.6,
+     "face_center_x_median": 0.617,
+     "face_center_y_median": 0.329,
+     "face_area_median_pct": 5.6,
+     "offcenter_rate": 0.2,
+     "cutoff_rate": 0.02,
+     "shirt_color": "green"
+    },
+    "has_semantic": false
    },
    "features": {
     "Visual (AI)": {
@@ -3321,6 +4665,48 @@
     "why_it_works": "The opening exclamation is a pattern interrupt that creates immediate intrigue and matches the physical/emotional reaction viewers expect. The lights-off reveal is a visual/experiential payoff, and the fake-out punchline lands because the buildup genuinely convinced the viewer there was danger.",
     "script_risk": "If the plasma ball does not activate visibly during the lights-off sequence, the core moment fails entirely. The humor of the fake-out also relies on audience investment in the fake danger, which could fall flat if pacing feels rushed."
    },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 10,
+     "hook": 8,
+     "retention": 25,
+     "loop": 5,
+     "total": 48,
+     "limiting_factor": "HOOK",
+     "why": {
+      "hook": "+8 loud open no ramp (-3.4dB)",
+      "retention": "+8 multi-beat(5); +6 payoff middle; +6 pacing(0.56/s); +5 pace medium",
+      "loop": "+contrast"
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 92,
+     "actual": 101.56,
+     "headroom": 9.6
+    },
+    "format": {
+     "value": "single_object_demo",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 13,
+     "cuts_per_sec": 0.56,
+     "n_swipes": 0,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -15.9,
+     "loudness_ramp_db": -3.4
+    },
+    "framing": {
+     "face_detect_rate": 0.23,
+     "face_center_x_median": 0.458,
+     "face_center_y_median": 0.311,
+     "face_area_median_pct": 13.7,
+     "offcenter_rate": 0.18,
+     "cutoff_rate": 0.0,
+     "shirt_color": "red/warm"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -3418,6 +4804,48 @@
     "why_it_works": "The opening combines brand specificity (Temu), superlative claim (cheapest, one beats original), and clear payoff curiosity. The three-round structure is easy to follow, and each escalates in comedy—from obvious scam to funny fake-out to chaotic uncontrol. The repeated comparison with 'Steve' the real dog anchors relatability.",
     "script_risk": "Three rounds risk feeling repetitive if each comparison with Steve plays too similarly. The script also assumes viewers find 'can't read Chinese' humor acceptable, which depends on cultural sensitivity and audience values. Pacing through three products in 57 seconds leaves each test feeling somewhat rushed."
    },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 18,
+     "retention": 25,
+     "loop": 0,
+     "total": 78,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+8 loud open no ramp (-0.9dB); +5 payoff; +5 superlative",
+      "retention": "+8 multi-beat(4); +6 payoff immediate; +6 pacing(0.62/s); +5 pace medium",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 75,
+     "actual": 78.87,
+     "headroom": 3.9
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 35,
+     "cuts_per_sec": 0.62,
+     "n_swipes": 5,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -15.6,
+     "loudness_ramp_db": -0.9
+    },
+    "framing": {
+     "face_detect_rate": 0.45,
+     "face_center_x_median": 0.551,
+     "face_center_y_median": 0.174,
+     "face_area_median_pct": 5.8,
+     "offcenter_rate": 0.18,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/tan"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 0.0,
@@ -3514,6 +4942,48 @@
     ],
     "why_it_works": "The opening twist directly contradicts viewer expectations set by the title, forcing cognitive dissonance that makes them lean in to understand. The binary comparison (explosive vs. indestructible) is clean and the dramatic audio cue (laughter) marks the payoff moments.",
     "script_risk": "The fast pacing (3.24 wps) combined with dense information (two product variants, tail vs. head distinctions) may confuse viewers who miss the first explanation. If the shattering moments are not visually clear or well-timed, the script loses its dramatic payoff beats."
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 22,
+     "hook": 15,
+     "retention": 25,
+     "loop": 5,
+     "total": 67,
+     "limiting_factor": "HOOK",
+     "why": {
+      "hook": "+12 face+mystery; +8 loud open no ramp (-1.3dB); -5 null-state",
+      "retention": "+8 multi-beat(4); +6 payoff middle; +6 pacing(0.73/s); +5 pace fast",
+      "loop": "+contrast"
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 92,
+     "actual": 98.15,
+     "headroom": 6.2
+    },
+    "format": {
+     "value": "challenge_test",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 18,
+     "cuts_per_sec": 0.73,
+     "n_swipes": 1,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -16.5,
+     "loudness_ramp_db": -1.3
+    },
+    "framing": {
+     "face_detect_rate": 0.04,
+     "face_center_x_median": 0.26,
+     "face_center_y_median": 0.247,
+     "face_area_median_pct": 1.2,
+     "offcenter_rate": 1.0,
+     "cutoff_rate": 0.0,
+     "shirt_color": "brown"
+    },
+    "has_semantic": false
    },
    "features": {
     "Visual (AI)": {
@@ -3616,6 +5086,48 @@
     "why_it_works": "The fast pacing (3.38 wps) and quick cuts maintain momentum. The repeated comparison with Steve creates an anchor for relatability, and the absurdist moment of the Temu dog producing sound from its 'butt' lands as unexpected comedic contrast.",
     "script_risk": "The opening is weak—'Temu dog versus a real dog' is generic and offers no curiosity hook or stakes. At only 24 seconds, there is minimal time to develop stakes, so the payoff (Steve's rejection) may feel abrupt. Heavy reliance on visual humor (the butt-sound gag) means the script underperforms if the visual timing is off."
    },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 14,
+     "retention": 25,
+     "loop": 0,
+     "total": 74,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+6 face; +8 loud open no ramp (-0.3dB)",
+      "retention": "+8 multi-beat(5); +6 payoff middle; +6 pacing(0.52/s); +5 pace fast",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 92,
+     "actual": 94.41,
+     "headroom": 2.4
+    },
+    "format": {
+     "value": "versus_comparison",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 12,
+     "cuts_per_sec": 0.52,
+     "n_swipes": 1,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -15.2,
+     "loudness_ramp_db": -0.3
+    },
+    "framing": {
+     "face_detect_rate": 0.35,
+     "face_center_x_median": 0.507,
+     "face_center_y_median": 0.258,
+     "face_area_median_pct": 5.3,
+     "offcenter_rate": 0.25,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/tan"
+    },
+    "has_semantic": false
+   },
    "features": {
     "Visual (AI)": {
      "face": 1.0,
@@ -3716,6 +5228,48 @@
     ],
     "why_it_works": "The promise is delivered fast: a countdown creates urgency and anticipation, then the sensory payoff (burning sensation) validates the premise within seconds. The physical reaction is the entire point, making the short runtime an asset rather than liability.",
     "script_risk": "Very short script (62 words) leaves little room for variation or engagement beyond the reaction moment. If the on-camera burn effect doesn't read clearly, the entire video loses impact."
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 10,
+     "hook": 13,
+     "retention": 20,
+     "loop": 0,
+     "total": 43,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+8 loud open no ramp (-2.8dB); +5 payoff",
+      "retention": "+8 multi-beat(5); +6 payoff early; +6 pacing(0.31/s)",
+      "loop": ""
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 82,
+     "actual": 86.42,
+     "headroom": 4.4
+    },
+    "format": {
+     "value": "single_object_demo",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 11,
+     "cuts_per_sec": 0.31,
+     "n_swipes": 1,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -18.8,
+     "loudness_ramp_db": -2.8
+    },
+    "framing": {
+     "face_detect_rate": 0.6,
+     "face_center_x_median": 0.551,
+     "face_center_y_median": 0.291,
+     "face_area_median_pct": 6.8,
+     "offcenter_rate": 0.23,
+     "cutoff_rate": 0.0,
+     "shirt_color": "brown"
+    },
+    "has_semantic": false
    },
    "features": {
     "Visual (AI)": {
@@ -3837,6 +5391,48 @@
     ],
     "why_it_works": "High-curiosity superlative hook immediately pulls viewers in. Rapid-fire product reveals with genuine reactions (absurdity, skepticism, surprise) maintain momentum. The recurring theme of 'this is cool but why' creates relatable humor and sets up viral-worthy 'useless but fascinating' appeal.",
     "script_risk": "Repetitive critique structure by video's end—both the cold spray and phone air conditioner segments end with nearly identical dismissals ('Why do you need this' vs. 'I don't know when I would use this'). This pattern risks viewer fatigue in the second half, potentially causing drops before the conclusion."
+   },
+   "assessment": {
+    "scorecard": {
+     "ceiling": 35,
+     "hook": 18,
+     "retention": 25,
+     "loop": 5,
+     "total": 83,
+     "limiting_factor": "LOOP",
+     "why": {
+      "hook": "+8 loud open no ramp (-1.7dB); +5 payoff; +5 superlative",
+      "retention": "+8 multi-beat(10); +6 payoff immediate; +6 pacing(0.53/s); +5 pace medium",
+      "loop": "+contrast"
+     }
+    },
+    "avd_headroom": {
+     "required_for_length": 78,
+     "actual": 84.21,
+     "headroom": 6.2
+    },
+    "format": {
+     "value": "multi_item_compilation",
+     "source": "classified"
+    },
+    "structural": {
+     "cuts": 26,
+     "cuts_per_sec": 0.53,
+     "n_swipes": 8,
+     "longest_static": 0,
+     "opening_loudness_dbfs": -11.5,
+     "loudness_ramp_db": -1.7
+    },
+    "framing": {
+     "face_detect_rate": 0.31,
+     "face_center_x_median": 0.439,
+     "face_center_y_median": 0.222,
+     "face_area_median_pct": 6.9,
+     "offcenter_rate": 0.17,
+     "cutoff_rate": 0.0,
+     "shirt_color": "beige/gray"
+    },
+    "has_semantic": false
    },
    "features": {
     "Visual (AI)": {

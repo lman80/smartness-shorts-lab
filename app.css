@@ -954,6 +954,21 @@ dialog::backdrop{background:rgba(17,22,35,.42);backdrop-filter:blur(2px)}
 .rs-note.good{background:#eef9f3;border-left:3px solid #16a34a;padding:7px 10px;border-radius:6px}
 .rs-note.risk{background:#fdf2f2;border-left:3px solid #dc2626;padding:7px 10px;border-radius:6px}
 .rs-disclaimer{font-size:11px;color:var(--mut-2);font-style:italic;margin-top:9px;line-height:1.5}
+/* 🎯 Viral Readiness panel */
+.vr-card>summary{color:#0f766e}
+.vr-note{font-size:11.5px;color:var(--mut);font-style:italic;margin:9px 0 4px;line-height:1.5}
+.vr-bars{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.vr-bar{display:grid;grid-template-columns:108px 1fr 42px;align-items:center;gap:8px;font-size:11.5px}
+.vr-bl{color:var(--mut);font-weight:600}
+.vr-track{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.vr-track>span{display:block;height:100%;background:linear-gradient(90deg,#14b8a6,#0f766e);border-radius:99px}
+.vr-bv{color:var(--ink);font-weight:800;text-align:right;font-variant-numeric:tabular-nums}
+.vr-headroom{margin-top:10px;font-size:12px;border-radius:8px;padding:7px 10px;line-height:1.45}
+.vr-headroom.good{background:#eef9f3;border-left:3px solid #16a34a;color:#15603a}
+.vr-headroom.weak{background:#fdf2f2;border-left:3px solid #dc2626;color:#9b2226}
+.vr-fmt{font-size:12px;color:var(--ink-2);margin-top:8px}
+.vr-facts{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.vr-facts span{font-size:11px;font-weight:700;background:var(--line-soft);color:var(--ink-2);border-radius:6px;padding:2px 7px;font-variant-numeric:tabular-nums}
 .rs-meta{font-weight:600;color:var(--mut-2);font-size:11px;margin-left:6px}
 /* full script */
 .ref-transcript{font-size:12.5px;line-height:1.65;color:var(--ink-2);margin-top:9px;
