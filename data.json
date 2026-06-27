@@ -5615,122 +5615,6 @@
   },
   {
    "kind": "prediction",
-   "id": "2026-06-25_floating-pot-blow",
-   "slug": "floating-plant-pot-blowing-intro-script-a",
-   "url": null,
-   "title": "Floating Plant Pot — blowing intro (Script A)",
-   "base": "Floating Plant Pot",
-   "source_video_id": null,
-   "lifecycle": "awaiting",
-   "track": "fpp-blow",
-   "attempt": 1,
-   "version_label": "blowing intro (Script A)",
-   "status": "awaiting",
-   "uploaded_date": null,
-   "bucket": "Short 20-35s",
-   "duration": null,
-   "note": "Close #2. Floating white pot in frame 1 + he BLOWS on it to spin (max mystery clarity 2 + motion) -> highest MODEL swipe (76). But only lower-half face, and Script A is a weaker explainer (lower AVD 91).",
-   "pred_swipe": {
-    "point": 76,
-    "range": [
-     72,
-     82
-    ],
-    "band": "MID",
-    "vs_original": "new product (no prior). Model 2*face+(5-clarity). "
-   },
-   "pred_avd": {
-    "point": 91,
-    "range": [
-     88,
-     93
-    ],
-    "band": "HIGH",
-    "rationale": "AVD model 90.25-134*buildup; loud open. Script B versions retain best."
-   },
-   "strip": "filmstrips/PREDICT_fpp_blow.jpg",
-   "script": "0s: If you take a sensor\n1s: and an electromagnet\n2s: and hide\n3s: them inside of a\n4s: wooden base, then\n5s: take a real magnet\n6s: and hide it inside\n7s: of a plant pot.\n8s: Place it down very\n9s: carefully in\n10s: the perfect sweet spot.\n11s: Then make the sensor\n12s: in the base continuously\n13s: check\n14s: where the pot\n15s: is, then adjust\n16s: the electromagnet's\n17s: strength to\n18s: hold the pot in\n19s: the perfect spot.\n20s: Congratulations,\n21s: you just invented\n22s: a magnetic covering\n23s: device.",
-   "how_to_change_it": [
-    {
-     "change": "Swap to Script B",
-     "detail": "Pair this strong blow-on-floating-pot visual with the '$100 / I thought it was just two magnets' hook (Script B) instead of the explainer — best of both.",
-     "fixes": "avd"
-    }
-   ],
-   "features": {
-    "Visual (AI ensemble)": {
-     "object_clarity_1to5": 2.0,
-     "weird_intrigue_1to5": 4.0,
-     "face_in_first_frame": 1.0,
-     "cuts_in_first_4s": 2.2,
-     "dead_air_or_stall": 0.0,
-     "_source": "blind 5-run"
-    },
-    "Pixel": {
-     "brightness": 129.2,
-     "contrast": 60.9,
-     "colorfulness": 31.6,
-     "saturation": 74.0,
-     "motion": 17.36,
-     "cuts_detected": 5,
-     "escalation_proxy": 3.17
-    },
-    "Audio": {
-     "loudness_first2s": 0.19,
-     "loudness_overall": 0.184,
-     "audio_buildup": -0.008,
-     "silent_ratio": 0.064
-    },
-    "Hook/words": {
-     "script": "A (explainer)",
-     "opens_with_question": false
-    },
-    "Scorecard": {
-     "value": 5.0
-    }
-   },
-   "prediction": {
-    "pred_swipe": {
-     "point": 76,
-     "range": [
-      72,
-      82
-     ],
-     "band": "MID",
-     "vs_original": "new product (no prior). Model 2*face+(5-clarity). "
-    },
-    "pred_avd": {
-     "point": 91,
-     "range": [
-      88,
-      93
-     ],
-     "band": "HIGH",
-     "rationale": "AVD model 90.25-134*buildup; loud open. Script B versions retain best."
-    },
-    "verdict": null,
-    "error": null,
-    "how_to_change_it": [
-     {
-      "change": "Swap to Script B",
-      "detail": "Pair this strong blow-on-floating-pot visual with the '$100 / I thought it was just two magnets' hook (Script B) instead of the explainer — best of both.",
-      "fixes": "avd"
-     }
-    ],
-    "scorecard": 5.0,
-    "note": "Close #2. Floating white pot in frame 1 + he BLOWS on it to spin (max mystery clarity 2 + motion) -> highest MODEL swipe (76). But only lower-half face, and Script A is a weaker explainer (lower AVD 91)."
-   },
-   "actual": {
-    "swipe": null,
-    "avd": null,
-    "views": null,
-    "verdict": null,
-    "error": null
-   },
-   "pin": "9792"
-  },
-  {
-   "kind": "prediction",
    "id": "2026-06-25_floating-pot-intro2",
    "slug": "floating-plant-pot-floating-pot-intro-100-hook-rec",
    "url": null,
@@ -6609,6 +6493,98 @@
     "error": "swipe +1.93 pts (pred 76 → actual 77.93); AVD -0.3 pts (pred 99 → actual 98.7)"
    },
    "pin": "2616"
+  },
+  {
+   "kind": "posted",
+   "id": "9g8fnIUMUx8",
+   "slug": "floating-plant-pot-blowing-intro-script-a",
+   "url": "https://www.youtube.com/shorts/9g8fnIUMUx8",
+   "title": "Floating Plant Pot — blowing intro (Script A)",
+   "base": "Floating Plant Pot",
+   "source_video_id": null,
+   "version_label": "blowing intro (Script A)",
+   "status": "posted",
+   "lifecycle": "uploaded",
+   "track": "fpp-blow",
+   "publish": null,
+   "bucket": "Short 20-35s",
+   "duration": null,
+   "swipe": 72.52,
+   "avd": 90.71,
+   "views": 23929.0,
+   "strip": "filmstrips/PREDICT_fpp_blow.jpg",
+   "script": "0s: If you take a sensor\n1s: and an electromagnet\n2s: and hide\n3s: them inside of a\n4s: wooden base, then\n5s: take a real magnet\n6s: and hide it inside\n7s: of a plant pot.\n8s: Place it down very\n9s: carefully in\n10s: the perfect sweet spot.\n11s: Then make the sensor\n12s: in the base continuously\n13s: check\n14s: where the pot\n15s: is, then adjust\n16s: the electromagnet's\n17s: strength to\n18s: hold the pot in\n19s: the perfect spot.\n20s: Congratulations,\n21s: you just invented\n22s: a magnetic covering\n23s: device.",
+   "features": {
+    "Visual (AI ensemble)": {
+     "object_clarity_1to5": 2.0,
+     "weird_intrigue_1to5": 4.0,
+     "face_in_first_frame": 1.0,
+     "cuts_in_first_4s": 2.2,
+     "dead_air_or_stall": 0.0,
+     "_source": "blind 5-run"
+    },
+    "Pixel": {
+     "brightness": 129.2,
+     "contrast": 60.9,
+     "colorfulness": 31.6,
+     "saturation": 74.0,
+     "motion": 17.36,
+     "cuts_detected": 5,
+     "escalation_proxy": 3.17
+    },
+    "Audio": {
+     "loudness_first2s": 0.19,
+     "loudness_overall": 0.184,
+     "audio_buildup": -0.008,
+     "silent_ratio": 0.064
+    },
+    "Hook/words": {
+     "script": "A (explainer)",
+     "opens_with_question": false
+    },
+    "Scorecard": {
+     "value": 5.0
+    }
+   },
+   "prediction": {
+    "pred_swipe": {
+     "point": 76,
+     "range": [
+      72,
+      82
+     ],
+     "band": "MID",
+     "vs_original": "new product (no prior). Model 2*face+(5-clarity). "
+    },
+    "pred_avd": {
+     "point": 91,
+     "range": [
+      88,
+      93
+     ],
+     "band": "HIGH",
+     "rationale": "AVD model 90.25-134*buildup; loud open. Script B versions retain best."
+    },
+    "verdict": "HIT",
+    "error": "swipe -3.48 (pred 76→72.52)",
+    "how_to_change_it": [
+     {
+      "change": "Swap to Script B",
+      "detail": "Pair this strong blow-on-floating-pot visual with the '$100 / I thought it was just two magnets' hook (Script B) instead of the explainer — best of both.",
+      "fixes": "avd"
+     }
+    ],
+    "scorecard": 5.0,
+    "note": "Close #2. Floating white pot in frame 1 + he BLOWS on it to spin (max mystery clarity 2 + motion) -> highest MODEL swipe (76). But only lower-half face, and Script A is a weaker explainer (lower AVD 91)."
+   },
+   "actual": {
+    "swipe": 72.52,
+    "avd": 90.71,
+    "views": 23929.0,
+    "verdict": "HIT",
+    "error": "swipe -3.48 (pred 76→72.52)"
+   },
+   "pin": "3876"
   },
   {
    "kind": "posted",
