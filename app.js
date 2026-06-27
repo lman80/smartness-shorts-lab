@@ -406,7 +406,8 @@ function pendingReminderHTML(it, variant){
   if(!it || uploadState(it)!=='uploaded_pending') return '';
   const cls = variant==='row' ? 'tr-data-reminder' : 'tile-data-reminder';
   const d = daysSince(it.uploaded_date);
-  const ago = d==null ? 'Uploaded' : `Uploaded ${d}d ago`;
+  const absd = fmtDateAbs(it.uploaded_date);
+  const ago = d==null ? 'Uploaded' : `Uploaded ${absd?absd+' · ':''}${d}d ago`;
   if(d!=null && d>=DATA_LAG_DAYS){
     return `<div class="${cls} is-due"><span class="dr-ago">${esc(ago)}</span>`+
            `<span class="dr-due">⏰ Data should be ready — pull a fresh report</span></div>`;
@@ -2155,10 +2156,14 @@ function renderReference(){
   const R = state.reference;
   if(!R || !R.videos){ wrap.innerHTML='<p class="empty">No competitor data loaded.</p>'; return; }
   const chans = R.channels||{};
-  $('#ref-stamp').textContent =
-    `${R.count||R.videos.length} videos scanned · ${Object.keys(chans).join(' · ')} · updated ${esc(R.updated||'—')}`;
-  // tracking/dedup line: per-channel handle + latest video we already have (the "fetch newer than" cutoff)
   const reg = state.refRegistry;
+  // compact one-line summary (the verbose warning/tracking/insights live in the collapsible below)
+  const chParts = (reg && reg.channels)
+    ? Object.entries(reg.channels).map(([ch,c])=>`${esc(c.handle||ch)} ${c.count}`)
+    : Object.entries(chans).map(([ch,n])=>`${esc(ch)} ${n}`);
+  $('#ref-stamp').innerHTML = `${R.count||R.videos.length} videos · ${chParts.join(' · ')} · `
+    + `<span class="ref-stamp-note">public metrics only — ideas to test, not levers</span>`;
+  // tracking/dedup line (inside the collapsible): per-channel handle + latest video we already have
   if(reg && reg.channels){
     const parts = Object.entries(reg.channels).map(([ch,c])=>
       `${esc(c.handle||ch)} (${c.count}, latest ${esc(c.latest_upload||'—')})`);

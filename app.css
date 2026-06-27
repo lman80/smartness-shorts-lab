@@ -909,9 +909,20 @@ dialog::backdrop{background:rgba(17,22,35,.42);backdrop-filter:blur(2px)}
 /* ============================== COMPETITORS ============================== */
 .ref-headwrap{margin-bottom:14px}
 .ref-headwrap h1{font-size:24px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}
+.ref-headwrap .findings-stamp{margin-top:4px}
+.ref-stamp-note{color:var(--mut-2);font-style:italic}
+/* collapsible "what this is & key findings" — keeps the header clean by default */
+.ref-about{margin-top:10px;border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
+.ref-about>summary{cursor:pointer;list-style:none;padding:9px 13px;font-size:12.5px;font-weight:700;
+  color:var(--accent-ink);user-select:none;display:flex;align-items:center;gap:6px}
+.ref-about>summary::-webkit-details-marker{display:none}
+.ref-about>summary::before{content:"▸";transition:transform .15s;display:inline-block;color:var(--mut)}
+.ref-about[open]>summary{border-bottom:1px solid var(--line)}
+.ref-about[open]>summary::before{transform:rotate(90deg)}
+.ref-about-body{padding:4px 13px 12px}
 .ref-warn{
-  margin-top:11px;background:var(--amber-soft);border:1px solid #f0dcb6;color:#8a5206;
-  border-radius:10px;padding:10px 14px;font-size:13px;font-weight:600;line-height:1.5;
+  margin-top:9px;background:var(--amber-soft);border:1px solid #f0dcb6;color:#8a5206;
+  border-radius:8px;padding:9px 12px;font-size:12.5px;font-weight:600;line-height:1.5;
 }
 .ref-insights{margin:10px 0 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:5px}
 .ref-insights li{

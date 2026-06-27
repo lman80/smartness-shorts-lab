@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Smartness · Shorts Lab</title>
   <meta name="description" content="Smartness Shorts Lab — sortable library of every short, versioned experiments, predictions and findings." />
-  <link rel="stylesheet" href="app.css?v=99d59199" />
+  <link rel="stylesheet" href="app.css?v=7b208d45" />
 </head>
 <body>
   <!-- ============================ READ-ONLY BANNER ============================ -->
@@ -79,11 +79,16 @@
   <!-- =============================== COMPETITORS ============================ -->
   <main id="view-reference" class="view" role="tabpanel" hidden>
     <div class="ref-headwrap">
-      <h1>🏁 Competitors — what I scanned</h1>
+      <h1>🏁 Competitors</h1>
       <p id="ref-stamp" class="findings-stamp"></p>
-      <div id="ref-track" class="ref-track"></div>
-      <div id="ref-warn" class="ref-warn"></div>
-      <ul id="ref-insights" class="ref-insights"></ul>
+      <details class="ref-about">
+        <summary>ℹ️ What this is &amp; key findings</summary>
+        <div class="ref-about-body">
+          <div id="ref-warn" class="ref-warn"></div>
+          <div id="ref-track" class="ref-track"></div>
+          <ul id="ref-insights" class="ref-insights"></ul>
+        </div>
+      </details>
     </div>
     <div class="ref-toolbar">
       <div id="ref-chips" class="chips" role="radiogroup" aria-label="Channel"></div>
@@ -176,6 +181,6 @@
     </div>
   </dialog>
 
-  <script src="app.js?v=f69d1eb0" defer></script>
+  <script src="app.js?v=52a2e230" defer></script>
 </body>
 </html>
