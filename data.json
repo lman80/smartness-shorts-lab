@@ -3007,7 +3007,7 @@
      "words_per_sec": 2.67
     }
    },
-   "pin": "4086"
+   "pin": "4085"
   },
   {
    "kind": "posted",
@@ -6362,147 +6362,6 @@
   },
   {
    "kind": "prediction",
-   "id": "2026-06-25_phone-ac-v3",
-   "slug": "air-conditioner-for-phone-v3-frost-led-open",
-   "url": null,
-   "title": "Air Conditioner for Phone (v3 — frost-led open)",
-   "base": "Air Conditioner for Phone",
-   "source_video_id": "ZUhlSyvddOM",
-   "lifecycle": "awaiting",
-   "track": "phone-ac-statement-recut",
-   "attempt": 2,
-   "version_label": "attempt 2 — frost-led open",
-   "status": "awaiting",
-   "uploaded_date": null,
-   "bucket": "Short 20-35s",
-   "duration": 27.8,
-   "note": "v3 of 'Air Conditioner for Phone!?' (original video_id ZUhlSyvddOM: stayed 69.52%, AVD 93.32%). SAME statement script + audio as v2; the OPENING was re-edited to declutter and lead faster with the frosted disc (addressing v2's cluttered/slow open).",
-   "pred_swipe": {
-    "point": 74,
-    "range": [
-     70,
-     78
-    ],
-    "band": "MID",
-    "vs_original": "model 73.5% (vs v2's 76% and original 69.52%). The frame-1-only model reads v3's opening as MORE recognizable (clarity 2.8 vs 2.0) = slightly lower score — BUT the model is blind to v3's real win: the frosted-disc payoff now lands at ~0.5s instead of ~3s. Likely a real, modest improvement the model can't score."
-   },
-   "pred_avd": {
-    "point": 93,
-    "range": [
-     90,
-     95
-    ],
-    "band": "HIGH",
-    "rationale": "Same audio as v2 (loud 0.178, buildup -0.02) -> 92.9%, holds the original's strong 93.32%."
-   },
-   "strip": "filmstrips/PREDICT_phoneac-v3.jpg",
-   "script": "0s: Airconditioners use to\n1s: only cool down houses,\n2s: but now they\n3s: can cool down your phone.\n4s: When you play games,\n5s: your phone can get\n6s: too hot to use\n7s: properly.\n8s: So I plugged in this phone\n9s: air conditioner to\n10s: see if I could play\n11s: games smoother,\n12s: but then I remembered\n13s: I don't play games.\n14s: Is it getting cold?\n15s: I can't tell. So\n16s: is there any other way\n17s: to prove it works?\n18s: This is supposed to get so\n19s: cold that ice\n20s: will form on.\n21s: But I waited forever and\n22s: nothing happened.\n23s: However, just when\n24s: I thought this product had\n25s: failed, I found\n26s: another way to test it.",
-   "how_to_change_it": [
-    {
-     "change": "Put the FROST on frame 1 (second 0.0)",
-     "detail": "Biggest remaining swipe lever. Right now frame 1 is a static puck+face composite and the frosty-disc-with-finger lands at ~0.5s. OPEN directly on the finger drawing in the frost (or the phone frosting over) at 0.0s — that single arresting payoff belongs on the very first frame.",
-     "fixes": "swipe"
-    },
-    {
-     "change": "Add motion in the first second",
-     "detail": "The open is static/slow (a stall risk in the swipe window). Start with the finger already moving / a quick push-in by 0.25s.",
-     "fixes": "swipe"
-    },
-    {
-     "change": "Keep the frost lead + statement + loud audio",
-     "detail": "v3's declutter and frost-forward edit is the right direction over v2 — keep it; just push the frost to frame 1.",
-     "fixes": "keep"
-    }
-   ],
-   "features": {
-    "Visual (AI ensemble)": {
-     "subject_size_1to5": 3.8,
-     "object_clarity_1to5": 2.8,
-     "weird_intrigue_1to5": 2.6,
-     "face_in_first_frame": 1.0,
-     "cuts_in_first_4s": 2.6,
-     "escalation_1to5": 3.0,
-     "dead_air_or_stall": 0.0,
-     "motion_first_second": "static/slow (still)",
-     "_source": "blind 5-run"
-    },
-    "Pixel": {
-     "brightness": 135.4,
-     "contrast": 61.6,
-     "colorfulness": 25.2,
-     "saturation": 33.6,
-     "motion": 22.83,
-     "cuts_detected": 10,
-     "escalation_proxy": 2.3
-    },
-    "Audio": {
-     "loudness_first2s": 0.178,
-     "loudness_overall": 0.161,
-     "audio_buildup": -0.02,
-     "silent_ratio": 0.148
-    },
-    "Hook/words": {
-     "opens_with_question": false,
-     "narrates_null_state": true,
-     "curiosity_gap_1to5": 3,
-     "_source": "blind 3-run"
-    },
-    "Scorecard": {
-     "value": 4.2
-    }
-   },
-   "prediction": {
-    "pred_swipe": {
-     "point": 74,
-     "range": [
-      70,
-      78
-     ],
-     "band": "MID",
-     "vs_original": "model 73.5% (vs v2's 76% and original 69.52%). The frame-1-only model reads v3's opening as MORE recognizable (clarity 2.8 vs 2.0) = slightly lower score — BUT the model is blind to v3's real win: the frosted-disc payoff now lands at ~0.5s instead of ~3s. Likely a real, modest improvement the model can't score."
-    },
-    "pred_avd": {
-     "point": 93,
-     "range": [
-      90,
-      95
-     ],
-     "band": "HIGH",
-     "rationale": "Same audio as v2 (loud 0.178, buildup -0.02) -> 92.9%, holds the original's strong 93.32%."
-    },
-    "verdict": null,
-    "error": null,
-    "how_to_change_it": [
-     {
-      "change": "Put the FROST on frame 1 (second 0.0)",
-      "detail": "Biggest remaining swipe lever. Right now frame 1 is a static puck+face composite and the frosty-disc-with-finger lands at ~0.5s. OPEN directly on the finger drawing in the frost (or the phone frosting over) at 0.0s — that single arresting payoff belongs on the very first frame.",
-      "fixes": "swipe"
-     },
-     {
-      "change": "Add motion in the first second",
-      "detail": "The open is static/slow (a stall risk in the swipe window). Start with the finger already moving / a quick push-in by 0.25s.",
-      "fixes": "swipe"
-     },
-     {
-      "change": "Keep the frost lead + statement + loud audio",
-      "detail": "v3's declutter and frost-forward edit is the right direction over v2 — keep it; just push the frost to frame 1.",
-      "fixes": "keep"
-     }
-    ],
-    "scorecard": 4.2,
-    "note": "v3 of 'Air Conditioner for Phone!?' (original video_id ZUhlSyvddOM: stayed 69.52%, AVD 93.32%). SAME statement script + audio as v2; the OPENING was re-edited to declutter and lead faster with the frosted disc (addressing v2's cluttered/slow open)."
-   },
-   "actual": {
-    "swipe": null,
-    "avd": null,
-    "views": null,
-    "verdict": null,
-    "error": null
-   },
-   "pin": "4085"
-  },
-  {
-   "kind": "prediction",
    "id": "2026-06-25_phone-ac-v6",
    "slug": "air-conditioner-for-phone-pure-frost-no-face",
    "url": null,
@@ -6750,6 +6609,113 @@
     "error": "swipe +1.93 pts (pred 76 → actual 77.93); AVD -0.3 pts (pred 99 → actual 98.7)"
    },
    "pin": "2616"
+  },
+  {
+   "kind": "posted",
+   "id": "h7QFJasK_hU",
+   "slug": "air-conditioner-for-phone-v3-frost-led-open",
+   "url": "https://www.youtube.com/shorts/h7QFJasK_hU",
+   "title": "Air Conditioner for Phone (v3 — frost-led open)",
+   "base": "Air Conditioner for Phone",
+   "source_video_id": "ZUhlSyvddOM",
+   "version_label": "attempt 2 — frost-led open",
+   "status": "posted",
+   "lifecycle": "uploaded",
+   "track": "phone-ac-statement-recut",
+   "publish": null,
+   "bucket": "Short 20-35s",
+   "duration": 27.8,
+   "swipe": 81.32,
+   "avd": 79.77,
+   "views": 28971.0,
+   "strip": "filmstrips/PREDICT_phoneac-v3.jpg",
+   "script": "0s: Airconditioners use to\n1s: only cool down houses,\n2s: but now they\n3s: can cool down your phone.\n4s: When you play games,\n5s: your phone can get\n6s: too hot to use\n7s: properly.\n8s: So I plugged in this phone\n9s: air conditioner to\n10s: see if I could play\n11s: games smoother,\n12s: but then I remembered\n13s: I don't play games.\n14s: Is it getting cold?\n15s: I can't tell. So\n16s: is there any other way\n17s: to prove it works?\n18s: This is supposed to get so\n19s: cold that ice\n20s: will form on.\n21s: But I waited forever and\n22s: nothing happened.\n23s: However, just when\n24s: I thought this product had\n25s: failed, I found\n26s: another way to test it.",
+   "features": {
+    "Visual (AI ensemble)": {
+     "subject_size_1to5": 3.8,
+     "object_clarity_1to5": 2.8,
+     "weird_intrigue_1to5": 2.6,
+     "face_in_first_frame": 1.0,
+     "cuts_in_first_4s": 2.6,
+     "escalation_1to5": 3.0,
+     "dead_air_or_stall": 0.0,
+     "motion_first_second": "static/slow (still)",
+     "_source": "blind 5-run"
+    },
+    "Pixel": {
+     "brightness": 135.4,
+     "contrast": 61.6,
+     "colorfulness": 25.2,
+     "saturation": 33.6,
+     "motion": 22.83,
+     "cuts_detected": 10,
+     "escalation_proxy": 2.3
+    },
+    "Audio": {
+     "loudness_first2s": 0.178,
+     "loudness_overall": 0.161,
+     "audio_buildup": -0.02,
+     "silent_ratio": 0.148
+    },
+    "Hook/words": {
+     "opens_with_question": false,
+     "narrates_null_state": true,
+     "curiosity_gap_1to5": 3,
+     "_source": "blind 3-run"
+    },
+    "Scorecard": {
+     "value": 4.2
+    }
+   },
+   "prediction": {
+    "pred_swipe": {
+     "point": 74,
+     "range": [
+      70,
+      78
+     ],
+     "band": "MID",
+     "vs_original": "model 73.5% (vs v2's 76% and original 69.52%). The frame-1-only model reads v3's opening as MORE recognizable (clarity 2.8 vs 2.0) = slightly lower score — BUT the model is blind to v3's real win: the frosted-disc payoff now lands at ~0.5s instead of ~3s. Likely a real, modest improvement the model can't score."
+    },
+    "pred_avd": {
+     "point": 93,
+     "range": [
+      90,
+      95
+     ],
+     "band": "HIGH",
+     "rationale": "Same audio as v2 (loud 0.178, buildup -0.02) -> 92.9%, holds the original's strong 93.32%."
+    },
+    "verdict": "MISS",
+    "error": "swipe +7.32 (pred 74→81.32)",
+    "how_to_change_it": [
+     {
+      "change": "Put the FROST on frame 1 (second 0.0)",
+      "detail": "Biggest remaining swipe lever. Right now frame 1 is a static puck+face composite and the frosty-disc-with-finger lands at ~0.5s. OPEN directly on the finger drawing in the frost (or the phone frosting over) at 0.0s — that single arresting payoff belongs on the very first frame.",
+      "fixes": "swipe"
+     },
+     {
+      "change": "Add motion in the first second",
+      "detail": "The open is static/slow (a stall risk in the swipe window). Start with the finger already moving / a quick push-in by 0.25s.",
+      "fixes": "swipe"
+     },
+     {
+      "change": "Keep the frost lead + statement + loud audio",
+      "detail": "v3's declutter and frost-forward edit is the right direction over v2 — keep it; just push the frost to frame 1.",
+      "fixes": "keep"
+     }
+    ],
+    "scorecard": 4.2,
+    "note": "v3 of 'Air Conditioner for Phone!?' (original video_id ZUhlSyvddOM: stayed 69.52%, AVD 93.32%). SAME statement script + audio as v2; the OPENING was re-edited to declutter and lead faster with the frosted disc (addressing v2's cluttered/slow open)."
+   },
+   "actual": {
+    "swipe": 81.32,
+    "avd": 79.77,
+    "views": 28971.0,
+    "verdict": "MISS",
+    "error": "swipe +7.32 (pred 74→81.32)"
+   },
+   "pin": "7927"
   }
  ],
  "schema": {
