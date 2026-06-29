@@ -6374,6 +6374,225 @@
    "pin": "8257"
   },
   {
+   "kind": "prediction",
+   "id": "2026-06-28_magnetic-slime-1-v2",
+   "slug": "magnetic-slime-ash-cut-v2",
+   "url": null,
+   "title": "Magnetic Slime (Ash Cut v2)",
+   "base": "Magnetic Slime (Ash Cut v2)",
+   "source_video_id": null,
+   "lifecycle": "awaiting",
+   "track": "2026-06-28_magnetic-slime-1-v2",
+   "attempt": 1,
+   "version_label": "pre-upload test",
+   "status": "awaiting",
+   "uploaded_date": null,
+   "bucket": "Short 20-35s",
+   "duration": 29.2,
+   "note": "v2 re-cut of magnetic-slime-1 after the Advisor pass. Uploading 2026-06-28. Supersedes 2026-06-28_magnetic-slime-1.",
+   "pred_swipe": {
+    "point": 76.0,
+    "range": [
+     72,
+     80
+    ],
+    "band": "MID-HIGH",
+    "vs_model": "face=1 (verified) + mystery kept (clarity~2) -> 76.0. If a clarifying label remains -> ~72.9. Hook = reach/swipe lever."
+   },
+   "pred_avd": {
+    "point": 89.8,
+    "range": [
+     87,
+     92
+    ],
+    "band": "HIGH",
+    "rationale": "short-bucket 90.25-134*buildup (0.003) -> 89.8. Loudest+flattest open yet (loud_first2s 0.215, ramp -1.3). Dead-air ELIMINATED (v1 had a 2s gap). Required <=35s 86 -> +3.8 headroom."
+   },
+   "strip": "filmstrips/PREDICT_magnetic-slime-1-v2.jpg",
+   "script": "",
+   "how_to_change_it": [],
+   "features": {
+    "Visual (AI ensemble)": {},
+    "Pixel": {},
+    "Audio": {
+     "loudness_first2s": 0.215,
+     "loudness_overall": 0.152,
+     "buildup": 0.003,
+     "opening2s_dbfs": -14.4,
+     "ramp_dbfs": -1.3,
+     "pause_ratio": 0.134,
+     "opening_sfx_cluster": "~11 onsets in first 2.4s"
+    },
+    "Hook/words": {},
+    "Scorecard": {
+     "value": null
+    }
+   },
+   "prediction": {
+    "pred_swipe": {
+     "point": 76.0,
+     "range": [
+      72,
+      80
+     ],
+     "band": "MID-HIGH",
+     "vs_model": "face=1 (verified) + mystery kept (clarity~2) -> 76.0. If a clarifying label remains -> ~72.9. Hook = reach/swipe lever."
+    },
+    "pred_avd": {
+     "point": 89.8,
+     "range": [
+      87,
+      92
+     ],
+     "band": "HIGH",
+     "rationale": "short-bucket 90.25-134*buildup (0.003) -> 89.8. Loudest+flattest open yet (loud_first2s 0.215, ramp -1.3). Dead-air ELIMINATED (v1 had a 2s gap). Required <=35s 86 -> +3.8 headroom."
+    },
+    "verdict": null,
+    "error": null,
+    "how_to_change_it": [],
+    "scorecard": null,
+    "note": "v2 re-cut of magnetic-slime-1 after the Advisor pass. Uploading 2026-06-28. Supersedes 2026-06-28_magnetic-slime-1."
+   },
+   "actual": {
+    "swipe": null,
+    "avd": null,
+    "views": null,
+    "verdict": null,
+    "error": null
+   },
+   "pin": "5740"
+  },
+  {
+   "kind": "prediction",
+   "id": "2026-06-28_magnetic-slime-1",
+   "slug": "magnetic-slime-ash-cut-1",
+   "url": null,
+   "title": "Magnetic Slime (Ash Cut 1)",
+   "base": "Magnetic Slime (Ash Cut 1)",
+   "source_video_id": null,
+   "lifecycle": "superseded",
+   "track": "2026-06-28_magnetic-slime-1",
+   "attempt": 1,
+   "version_label": "pre-upload test",
+   "status": "awaiting",
+   "uploaded_date": null,
+   "bucket": "Short 20-35s",
+   "duration": 28.6,
+   "note": "Magnetic putty \"eats\" a magnet; explainer (metal shavings). Uploading 2026-06-28.",
+   "pred_swipe": {
+    "point": 76.0,
+    "range": [
+     72,
+     80
+    ],
+    "band": "MID-HIGH",
+    "vs_model": "With the recommended hook (\"This is the slime that eats magnets\" — no \"magnetic slime\" label), clarity stays low/mystery kept -> face=1 + clarity~2 -> ~76. (Was ~73 with the label.) Hook is a reach/swipe play, not AVD."
+   },
+   "pred_avd": {
+    "point": 87.7,
+    "range": [
+     85,
+     90
+    ],
+    "band": "HIGH",
+    "rationale": "short-bucket 90.25-134*buildup (buildup 0.019) -> 87.7. Loud, near-flat open (loud_first2s 0.158, ramp -0.3 dB) = our strongest AVD lever, present. Required AVD <=35s is 86 -> +1.7 headroom (thin). Watch the 2.05s low-motion engulf at ~7-9s."
+   },
+   "strip": "filmstrips/PREDICT_plasma_blue.jpg",
+   "script": "",
+   "how_to_change_it": [
+    {
+     "change": "Drop or delay the \"This is magnetic slime\" label (your call — agreed)",
+     "detail": "Naming it up front raises clarity and kills the \"what is happening / is it eating it?\" mystery. Open on the slime climbing to the magnet with NO label for ~1-1.5s, THEN reveal what it is. Clarity 3->2 ~= swipe +3 (to ~76). Highest-leverage swipe move now that the face is confirmed present.",
+     "fixes": "swipe"
+    },
+    {
+     "change": "Tighten the pacing",
+     "detail": "~1 cut per 1.9s vs the ~1/s winners. Add a few hard cuts in the explanation (~13-20s) and on satisfying beats so it never sits.",
+     "fixes": "avd/swipe"
+    },
+    {
+     "change": "Add a loop",
+     "detail": "Hard-match the end back to the opening climb instead of \"smile, music ends\" — compounds watch time.",
+     "fixes": "avd"
+    },
+    {
+     "change": "Hold loudness flat",
+     "detail": "buildup mildly positive (+0.019); keep the back half from getting louder than the open. Minor.",
+     "fixes": "avd"
+    }
+   ],
+   "features": {
+    "Visual (AI ensemble)": {},
+    "Pixel": {},
+    "Audio": {
+     "loudness_first2s": 0.158,
+     "loudness_overall": 0.146,
+     "buildup": 0.019,
+     "opening2s_dbfs": -16.8,
+     "ramp_dbfs": -0.3,
+     "pause_ratio": 0.1
+    },
+    "Hook/words": {},
+    "Scorecard": {
+     "value": null
+    }
+   },
+   "prediction": {
+    "pred_swipe": {
+     "point": 76.0,
+     "range": [
+      72,
+      80
+     ],
+     "band": "MID-HIGH",
+     "vs_model": "With the recommended hook (\"This is the slime that eats magnets\" — no \"magnetic slime\" label), clarity stays low/mystery kept -> face=1 + clarity~2 -> ~76. (Was ~73 with the label.) Hook is a reach/swipe play, not AVD."
+    },
+    "pred_avd": {
+     "point": 87.7,
+     "range": [
+      85,
+      90
+     ],
+     "band": "HIGH",
+     "rationale": "short-bucket 90.25-134*buildup (buildup 0.019) -> 87.7. Loud, near-flat open (loud_first2s 0.158, ramp -0.3 dB) = our strongest AVD lever, present. Required AVD <=35s is 86 -> +1.7 headroom (thin). Watch the 2.05s low-motion engulf at ~7-9s."
+    },
+    "verdict": null,
+    "error": null,
+    "how_to_change_it": [
+     {
+      "change": "Drop or delay the \"This is magnetic slime\" label (your call — agreed)",
+      "detail": "Naming it up front raises clarity and kills the \"what is happening / is it eating it?\" mystery. Open on the slime climbing to the magnet with NO label for ~1-1.5s, THEN reveal what it is. Clarity 3->2 ~= swipe +3 (to ~76). Highest-leverage swipe move now that the face is confirmed present.",
+      "fixes": "swipe"
+     },
+     {
+      "change": "Tighten the pacing",
+      "detail": "~1 cut per 1.9s vs the ~1/s winners. Add a few hard cuts in the explanation (~13-20s) and on satisfying beats so it never sits.",
+      "fixes": "avd/swipe"
+     },
+     {
+      "change": "Add a loop",
+      "detail": "Hard-match the end back to the opening climb instead of \"smile, music ends\" — compounds watch time.",
+      "fixes": "avd"
+     },
+     {
+      "change": "Hold loudness flat",
+      "detail": "buildup mildly positive (+0.019); keep the back half from getting louder than the open. Minor.",
+      "fixes": "avd"
+     }
+    ],
+    "scorecard": null,
+    "note": "Magnetic putty \"eats\" a magnet; explainer (metal shavings). Uploading 2026-06-28."
+   },
+   "actual": {
+    "swipe": null,
+    "avd": null,
+    "views": null,
+    "verdict": null,
+    "error": null
+   },
+   "pin": "3604"
+  },
+  {
    "kind": "posted",
    "id": "sczLUWfbHZk",
    "slug": "plasma-ballssssss",
