@@ -6103,6 +6103,136 @@
    "pin": "3604"
   },
   {
+   "kind": "prediction",
+   "id": "2026-07-01_tesla-coil-6",
+   "slug": "tesla-coil-plays-music-short-6",
+   "url": null,
+   "title": "Tesla Coil plays music (short 6)",
+   "base": "What Happens If You Touch a Tesla Coil",
+   "source_video_id": "9rtnBwUluV8",
+   "lifecycle": "awaiting",
+   "track": "2026-07-01_tesla-coil-6",
+   "attempt": 1,
+   "version_label": "pre-upload test",
+   "status": "awaiting",
+   "uploaded_date": null,
+   "bucket": "Mid ~41s (<=45)",
+   "duration": 40.85,
+   "note": "\"Can a Tesla coil play music?\" -> investigation -> failed attempts (flower/shrimp) -> payoff: plays Super Mario at ~35s. Uploading 2026-07-01. Prior tesla coil (9rtnBwUluV8) did stayed 75.71/avd 89.72.",
+   "pred_swipe": {
+    "point": 72.9,
+    "range": [
+     70,
+     78
+    ],
+    "band": "MID",
+    "vs_model": "face=1 (verified) + weird shrimp-on-coil + curiosity question -> ~73. The very-weird visual likely lands it higher (model under-reads weird)."
+   },
+   "pred_avd": {
+    "point": 82.0,
+    "range": [
+     76,
+     88
+    ],
+    "band": "MID-HIGH",
+    "rationale": "Long model (41s) 87.48+35.46*loud2s-0.095*bright -> 82.0, right at the ~82 required for <=45s (headroom ~0). Front-loaded audio (buildup -0.026) is a plus, BUT the payoff (Mario) is held to ~35s on a 41s video + a ~6s mid lull -> HIGH body-drag risk. Recent reconciles (slime, phone-ac) show AVD OVER-calls exactly this pattern, so downside skew."
+   },
+   "strip": "filmstrips/PREDICT_tesla-coil-6.jpg",
+   "script": "",
+   "how_to_change_it": [
+    {
+     "change": "Tease the payoff in the first ~2s (highest-leverage AVD move)",
+     "detail": "The hook asks \"can a Tesla coil play music?\" but the viewer gets NO hint of the Mario payoff until 35s. Flash a 0.5-1s clip of the coil playing Mario right after the hook (a \"wait for it\") so the long build has a promise. Show the spectacle, withhold the how.",
+     "fixes": "avd"
+    },
+    {
+     "change": "Tighten the middle / kill the mid lull",
+     "detail": "Add cuts through 20.7-26.6s (the shrimp explanation, ~6s no cut) and trim any failed-attempt beat that does not land, so it never sits before the payoff.",
+     "fixes": "avd"
+    },
+    {
+     "change": "Consider shortening toward ~30s",
+     "detail": "41s is long; every second before the payoff is a drop-off risk. If any of the flower/shrimp bits are filler, cutting to ~30-33s raises AVD headroom (required drops but hold improves).",
+     "fixes": "avd"
+    },
+    {
+     "change": "Opening is strong — keep it",
+     "detail": "Face in frame 1 + shrimp-on-coil + the question is a great scroll-stopper. Do not touch the first 2 seconds except to add the payoff tease.",
+     "fixes": "keep"
+    }
+   ],
+   "features": {
+    "Visual (AI ensemble)": {},
+    "Pixel": {},
+    "Audio": {
+     "loudness_first2s": 0.159,
+     "buildup": -0.026,
+     "opening2s_dbfs": -18.0,
+     "ramp_dbfs": -2.6,
+     "onsets": 103,
+     "pause_ratio": 0.095
+    },
+    "Hook/words": {},
+    "Scorecard": {
+     "value": null
+    }
+   },
+   "prediction": {
+    "pred_swipe": {
+     "point": 72.9,
+     "range": [
+      70,
+      78
+     ],
+     "band": "MID",
+     "vs_model": "face=1 (verified) + weird shrimp-on-coil + curiosity question -> ~73. The very-weird visual likely lands it higher (model under-reads weird)."
+    },
+    "pred_avd": {
+     "point": 82.0,
+     "range": [
+      76,
+      88
+     ],
+     "band": "MID-HIGH",
+     "rationale": "Long model (41s) 87.48+35.46*loud2s-0.095*bright -> 82.0, right at the ~82 required for <=45s (headroom ~0). Front-loaded audio (buildup -0.026) is a plus, BUT the payoff (Mario) is held to ~35s on a 41s video + a ~6s mid lull -> HIGH body-drag risk. Recent reconciles (slime, phone-ac) show AVD OVER-calls exactly this pattern, so downside skew."
+    },
+    "verdict": null,
+    "error": null,
+    "how_to_change_it": [
+     {
+      "change": "Tease the payoff in the first ~2s (highest-leverage AVD move)",
+      "detail": "The hook asks \"can a Tesla coil play music?\" but the viewer gets NO hint of the Mario payoff until 35s. Flash a 0.5-1s clip of the coil playing Mario right after the hook (a \"wait for it\") so the long build has a promise. Show the spectacle, withhold the how.",
+      "fixes": "avd"
+     },
+     {
+      "change": "Tighten the middle / kill the mid lull",
+      "detail": "Add cuts through 20.7-26.6s (the shrimp explanation, ~6s no cut) and trim any failed-attempt beat that does not land, so it never sits before the payoff.",
+      "fixes": "avd"
+     },
+     {
+      "change": "Consider shortening toward ~30s",
+      "detail": "41s is long; every second before the payoff is a drop-off risk. If any of the flower/shrimp bits are filler, cutting to ~30-33s raises AVD headroom (required drops but hold improves).",
+      "fixes": "avd"
+     },
+     {
+      "change": "Opening is strong — keep it",
+      "detail": "Face in frame 1 + shrimp-on-coil + the question is a great scroll-stopper. Do not touch the first 2 seconds except to add the payoff tease.",
+      "fixes": "keep"
+     }
+    ],
+    "scorecard": null,
+    "note": "\"Can a Tesla coil play music?\" -> investigation -> failed attempts (flower/shrimp) -> payoff: plays Super Mario at ~35s. Uploading 2026-07-01. Prior tesla coil (9rtnBwUluV8) did stayed 75.71/avd 89.72."
+   },
+   "actual": {
+    "swipe": null,
+    "avd": null,
+    "views": null,
+    "verdict": null,
+    "error": null
+   },
+   "pin": "6835"
+  },
+  {
    "kind": "posted",
    "id": "sczLUWfbHZk",
    "slug": "plasma-ballssssss",
