@@ -6129,13 +6129,13 @@
     "vs_model": "face=1 (verified) + weird shrimp-on-coil + curiosity question -> ~73. The very-weird visual likely lands it higher (model under-reads weird)."
    },
    "pred_avd": {
-    "point": 82.0,
+    "point": 74.0,
     "range": [
-     76,
-     88
+     68,
+     82
     ],
-    "band": "MID-HIGH",
-    "rationale": "Long model (41s) 87.48+35.46*loud2s-0.095*bright -> 82.0, right at the ~82 required for <=45s (headroom ~0). Front-loaded audio (buildup -0.026) is a plus, BUT the payoff (Mario) is held to ~35s on a 41s video + a ~6s mid lull -> HIGH body-drag risk. Recent reconciles (slime, phone-ac) show AVD OVER-calls exactly this pattern, so downside skew."
+    "band": "MID",
+    "rationale": "BODY-DRAG GUARD applied. Raw long-model AVD ~82, but body-drag risk is HIGH (deterministic: 5.93s un-cut stretch at ~20.7-26.6s + pace decay + 41s length; semantic: payoff held to ~35s). Reconciled data shows AVD over-calls ~12pt when the body drags -> conservative -8 haircut to ~74, band skewed DOWN. This is now a live test of the body-drag guard."
    },
    "strip": "filmstrips/PREDICT_tesla-coil-6.jpg",
    "script": "",
@@ -6188,13 +6188,13 @@
      "vs_model": "face=1 (verified) + weird shrimp-on-coil + curiosity question -> ~73. The very-weird visual likely lands it higher (model under-reads weird)."
     },
     "pred_avd": {
-     "point": 82.0,
+     "point": 74.0,
      "range": [
-      76,
-      88
+      68,
+      82
      ],
-     "band": "MID-HIGH",
-     "rationale": "Long model (41s) 87.48+35.46*loud2s-0.095*bright -> 82.0, right at the ~82 required for <=45s (headroom ~0). Front-loaded audio (buildup -0.026) is a plus, BUT the payoff (Mario) is held to ~35s on a 41s video + a ~6s mid lull -> HIGH body-drag risk. Recent reconciles (slime, phone-ac) show AVD OVER-calls exactly this pattern, so downside skew."
+     "band": "MID",
+     "rationale": "BODY-DRAG GUARD applied. Raw long-model AVD ~82, but body-drag risk is HIGH (deterministic: 5.93s un-cut stretch at ~20.7-26.6s + pace decay + 41s length; semantic: payoff held to ~35s). Reconciled data shows AVD over-calls ~12pt when the body drags -> conservative -8 haircut to ~74, band skewed DOWN. This is now a live test of the body-drag guard."
     },
     "verdict": null,
     "error": null,
