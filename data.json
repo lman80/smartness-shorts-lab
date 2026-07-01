@@ -5820,6 +5820,135 @@
   },
   {
    "kind": "prediction",
+   "id": "2026-06-25_phone-ac-s7",
+   "slug": "air-conditioner-for-phone-frost-led-face",
+   "url": null,
+   "title": "Air Conditioner for Phone (frost-led + face)",
+   "base": "Air Conditioner for Phone",
+   "source_video_id": "ZUhlSyvddOM",
+   "lifecycle": "scrapped",
+   "track": "phone-ac-frost-s7",
+   "attempt": 1,
+   "version_label": "frost-led + face",
+   "status": "scrapped",
+   "uploaded_date": null,
+   "bucket": "Short 20-35s",
+   "duration": 27.8,
+   "note": "Separate parallel version to POST for 'Air Conditioner for Phone!?' (original video_id ZUhlSyvddOM: stayed 69.52%, AVD 93.32%). One of two frost-led openings (s7 keeps a face, v6 is pure frost) — a natural A/B on face-vs-mystery.",
+   "pred_swipe": {
+    "point": 76,
+    "range": [
+     70,
+     78
+    ],
+    "band": "MID",
+    "vs_original": "model 76% (frame 1 retains a face at top + the frosted-disc mystery, clarity 2). Keeps the +0.78 face driver AND the mystery."
+   },
+   "pred_avd": {
+    "point": 93,
+    "range": [
+     90,
+     95
+    ],
+    "band": "HIGH",
+    "rationale": "Same audio (loud 0.178, buildup -0.02) -> 92.9%, holds the original's 93.32%."
+   },
+   "strip": "filmstrips/PREDICT_phoneac-s7.jpg",
+   "script": "0s: Eric conditioners use to\n1s: only cool down houses,\n2s: but now they\n3s: can cool down your phone.\n4s: When you play games,\n5s: your phone can get\n6s: too hot to use\n7s: properly, so\n8s: I plugged in this phone\n9s: air conditioner to\n10s: see if I could play\n11s: games smoother,\n12s: but then I remembered\n13s: I don't play games.\n14s: Is it getting cold?\n15s: I can't tell. So,\n16s: is there any other way\n17s: to prove it works?\n18s: This is supposed to get so\n19s: cold that ice\n20s: will form on.\n21s: But I waited forever and\n22s: nothing happened.\n23s: However, just when\n24s: I thought this product had\n25s: failed, I found\n26s: another way to test it.",
+   "how_to_change_it": [
+    {
+     "change": "Add motion in the first second",
+     "detail": "Both open 'slow' in the swipe window — start with the finger already carving the frost / a quick push-in by 0.25s.",
+     "fixes": "swipe"
+    },
+    {
+     "change": "Keep the frost-led frame 1",
+     "detail": "Leading on the frosted disc is the right call — it's the most arresting payoff. Good.",
+     "fixes": "keep"
+    }
+   ],
+   "features": {
+    "Visual (AI ensemble)": {
+     "object_clarity_1to5": 2.0,
+     "weird_intrigue_1to5": 3.2,
+     "face_in_first_frame": 1.0,
+     "cuts_in_first_4s": 2.4,
+     "escalation_1to5": 3.4,
+     "dead_air_or_stall": 0.0,
+     "motion_first_second": "slow",
+     "_source": "blind 5-run"
+    },
+    "Pixel": {
+     "brightness": 144.8,
+     "contrast": 63.7,
+     "colorfulness": 26.5,
+     "saturation": 34.5,
+     "motion": 22.9,
+     "cuts_detected": 10,
+     "escalation_proxy": 9.92
+    },
+    "Audio": {
+     "loudness_first2s": 0.178,
+     "loudness_overall": 0.161,
+     "audio_buildup": -0.02,
+     "silent_ratio": 0.148
+    },
+    "Hook/words": {
+     "opens_with_question": false,
+     "narrates_null_state": true,
+     "curiosity_gap_1to5": 3
+    },
+    "Scorecard": {
+     "value": 5.0
+    }
+   },
+   "prediction": {
+    "pred_swipe": {
+     "point": 76,
+     "range": [
+      70,
+      78
+     ],
+     "band": "MID",
+     "vs_original": "model 76% (frame 1 retains a face at top + the frosted-disc mystery, clarity 2). Keeps the +0.78 face driver AND the mystery."
+    },
+    "pred_avd": {
+     "point": 93,
+     "range": [
+      90,
+      95
+     ],
+     "band": "HIGH",
+     "rationale": "Same audio (loud 0.178, buildup -0.02) -> 92.9%, holds the original's 93.32%."
+    },
+    "verdict": null,
+    "error": null,
+    "how_to_change_it": [
+     {
+      "change": "Add motion in the first second",
+      "detail": "Both open 'slow' in the swipe window — start with the finger already carving the frost / a quick push-in by 0.25s.",
+      "fixes": "swipe"
+     },
+     {
+      "change": "Keep the frost-led frame 1",
+      "detail": "Leading on the frosted disc is the right call — it's the most arresting payoff. Good.",
+      "fixes": "keep"
+     }
+    ],
+    "scorecard": 5.0,
+    "note": "Separate parallel version to POST for 'Air Conditioner for Phone!?' (original video_id ZUhlSyvddOM: stayed 69.52%, AVD 93.32%). One of two frost-led openings (s7 keeps a face, v6 is pure frost) — a natural A/B on face-vs-mystery."
+   },
+   "actual": {
+    "swipe": null,
+    "avd": null,
+    "views": null,
+    "verdict": null,
+    "error": null
+   },
+   "pin": "9851"
+  },
+  {
+   "kind": "prediction",
    "id": "2026-06-25_phone-ac-v2",
    "slug": "air-conditioner-for-phone-v2-statement-re-cut",
    "url": null,
@@ -6106,15 +6235,15 @@
    "kind": "prediction",
    "id": "2026-07-01_tesla-coil-6",
    "slug": "tesla-coil-plays-music-short-6",
-   "url": null,
+   "url": "https://www.youtube.com/shorts/R69vXrspII8",
    "title": "Tesla Coil plays music (short 6)",
    "base": "What Happens If You Touch a Tesla Coil",
    "source_video_id": "9rtnBwUluV8",
-   "lifecycle": "awaiting",
+   "lifecycle": "uploaded",
    "track": "2026-07-01_tesla-coil-6",
    "attempt": 1,
    "version_label": "pre-upload test",
-   "status": "awaiting",
+   "status": "uploaded_pending",
    "uploaded_date": null,
    "bucket": "Mid ~41s (<=45)",
    "duration": 40.85,
@@ -6557,106 +6686,6 @@
   {
    "kind": "posted",
    "id": "h7QFJasK_hU",
-   "slug": "air-conditioner-for-phone-frost-led-face",
-   "url": "https://www.youtube.com/shorts/h7QFJasK_hU",
-   "title": "Air Conditioner for Phone (frost-led + face)",
-   "base": "Air Conditioner for Phone",
-   "source_video_id": "ZUhlSyvddOM",
-   "version_label": "frost-led + face",
-   "status": "posted",
-   "lifecycle": "uploaded",
-   "track": "phone-ac-frost-s7",
-   "publish": null,
-   "bucket": "Short 20-35s",
-   "duration": 27.8,
-   "swipe": 80.57,
-   "avd": 80.37,
-   "views": 34937.0,
-   "strip": "filmstrips/PREDICT_phoneac-s7.jpg",
-   "script": "0s: Eric conditioners use to\n1s: only cool down houses,\n2s: but now they\n3s: can cool down your phone.\n4s: When you play games,\n5s: your phone can get\n6s: too hot to use\n7s: properly, so\n8s: I plugged in this phone\n9s: air conditioner to\n10s: see if I could play\n11s: games smoother,\n12s: but then I remembered\n13s: I don't play games.\n14s: Is it getting cold?\n15s: I can't tell. So,\n16s: is there any other way\n17s: to prove it works?\n18s: This is supposed to get so\n19s: cold that ice\n20s: will form on.\n21s: But I waited forever and\n22s: nothing happened.\n23s: However, just when\n24s: I thought this product had\n25s: failed, I found\n26s: another way to test it.",
-   "features": {
-    "Visual (AI ensemble)": {
-     "object_clarity_1to5": 2.0,
-     "weird_intrigue_1to5": 3.2,
-     "face_in_first_frame": 1.0,
-     "cuts_in_first_4s": 2.4,
-     "escalation_1to5": 3.4,
-     "dead_air_or_stall": 0.0,
-     "motion_first_second": "slow",
-     "_source": "blind 5-run"
-    },
-    "Pixel": {
-     "brightness": 144.8,
-     "contrast": 63.7,
-     "colorfulness": 26.5,
-     "saturation": 34.5,
-     "motion": 22.9,
-     "cuts_detected": 10,
-     "escalation_proxy": 9.92
-    },
-    "Audio": {
-     "loudness_first2s": 0.178,
-     "loudness_overall": 0.161,
-     "audio_buildup": -0.02,
-     "silent_ratio": 0.148
-    },
-    "Hook/words": {
-     "opens_with_question": false,
-     "narrates_null_state": true,
-     "curiosity_gap_1to5": 3
-    },
-    "Scorecard": {
-     "value": 5.0
-    }
-   },
-   "prediction": {
-    "pred_swipe": {
-     "point": 76,
-     "range": [
-      70,
-      78
-     ],
-     "band": "MID",
-     "vs_original": "model 76% (frame 1 retains a face at top + the frosted-disc mystery, clarity 2). Keeps the +0.78 face driver AND the mystery."
-    },
-    "pred_avd": {
-     "point": 93,
-     "range": [
-      90,
-      95
-     ],
-     "band": "HIGH",
-     "rationale": "Same audio (loud 0.178, buildup -0.02) -> 92.9%, holds the original's 93.32%."
-    },
-    "verdict": "MISS",
-    "error": "swipe +4.57 (pred 76→80.57)",
-    "how_to_change_it": [
-     {
-      "change": "Add motion in the first second",
-      "detail": "Both open 'slow' in the swipe window — start with the finger already carving the frost / a quick push-in by 0.25s.",
-      "fixes": "swipe"
-     },
-     {
-      "change": "Keep the frost-led frame 1",
-      "detail": "Leading on the frosted disc is the right call — it's the most arresting payoff. Good.",
-      "fixes": "keep"
-     }
-    ],
-    "scorecard": 5.0,
-    "note": "Separate parallel version to POST for 'Air Conditioner for Phone!?' (original video_id ZUhlSyvddOM: stayed 69.52%, AVD 93.32%). One of two frost-led openings (s7 keeps a face, v6 is pure frost) — a natural A/B on face-vs-mystery."
-   },
-   "actual": {
-    "swipe": 80.57,
-    "avd": 80.37,
-    "views": 34937.0,
-    "verdict": "MISS",
-    "error": "swipe +4.57 (pred 76→80.57)"
-   },
-   "pin": "7927"
-  },
-  {
-   "kind": "posted",
-   "id": "h7QFJasK_hU",
    "slug": "air-conditioner-for-phone-v3-frost-led-open",
    "url": "https://www.youtube.com/shorts/h7QFJasK_hU",
    "title": "Air Conditioner for Phone (v3 — frost-led open)",
@@ -6759,7 +6788,7 @@
     "verdict": "MISS",
     "error": "swipe +7.32 (pred 74→81.32)"
    },
-   "pin": "7928"
+   "pin": "7927"
   },
   {
    "kind": "posted",
